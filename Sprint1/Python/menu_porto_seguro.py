@@ -1,6 +1,13 @@
+""" inicia a variavel opcao para entrar no while """
 opcao = 0
+
+""" inicia a variavel cadastro que sera usada para ver se o cliente esta cadastrado fazendo assim com que consiga cadstrar um veiculo """
 cadastro = False
+
+""" entra no laço de repetição """
 while(opcao != 4):
+
+    """ menu da nossa aplicação """
     print("\nSistema de Diagnosticar Veiculo\n")
 
     print("1 - Cadastrar Cliente")
@@ -8,8 +15,10 @@ while(opcao != 4):
     print("3 - Orçamento")
     print("4 - sair\n")
 
+    """ altera a variavel opção pegando um input digitado pelo usuario """
     opcao = int(input("Digite a opção desejada: "))
 
+    """ entra na verificação se opção e um dessas alternativas """
     if(opcao == 1):
         print("\nComeçando Cadastro Cliente\n")
         nome = input("Digite seu nome: ")
@@ -17,6 +26,7 @@ while(opcao != 4):
         email = input("Digite seu email: ")
         senha = input("Digite sua senha: ")
 
+        """ verifica se todas as informações estão validas """
         if(not nome or len(cpf) != 11 or not email or len(senha) < 8):
             print("Cadastro invalido")
         else:
@@ -26,12 +36,14 @@ while(opcao != 4):
         print("\nVoltando para o menu")
         opcao = 0
 
+    
     elif(opcao == 2):
         print("\nComeçando Cadastro Veiculo\n")
         marca = input("Digite a marca do veiculo: ")
         modelo = input("Digite o modelo do seu veiculo: ")
         ano = int(input("Digite o ano do seu veiculo: "))
 
+        """ verifica se todas as informações estão validas """
         if(marca == "" or modelo == "" or ano < 0 or ano > 2024 or cadastro == False):
             print("Cadastro de veiculo invalido")
         else:
@@ -48,13 +60,16 @@ while(opcao != 4):
         farol = 100
         bateria = 300
 
+        """ variavel que define a escolha do pneu escolhido no input do usuario """
         escolha = 0
+        """ variavel que vai receber o valor do pneu escolhido """
         pneu = 0
         while(escolha != 1 or escolha != 2 or escolha !=3):
             print("Pelo seu dignostico você precisa de 4 pneu escolha uma das opções de pneu que eu tenho disponivel")
             print(f"1 - pneu1 R${pneu_opcao1}")
             print(f"2 - pneu2 R${pneu_opcao2}")
             print(f"3 - pneu3 R${pneu_opcao3}")
+            """ input do usuarui para a escolha do pneu """
             escolha = int(input("Digite uma das opções de pneu: "))
 
             if(escolha == 1):
