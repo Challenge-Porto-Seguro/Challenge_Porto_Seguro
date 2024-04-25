@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
 }
 
+:root {
+    --font-principal: 'Jockey One', sans-serif;
+}
+
 .header{
-    background-color: black;
+    background-color: #000000;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -15,10 +21,17 @@
 h1{
     color: #ffffff;
     text-transform: uppercase;
+    font-family: var(--font-principal);
+    
 }
 
 img{
     margin: 10px;
+}
+
+.icone_mensagem{
+    background-color: #ffffff;
+    border-radius: 10px;
 }
 
 .icone_container{
@@ -27,7 +40,7 @@ img{
 }
 
 .container{
-    background-color: gray;
+    background-color: #D9D9D9;
     border: 1px solid black;
     height: 30px;
     width: 50%;
@@ -38,6 +51,7 @@ img{
 #container1{
     display: block;
     float: right;
+    height: 50px;
 }
 
 #container2{
@@ -48,10 +62,18 @@ img{
 
 #container3{
     height: 100px;
-    position: relative;
+}
+
+#icon{
+    margin-top: 15%;
 }
 
 .footer{
     bottom: 0;
     position: fixed;
+    display: flex;
+    background-color: #000000;
+    border-radius: 50px;
+    margin-left: 97%;
+    margin-bottom: 10px;
 }
