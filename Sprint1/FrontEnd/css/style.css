@@ -39,7 +39,6 @@ h1, h3{
 .pagina_toda{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .primeira_parte{
@@ -62,6 +61,27 @@ p{
 .icones{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 50px;
+    justify-content: space-around;
+    margin: 50px 50% 90px;
+    width: 50%;
+}
+
+.cada_icone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 150px ;
+}
+
+.plano_total{
+    display: flex;
+    flex-direction: row;
+}
+.planos{
+    background-color: #000000;
+    width: 90px;
+}
+
+.letra_plano{
+    color: #FFFFFF;
 }
