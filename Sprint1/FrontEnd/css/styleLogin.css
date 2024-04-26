@@ -58,3 +58,8 @@ h3{
     margin-top: 70px;
     margin-left: 30%;
 }
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
