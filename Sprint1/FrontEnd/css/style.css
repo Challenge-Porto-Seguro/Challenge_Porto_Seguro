@@ -66,9 +66,9 @@ p{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 50px 50% 50px;
+    margin: 50px 40% 50px;
     width: 50%;
-}
+}   
 
 .cada_icone{
     display: flex;
@@ -87,7 +87,7 @@ p{
     width: 100px;
     padding-left: 90px;
     padding-right: 90px;
-    margin-left: 150px;
+    margin-left: 50px;
     margin-bottom: 40px;
     border: 0.5px solid #000000;
     border-radius: 60px;
