@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 90px;
+    width: 100%;
+    background-color: #7130FC;
+}
+
+.icone_voltar{
+    margin: 20px;
+}
+
+
+.divisao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 4%;
+}
+
+.fotos {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+  }
+
+h3{
+    margin: 10px;
+}
+
+a{
+    margin: 10px;
+    color: black;
+}
+
+.projeto{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.github, .figma{
+    text-decoration: none;
+}
+
