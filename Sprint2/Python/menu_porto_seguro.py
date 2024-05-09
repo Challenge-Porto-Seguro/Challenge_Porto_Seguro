@@ -1,58 +1,40 @@
 from Automovel import Automovel
-from Cliente import Cliente
-
-
-def valida_informacoes_cliente(nome, cpf, email, senha):
-        if(not nome):
-            raise Exception("Nome não pode ser nulo")
-        elif(len(cpf) != 11):
-            raise Exception("CPF invalido") 
-        elif(not email):
-            raise Exception("Email invalido")
-        elif(len(senha) < 8):
-            raise Exception("Senha invalida")
-
-def valida_informacoes_automovel(marca, modelo, ano):
-        if(not marca):
-            raise Exception("Marca não pode ser nulo") 
-        elif(not modelo):
-            raise Exception("Modelo não pode ser nulo")
-        elif(ano < 0 or ano > 2024):
-            raise Exception("Ano invalida")
-        
+from Cliente import Cliente     
 
 def login():
-    print("----------------------------------------")
-    print("|                                      |")
-    print("|   Sistema de Diagnostico Veicular    |")
-    print("|                                      |")
-    print("|        1 - Cadastrar Cliente         |")
-    print("|        2 - Entrar                    |")
-    print("|        3 - sair                      |")
-    print("----------------------------------------")
+    print("-------------------------------------------")
+    print("|                                         |")
+    print("|   Sistema de Diagnostico Veicular       |")
+    print("|                                         |")
+    print("|        1 - Cadastrar Cliente            |")
+    print("|        2 - Entrar                       |")
+    print("|        3 - sair                         |")
+    print("-------------------------------------------\n")
 
 def informacoes_menu(cliente):
-    print("----------------------------------------")
-    print("|{}            |".format(cliente.__str__()))
-    print("|                                      |")
-    print("|   Sistema de Diagnostico Veicular    |")
-    print("|                                      |")
-    print("|        1 - Cadastrar Veiculo         |")
-    print("|        2 - Listar Veiculo            |")
-    print("|        3 - Excluir Veiculo           |")
-    print("|        4 - Orçamento                 |")
-    print("|        5 - Voltar tela de login      |")
-    print("----------------------------------------")
+    tamanho = len(cliente.__str__())
+    print("-------------------------------------------")
+    print("|{}".format(cliente.__str__()), " " * (39 - tamanho), "|")
+    print("|                                         |")
+    print("|   Sistema de Diagnostico Veicular       |")
+    print("|                                         |")
+    print("|        1 - Cadastrar Veiculo            |")
+    print("|        2 - Listar Veiculo               |")
+    print("|        3 - Excluir Veiculo              |")
+    print("|        4 - Orçamento                    |")
+    print("|        5 - Voltar tela de login         |")
+    print("-------------------------------------------\n")
 
 def usuarios(lista):
-    print("----------------------------------------")
-    print("|                                      |")
-    print("|            Lista de Usuarios         |")
-    print("|                                      |")
+    print("-------------------------------------------")
+    print("|                                         |")
+    print("|            Lista de Usuarios            |")
+    print("|                                         |")
 
     for usuario in lista:
-        print("|        {}                      |".format(usuario.nome))
-    print("----------------------------------------")
+        tamanho = len(usuario.nome) + 8
+        print("|        {}".format(usuario.nome), " " * (39 - tamanho), "|")
+    print("-------------------------------------------\n")
 
 def orcamento():
     descricao = input("Descreva seu problema: ")
@@ -92,7 +74,6 @@ def orcamento():
 
 def cadastro_cliente(nome, cpf, email, senha):
     try:
-        valida_informacoes_cliente(nome, cpf, email, senha)
         cliente = Cliente(nome, cpf, email, senha)
         print("Cadastro Realizado")
         clientes.append(cliente)
@@ -102,13 +83,12 @@ def cadastro_cliente(nome, cpf, email, senha):
 
 def cadastro_veiculo(cliente, marca, modelo, ano):
     try:
-        valida_informacoes_automovel(marca, modelo, ano)
         automovel = Automovel(marca, modelo, ano)
         cliente.cadastrar_veiculo(automovel)
         print("Cadastro de veiculo efetuado com sucesso")
     except Exception as e:
-        print(e)
-        print("Cadastro de veiculo invalido")
+        print("\n", e)
+        print("\nCadastro de veiculo invalido")
 
 """ inicia a variavel opcao para entrar no while """
 opcao = 0
@@ -220,9 +200,9 @@ while(opcao != 3):
                             print("Opção invalida\n")
                             print("Voltando ao menu")
                         
-                else:
-                    print("Login invalido")
-                    print("\nVoltando ao menu")
+            if(cliente == None):
+                print("Login invalido")
+                print("\nVoltando ao menu")
 
         else:
             print("Não existe usuario cadastrado")
