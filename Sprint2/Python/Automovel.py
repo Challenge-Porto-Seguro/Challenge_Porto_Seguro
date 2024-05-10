@@ -9,9 +9,9 @@ class Automovel:
 
     
     def valida_informacoes_automovel(self, marca, modelo, ano):
-        if(not marca):
-            raise Exception("Marca não pode ser nulo") 
-        elif(not modelo):
-            raise Exception("Modelo não pode ser nulo")
-        elif(ano < 0 or ano > datetime.date.today().year):
+        if(not marca or not marca.replace(" ", "").isalpha()):
+            raise Exception("Marca invalida") 
+        elif(not modelo or not modelo.replace(" ", "").isalpha()):
+            raise Exception("Modelo invalido")
+        elif(ano < 1886 or ano > datetime.date.today().year):
             raise Exception("Ano invalida")
