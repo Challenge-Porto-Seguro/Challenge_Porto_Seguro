@@ -104,15 +104,14 @@ class Cliente:
         self.orcamento.append(orcamento)
 
     def listar_orcamentos(self):
-        print("-------------------------------------------")
-        print("|                                         |")
-        print("|            Lista de Orçamentos          |")
-        print("|                                         |")
+        print("------------------------------------------")
+        print("                                         ")
+        print("            Lista de Orçamentos          ")
+        print("                                         ")
 
         i = 1
         for n in self.orcamento:
-            tamanho = len(n.descricao) + 11
-            print("|{}, Descrição: {}".format(i, n.descricao), " " * (39 - tamanho ), "|")
+            print("{}, Marca: {}, Descrição: {}, valor total: {}".format(i, n.automovel.marca, n.descricao, n.calcular_valor_total()))
             i += 1
         print("-------------------------------------------")
 
