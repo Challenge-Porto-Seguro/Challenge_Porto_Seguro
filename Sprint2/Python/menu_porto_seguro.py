@@ -1,5 +1,7 @@
 from Automovel import Automovel
-from Cliente import Cliente     
+from Cliente import Cliente
+from Orcamentos import Orcamento
+from Produto import Produto     
 
 def login():
     print("-------------------------------------------")
@@ -22,7 +24,8 @@ def informacoes_menu(cliente):
     print("|        2 - Listar Veiculo               |")
     print("|        3 - Excluir Veiculo              |")
     print("|        4 - Orçamento                    |")
-    print("|        5 - Voltar tela de login         |")
+    print("|        5 - Lista de Orçamentos          |")
+    print("|        6 - Voltar tela de login         |")
     print("-------------------------------------------\n")
 
 def usuarios(lista):
@@ -36,52 +39,87 @@ def usuarios(lista):
         print("|        {}".format(usuario.nome), " " * (39 - tamanho), "|")
     print("-------------------------------------------\n")
 
-def orcamento():
-    descricao = input("Descreva seu problema: ")
-    pneu_opcao1 = 50
-    pneu_opcao2 = 30
-    pneu_opcao3 = 60
-    farol = 100
-    bateria = 300
+def orcamento(cliente):
+    print("\nOrçamento\n")
+    cliente.listar_veiculos()
 
-    """ variavel que define a escolha do pneu escolhido no input do usuario """
-    escolha = 0
-    """ variavel que vai receber o valor do pneu escolhido """
-    pneu = 0
-    while(escolha != 1 or escolha != 2 or escolha !=3):
-        print("Pelo seu dignostico você precisa de 4 pneu escolha uma das opções de pneu que eu tenho disponivel")
-        print(f"1 - pneu1 R${pneu_opcao1}")
-        print(f"2 - pneu2 R${pneu_opcao2}")
-        print(f"3 - pneu3 R${pneu_opcao3}")
-        """ input do usuarui para a escolha do pneu """
-        escolha = int(input("Digite uma das opções de pneu: "))
+    if(len(cliente.automoveis) != 0):   
+        index = int(input("Digite o codigo do veiculo que irá usar: ")) - 1
 
-        if(escolha == 1):
-            pneu = pneu_opcao1
-            break
-        elif(escolha == 2):
-            pneu = pneu_opcao2
-            break
-        elif(escolha == 3):
-            pneu = pneu_opcao3
-            break
+        while index >= len(cliente.automoveis):
+            print("Veiculo não existente")
+            index = int(input("Digite o codigo do veiculo que esta na lista")) - 1
+
+        produto_a_venda()
+        descricao = input("Descreva seu problema: ")
+    
+        print("Escolha os itens que vai ter no seu orçamento")
+
+        orcamento = Orcamento(descricao, cliente.automoveis[index])
+    
+        """ variavel que define a escolha do pneu escolhido no input do usuario """
+        escolha = 0
+
+        while(escolha != 4):
+            escolha = int(input("Digite uma das opções de Produtos: "))
+            if(escolha == 1):
+                quantidade = int(input("Quantos pneu quer adicionar: "))
+                orcamento.adicionar_produto(Produto("pneu", 20.0, quantidade))
+
+            elif(escolha == 2):
+                quantidade = int(input("Quantas baterias quer adicionar: "))
+                orcamento.adicionar_produto(Produto("bateria", 200, quantidade))
+            elif(escolha == 3):
+                quantidade = int(input("Quantos farois quer adicionar: "))
+                orcamento.adicionar_produto(Produto("farois", 150, quantidade))
+            elif(escolha == 4):
+                print("Saindo das escolhas")
+            else:
+                print("\nOpção invalida\n")
+                print("Voltando para a escolha\n")
+
+        if(orcamento.produtos != []):
+            cliente.adicionar_orcamento(orcamento)
+            print("Resumo do seu orcamento: Automovel: {}, Descrição: {}, valor total: {:.2f}R$".format(orcamento.automovel.marca, orcamento.descricao, orcamento.calcular_valor_total()))                            
         else:
-            print("\nOpção invalida\n")
-            print("Voltando para a escolha\n")
+            print("Você não escolheu nem um produto")
 
-    orcamento = (4 * pneu) + (2 * farol) + bateria
-    print(f"Pelo diagnostico seu carro precisa dos pneus, 2 farois e 1 bateria o valor total = {orcamento}")
+        print("\nVoltando para o menu")
+    
+    
 
-def cadastro_cliente(nome, cpf, email, senha):
-    try:
-        cliente = Cliente(nome, cpf, email, senha)
-        print("Cadastro Realizado")
-        clientes.append(cliente)
-    except Exception as e:
-        print(e)
-        print("Cadastro invalido")
+def cadastro_cliente(clientes):
+    print("\nComeçando Cadastro Cliente\n")
+    nome = input("Digite seu nome: ")
+    cpf = input("Digite seu CPF: ")
+    email = input("Digite seu email: ")
+    senha = input("Digite sua senha: ")
 
-def cadastro_veiculo(cliente, marca, modelo, ano):
+    email_ja_cadastrado = False
+    cpf_ja_cadastrado = False
+    for usuario in clientes:
+        if(usuario.email.__eq__(email)):
+                email_ja_cadastrado = True
+        if(usuario.cpf.__eq__(cpf)):
+                cpf_ja_cadastrado = True
+    if(email_ja_cadastrado):
+        print("Esse email ja esta vinculado a um Usuario")
+    elif(cpf_ja_cadastrado):
+        print("Esse cpf ja esta vinculado a um Usuario")
+    else:
+        try:
+            cliente = Cliente(nome, cpf, email, senha)
+            print("Cadastro Realizado")
+            clientes.append(cliente)
+        except Exception as e:
+            print(e)
+            print("Cadastro invalido")
+
+def cadastro_veiculo(cliente):
+    print("\nComeçando Cadastro Veiculo\n")
+    marca = input("Digite a marca do veiculo: ")
+    modelo = input("Digite o modelo do seu veiculo: ")
+    ano = int(input("Digite o ano do seu veiculo: "))
     try:
         automovel = Automovel(marca, modelo, ano)
         cliente.cadastrar_veiculo(automovel)
@@ -89,6 +127,28 @@ def cadastro_veiculo(cliente, marca, modelo, ano):
     except Exception as e:
         print("\n", e)
         print("\nCadastro de veiculo invalido")
+
+def produto_a_venda():
+    print("1, pneu - 20R$")
+    print("2, bateria - 200R$")
+    print("3, farol - 150$")
+    print("4, sair dos produtos\n")
+
+def excluir_veiculo(cliente):
+    print("\nExclusão de veiculo\n")
+    cliente.listar_veiculos()
+
+    if(len(cliente.automoveis) != 0):   
+        index = int(input("Digite o codigo do veiculo que irá usar: ")) - 1
+
+        while index >= len(cliente.automoveis):
+            print("Veiculo não existente")
+            index = int(input("Digite o codigo do veiculo que esta na lista: ")) - 1
+                                
+        excluido = cliente.excluir_veiculo(index)
+        print("Veiculo da marca {} excluido".format(excluido.marca))
+
+        print("\nVoltando para o menu")
 
 """ inicia a variavel opcao para entrar no while """
 opcao = 0
@@ -104,25 +164,7 @@ while(opcao != 3):
 
     """ entra na verificação se opção e um dessas alternativas """
     if(opcao == 1):
-        print("\nComeçando Cadastro Cliente\n")
-        nome = input("Digite seu nome: ")
-        cpf = input("Digite seu CPF: ")
-        email = input("Digite seu email: ")
-        senha = input("Digite sua senha: ")
-
-        email_ja_cadastrado = False
-        cpf_ja_cadastrado = False
-        for usuario in clientes:
-            if(usuario.email.__eq__(email)):
-                email_ja_cadastrado = True
-            if(usuario.cpf.__eq__(cpf)):
-                cpf_ja_cadastrado = True
-        if(email_ja_cadastrado):
-            print("Esse email ja esta vinculado a um Usuario")
-        elif(cpf_ja_cadastrado):
-            print("Esse cpf ja esta vinculado a um Usuario")
-        else:
-            cadastro_cliente(nome, cpf, email, senha)
+        cadastro_cliente(clientes)
 
         print("\nVoltando para o menu")
         opcao = 0
@@ -140,60 +182,24 @@ while(opcao != 3):
                     cliente = usuario
             
                     opcao = 0
-                    while(opcao != 5):
+                    while(opcao != 6):
                         informacoes_menu(cliente)
                         opcao = int(input("Digite a opção desejada: "))
 
                         if(opcao == 1):
-                            print("\nComeçando Cadastro Veiculo\n")
-                            marca = input("Digite a marca do veiculo: ")
-                            modelo = input("Digite o modelo do seu veiculo: ")
-                            ano = int(input("Digite o ano do seu veiculo: "))
-
-                            """ verifica se todas as informações estão validas e cadastra veiculo"""
-                            cadastro_veiculo(cliente, marca, modelo, ano)
-
+                            cadastro_veiculo(cliente)
                             print("\nVoltando para o menu")
 
                         elif(opcao == 2):
                             cliente.listar_veiculos()
-                        
                         elif(opcao == 3):
-                            print("\nExclusão de veiculo\n")
-                            cliente.listar_veiculos()
-
-                            if(len(cliente.automoveis) != 0):   
-                                index = int(input("Digite o codigo do veiculo que irá usar: ")) - 1
-
-                                while index != len(cliente.automoveis) - 1:
-                                    print("Veiculo não existente")
-                                    index = int(input("Digite o codigo do veiculo que esta na lista")) - 1
-                                
-                                automovel = cliente.automoveis[index]
-                                cliente.excluir_veiculo(automovel)
-                                print("Veiculo da marca {} excluido".format(automovel.marca))
-
-                                print("\nVoltando para o menu")
-                            else:
-                                print("Não existe veiculo cadastrado")
+                            excluir_veiculo(cliente)
                         elif(opcao == 4):
-                            print("\nOrçamento\n")
-                            cliente.listar_veiculos()
-
-                            if(len(cliente.automoveis) != 0):   
-                                index = int(input("Digite o codigo do veiculo que irá usar: ")) - 1
-
-                                while index != len(cliente.automoveis) - 1:
-                                    print("Veiculo não existente")
-                                    index = int(input("Digite o codigo do veiculo que esta na lista")) - 1
-                                    
-                                orcamento()
-
-                                print("\nVoltando para o menu")
-                            else:
-                                print("Não existe veiculo cadastrado")
-
+                            orcamento(cliente)
                         elif(opcao == 5):
+                            print("Listando Orçamentos\n")
+                            cliente.listar_orcamentos()
+                        elif(opcao == 6):
                             print("Voltando a tela de login")
                             
                         else:
