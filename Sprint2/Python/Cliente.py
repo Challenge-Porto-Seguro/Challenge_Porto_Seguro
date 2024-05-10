@@ -6,11 +6,12 @@ class Cliente:
         self.email = email
         self.senha = senha
         self.automoveis = []
+        self.orcamento = []
         
         
     def valida_informacoes_cliente(self, nome, cpf, email, senha):
-        if(not nome):
-            raise Exception("Nome não pode ser nulo")
+        if(not nome or not nome.replace(" ", "").isalpha()):
+            raise Exception("Nome invalido")
         elif(not self.valida_cpf(cpf)):
             raise Exception("CPF invalido") 
         elif(not self.valida_email(email)):
@@ -21,8 +22,8 @@ class Cliente:
     def cadastrar_veiculo(self, veiculo):
         self.automoveis.append(veiculo)
 
-    def excluir_veiculo(self, veiculo):
-        self.automoveis.remove(veiculo)
+    def excluir_veiculo(self, index):
+        return self.automoveis.pop(index)
 
     def listar_veiculos(self):
         print("-------------------------------------------")
@@ -36,6 +37,10 @@ class Cliente:
             print("|        {} {}".format(i, automovel.marca), " " * (39 - tamenho), "|")
             i += 1
         print("-------------------------------------------")
+
+        if(len(self.automoveis) == 0):
+            print("\nNenhum automovel cadastrado")
+        
 
     def valida_cpf(self, cpf):
         if(len(cpf) != 11):
@@ -94,6 +99,25 @@ class Cliente:
         if(validacao.__eq__(["@", ".com"])):
             return True
         return False
+    
+    def adicionar_orcamento(self, orcamento):
+        self.orcamento.append(orcamento)
+
+    def listar_orcamentos(self):
+        print("-------------------------------------------")
+        print("|                                         |")
+        print("|            Lista de Orçamentos          |")
+        print("|                                         |")
+
+        i = 1
+        for n in self.orcamento:
+            tamanho = len(n.descricao) + 11
+            print("|{}, Descrição: {}".format(i, n.descricao), " " * (39 - tamanho ), "|")
+            i += 1
+        print("-------------------------------------------")
+
+        if(len(self.orcamento) == 0):
+            print("\nNenhum orçamento feito")
     
     def __str__(self) -> str:
         return "Nome: {}, CPF: {}".format(self.nome, self.cpf)
