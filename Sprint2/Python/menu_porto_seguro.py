@@ -110,11 +110,11 @@ def cadastro_cliente(clientes):
     else:
         try:
             cliente = Cliente(nome, cpf, email, senha)
-            print("Cadastro Realizado")
+            print("\nCadastro Realizado")
             clientes.append(cliente)
         except Exception as e:
             print(e)
-            print("Cadastro invalido")
+            print("\nCadastro invalido")
 
 def cadastro_veiculo(cliente):
     print("\nComeçando Cadastro Veiculo\n")
@@ -126,7 +126,7 @@ def cadastro_veiculo(cliente):
         cliente.cadastrar_veiculo(automovel)
         print("Cadastro de veiculo efetuado com sucesso")
     except Exception as e:
-        print("\n", e)
+        print("\n{}".format(e))
         print("\nCadastro de veiculo invalido")
 
 def produto_a_venda():
