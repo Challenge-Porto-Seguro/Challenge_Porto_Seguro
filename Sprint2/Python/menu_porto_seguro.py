@@ -50,8 +50,9 @@ def orcamento(cliente):
             print("Veiculo não existente")
             index = int(input("Digite o codigo do veiculo que esta na lista")) - 1
 
-        produto_a_venda()
         descricao = input("Descreva seu problema: ")
+
+        produto_a_venda()
     
         print("Escolha os itens que vai ter no seu orçamento")
 
@@ -61,11 +62,11 @@ def orcamento(cliente):
         escolha = 0
 
         while(escolha != 4):
-            escolha = int(input("Digite uma das opções de Produtos: "))
+            escolha = int(input("\nDigite uma das opções de Produtos: "))
+            print("")
             if(escolha == 1):
                 quantidade = int(input("Quantos pneu quer adicionar: "))
                 orcamento.adicionar_produto(Produto("pneu", 20.0, quantidade))
-
             elif(escolha == 2):
                 quantidade = int(input("Quantas baterias quer adicionar: "))
                 orcamento.adicionar_produto(Produto("bateria", 200, quantidade))

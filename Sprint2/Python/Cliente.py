@@ -111,7 +111,7 @@ class Cliente:
 
         i = 1
         for n in self.orcamento:
-            print("{}, Marca: {}, Descrição: {}, valor total: {}".format(i, n.automovel.marca, n.descricao, n.calcular_valor_total()))
+            print("{}, Marca: {}, Descrição: {}, valor total: {:.2f}R$".format(i, n.automovel.marca, n.descricao, n.calcular_valor_total()))
             i += 1
         print("-------------------------------------------")
 
