@@ -3,6 +3,13 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 :root {
@@ -12,7 +19,6 @@
 header{
     background-color: #7130FC;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -38,17 +44,28 @@ h1, h3{
 
 .pagina_toda{
     display: flex;
-    flex-direction: row;
 }
 
 .primeira_parte{
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .segunda_parte{
     display: flex;
     flex-direction: column;
+    text-align: center;
+    width: 50%;
+}
+
+.primeira_parte img{
+    width: 80%;
+    margin: 20px;
+}
+
+.primeira_parte div{
+    height: 50%;
 }
 
 .descricao{
@@ -64,31 +81,23 @@ p{
 
 .icones{
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    margin: 50px 40% 50px;
-    width: 50%;
 }   
 
-.cada_icone{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0 20% ;
+.icones img{
+    width: 80%;
+    margin: 40% 0;
 }
 
 .plano_total{
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 .planos{
     background-color: #000000;
-    width: 100px;
-    padding-left: 90px;
-    padding-right: 90px;
-    margin-left: 50px;
-    margin-bottom: 40px;
+    width: 30%;
+    margin: 20px 0;
     border: 0.5px solid #000000;
     border-radius: 60px;
 }
@@ -96,20 +105,19 @@ p{
 .planos_baixo{
     display: flex;
     flex-direction: column;
-    margin-left: 25%;
-
+    align-items: center;
 }
 
 .letra_plano{
     color: #FFFFFF;
 }
 
-.footer{
+footer{
     background-color: #7130FC;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    position: absolute;
     bottom: 0;
-    position: fixed;
     width: 100%;
+    height: 10%;
 }
