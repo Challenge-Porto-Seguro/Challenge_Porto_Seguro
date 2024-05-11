@@ -21,6 +21,11 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+}
+
+main{
+    height: 80vh;
 }
 
 h1{
@@ -116,7 +121,8 @@ footer{
     background-color: #7130FC;
     display: flex;
     justify-content: space-between;
-    position: absolute;
+    padding: 10px;
+    gap: -1;
     bottom: 0;
     width: 100%;
     height: 10%;
