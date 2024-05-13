@@ -3,6 +3,7 @@ from Cliente import Cliente
 from Orcamentos import Orcamento
 from Produto import Produto     
 
+#Mostra as opções de login
 def login():
     print("-------------------------------------------")
     print("|                                         |")
@@ -13,6 +14,7 @@ def login():
     print("|        3 - sair                         |")
     print("-------------------------------------------\n")
 
+#mostra as opções do meniu
 def informacoes_menu(cliente):
     tamanho = len(cliente.__str__())
     print("-------------------------------------------")
@@ -28,6 +30,7 @@ def informacoes_menu(cliente):
     print("|        6 - Voltar tela de login         |")
     print("-------------------------------------------\n")
 
+#lista todos os usuarios
 def usuarios(lista):
     print("-------------------------------------------")
     print("|                                         |")
@@ -39,6 +42,7 @@ def usuarios(lista):
         print("|        {}".format(usuario.nome), " " * (39 - tamanho), "|")
     print("-------------------------------------------\n")
 
+#faz o orçamento e cadastra no cliente
 def orcamento(cliente):
     print("\nOrçamento\n")
     cliente.listar_veiculos()
@@ -88,7 +92,7 @@ def orcamento(cliente):
         print("\nVoltando para o menu")
     
     
-
+#Faz o cadastro de cliente e adiciona a lista de clientes
 def cadastro_cliente(clientes):
     print("\nComeçando Cadastro Cliente\n")
     nome = input("Digite seu nome: ")
@@ -116,6 +120,7 @@ def cadastro_cliente(clientes):
             print(e)
             print("\nCadastro invalido")
 
+#Faz o cadastro de veiculo e adiciona ao cliente 
 def cadastro_veiculo(cliente):
     print("\nComeçando Cadastro Veiculo\n")
     marca = input("Digite a marca do veiculo: ")
@@ -154,6 +159,7 @@ def excluir_veiculo(cliente):
 """ inicia a variavel opcao para entrar no while """
 opcao = 0
 
+#lista de clientes
 clientes = []
 """ entra no laço de repetição """
 while(opcao != 3):

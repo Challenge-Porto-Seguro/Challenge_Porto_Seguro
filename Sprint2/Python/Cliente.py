@@ -1,5 +1,6 @@
 class Cliente:
-    def __init__(self, nome, cpf, email, senha):   
+    def __init__(self, nome, cpf, email, senha):
+        # Verifica se a informação recebidas para criar o objeto e valida, se não for lança uma exception   
         self.valida_informacoes_cliente(nome, cpf, email, senha) 
         self.nome = nome
         self.cpf = cpf
@@ -8,7 +9,7 @@ class Cliente:
         self.automoveis = []
         self.orcamento = []
         
-        
+    # Faz a verificação das informações enviadas    
     def valida_informacoes_cliente(self, nome, cpf, email, senha):
         if(not nome or not nome.replace(" ", "").isalpha()):
             raise Exception("Nome invalido")
@@ -19,12 +20,14 @@ class Cliente:
         elif(len(senha) < 8):
             raise Exception("Senha invalida")
 
+    #adiciona o veiculo na lista de veiculos
     def cadastrar_veiculo(self, veiculo):
         self.automoveis.append(veiculo)
-
+    #tira o veiculo da lista de veiculos
     def excluir_veiculo(self, index):
         return self.automoveis.pop(index)
 
+    #Lista todos os veiculo que existem na lista deve veiculos
     def listar_veiculos(self):
         print("-------------------------------------------")
         print("|                                         |")
@@ -42,6 +45,7 @@ class Cliente:
             print("\nNenhum automovel cadastrado")
         
 
+    # Faz a verificação se o CPF e valido se for retorna True se não for False
     def valida_cpf(self, cpf):
         if(len(cpf) != 11):
             return False
@@ -83,6 +87,7 @@ class Cliente:
 
         return False
     
+    #Verifica se email e valido se for retorna true se não for retorna false
     def valida_email(self, email):
         validacao = []
         for i in email:
@@ -100,6 +105,7 @@ class Cliente:
             return True
         return False
     
+    # Adiciona orçamento na lista de orçamentos
     def adicionar_orcamento(self, orcamento):
         self.orcamento.append(orcamento)
 
@@ -114,9 +120,10 @@ class Cliente:
             print("{}, Marca: {}, Descrição: {}, valor total: {:.2f}R$".format(i, n.automovel.marca, n.descricao, n.calcular_valor_total()))
             i += 1
         print("-------------------------------------------")
-
+        #Se orçamento estiver vazio retorna nenhum orçamento valido
         if(len(self.orcamento) == 0):
             print("\nNenhum orçamento feito")
     
+    # retorna o objeto formatado
     def __str__(self) -> str:
         return "Nome: {}, CPF: {}".format(self.nome, self.cpf)
