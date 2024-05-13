@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_ORCAMENTO_PEDIDO" directorySegmentName="seg_0" id="BA01996D-AD0F-701D-2000-5E37A1AC52D0">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-04-23 14:50:28 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<sourcePk>9BBED5DD-D8AD-E109-0EEA-989BA9A52727</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>97221D97-8CB5-072B-CBF7-5D0943C9283E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>12AFAA85-89D1-3079-14EB-2328D7A83438</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

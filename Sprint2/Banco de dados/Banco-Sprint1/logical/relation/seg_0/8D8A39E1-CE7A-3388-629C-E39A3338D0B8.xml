@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_USUARIO_AUTOMOVEL" directorySegmentName="seg_0" id="8D8A39E1-CE7A-3388-629C-E39A3338D0B8">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-04-23 14:44:16 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<sourcePk>8A51DF04-D5A1-AD48-085B-E3244A1EFEEC</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>21481CBC-C9C0-32F9-0346-8AE396D0802B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>92B1331F-A342-D322-8A0F-84EFFC7D8B54</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

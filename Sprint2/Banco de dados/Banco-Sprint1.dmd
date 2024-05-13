@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Banco-Sprint1" id="F07B87FF-4262-95D8-9018-E0E91D871C7B" version="3.5">
+<createdBy>thmaz</createdBy>
+<createdTime>2024-04-22 17:14:24 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F07B87FF-4262-95D8-9018-E0E91D871C7B</designId>
+</OSDM_Design>

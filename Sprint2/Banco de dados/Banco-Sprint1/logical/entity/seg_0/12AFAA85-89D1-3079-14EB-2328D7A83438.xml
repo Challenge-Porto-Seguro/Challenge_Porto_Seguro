@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="12AFAA85-89D1-3079-14EB-2328D7A83438" name="PEDIDO">
+<createdBy>thmaz</createdBy>
+<createdTime>2024-04-22 17:36:13 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pedido" id="058B7F3E-4B95-26DB-ECE5-E6B41A99A7CF">
+<createdBy>thmaz</createdBy>
+<createdTime>2024-04-22 17:38:52 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_orcamento" id="1D3EE162-E361-A4E7-076E-5B1499F73178">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-04-23 14:50:28 UTC</createdTime>
+<generatorID>BA01996D-AD0F-701D-2000-5E37A1AC52D0</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<referedAttribute>7A38B30B-EAF6-1377-2C65-23C6F52C10D3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="DAACDD67-F57F-888E-5AC5-754462D5EDC2">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-04-23 14:50:28 UTC</createdTime>
+<generatorID>BA01996D-AD0F-701D-2000-5E37A1AC52D0</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<referedAttribute>79FD9BDE-12FD-1360-506D-7FD557A70FBD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_produto" id="FFFC4512-79C5-600B-6A37-F66610098F1A">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-04-23 14:52:52 UTC</createdTime>
+<generatorID>A786919D-79A5-E58E-4838-30A6DA1680AF</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<referedAttribute>5A54663E-509A-046D-D45F-0A722B5CD8A6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="quantidade" id="A3F19568-5845-8FB4-4C25-C0070EAB40D5">
+<createdBy>thmaz</createdBy>
+<createdTime>2024-04-22 17:38:30 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor" id="64D5E123-F560-BE60-84DE-4FF7F4C3E9C2">
+<createdBy>thmaz</createdBy>
+<createdTime>2024-04-22 17:38:47 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="86F8034E-8CF4-CB12-0228-75CB4FD06546" name="PEDIDO PK">
+<createdBy>thmaz</createdBy>
+<createdTime>2024-04-22 17:43:27 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>058B7F3E-4B95-26DB-ECE5-E6B41A99A7CF</attributeRef>
+<attributeRef>1D3EE162-E361-A4E7-076E-5B1499F73178</attributeRef>
+<attributeRef>DAACDD67-F57F-888E-5AC5-754462D5EDC2</attributeRef>
+<attributeRef>FFFC4512-79C5-600B-6A37-F66610098F1A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
