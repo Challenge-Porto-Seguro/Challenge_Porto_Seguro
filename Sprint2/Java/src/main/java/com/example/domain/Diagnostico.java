@@ -1,3 +1,7 @@
+package com.example.domain;
+
+import com.example.enums.VerificaDiagnostico;
+
 import java.util.Date;
 
 public class Diagnostico {

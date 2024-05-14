@@ -1,3 +1,5 @@
+package com.example.domain;
+
 public class Produto {
 
     private String nome;

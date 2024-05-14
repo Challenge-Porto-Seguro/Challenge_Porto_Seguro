@@ -1,7 +1,15 @@
+package com.example.domain.usuarios;
+
+import com.example.FazerOrcamento;
+import com.example.domain.Orcamento;
+import com.example.enums.StatusOrcamento;
+import com.example.domain.Automovel;
+import com.example.domain.Endereco;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Usuario {
+public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados {
 
     private String nome;
     private String cpf;
@@ -11,7 +19,7 @@ public class Usuario {
     private List<Automovel> automoveis = new ArrayList<>();
     private List<Orcamento> orcamentos = new ArrayList<>();
 
-    public Usuario(String nome, String cpf, String email, String senha, Endereco endereco) {
+    public MinimoInformacao(String nome, String cpf, String email, String senha, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -23,16 +31,16 @@ public class Usuario {
         return nome;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public String getSenha() {
         return senha;
+    }
+
+    public String getCpf() {
+        return cpf;
     }
 
     public List<Automovel> getAutomoveis() {
@@ -55,10 +63,6 @@ public class Usuario {
         return orcamentos;
     }
 
-    public void addOrcamento(Orcamento orcamento){
-        orcamentos.add(orcamento);
-    }
-
     public void removeOrcamento(Orcamento orcamento){
         orcamentos.remove(orcamento);
     }
@@ -71,11 +75,8 @@ public class Usuario {
         this.endereco = endereco;
     }
 
-    private boolean verificaSeCpfEValido(String cpf){
-        return true;
-    }
-
     private void mudarStatusOrcamento(Orcamento orcamento){
         orcamento.setStatus(StatusOrcamento.INATIVO);
     }
+
 }

@@ -1,3 +1,7 @@
+package com.example.domain;
+
+import com.example.enums.StatusOrcamento;
+
 import java.util.ArrayList;
 import java.util.List;
 
