@@ -93,6 +93,8 @@
       <workItem from="1712455415291" duration="1227000" />
       <workItem from="1715645129405" duration="10320000" />
       <workItem from="1715655471548" duration="16000" />
+      <workItem from="1715655785668" duration="40000" />
+      <workItem from="1715655842193" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
       <option name="closed" value="true" />
@@ -102,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715655434088</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Começo da implementação sprint 2 java">
+      <option name="closed" value="true" />
+      <created>1715655812406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715655812406</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
