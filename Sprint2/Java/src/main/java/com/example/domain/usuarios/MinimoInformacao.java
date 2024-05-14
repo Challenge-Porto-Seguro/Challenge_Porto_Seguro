@@ -47,8 +47,12 @@ public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados 
         return automoveis;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void alterarSenha(String senha, String cpf){
+        if(senha.equals(this.senha) && cpf.equals(this.cpf)){
+            this.senha = senha;
+        } else {
+            throw new RuntimeException("Não foi possivel alterar senha! Pois uma das informação esta invalida");
+        }
     }
 
     public void addAutomovel(Automovel automovel){
@@ -75,7 +79,7 @@ public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados 
         this.endereco = endereco;
     }
 
-    private void mudarStatusOrcamento(Orcamento orcamento){
+    public void mudarStatusOrcamento(Orcamento orcamento){
         orcamento.setStatus(StatusOrcamento.INATIVO);
     }
 

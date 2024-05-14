@@ -5,9 +5,9 @@ import com.example.domain.Endereco;
 import com.example.domain.Orcamento;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
-public class UsuarioPorto extends MinimoInformacao {
-
+public class UsuarioPorto extends MinimoInformacao{
     private String codigoSeguro;
     private int quantidadeOrcamento;
     private LocalDate diaOrcamento;
@@ -16,7 +16,6 @@ public class UsuarioPorto extends MinimoInformacao {
         super(nome, cpf, email, senha, endereco);
         validaDados(nome, cpf, email, senha);
         this.codigoSeguro = codigoSeguro;
-        quantidadeOrcamento = 0;
     }
 
     @Override
@@ -45,16 +44,24 @@ public class UsuarioPorto extends MinimoInformacao {
 
     @Override
     public void addOrcamento(Orcamento orcamento) {
-        if(quantidadeOrcamento == 1){
-            diaOrcamento = LocalDate.now();
+        LocalDate diaHoje = LocalDate.now();
+        if(quantidadeOrcamento == 0){
+            diaOrcamento = diaHoje;
         }
-        if(quantidadeOrcamento == 7 && LocalDate.now().getDayOfMonth() - diaOrcamento.getDayOfMonth() != 0){
-            throw new RuntimeException("Limite de orçamento por mês atingido");
-        } else if(quantidadeOrcamento == 7 && LocalDate.now().getDayOfMonth() - diaOrcamento.getDayOfMonth() == 0) {
+
+        int diferencaDias = (int) ChronoUnit.DAYS.between(diaOrcamento, diaHoje);
+        if(quantidadeOrcamento == 7 && diferencaDias != 30){
+            throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaOrcamento.getDayOfMonth() + " do mês: " + (diaOrcamento.getMonthValue() + 1));
+        } else if(quantidadeOrcamento == 7) {
             quantidadeOrcamento = 0;
         }
 
         getOrcamentos().add(orcamento);
         quantidadeOrcamento++;
     }
+    @Override
+    public String toString() {
+        return "Usuario Porto: " + "Nome: " + getNome() + ", Email: " + getEmail();
+    }
 }
+

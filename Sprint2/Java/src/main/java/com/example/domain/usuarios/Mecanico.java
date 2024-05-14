@@ -19,6 +19,10 @@ public class Mecanico extends MinimoInformacao {
         return nomeMecanica;
     }
 
+    public double getValorAPagar() {
+        return valorAPagar;
+    }
+
     @Override
     public void addOrcamento(Orcamento orcamento) {
         getOrcamentos().add(orcamento);
@@ -39,5 +43,10 @@ public class Mecanico extends MinimoInformacao {
         if(!ValidaInformacoes.validaSenha(senha)){
             throw new RuntimeException("Senha invalida");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Mecanico: " + "Nome: " + getNome() + ", Email: " + getEmail() + ", Nome da Mecanica: " + this.nomeMecanica;
     }
 }

@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="Começo da implementação sprint 2 java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Orcamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Orcamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/Mecanico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/Mecanico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/MinimoInformacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/MinimoInformacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/UsuarioComum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/UsuarioComum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/UsuarioPorto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/UsuarioPorto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,22 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;web.server&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Main" />
@@ -95,6 +104,8 @@
       <workItem from="1715655471548" duration="16000" />
       <workItem from="1715655785668" duration="40000" />
       <workItem from="1715655842193" duration="23000" />
+      <workItem from="1715683904521" duration="187000" />
+      <workItem from="1715684102013" duration="13103000" />
     </task>
     <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
       <option name="closed" value="true" />
@@ -121,5 +132,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Começo da implementação sprint 2 java" />
     <option name="LAST_COMMIT_MESSAGE" value="Começo da implementação sprint 2 java" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

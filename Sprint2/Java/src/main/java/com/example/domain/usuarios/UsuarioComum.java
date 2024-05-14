@@ -5,6 +5,7 @@ import com.example.domain.Endereco;
 import com.example.domain.Orcamento;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class UsuarioComum extends MinimoInformacao {
 
@@ -21,14 +22,21 @@ public class UsuarioComum extends MinimoInformacao {
         return quantidadeOrcamento;
     }
 
+    public LocalDate getDiaOrcamento() {
+        return diaOrcamento;
+    }
+
     @Override
     public void addOrcamento(Orcamento orcamento) {
-        if(quantidadeOrcamento == 1){
-            diaOrcamento = LocalDate.now();
+        LocalDate diaHoje = LocalDate.now();
+        if(quantidadeOrcamento == 0){
+            diaOrcamento = diaHoje;
         }
-        if(quantidadeOrcamento == 3 && LocalDate.now().getDayOfMonth() - diaOrcamento.getDayOfMonth() != 0){
-            throw new RuntimeException("Limite de orçamento por mês atingido");
-        } else if(quantidadeOrcamento == 3 && LocalDate.now().getDayOfMonth() - diaOrcamento.getDayOfMonth() == 0) {
+
+        int diferencaDias = (int) ChronoUnit.DAYS.between(diaOrcamento, diaHoje);
+        if(quantidadeOrcamento == 3 && diferencaDias != 30){
+            throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaOrcamento.getDayOfMonth() + " do mês: " + (diaOrcamento.getMonthValue() + 1));
+        } else if(quantidadeOrcamento == 3) {
             quantidadeOrcamento = 0;
         }
 
@@ -50,5 +58,10 @@ public class UsuarioComum extends MinimoInformacao {
         if(!ValidaInformacoes.validaSenha(senha)){
             throw new RuntimeException("Senha invalida");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario Comum: " + "Nome: " + getNome() + ", Email: " + getEmail();
     }
 }

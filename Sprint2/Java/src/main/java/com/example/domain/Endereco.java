@@ -10,15 +10,20 @@ public class Endereco {
     private String estado;
 
     public Endereco(String rua, int numero, String cep, String bairro, String cidade, String estado) {
+        verificaSeCepEValido(cep);
         this.rua = rua;
         this.numero = numero;
+        this.cep = cep;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
     }
 
-    private boolean verificaSeCepEValido(String cep) {
-        return true;
+    private void verificaSeCepEValido(String cep) {
+        cep = cep.replaceAll("-", "");
+        if(cep.length() != 8 || !cep.matches("^[0-9]+$")) {
+            throw new RuntimeException("CEP Invalido!");
+        }
     }
 
     public String getRua() {
