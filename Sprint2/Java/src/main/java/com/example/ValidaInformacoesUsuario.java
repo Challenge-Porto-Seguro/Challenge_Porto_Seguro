@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ValidaInformacoes {
+public class ValidaInformacoesUsuario {
 
     public static boolean validaCPF(String cpf){
         if(cpf.contains(".")){
