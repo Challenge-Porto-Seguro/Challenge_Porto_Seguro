@@ -1,6 +1,5 @@
 package com.example.domain.usuarios;
 
-import com.example.ValidaInformacoes;
 import com.example.domain.Endereco;
 import com.example.domain.Orcamento;
 
@@ -14,24 +13,7 @@ public class UsuarioPorto extends MinimoInformacao{
 
     public UsuarioPorto(String nome, String cpf, String email, String senha, Endereco endereco, String codigoSeguro) {
         super(nome, cpf, email, senha, endereco);
-        validaDados(nome, cpf, email, senha);
         this.codigoSeguro = codigoSeguro;
-    }
-
-    @Override
-    public void validaDados(String nome, String cpf, String email, String senha) {
-        if(!ValidaInformacoes.validaNome(nome)){
-            throw new RuntimeException("Nome invalido");
-        }
-        if(!ValidaInformacoes.validaCPF(cpf)){
-            throw new RuntimeException("CPF invalido");
-        }
-        if(!ValidaInformacoes.validaEmail(email)){
-            throw new RuntimeException("Email invalido");
-        }
-        if(!ValidaInformacoes.validaSenha(senha)){
-            throw new RuntimeException("Senha invalida");
-        }
     }
 
     public String getCodigoSeguro() {
@@ -42,6 +24,7 @@ public class UsuarioPorto extends MinimoInformacao{
         return quantidadeOrcamento;
     }
 
+    //Um Usuario Porto pode fazer ate 7 orçamentos por mês
     @Override
     public void addOrcamento(Orcamento orcamento) {
         LocalDate diaHoje = LocalDate.now();

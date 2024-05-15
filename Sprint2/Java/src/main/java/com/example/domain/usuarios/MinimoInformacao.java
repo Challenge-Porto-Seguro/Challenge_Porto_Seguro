@@ -1,10 +1,9 @@
 package com.example.domain.usuarios;
 
 import com.example.FazerOrcamento;
-import com.example.domain.Orcamento;
+import com.example.ValidaInformacoesUsuario;
+import com.example.domain.*;
 import com.example.enums.StatusOrcamento;
-import com.example.domain.Automovel;
-import com.example.domain.Endereco;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +19,9 @@ public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados 
     private List<Orcamento> orcamentos = new ArrayList<>();
 
     public MinimoInformacao(String nome, String cpf, String email, String senha, Endereco endereco) {
+        validaDados(nome, cpf, email, senha);
         this.nome = nome;
-        this.cpf = cpf;
+        this.cpf = formataCpf(cpf);
         this.email = email;
         this.senha = senha;
         this.endereco = endereco;
@@ -47,11 +47,37 @@ public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados 
         return automoveis;
     }
 
-    public void alterarSenha(String senha, String cpf){
-        if(senha.equals(this.senha) && cpf.equals(this.cpf)){
-            this.senha = senha;
+    private String formataCpf(String cpf) {
+        return cpf.replace(".", "").replace("-", "");
+    }
+    public void alterarSenha(String cpf, String novaSenha){
+        String cpfFormatado = formataCpf(cpf);
+
+        if(cpfFormatado.equals(this.cpf)){
+            if(ValidaInformacoesUsuario.validaSenha(novaSenha)){
+                this.senha = novaSenha;
+                System.out.println("Senha alterada com sucesso!");
+            } else {
+                throw new RuntimeException("Nova senha esta invalida");
+            }
         } else {
-            throw new RuntimeException("Não foi possivel alterar senha! Pois uma das informação esta invalida");
+            throw new RuntimeException("Não foi possivel alterar senha! Pois o cpf esta invalido");
+        }
+    }
+
+    @Override
+    public void validaDados(String nome, String cpf, String email, String senha) {
+        if(!ValidaInformacoesUsuario.validaNome(nome)){
+            throw new RuntimeException("Nome invalido");
+        }
+        if(!ValidaInformacoesUsuario.validaCPF(cpf)){
+            throw new RuntimeException("CPF invalido");
+        }
+        if(!ValidaInformacoesUsuario.validaEmail(email)){
+            throw new RuntimeException("Email invalido");
+        }
+        if(!ValidaInformacoesUsuario.validaSenha(senha)){
+            throw new RuntimeException("Senha invalida");
         }
     }
 
