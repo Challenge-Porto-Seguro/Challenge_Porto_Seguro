@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="Começo da implementação sprint 2 java">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add validation to classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Orcamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Orcamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ValidaInformacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ValidaInformacoesUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Diagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Diagnostico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/Mecanico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/Mecanico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/MinimoInformacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/MinimoInformacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/UsuarioComum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/usuarios/UsuarioComum.java" afterDir="false" />
@@ -59,7 +57,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -105,7 +106,9 @@
       <workItem from="1715655785668" duration="40000" />
       <workItem from="1715655842193" duration="23000" />
       <workItem from="1715683904521" duration="187000" />
-      <workItem from="1715684102013" duration="13103000" />
+      <workItem from="1715684102013" duration="13509000" />
+      <workItem from="1715702226026" duration="139000" />
+      <workItem from="1715726277437" duration="4296000" />
     </task>
     <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
       <option name="closed" value="true" />
@@ -123,18 +126,68 @@
       <option name="project" value="LOCAL" />
       <updated>1715655812406</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: add validation to classes">
+      <option name="closed" value="true" />
+      <created>1715702181747</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715702181747</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="enzoberzins19" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="ThiagoThmaz" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Começo da implementação sprint 2 java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Começo da implementação sprint 2 java" />
+    <MESSAGE value="feat: add validation to classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add validation to classes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java$Main.ic" NAME="Main Coverage Results" MODIFIED="1715702265948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.usuarios.*</FILTER>
+    </SUITE>
   </component>
 </project>
