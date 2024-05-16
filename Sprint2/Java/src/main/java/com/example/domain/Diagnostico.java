@@ -11,6 +11,7 @@ public class Diagnostico {
     private int id;
     private String descricao;
     private Date data;
+    private Date dataFinalizado;
     private VerificaDiagnostico verificador;
 
     public Diagnostico(String descricao) {
@@ -32,14 +33,24 @@ public class Diagnostico {
         return verificador;
     }
 
-    public void setVerificador(VerificaDiagnostico verificador) {
-        this.verificador = verificador;
+    public void diagnosticoResolvido() {
+        this.verificador = VerificaDiagnostico.RESOLVIDO;
+        dataFinalizado = new Date();
     }
 
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String dataStr = sdf.format(data);
-        return "id: " + id +  ", descrição: " + descricao + ", data: " + dataStr + ", verificador: " + verificador;
+        if(verificador == VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO){
+            return "id: " + id +  ", descrição: " + descricao + ", data inicio: " + dataStr + ", verificador: " + verificador;
+        }
+
+        String dataFinalizadoStr = sdf.format(dataFinalizado);
+        return "id: " + id
+                + ", descrição: " + descricao
+                + ", data inicio: " + dataStr
+                + ", data finalizado: " + dataFinalizadoStr
+                + ", verificador: " + verificador;
     }
 }
