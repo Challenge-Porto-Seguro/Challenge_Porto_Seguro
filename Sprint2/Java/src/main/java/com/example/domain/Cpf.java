@@ -20,17 +20,14 @@ public class Cpf {
     }
 
     public void verificaSeCpfEValido(String cpf){
-        if(!validaCPF(cpf)){
+        if(!validaCpf(cpf)){
             throw new RuntimeException("CPF invalido");
         }
     }
 
-    private boolean validaCPF(String cpf){
-        if(cpf.contains(".")){
-            cpf = cpf.replace(".", "");
-        }
-        if(cpf.contains("-")){
-            cpf = cpf.replace("-", "");
+    private boolean validaCpf(String cpf){
+        if(cpf.contains(".") || cpf.contains("-")){
+            cpf = desformatarCpf(cpf);
         }
         if(cpf.length() != 11){
             return false;
