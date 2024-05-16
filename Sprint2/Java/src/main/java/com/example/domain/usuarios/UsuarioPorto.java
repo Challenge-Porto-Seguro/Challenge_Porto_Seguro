@@ -1,5 +1,6 @@
 package com.example.domain.usuarios;
 
+import com.example.domain.Cpf;
 import com.example.domain.Endereco;
 import com.example.domain.Orcamento;
 
@@ -7,13 +8,15 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class UsuarioPorto extends MinimoInformacao{
+    private Cpf cpf;
     private String codigoSeguro;
     private int quantidadeOrcamento;
     private LocalDate diaOrcamento;
 
     public UsuarioPorto(String nome, String cpf, String email, String senha, Endereco endereco, String codigoSeguro) {
-        super(nome, cpf, email, senha, endereco);
+        super(nome, email, senha, endereco);
         this.codigoSeguro = codigoSeguro;
+        this.cpf = new Cpf(cpf);
     }
 
     public String getCodigoSeguro() {
@@ -22,6 +25,10 @@ public class UsuarioPorto extends MinimoInformacao{
 
     public int getQuantidadeOrcamento() {
         return quantidadeOrcamento;
+    }
+
+    public Cpf getCpf() {
+        return cpf;
     }
 
     //Um Usuario Porto pode fazer ate 7 orçamentos por mês

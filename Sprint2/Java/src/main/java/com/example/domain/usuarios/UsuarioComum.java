@@ -1,5 +1,6 @@
 package com.example.domain.usuarios;
 
+import com.example.domain.Cpf;
 import com.example.domain.Endereco;
 import com.example.domain.Orcamento;
 
@@ -8,12 +9,18 @@ import java.time.temporal.ChronoUnit;
 
 public class UsuarioComum extends MinimoInformacao {
 
+    private Cpf cpf;
     private int quantidadeOrcamento;
     private LocalDate diaOrcamento;
 
     public UsuarioComum(String nome, String cpf, String email, String senha, Endereco endereco) {
-        super(nome, cpf, email, senha, endereco);
+        super(nome, email, senha, endereco);
+        this.cpf = new Cpf(cpf);
         quantidadeOrcamento = 0;
+    }
+
+    public Cpf getCpf() {
+        return cpf;
     }
 
     public int getQuantidadeOrcamento() {
