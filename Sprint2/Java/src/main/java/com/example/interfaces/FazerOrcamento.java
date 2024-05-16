@@ -1,4 +1,4 @@
-package com.example;
+package com.example.interfaces;
 
 import com.example.domain.Orcamento;
 
