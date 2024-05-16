@@ -3,6 +3,7 @@ package com.example.domain;
 import com.example.enums.VerificaDiagnostico;
 
 import java.util.Date;
+import java.util.List;
 
 public class Automovel {
 
@@ -11,6 +12,7 @@ public class Automovel {
     private String placa;
     private Date ano;
     private Diagnostico diagnostico;
+    private List<Diagnostico> diagnosticos;
 
     public Automovel(String marca, String modelo, String placa, Date ano) {
         this.marca = marca;
@@ -47,8 +49,13 @@ public class Automovel {
         return diagnostico;
     }
 
+    public List<Diagnostico> getDiagnosticos() {
+        return diagnosticos;
+    }
+
     public void autalizarDiagnostico(){
         if(diagnostico.getVerificador() == VerificaDiagnostico.RESOLVIDO){
+            diagnosticos.add(diagnostico);
             diagnostico = null;
         }
     }
