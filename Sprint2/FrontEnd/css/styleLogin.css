@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .header{
@@ -35,7 +36,7 @@ h3{
 .caixa_texto{
     background-color: #D9D9D9;
     width: 500px;
-    height: 30px;
+    height: 60px;
     padding: 10px;
     margin: 10px;
 }
@@ -51,12 +52,19 @@ h3{
     margin-left: 70%;
 }
 
+article div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .entrar{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
     background-color: #7130FC;
     width: 50px;
     padding: 10px 80px;
-    margin-top: 70px;
-    margin-left: 30%;
     border-radius: 10px;
     box-shadow: 3px 3px 4px black;
     transition: 0.5s;
@@ -69,4 +77,47 @@ h3{
 a{
     text-decoration: none;
     color: #000000;
+}
+
+@media screen and (max-width: 960px){
+    
+    .icone_voltar{
+        width: 10%;
+    }
+    
+    .pagina_toda{
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    section{
+        margin: 10px;
+    }
+
+    .nome_campo{
+        width: 90%;
+        margin: 10px 0 10px 10px;
+    }
+    
+    h1{
+        font-size: 5em;
+    }
+
+    .caixa_texto{
+        margin-right: 30px;
+        width: 90%;
+        height: 50px;
+    }
+
+}
+
+@media screen and (max-width: 442px){
+
+    h1{
+        font-size: 4em;
+    }
+
+    article h3{
+        font-size: 1.5em;
+    }
 }
