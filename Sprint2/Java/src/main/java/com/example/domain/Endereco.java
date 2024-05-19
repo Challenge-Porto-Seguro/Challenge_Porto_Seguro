@@ -121,12 +121,3 @@ public class Endereco {
     }
 
 }
-
-class teste{
-    public static void main(String[] args) {
-        Endereco endereco1 =new Endereco("05274-050", 104);
-        System.out.println(endereco1.getRua());
-        Endereco endereco = new Endereco("rua kenda", 104, "05274-050", "Jardim rosinha", "São Paulo", "sp");
-        System.out.println(endereco.getRua());
-    }
-}
