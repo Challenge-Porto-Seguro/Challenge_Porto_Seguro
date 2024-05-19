@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: add Gson dependency from google">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: changing method pegarInformacoesEnderecoPoCep">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/EnderecoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,7 @@
         <option value="Interface" />
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -44,8 +45,13 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.teste.executor": "Run",
+    "JUnit.EnderecoTest.executor": "Run",
+    "JUnit.EnderecoTest.testGetRua.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311100_cep_invalido.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -60,20 +66,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.teste">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.Main" />
-      <module name="Java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.usuarios.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.domain" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.EnderecoTest">
     <configuration name="teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.domain.teste" />
       <module name="Java" />
@@ -87,10 +88,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EnderecoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnderecoTest.testGetRua" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
+      <option name="METHOD_NAME" value="testGetRua" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnderecoTest.testa_se_cep_for_01311100_cep_invalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
+      <option name="METHOD_NAME" value="testa_se_cep_for_01311100_cep_invalido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnderecoTest.testa_se_cep_for_05271050_cep_invalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
+      <option name="METHOD_NAME" value="testa_se_cep_for_05271050_cep_invalido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EnderecoTest" />
+        <item itemvalue="JUnit.EnderecoTest.testa_se_cep_for_05271050_cep_invalido" />
+        <item itemvalue="JUnit.EnderecoTest.testa_se_cep_for_01311100_cep_invalido" />
+        <item itemvalue="JUnit.EnderecoTest.testGetRua" />
         <item itemvalue="Application.teste" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716074283583</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactor: changing method pegarInformacoesEnderecoPoCep">
+      <option name="closed" value="true" />
+      <created>1716086491337</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716086491337</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +385,8 @@
     <MESSAGE value="feat: add CNPJ class" />
     <MESSAGE value="refactor: add a diagnosticos list attribute and changing method atualiza diagnostico" />
     <MESSAGE value="refactor: add Gson dependency from google" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: add Gson dependency from google" />
+    <MESSAGE value="refactor: changing method pegarInformacoesEnderecoPoCep" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: changing method pegarInformacoesEnderecoPoCep" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
