@@ -70,6 +70,7 @@ public class Endereco {
 
     private Endereco pegaInformacoesEnderecoPorCep(String cep){
         verificaSeCepEValido(cep);
+        cep = cep.replace("-", "");
         try {
             String enderecoPesquisa = "http://viacep.com.br/ws/" + cep + "/json/";
             HttpClient client = HttpClient.newHttpClient();
