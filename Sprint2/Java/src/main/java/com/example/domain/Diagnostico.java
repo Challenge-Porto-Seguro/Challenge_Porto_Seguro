@@ -33,6 +33,13 @@ public class Diagnostico {
         return verificador;
     }
 
+    public Date getDataFinalizado() {
+        if (dataFinalizado == null) {
+            throw new RuntimeException("Esse diagnostico não foi finalizado");
+        }
+        return dataFinalizado;
+    }
+
     public void diagnosticoResolvido() {
         this.verificador = VerificaDiagnostico.RESOLVIDO;
         dataFinalizado = new Date();

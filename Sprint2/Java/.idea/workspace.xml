@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: changing method pegarInformacoesEnderecoPoCep">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/EnderecoTest.java" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: changing junit dependency">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/DiagnosticoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/usuarios/OficinaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Cnpj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Cnpj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Diagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Diagnostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/domain/EnderecoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/EnderecoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,7 @@
         <option value="Kotlin Class" />
         <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,13 +51,26 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.teste.executor": "Run",
-    "JUnit.EnderecoTest.executor": "Run",
+    "JUnit.DiagnosticoTest.diagnosticoResolvido.executor": "Run",
+    "JUnit.DiagnosticoTest.executor": "Run",
+    "JUnit.DiagnosticoTest.se_diagnostico_criado_hoje_get_data_igual_a_data_de_hoje.executor": "Run",
+    "JUnit.EnderecoTest.executor": "Coverage",
+    "JUnit.EnderecoTest.test.executor": "Run",
     "JUnit.EnderecoTest.testGetRua.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311000_e_todas_iformacoes_corretas_endereco_criado.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311000_uf_igual_pa_retorna_erro.executor": "Run",
     "JUnit.EnderecoTest.testa_se_cep_for_01311100_cep_invalido.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_05271050_cep_invalido.executor": "Run",
+    "JUnit.OficinaTest.executor": "Run",
+    "JUnit.OficinaTest.se_cnpj_igual_a_19036613000107_get_cnpj_igual_19036613000107.executor": "Run",
+    "JUnit.OficinaTest.testa_se_orcamento_igual_a_2_valor_a_pagar_igual_a_10.executor": "Run",
+    "JUnit.domain in Java.executor": "Coverage",
+    "JUnit.java in Java.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -68,27 +87,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example.domain" />
+      <recent name="com.example.domain.usuarios" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EnderecoTest">
-    <configuration name="teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.domain.teste" />
-      <module name="Java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EnderecoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DiagnosticoTest.se_diagnostico_resolvido_hoje_data_finalizado_igual_hoje">
+    <configuration name="DiagnosticoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -97,13 +105,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.DiagnosticoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EnderecoTest.testGetRua" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiagnosticoTest.diagnosticoResolvido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -112,14 +120,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
-      <option name="METHOD_NAME" value="testGetRua" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.DiagnosticoTest" />
+      <option name="METHOD_NAME" value="diagnosticoResolvido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EnderecoTest.testa_se_cep_for_01311100_cep_invalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiagnosticoTest.se_diagnostico_criado_hoje_get_data_igual_a_data_de_hoje" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -128,14 +136,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
-      <option name="METHOD_NAME" value="testa_se_cep_for_01311100_cep_invalido" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.DiagnosticoTest" />
+      <option name="METHOD_NAME" value="se_diagnostico_criado_hoje_get_data_igual_a_data_de_hoje" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EnderecoTest.testa_se_cep_for_05271050_cep_invalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiagnosticoTest.se_diagnostico_resolvido_hoje_data_finalizado_igual_hoje" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -144,20 +152,28 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.example.domain.EnderecoTest" />
-      <option name="METHOD_NAME" value="testa_se_cep_for_05271050_cep_invalido" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.DiagnosticoTest" />
+      <option name="METHOD_NAME" value="se_diagnostico_resolvido_hoje_data_finalizado_igual_hoje" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in Java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EnderecoTest" />
-        <item itemvalue="JUnit.EnderecoTest.testa_se_cep_for_05271050_cep_invalido" />
-        <item itemvalue="JUnit.EnderecoTest.testa_se_cep_for_01311100_cep_invalido" />
-        <item itemvalue="JUnit.EnderecoTest.testGetRua" />
-        <item itemvalue="Application.teste" />
+        <item itemvalue="JUnit.DiagnosticoTest.se_diagnostico_resolvido_hoje_data_finalizado_igual_hoje" />
+        <item itemvalue="JUnit.DiagnosticoTest" />
+        <item itemvalue="JUnit.DiagnosticoTest.se_diagnostico_criado_hoje_get_data_igual_a_data_de_hoje" />
+        <item itemvalue="JUnit.java in Java" />
+        <item itemvalue="JUnit.DiagnosticoTest.diagnosticoResolvido" />
       </list>
     </recent_temporary>
   </component>
@@ -190,6 +206,7 @@
       <workItem from="1715817285295" duration="8537000" />
       <workItem from="1716072452387" duration="30000" />
       <workItem from="1716072492612" duration="6711000" />
+      <workItem from="1716155924427" duration="6303000" />
     </task>
     <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
       <option name="closed" value="true" />
@@ -327,7 +344,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716086491337</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="test: add test in EnderecoTest class">
+      <option name="closed" value="true" />
+      <created>1716087749404</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716087749404</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactor: changing junit dependency">
+      <option name="closed" value="true" />
+      <created>1716157458536</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716157458536</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,15 +419,22 @@
     <MESSAGE value="refactor: add a diagnosticos list attribute and changing method atualiza diagnostico" />
     <MESSAGE value="refactor: add Gson dependency from google" />
     <MESSAGE value="refactor: changing method pegarInformacoesEnderecoPoCep" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: changing method pegarInformacoesEnderecoPoCep" />
+    <MESSAGE value="test: add test in EnderecoTest class" />
+    <MESSAGE value="refactor: changing junit dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: changing junit dependency" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java$EnderecoTest.ic" NAME="EnderecoTest Coverage Results" MODIFIED="1716087568941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.domain.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java$java_in_Java.ic" NAME="java in Java Coverage Results" MODIFIED="1716159789848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/Java$Main.ic" NAME="Main Coverage Results" MODIFIED="1715702265948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.usuarios.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Java$domain_in_Java.ic" NAME="domain in Java Coverage Results" MODIFIED="1716158106035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

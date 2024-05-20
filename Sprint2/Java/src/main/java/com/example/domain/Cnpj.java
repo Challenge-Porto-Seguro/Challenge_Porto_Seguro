@@ -3,6 +3,7 @@ package com.example.domain;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Cnpj {
 
@@ -88,6 +89,19 @@ public class Cnpj {
         sb.append("-");
         sb.append(cnpj, 12, 14);
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cnpj cnpj1 = (Cnpj) o;
+        return Objects.equals(cnpj, cnpj1.cnpj);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(cnpj);
     }
 
     @Override
