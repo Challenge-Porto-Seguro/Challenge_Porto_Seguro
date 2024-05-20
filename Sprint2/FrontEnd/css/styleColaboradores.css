@@ -15,32 +15,19 @@
 }
 
 .divisao{
+    justify-content: space-around;
     display: flex;
+}
+
+.fotos{
+    width: 100%;
+    height: 360px;
+    border-radius: 50%;
 }
 
 .divisao article{
     width: 30%;
-    height: 314px;
-    margin-right: auto;
-    text-align: center;
 }
-
-.divisao div article{
-    width: 100%;
-}
-
-.divisao div{
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
-    margin-left: auto;
-}
-
-.fotos {
-    border-radius: 50%;
-    width: 80%;
-    height: 250px;
-  }
 
 h3{
     margin: 10px;
@@ -52,58 +39,30 @@ a{
 }
 
 .projeto{
-    display: flex;
     flex-direction: column;
-    width: 100%;
     text-align: center;
-    margin-top: 50px;
 }
 
 .github, .figma{
     text-decoration: none;
 }
-
-@media screen and (max-width: 960px){
-
-    .icone_voltar{
-        width: 7%;
-        margin-top: 10px;
-    }
-    .divisao{
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
+@media screen and(max-width: 800px) {
     .divisao article{
-        margin-right: auto;
-        margin-left: auto;
-        width: 40%;
-        height: 300px;
-    }
-
-    .divisao div{
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: space-around;
-        width: 80%;
+        width: 25%;
     }
 
     .fotos{
-        height: 210px;
-    }
-    .projeto{
-        margin-top: 0;
-    }
-
-    .projeto a{
-        font-size: 0.9em;
+        height: 200px;
     }
 }
 
-@media screen and (max-width: 580px){
+@media screen and (max-width: 514px){
     h3{
         font-size: 1em;
+    }
+
+    .fotos{
+        height: 100px;
     }
 }
 
