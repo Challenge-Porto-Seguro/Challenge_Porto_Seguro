@@ -4,6 +4,8 @@ import com.example.enums.VerificaDiagnostico;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 class DiagnosticoTest {
@@ -49,10 +51,11 @@ class DiagnosticoTest {
 
     @Test
     void se_diagnostico_to_string_retorna_algumas_informacoes() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Diagnostico mockDiagnostico = new Diagnostico("seu pneu esta furado");
         String retorno = "id: " + mockDiagnostico.getId()
                 + ", descrição: " + mockDiagnostico.getDescricao()
-                + ", data inicio: " + "20/05/2024"
+                + ", data inicio: " + sdf.format(new Date())
                 + ", verificador: " + VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO;
         Assertions.assertEquals(retorno, mockDiagnostico.toString());
     }

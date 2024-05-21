@@ -4,6 +4,9 @@ import com.example.domain.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UsuarioPortoTest {
@@ -57,7 +60,7 @@ class UsuarioPortoTest {
         mockUsuarioPorto.addOrcamento(mockOrcamento);
         mockUsuarioPorto.addOrcamento(mockOrcamento);
         mockUsuarioPorto.addOrcamento(mockOrcamento);
-        Assertions.assertEquals("2024-05-20", mockUsuarioPorto.getDiaUltimoOrcamento().toString());
+        Assertions.assertEquals(LocalDate.now().toString(), mockUsuarioPorto.getDiaUltimoOrcamento().toString());
     }
 
 

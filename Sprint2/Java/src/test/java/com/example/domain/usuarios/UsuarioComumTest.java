@@ -51,7 +51,7 @@ class UsuarioComumTest {
         mockUsuarioComum.addOrcamento(mockOrcamento);
         mockUsuarioComum.addOrcamento(mockOrcamento);
         mockUsuarioComum.addOrcamento(mockOrcamento);
-        Assertions.assertEquals("2024-05-20", mockUsuarioComum.getDiaUltimoOrcamento().toString());
+        Assertions.assertEquals(LocalDate.now().toString(), mockUsuarioComum.getDiaUltimoOrcamento().toString());
     }
 
     @Test
