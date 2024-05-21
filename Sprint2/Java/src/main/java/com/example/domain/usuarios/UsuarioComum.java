@@ -11,12 +11,11 @@ public class UsuarioComum extends MinimoInformacao {
 
     private Cpf cpf;
     private int quantidadeOrcamento;
-    private LocalDate diaOrcamento;
+    private LocalDate diaUltimoOrcamento;
 
     public UsuarioComum(String nome, String cpf, String email, String senha, Endereco endereco) {
         super(nome, email, senha, endereco);
         this.cpf = new Cpf(cpf);
-        quantidadeOrcamento = 0;
     }
 
     public Cpf getCpf() {
@@ -27,27 +26,30 @@ public class UsuarioComum extends MinimoInformacao {
         return quantidadeOrcamento;
     }
 
-    public LocalDate getDiaOrcamento() {
-        return diaOrcamento;
+    public LocalDate getDiaUltimoOrcamento() {
+        return diaUltimoOrcamento;
     }
 
     //Um usuario pode fazer ate 3 orçamentos por mes
     @Override
     public void addOrcamento(Orcamento orcamento) {
         LocalDate diaHoje = LocalDate.now();
+
         if(quantidadeOrcamento == 0){
-            diaOrcamento = diaHoje;
+            this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
         }
 
-        int diferencaDias = (int) ChronoUnit.DAYS.between(diaOrcamento, diaHoje);
-        if(quantidadeOrcamento == 3 && diferencaDias != 30){
-            throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaOrcamento.getDayOfMonth() + " do mês: " + (diaOrcamento.getMonthValue() + 1));
-        } else if(quantidadeOrcamento == 3 || diferencaDias == 30) {
+        int diferencaDias = (int) ChronoUnit.DAYS.between(diaUltimoOrcamento, diaHoje);
+        if(quantidadeOrcamento == 3 && diferencaDias < 30){
+            throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaUltimoOrcamento.getDayOfMonth() + " do mês: " + (diaUltimoOrcamento.getMonthValue() + 1));
+        } else if(diferencaDias >= 30) {
             quantidadeOrcamento = 0;
+            this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
         }
 
         getOrcamentos().add(orcamento);
         quantidadeOrcamento++;
+
     }
 
     @Override

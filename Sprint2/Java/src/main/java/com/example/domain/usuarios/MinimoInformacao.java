@@ -77,6 +77,8 @@ public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados 
         return orcamentos;
     }
 
+    public abstract void addOrcamento(Orcamento orcamento);
+
     public void removeOrcamento(Orcamento orcamento){
         orcamentos.remove(orcamento);
     }

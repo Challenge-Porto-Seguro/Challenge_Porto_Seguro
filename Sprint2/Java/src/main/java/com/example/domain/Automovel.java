@@ -2,6 +2,8 @@ package com.example.domain;
 
 import com.example.enums.VerificaDiagnostico;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,17 +14,29 @@ public class Automovel {
     private String placa;
     private Date ano;
     private Diagnostico diagnostico;
-    private List<Diagnostico> diagnosticos;
+    private List<Diagnostico> diagnosticos = new ArrayList<>();
 
     public Automovel(String marca, String modelo, String placa, Date ano) {
+        verificaSeAutomovelEValido(marca, modelo, placa, ano);
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
         this.ano = ano;
     }
 
-    private boolean verificaSeAutomovelEValido(){
-        return true;
+    private void verificaSeAutomovelEValido(String marca, String modelo, String placa, Date ano){
+        if(marca.isBlank()){
+            throw new RuntimeException("Marca invalida");
+        }
+        if(modelo.isBlank()){
+            throw new RuntimeException("Modelo invalido");
+        }
+        if(placa.isBlank() || !placa.matches("[A-Z]{3}[0-9][0-9A-Z][0-9]{2}")){
+            throw new RuntimeException("Placa invalida");
+        }
+        if(ano == null || ano.after(new Date())){
+            throw new RuntimeException("Ano invalido");
+        }
     }
 
     public String getMarca() {
@@ -41,6 +55,11 @@ public class Automovel {
         return ano;
     }
 
+    public String anoFormatado(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(ano);
+    }
+
     public void setDiagnostico(Diagnostico diagnostico) {
         this.diagnostico = diagnostico;
     }
@@ -54,9 +73,8 @@ public class Automovel {
     }
 
     public void autalizarDiagnostico(){
-        if(diagnostico.getVerificador() == VerificaDiagnostico.RESOLVIDO){
-            diagnosticos.add(diagnostico);
-            diagnostico = null;
-        }
+        diagnostico.diagnosticoResolvido();
+        diagnosticos.add(diagnostico);
+        diagnostico = null;
     }
 }

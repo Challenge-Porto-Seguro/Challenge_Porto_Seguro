@@ -11,7 +11,7 @@ public class UsuarioPorto extends MinimoInformacao{
     private Cpf cpf;
     private String codigoSeguro;
     private int quantidadeOrcamento;
-    private LocalDate diaOrcamento;
+    private LocalDate diaUltimoOrcamento;
 
     public UsuarioPorto(String nome, String cpf, String email, String senha, Endereco endereco, String codigoSeguro) {
         super(nome, email, senha, endereco);
@@ -27,6 +27,10 @@ public class UsuarioPorto extends MinimoInformacao{
         return quantidadeOrcamento;
     }
 
+    public LocalDate getDiaUltimoOrcamento() {
+        return diaUltimoOrcamento;
+    }
+
     public Cpf getCpf() {
         return cpf;
     }
@@ -36,14 +40,15 @@ public class UsuarioPorto extends MinimoInformacao{
     public void addOrcamento(Orcamento orcamento) {
         LocalDate diaHoje = LocalDate.now();
         if(quantidadeOrcamento == 0){
-            diaOrcamento = diaHoje;
+            this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
         }
 
-        int diferencaDias = (int) ChronoUnit.DAYS.between(diaOrcamento, diaHoje);
-        if(quantidadeOrcamento == 7 && diferencaDias != 30){
-            throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaOrcamento.getDayOfMonth() + " do mês: " + (diaOrcamento.getMonthValue() + 1));
-        } else if(quantidadeOrcamento == 7) {
+        int diferencaDias = (int) ChronoUnit.DAYS.between(diaUltimoOrcamento, diaHoje);
+        if(quantidadeOrcamento == 7 && diferencaDias < 30){
+            throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaUltimoOrcamento.getDayOfMonth() + " do mês: " + (diaUltimoOrcamento.getMonthValue() + 1));
+        } else if(diferencaDias >= 30) {
             quantidadeOrcamento = 0;
+            this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
         }
 
         getOrcamentos().add(orcamento);

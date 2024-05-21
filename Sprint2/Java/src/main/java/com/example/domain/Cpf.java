@@ -5,6 +5,7 @@ import com.example.ValidaInformacoesMinimoInformacao;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Cpf {
 
@@ -89,6 +90,19 @@ public class Cpf {
         }
 
         return cpfFormatado.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cpf cpf1 = (Cpf) o;
+        return Objects.equals(cpf, cpf1.cpf);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(cpf);
     }
 
     @Override

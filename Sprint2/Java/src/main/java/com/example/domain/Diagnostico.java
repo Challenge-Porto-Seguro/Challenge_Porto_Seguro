@@ -33,6 +33,10 @@ public class Diagnostico {
         return verificador;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public Date getDataFinalizado() {
         if (dataFinalizado == null) {
             throw new RuntimeException("Esse diagnostico não foi finalizado");

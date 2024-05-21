@@ -2,6 +2,7 @@ package com.example.domain;
 
 import com.example.enums.StatusOrcamento;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +11,14 @@ public class Orcamento {
     private static int sequencia = 1;
     private int id;
     private double valorTotal;
+    private LocalDate diaOrcamento;
     private List<Pedido> pedidos = new ArrayList<>();
     private StatusOrcamento statusOrcamento;
 
     public Orcamento() {
         this.statusOrcamento = StatusOrcamento.ATIVO;
         id += sequencia++;
+        diaOrcamento = LocalDate.now();
     }
 
     public double getValorTotal() {
@@ -46,6 +49,10 @@ public class Orcamento {
 
     public void setStatus(StatusOrcamento statusOrcamento) {
         this.statusOrcamento = statusOrcamento;
+    }
+
+    public LocalDate getDiaOrcamento() {
+        return diaOrcamento;
     }
 
     @Override
