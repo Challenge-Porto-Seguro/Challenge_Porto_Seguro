@@ -46,4 +46,14 @@ class DiagnosticoTest {
         Diagnostico mockDiagnostico = new Diagnostico("seu pneu esta furado");
         Assertions.assertThrows(RuntimeException.class, mockDiagnostico::getDataFinalizado);
     }
+
+    @Test
+    void se_diagnostico_to_string_retorna_algumas_informacoes() {
+        Diagnostico mockDiagnostico = new Diagnostico("seu pneu esta furado");
+        String retorno = "id: " + mockDiagnostico.getId()
+                + ", descrição: " + mockDiagnostico.getDescricao()
+                + ", data inicio: " + "20/05/2024"
+                + ", verificador: " + VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO;
+        Assertions.assertEquals(retorno, mockDiagnostico.toString());
+    }
 }
