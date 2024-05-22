@@ -26,7 +26,8 @@
 }
 
 .divisao article{
-    width: 30%;
+    width: 20%;
+    text-align: center;
 }
 
 h3{
@@ -46,13 +47,15 @@ a{
 .github, .figma{
     text-decoration: none;
 }
-@media screen and(max-width: 800px) {
-    .divisao article{
-        width: 25%;
-    }
+
+@media screen and (max-width: 880px){
 
     .fotos{
         height: 200px;
+    }
+
+    .divisao article{
+        width: 30%;
     }
 }
 
@@ -62,11 +65,16 @@ a{
     }
 
     .fotos{
-        height: 100px;
+        height: 150px;
     }
 }
 
 @media screen and (max-width: 400px){
+    .icone_voltar{
+        width: 15%;
+        margin: 0;
+        margin-top: 20px;
+    }
     h3{
         font-size: 0.8em;
     }
@@ -74,12 +82,28 @@ a{
     .divisao a{
         font-size: 1em;
     }
+
+    .divisao article{
+        width: 30%;
+    }
     
 }
 
-@media screen and (max-width: 274px){
+@media screen and (max-width: 300px){
 
-    .divisao div{
+    .icone_voltar{
+        width: 15%;
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .divisao{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .divisao article{
+        width: 50%;
         margin-bottom: 20px;
     }
     
