@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: changing DiagnosticoTest class">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/ValidaInformacoesMinimoInformacaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/OrcamentoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/PedidoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/ProdutoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/domain/DiagnosticoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/DiagnosticoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/domain/usuarios/UsuarioComumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/usuarios/UsuarioComumTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/domain/usuarios/UsuarioPortoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/domain/usuarios/UsuarioPortoTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: changing DiagnosticoTest class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,6 +110,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Entrega2 Challenge/Java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -262,6 +254,7 @@
       <workItem from="1716155924427" duration="6303000" />
       <workItem from="1716204003017" duration="18149000" />
       <workItem from="1716288759645" duration="2987000" />
+      <workItem from="1716503036656" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
       <option name="closed" value="true" />

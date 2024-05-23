@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E6F0CC30-C750-5436-C3EF-6A38B4EAE7F9" name="ENDERECO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E6F0CC30-C750-5436-C3EF-6A38B4EAE7F9" name="T_PS_ENDERECO">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:02 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -15,7 +15,22 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_endereco" id="34B52D64-66D0-C33A-DF7F-36C741D54186">
+<Attribute name="cd_minimo_informacoes" id="21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-05-21 13:03:30 UTC</createdTime>
+<generatorID>1D5DFF92-C4BD-7D40-D493-AD4A8C986AF9</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<referedAttribute>3DCD207D-F524-2E29-CDA4-D0346BA08DEB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_endereco" id="34B52D64-66D0-C33A-DF7F-36C741D54186">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:18 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -28,22 +43,7 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_usuario" id="279A8F45-4BC8-104F-B595-C2965F128F91">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-04-23 14:45:30 UTC</createdTime>
-<generatorID>5453D62B-F03A-D735-19BF-CE0425E636B2</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<referedAttribute>C019ADA5-1016-20CC-DF5A-AE9C9D0FAB1A</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="rua" id="939D4E51-433F-5CCC-33AF-C1EFBF9F872C">
+<Attribute name="nm_rua" id="939D4E51-433F-5CCC-33AF-C1EFBF9F872C">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:24 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -57,7 +57,7 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cidade" id="C1D562C5-2AEB-CDAF-B27C-A5BE6A1CB976">
+<Attribute name="nm_cidade" id="C1D562C5-2AEB-CDAF-B27C-A5BE6A1CB976">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:27 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -70,7 +70,7 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="estado" id="709741A3-405F-E157-7ED7-06BE81A17F00">
+<Attribute name="nm_estado" id="709741A3-405F-E157-7ED7-06BE81A17F00">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:29 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -83,7 +83,7 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="bairro" id="5076D932-8729-24E5-BA04-DFCF41D7DF21">
+<Attribute name="nm_bairro" id="5076D932-8729-24E5-BA04-DFCF41D7DF21">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:33 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -97,7 +97,7 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cep" id="1CF39CA1-A95F-783C-8257-6A29225CDA0A">
+<Attribute name="sq_cep" id="1CF39CA1-A95F-783C-8257-6A29225CDA0A">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:35 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -122,7 +122,7 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>34B52D64-66D0-C33A-DF7F-36C741D54186</attributeRef>
-<attributeRef>279A8F45-4BC8-104F-B595-C2965F128F91</attributeRef>
+<attributeRef>21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -1,19 +1,19 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_PRODUTO_PEDIDO" directorySegmentName="seg_0" id="A786919D-79A5-E58E-4838-30A6DA1680AF">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_AUTOMOVEL_DIAGNOSTICO" directorySegmentName="seg_0" id="6FFC3C2D-576D-4771-E413-0A37DC6A5BCA">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-04-23 14:52:52 UTC</createdTime>
+<createdTime>2024-05-21 13:12:03 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
-<sourcePk>5230C42D-2775-AADD-925D-933973D059B4</sourcePk>
-<identifying>true</identifying>
+<sourcePk>ECE78717-075B-C0CA-1FF9-1E7898ACA1ED</sourcePk>
+<identifying>false</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>13C6AB33-DC8A-E1F7-2683-22BA9130754A</sourceEntity>
+<sourceEntity>92B1331F-A342-D322-8A0F-84EFFC7D8B54</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
-<targetEntity>12AFAA85-89D1-3079-14EB-2328D7A83438</targetEntity>
+<targetEntity>647B10E9-4219-C287-EA5C-3DB0A388895A</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>
