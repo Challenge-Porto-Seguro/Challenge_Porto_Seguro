@@ -17,27 +17,49 @@ body{
 }
 
 header{
-    background-color: #7130FC;
+    background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    border-bottom: solid 5px rgb(138, 136, 136);
 }
 
-h1{
-    letter-spacing: 25px;
-}
-
-h3{
-    letter-spacing: 10px;
-}
-
-h1, h3{
-    color: #FFFFFF;
-    font-family: var(--font-principal);
+.logo {
+    width: 50%;
+    height: 100px;
     padding: 10px;
-    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 30%;
+}
+
+header h3{
+    letter-spacing: 10px;
+    color: #3b62e2;
+    font-family: var(--font-principal);
+    font-size: 1.7em;
+    padding: 5px;
     text-transform: uppercase;
+}
+
+header a{
+    text-decoration: none;
+    margin: 20px;
+}
+
+header button{
+    background-color: #ffffff;
+    border: solid 2px black;
+    margin: 20px;
+}
+
+header button:hover {
+    background-color: #bee2f3;
+    transition: 0.6s;
 }
 
 main{
@@ -49,72 +71,88 @@ main{
     flex-direction: column;
 }
 
-.primeira_parte{
-    display: flex;
+.primeira_parte {
     width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    border-bottom: solid 1px #b9b9b9;
+    margin-bottom: 10px;
 }
+
+.primeira_parte div{
+    max-width: 50%;
+}
+
+#logo_porto{
+    width: 25%;
+}
+
+.primeira_parte h1 {
+    font-size: 3em;
+    margin-left: 20px;
+}
+
+#imagem_carro {
+    width: 50%;
+    margin: 20px;
+    height: 350px;
+    border-radius: 50px;
+}
+
 
 .segunda_parte{
     display: flex;
     width: 100%;
 }
 
-.imagem  img{
-    width: 80%;
-    margin: 30px;
-}
 
-.teste, .desc, .imagem{
+.desc{
     width: 50%;
-    height: 50%;
-    
 }
 
-.descricao{
-    margin-bottom: 50px;
-}
-
-p{
+.desc p, .desc h3{
     color: #000000;
     margin-left: 10px;
     text-transform: uppercase;
     font-family: var(--font-principal);
 }
 
-.icones{
-    display: flex;
-    justify-content: space-around;
-}   
-
-.icones img{
-    width: 80%;
-    margin: 40% 0;
+.desc h3{
+    font-size: 1.6em;
 }
 
-.plano_total{
+.desc p {
+    text-indent: 5px;
+    margin-bottom: 5px;
+}
+
+#acessadores{
+    width: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-align: center;
-    align-items: center;
+    margin: 10px;
 }
-.planos{
-    background-color: #000000;
-    width: 30%;
-    margin: 20px 0 0;
-    border: 0.5px solid #000000;
-    border-radius: 60px;
+
+#acessadores h1{
+    font-size: 1.8em;
+    margin: 30px;
+}
+
+#acessadores button{
+    width: 50%;
     padding: 10px;
+    background-color: #7130FC;
+    color: #ffffff;
+    border: solid 3px #000000;
 }
 
-.planos_baixo{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-}
-
-.letra_plano{
-    color: #FFFFFF;
+#acessadores button:hover {
+    background-color: #ffffff;
+    padding: 15px;
+    color: #000000;
+    transition: 1.2s;
 }
 
 footer{
@@ -122,112 +160,122 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px; 
+    padding: 20px; 
     width: 100%;
 }
 
 @media screen and (max-width: 1200px){
-    .imagem img{
-        width: 90%;
-        height: 200px;
-    }
-    .icones img{
-        width: 70%;
-        margin: 20px 0;
+    .primeira_parte h1 {
+        font-size: 2.5em;
     }
 
     .segunda_parte{
         flex-direction: column;
     }
-
-    p{
-        font-size: 1.2em;
-    }
-
-    .descricao{
-        margin-bottom: 30px;
-    }
     .desc{
         width: 100%;
-        margin-bottom: 20px;
     }
 
-    .plano_total, .planos_baixo{
-        text-align: center;
-    }
-
-    .planos{
-        width: 200px;
-    }
-}
-
-@media screen and (max-width: 714px){
-    footer h3{
-        font-size: 0.9em
-    }
-}
-
-@media screen and (max-width: 562px){
-    .imagem img{
-        width: 80%;
-    }
-    .icones img{
+    #acessadores {
         width: 100%;
-        margin: 10px 0;
+        margin-left: 0;
     }
 
-    .icones{
-        flex-direction: column;
+}
+
+@media screen and (max-width: 800px){
+    .logo img{
+        width: 50%;
     }
 
-    .imagem{
-        width: 90%  ;
+    #logo_porto{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 660px){
+    header h3{
+        letter-spacing: 5px;
+        font-size: 1.3em;
+        padding: 5px;
+        
     }
 
-    .teste{
-        width: 10%;
-        margin-right: 30px;
+    .primeira_parte h1 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #imagem_carro{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .logo img{
+        width: 60%;
     }
 
-    p{
+    header h3{
         font-size: 1em;
     }
 
-    h1, h3{
-        font-size: 0.9em;
-        margin: 5px;
-        flex-wrap: nowrap;
+    header button{
+        margin: 0;
     }
 
-    h1{
-        letter-spacing: 15px;
-    }
-
-    h3{
-        letter-spacing: 8px;
-    }
-
-
-    footer{
-        h3{
-            font-size: 0.9em;
-        }
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 410px){
-    .imagem img{
+    #logo_porto{
         width: 60%;
     }
-    .icones img{
-        width: 80%;
-        margin: 10px 0;
+    .primeira_parte h1 {
+        font-size: 1.3em;
     }
 
-    .planos{
-        width: 130px;
+    #acessadores h1{
+        font-size: 1.5em;
     }
 
+    #acessadores button{
+        width: 40%;
+        
+    }
    
+}
+
+@media screen and (max-width: 442px) {
+    .desc h3{
+        font-size: 1.2em;
+    }
+
+    .desc p{
+        font-size: 0.8em;
+    }
+
+    #acessadores h1{
+        font-size: 1.2em;
+    }
+
+    header h3{
+        font-size: 0.8em;
+    }
+    
+}
+
+@media screen and (max-width: 375px) {
+    .primeira_parte h1 {
+        font-size: 1em;
+    }
+
+    #imagem_carro{
+        height: 150px;
+    }
+
+    footer h3{
+        font-size: 0.8em;
+    }
+
+    #acessadores button{
+        width: 40%;
+    }
 }
