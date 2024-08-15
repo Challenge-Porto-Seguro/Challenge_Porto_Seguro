@@ -14,14 +14,15 @@ def menu_cliente():
             try:
                 cliente.cadastrar_usuario()
             except Exception as msgErro:
-                print(msgErro.args[0])      
+                print(msgErro.args[0] if msgErro.args else "Erro desconhecido.")
         elif opcao == "2":
             cliente.exibir_usuarios()
         elif opcao == "3":
             if cliente.logar_usuario():
+                print("Login realizado com sucesso!")
                 menu_porto()
             else:
-                print("Falha no login. Tente novamnete.")
+                print("Falha no login. Tente novamente.")
         elif opcao == "4":
             print("[-------------------------------]")
             print("[----        SAINDO..      -----]")
@@ -37,9 +38,10 @@ def menu_porto():
         print("2. Listar todos os carros")
         print("3. Atualizar um carro")
         print("4. Deletar um carro")
-        print("5. Sair")
+        print("5. Voltar ao menu principal")
 
         escolha = input("Escolha uma opção: ")
+        
 
         if escolha == '1':
             try:
@@ -53,7 +55,7 @@ def menu_porto():
         elif escolha == '4':
             carros.deletar_carro()
         elif escolha == '5':
-            print("Saindo do programa...")
+            print("Voltando ao menu principal...")
             break
         else:
             print("Opção inválida. Tente novamente.")
