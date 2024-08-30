@@ -19,7 +19,6 @@ def menu_cliente():
             cliente.exibir_usuarios()
         elif opcao == "3":
             if cliente.logar_usuario():
-                print("Login realizado com sucesso!")
                 menu_porto()
             else:
                 print("Falha no login. Tente novamente.")
