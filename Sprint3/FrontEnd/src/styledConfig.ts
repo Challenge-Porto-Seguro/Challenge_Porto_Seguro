@@ -65,3 +65,30 @@ export const ErrorStyle = styled.main`
     }
     
 ` 
+
+export const HomeStyle = styled.main`
+    margin: 1em;
+
+    section {
+        display: flex;
+        border-bottom: 2px solid #8A8888;
+        padding: 1em 0;
+        gap: 20px;
+    }
+
+    .principal__logo{
+        width: 25%;
+    }
+
+    .principal__titulo {
+        margin-left: 20px;
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
+
+    .principal__imagem {
+        width: 35%;
+        border-radius: 50px;
+    }
+
+`
