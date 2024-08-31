@@ -28,7 +28,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="sq_cpf" id="2AB620C5-B12A-A133-2C91-B482FE4158FD">
 <createdBy>thmaz</createdBy>
@@ -67,6 +67,21 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_usuario" id="53EAF96D-57C4-F603-17D8-921450E5EAD5">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-08-24 00:03:31 UTC</createdTime>
+<generatorID>0BFAD984-BA6B-DCF7-669F-AAFA0C0056D1</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<referedAttribute>312D4B44-E25C-AB0B-F7EA-9F0AA087D47B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
