@@ -111,6 +111,7 @@ export const HomeStyle = styled.main`
         text-indent: 10px;
         font-size: 1.3rem;
         font-family: var(--fonte-secundaria);
+        word-spacing: 5px;
     }
 
 `
