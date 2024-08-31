@@ -38,6 +38,7 @@ export const HeaderStyle = styled.header`
         padding: 1em 2em;
         width: 15em;
         margin: 0 1em;
+        font-weight: 700;
     }
 
 `
@@ -70,26 +71,46 @@ export const ErrorStyle = styled.main`
 export const HomeStyle = styled.main`
     margin: 1em;
 
-    section {
+    .home__introducao {
         display: flex;
         border-bottom: 2px solid var(--cinza);
         padding: 1em 0;
-        gap: 20px;
+        gap: 15px;
+    }
+
+    article {
+        width: 50%;
     }
 
     .principal__logo{
-        width: 25%;
+        width: 40%;
     }
 
     .principal__titulo {
         margin-left: 20px;
         text-transform: uppercase;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .principal__imagem {
-        width: 35%;
+        width: 50%;
         border-radius: 50px;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .home__sobre-nos--titulo {
+        margin: 20px 0;
+        font-size: 2.5rem;
+    }
+
+    .home__sobre-nos--paragrafo {
+        margin: 10px 0;
+        text-indent: 10px;
+        font-size: 1.3rem;
+        font-family: var(--fonte-secundaria);
     }
 
 `
