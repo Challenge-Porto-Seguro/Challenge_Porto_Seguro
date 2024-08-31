@@ -2,6 +2,7 @@ import logoPorto from "../../assets/logo_porto.webp"
 import carro from "../../assets/carro_tela_inicial.jpeg"
 
 export default function Home() {
+    document.title = "Home"
     return (
         <main>
             <section>
