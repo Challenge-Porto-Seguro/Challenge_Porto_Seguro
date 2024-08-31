@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import "./App.css"
 
 export const HeaderStyle = styled.header`
-    border-bottom: 2px solid #8A8888;
+    border-bottom: 2px solid var(--cinza);
     padding: 0.2em 0;
-    color: var(--primary-color);
+    color: var(--peto);
 
     .header__lista{
         display: flex;
@@ -19,7 +20,7 @@ export const HeaderStyle = styled.header`
 
     .header__link{
         text-decoration: none;
-        color: var(--primary-color);
+        color: var(--preto);
     }
 
 
@@ -47,7 +48,7 @@ export const ErrorStyle = styled.main`
 
     article {
         text-align: center;
-        border: 5px solid #8A8888;
+        border: 5px solid var(--cinza);
         padding: 1em;
     }
 
@@ -71,7 +72,7 @@ export const HomeStyle = styled.main`
 
     section {
         display: flex;
-        border-bottom: 2px solid #8A8888;
+        border-bottom: 2px solid var(--cinza);
         padding: 1em 0;
         gap: 20px;
     }
