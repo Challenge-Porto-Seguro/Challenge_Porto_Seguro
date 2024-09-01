@@ -10,6 +10,7 @@ const GlobalConfig = createGlobalStyle`
 
     #root{
         font-family: var(--fonte-principal);
+        min-height: 100vh;
     }
 `
 
