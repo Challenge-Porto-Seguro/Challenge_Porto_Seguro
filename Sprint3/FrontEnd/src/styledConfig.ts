@@ -129,3 +129,42 @@ export const FooterStyle = styled.footer`
     font-weight: 700;
 
 `
+
+export const ChatBotPageStyle = styled.main`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+    gap: 40em;
+
+    .titulo {
+        font-family: var(--fonte-terciaria);
+        letter-spacing: 6px;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container__input{
+        width: 80%;
+        border-radius: 50px;
+    }
+
+    .container__input::placeholder{
+        text-align: center;
+    }
+
+    .container__imagem {
+        width: 100%;
+    }
+
+    .container__btn {
+        text-decoration: none;
+        background: none;
+        border: none;
+        width: 3%;
+    }
+
+`
