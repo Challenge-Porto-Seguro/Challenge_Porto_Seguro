@@ -1,6 +1,7 @@
 import logoPorto from "../../assets/logo_porto.webp"
 import carro from "../../assets/carro_tela_inicial.jpeg"
 import { HomeStyle } from "../../styledConfig"
+import Footer from "../../components/Footer"
 
 export default function Home() {
     document.title = "Home"
@@ -22,6 +23,7 @@ export default function Home() {
                 <p className="home__sobre-nos--paragrafo">MAS NÃO PARAMOS POR AÍ! ALÉM DE IDENTIFICAR O PROBLEMA, A AUTODIAG AJUDA VOCÊ A ENCONTRAR AS MELHORES OPÇÕES DE ORÇAMENTO PARA O REPARO DO SEU VEÍCULO. CONECTAMOS VOCÊ COM OFICINAS E MECÂNICOS DE CONFIANÇA, OFERECENDO COTAÇÕES TRANSPARENTES E COMPETITIVAS. NOSSO OBJETIVO É TORNAR O PROCESSO DE MANUTENÇÃO AUTOMOTIVA SIMPLES, CONVENIENTE E ECONÔMICO.</p>
                 <p className="home__sobre-nos--paragrafo">NOSSA MISSÃO É PROPORCIONAR UMA EXPERIÊNCIA LIVRE DE ESTRESSE E CONFIÁVEL PARA OS PROPRIETÁRIOS DE VEÍCULOS, UTILIZANDO TECNOLOGIA DE PONTA PARA DIAGNÓSTICOS AUTOMOTIVOS E SERVIÇOS DE ORÇAMENTO. QUEREMOS GARANTIR QUE SEU CARRO ESTEJA SEMPRE EM ÓTIMO ESTADO, SEM COMPLICAÇÕES E COM TOTAL TRANSPARÊNCIA.</p>
             </section>
+            <Footer />
         </HomeStyle>
     )
 }

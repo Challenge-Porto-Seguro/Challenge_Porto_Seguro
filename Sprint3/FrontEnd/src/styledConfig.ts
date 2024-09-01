@@ -69,12 +69,11 @@ export const ErrorStyle = styled.main`
 ` 
 
 export const HomeStyle = styled.main`
-    margin: 1em;
 
     .home__introducao {
         display: flex;
         border-bottom: 2px solid var(--cinza);
-        padding: 1em 0;
+        padding: 1em 2em;
         gap: 15px;
     }
 
@@ -93,8 +92,12 @@ export const HomeStyle = styled.main`
     }
 
     .principal__imagem {
-        width: 50%;
+        width: 45%;
         border-radius: 50px;
+    }
+
+    .home__sobre-nos{
+        padding: 0 1em;
     }
 
     .container {
@@ -113,5 +116,16 @@ export const HomeStyle = styled.main`
         font-family: var(--fonte-secundaria);
         word-spacing: 5px;
     }
+
+`
+
+export const FooterStyle = styled.footer`
+    display: flex;
+    justify-content: space-between;
+    background-color: #007FFF;
+    padding: 1em 1.3em;
+    color: var(--branco);
+    text-transform: uppercase;
+    font-weight: 700;
 
 `
