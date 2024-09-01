@@ -35,7 +35,7 @@ DROP TABLE T_PS_OFICINA;
 CREATE TABLE T_PS_USUARIO_COMUM(
     cpf CHAR(11) PRIMARY KEY,
     QuantidadeOrcamento NUMERIC(10) NOT NULL,
-    DataOrcamento DATE,
+    DataOrcamento DATE CHECK(DataOrcamento <= SYSDATE),
     comum_minino_informacoes int,
     CONSTRAINT comum_minino_informacoes FOREIGN KEY (comum_minino_informacoes) REFERENCES T_PS_Minimo_Informacoes(cd_minino_informacoes)
 );
@@ -48,7 +48,7 @@ CREATE TABLE T_PS_USUARIO_PORTO (
     CPF CHAR(11) PRIMARY KEY,
     CodigoSeguro CHAR(15) NOT NULL,
     QuantidadeOrcamento NUMBER(10) NOT NULL,
-    DataUltimoOrcamento DATE,
+    DataUltimoOrcamento DATE CHECK(DataUltimoOrcamento <= SYSDATE),
     porto_minino_informacoes int,
     CONSTRAINT porto_minino_informacoes FOREIGN KEY (porto_minino_informacoes) REFERENCES T_PS_Minimo_Informacoes(cd_minino_informacoes)
 );
@@ -90,7 +90,7 @@ DROP TABLE T_PS_AUTOMOVEL;
 CREATE TABLE T_PS_DIAGNOSTICO (
     cd_diagnostico NUMBER(10) PRIMARY KEY,
     nm_descricao_diagnostico CHAR(255) NOT NULL,
-    dt_inicio_diagnostico DATE NOT NULL,
+    dt_inicio_diagnostico DATE NOT NULL CHECK(dt_inicio_diagnostico <= SYSDATE),
     dt_fim_diagnostico DATE,
     st_diagnostico CHAR(25) NOT NULL,
     diagnostico_minino_informacoes int,
@@ -99,9 +99,9 @@ CREATE TABLE T_PS_DIAGNOSTICO (
     CONSTRAINT fk_diagnostico_automovel FOREIGN KEY (fk_diagnostico_automovel) REFERENCES T_PS_AUTOMOVEL(cd_automovel)
 );
 
-SELECT * FROM T_PS_AUTOMOVEL;
-DESC T_PS_AUTOMOVEL;
-DROP TABLE T_PS_AUTOMOVEL;
+SELECT * FROM T_PS_DIAGNOSTICO;
+DESC T_PS_DIAGNOSTICO;
+DROP TABLE T_PS_DIAGNOSTICO;
 
 CREATE TABLE T_PS_ORCAMENTO (
     cd_orcamento NUMBER(10) PRIMARY KEY,
