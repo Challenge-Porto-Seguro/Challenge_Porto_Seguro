@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: changing DiagnosticoTest class" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Kotlin Class" />
+        <option value="Class" />
+        <option value="JUnit3 Test Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2gR0YK51Uq8SPMQAckILpYTKd5Q" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.teste.executor": "Run",
+    "JUnit.AutomovelTest.se_ano_igual_20_10_2005_ano_formatado_igual_20_10_2005.executor": "Run",
+    "JUnit.AutomovelTest.se_ano_igual_depois_de_hoje_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_ano_igual_null_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_atualiza_diagnostico_get_diagnosticos_dever_ter_um_diagnostico.executor": "Run",
+    "JUnit.AutomovelTest.se_marca_em_branco_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_modelo_em_branco_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_placa_igual_123AAAA_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_placa_igual_AAA1234_get_placa_retorna_AAA1234.executor": "Run",
+    "JUnit.AutomovelTest.se_placa_igual_AAA1234_nao_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_setar_um_diagnostico_get_diagnostico_retorna_um_diagnostico.executor": "Run",
+    "JUnit.DiagnosticoTest.diagnosticoResolvido.executor": "Run",
+    "JUnit.DiagnosticoTest.executor": "Run",
+    "JUnit.DiagnosticoTest.se_diagnostico_criado_hoje_get_data_igual_a_data_de_hoje.executor": "Run",
+    "JUnit.DiagnosticoTest.se_diagnostico_to_string_retorna_algumas_informacoes.executor": "Run",
+    "JUnit.EnderecoTest.executor": "Coverage",
+    "JUnit.EnderecoTest.test.executor": "Run",
+    "JUnit.EnderecoTest.testGetRua.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311000_e_todas_iformacoes_corretas_endereco_criado.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311000_uf_igual_pa_retorna_erro.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311100_cep_invalido.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_05271050_cep_invalido.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_adiciona_automovel_get_automove_size_igual_1.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_adiciona_orcamento_get_orcamento_size_igual_1.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_cep_igual_01311000_get_endereco_rua_igual_Avenida_Paulista.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_mudarStatusOrcamento_orcamento_get_status_fica_inatico.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_nome_senha_ou_cpf_invalido_validaDados_retorna_erro.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_remove_automovel_get_automove_size_igual_0.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_remove_orcamento_get_orcamento_size_igual_0.executor": "Run",
+    "JUnit.OficinaTest.executor": "Run",
+    "JUnit.OficinaTest.se_cnpj_igual_a_19036613000107_get_cnpj_igual_19036613000107.executor": "Run",
+    "JUnit.OficinaTest.se_cnpj_igual_a_19036613000107_get_cnpj_retorna_cnpj_formatado.executor": "Run",
+    "JUnit.OficinaTest.se_inscricao_estadual_igual_12345678911_get_incricao_retorna_12345678911.executor": "Run",
+    "JUnit.OficinaTest.testa_se_orcamento_igual_a_2_valor_a_pagar_igual_a_10.executor": "Run",
+    "JUnit.OrcamentoTest.se_adicionar_1_pedido_get_pedido_size_retorna_1.executor": "Run",
+    "JUnit.OrcamentoTest.se_remover_pedido_get_pedido_size_retorna_0.executor": "Run",
+    "JUnit.OrcamentoTest.se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603.executor": "Run",
+    "JUnit.OrcamentoTest.se_tiver_2_pedido_de_100_50_valor_total_igual_201.executor": "Run",
+    "JUnit.PedidoTest.executor": "Run",
+    "JUnit.ProdutoTest.executor": "Run",
+    "JUnit.UsuarioComumTest.se_alterar_senha_e_email_e_nova_senha_for_valida_nao_retorna_erro.executor": "Run",
+    "JUnit.UsuarioComumTest.se_alterar_senha_e_email_ou_nova_senha_for_invalido_retorna_erro.executor": "Run",
+    "JUnit.UsuarioComumTest.se_cpf_12345678909_get_cpf_retorna_CPF_123_456_789_09.executor": "Run",
+    "JUnit.UsuarioComumTest.se_cpf_12345678909_retorna_123_456_789_09.executor": "Run",
+    "JUnit.UsuarioComumTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor": "Run",
+    "JUnit.UsuarioComumTest.se_hoje_igual_20_05_2024_get_dia_orcamento_igual_a_hoje.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_get_quantidade_igual_a_3.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_mais_de_30_dias_add_orcamento_nao_retorna_err.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_mais_de_30_dias_add_orcamento_nao_retorna_erro.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_menos_de_30_dias_add_orcamento_retorna_erro.executor": "Run",
+    "JUnit.UsuarioPortoTest.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_codigo_seguro_igual_1_get_codigo_seguro_igual_a_1.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_hoje_igual_20_05_2024_get_dia_orcamento_igual_a_hoje.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_3_e_get_quantidade_igual_a_3.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_7_e_menos_de_30_dias_add_orcamento_retorna_erro.executor": "Run",
+    "JUnit.ValidaInformacoesMinimoInformacaoTest.executor": "Run",
+    "JUnit.com.example in Java.executor": "Run",
+    "JUnit.com.example.domain in Java.executor": "Coverage",
+    "JUnit.domain in Java.executor": "Coverage",
+    "JUnit.java in Java.executor": "Coverage",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Pedro Henrique/OneDrive/Documentos/Challenge_Porto_Seguro/Sprint3/Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example" />
+      <recent name="com.example.domain" />
+      <recent name="com.example.domain.usuarios" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.com.example in Java">
+    <configuration name="DiagnosticoTest.se_diagnostico_to_string_retorna_algumas_informacoes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.DiagnosticoTest" />
+      <option name="METHOD_NAME" value="se_diagnostico_to_string_retorna_algumas_informacoes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrcamentoTest.se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.OrcamentoTest" />
+      <option name="METHOD_NAME" value="se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrcamentoTest.se_tiver_2_pedido_de_100_50_valor_total_igual_201" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.OrcamentoTest" />
+      <option name="METHOD_NAME" value="se_tiver_2_pedido_de_100_50_valor_total_igual_201" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidaInformacoesMinimoInformacaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.ValidaInformacoesMinimoInformacaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.example in Java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.example in Java" />
+        <item itemvalue="JUnit.ValidaInformacoesMinimoInformacaoTest" />
+        <item itemvalue="JUnit.OrcamentoTest.se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603" />
+        <item itemvalue="JUnit.OrcamentoTest.se_tiver_2_pedido_de_100_50_valor_total_igual_201" />
+        <item itemvalue="JUnit.DiagnosticoTest.se_diagnostico_to_string_retorna_algumas_informacoes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="" />
+      <created>1712455414164</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712455414164</updated>
+      <workItem from="1712455415291" duration="1227000" />
+      <workItem from="1715645129405" duration="10320000" />
+      <workItem from="1715655471548" duration="16000" />
+      <workItem from="1715655785668" duration="40000" />
+      <workItem from="1715655842193" duration="23000" />
+      <workItem from="1715683904521" duration="187000" />
+      <workItem from="1715684102013" duration="13509000" />
+      <workItem from="1715702226026" duration="139000" />
+      <workItem from="1715726277437" duration="4296000" />
+      <workItem from="1715731275703" duration="373000" />
+      <workItem from="1715817285295" duration="8537000" />
+      <workItem from="1716072452387" duration="30000" />
+      <workItem from="1716072492612" duration="6711000" />
+      <workItem from="1716155924427" duration="6303000" />
+      <workItem from="1716204003017" duration="18149000" />
+      <workItem from="1716288759645" duration="2987000" />
+      <workItem from="1716503036656" duration="23000" />
+      <workItem from="1725275415495" duration="510000" />
+    </task>
+    <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
+      <option name="closed" value="true" />
+      <created>1715655434088</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715655434088</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Começo da implementação sprint 2 java">
+      <option name="closed" value="true" />
+      <created>1715655812406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715655812406</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: add validation to classes">
+      <option name="closed" value="true" />
+      <created>1715702181747</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715702181747</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor: changing class name">
+      <option name="closed" value="true" />
+      <created>1715731331318</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715731331318</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactor: deleting validaDados in childs classes and add in class mother and changing alterarSenha">
+      <option name="closed" value="true" />
+      <created>1715731542640</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715731542640</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add increment id">
+      <option name="closed" value="true" />
+      <created>1715731585530</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715731585530</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test: testing methodo alterarSenha">
+      <option name="closed" value="true" />
+      <created>1715731626742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715731626742</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: add CPF class">
+      <option name="closed" value="true" />
+      <created>1715820768733</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715820768733</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor: moved to interfaces package">
+      <option name="closed" value="true" />
+      <created>1715820857148</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715820857148</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix: removing valida cpf and renaming class">
+      <option name="closed" value="true" />
+      <created>1715821579596</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715821579596</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor: add methods to validar cpf">
+      <option name="closed" value="true" />
+      <created>1715821687823</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715821687823</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor: changing method valida cpf">
+      <option name="closed" value="true" />
+      <created>1715822142631</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715822142631</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactor: add attribute dataFinalizado, changing method to string and method setDiagnostico">
+      <option name="closed" value="true" />
+      <created>1715825546458</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715825546458</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: add CNPJ class">
+      <option name="closed" value="true" />
+      <created>1715825586292</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715825586292</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor: add a diagnosticos list attribute and changing method atualiza diagnostico">
+      <option name="closed" value="true" />
+      <created>1715825771121</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715825771121</updated>
+    </task>
+    <task id="LOCAL-00016" summary="refactor: add Gson dependency from google">
+      <option name="closed" value="true" />
+      <created>1716074283583</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716074283583</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor: changing method pegarInformacoesEnderecoPoCep">
+      <option name="closed" value="true" />
+      <created>1716086491337</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716086491337</updated>
+    </task>
+    <task id="LOCAL-00018" summary="test: add test in EnderecoTest class">
+      <option name="closed" value="true" />
+      <created>1716087749404</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716087749404</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactor: changing junit dependency">
+      <option name="closed" value="true" />
+      <created>1716157458536</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716157458536</updated>
+    </task>
+    <task id="LOCAL-00020" summary="refactor: making changes">
+      <option name="closed" value="true" />
+      <created>1716259905949</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716259905949</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: AutomovelTest class">
+      <option name="closed" value="true" />
+      <created>1716259922732</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716259922732</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: MinimoInformacaoTest class">
+      <option name="closed" value="true" />
+      <created>1716259938632</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1716259938632</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: UsuarioComumTest class">
+      <option name="closed" value="true" />
+      <created>1716259949606</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716259949606</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: UsuarioPortoTest class">
+      <option name="closed" value="true" />
+      <created>1716259960162</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1716259960162</updated>
+    </task>
+    <task id="LOCAL-00025" summary="refactor: changing OficinaTest class">
+      <option name="closed" value="true" />
+      <created>1716259998463</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1716259998463</updated>
+    </task>
+    <task id="LOCAL-00026" summary="refactor: changing DiagnosticoTest class">
+      <option name="closed" value="true" />
+      <created>1716260012095</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1716260012095</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="enzoberzins19" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="ThiagoThmaz" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Começo da implementação sprint 2 java" />
+    <MESSAGE value="feat: add validation to classes" />
+    <MESSAGE value="refactor: changing class name" />
+    <MESSAGE value="refactor: deleting validaDados in childs classes and add in class mother and changing alterarSenha" />
+    <MESSAGE value="feat: add increment id" />
+    <MESSAGE value="test: testing methodo alterarSenha" />
+    <MESSAGE value="feat: add CPF class" />
+    <MESSAGE value="refactor: moved to interfaces package" />
+    <MESSAGE value="fix: removing valida cpf and renaming class" />
+    <MESSAGE value="refactor: add methods to validar cpf" />
+    <MESSAGE value="refactor: changing method valida cpf" />
+    <MESSAGE value="refactor: add attribute dataFinalizado, changing method to string and method setDiagnostico" />
+    <MESSAGE value="feat: add CNPJ class" />
+    <MESSAGE value="refactor: add a diagnosticos list attribute and changing method atualiza diagnostico" />
+    <MESSAGE value="refactor: add Gson dependency from google" />
+    <MESSAGE value="refactor: changing method pegarInformacoesEnderecoPoCep" />
+    <MESSAGE value="test: add test in EnderecoTest class" />
+    <MESSAGE value="refactor: changing junit dependency" />
+    <MESSAGE value="refactor: making changes" />
+    <MESSAGE value="feat: AutomovelTest class" />
+    <MESSAGE value="feat: MinimoInformacaoTest class" />
+    <MESSAGE value="feat: UsuarioComumTest class" />
+    <MESSAGE value="feat: UsuarioPortoTest class" />
+    <MESSAGE value="refactor: changing OficinaTest class" />
+    <MESSAGE value="refactor: changing DiagnosticoTest class" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: changing DiagnosticoTest class" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java$EnderecoTest.ic" NAME="EnderecoTest Coverage Results" MODIFIED="1716087568941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.domain.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java$java_in_Java.ic" NAME="java in Java Coverage Results" MODIFIED="1716159789848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Java$Main.ic" NAME="Main Coverage Results" MODIFIED="1715702265948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.usuarios.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java$com_example_domain_in_Java.ic" NAME="com.example.domain in Java Coverage Results" MODIFIED="1716204585130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.domain.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java$com_example_in_Java.ic" NAME="com.example in Java Coverage Results" MODIFIED="1716291045238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java$domain_in_Java.ic" NAME="domain in Java Coverage Results" MODIFIED="1716158106035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>
