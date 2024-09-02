@@ -169,13 +169,17 @@ export const ChatBotPageStyle = styled.main`
 
 `
 
-export const ColaboradoresPageStyle = styled.main`
-    margin: 1em;
-
+export const SetaVoltarStyle = styled.div`
     .link__imagem {
         width: 5%;
         margin-bottom: 1em;
     }
+`
+
+export const ColaboradoresPageStyle = styled.main`
+    margin: 1em;
+
+    
 
     .colaboradores {
         display: flex;
@@ -239,6 +243,71 @@ export const ColaboradoresPageStyle = styled.main`
 
     .links__link--imagem {
         width: 5%;
+    }
+
+`
+
+export const LoginPageStyle = styled.main`
+    margin: 1em;
+
+    article {
+        width: 50%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 2em;
+    }
+
+    .container__titulos--titulo {
+        font-size: 5rem;
+    }
+    .container__titulos--subtitulo {
+        font-size: 2rem;
+    }
+
+    .nome__input {
+        font-size: 1.5rem;
+        margin: 1em 0 0.6em 10px;
+    }
+
+    .input {
+        width: 80%;
+        padding: 1.5em 1em;
+        border-radius: 50px;
+        background-color: var(--cinza-claro);
+        border: none;
+    }
+
+    .input::placeholder {
+        color: var(--preto);
+    }
+
+    .esqueceu__senha {
+        display: flex;
+        justify-content: end;
+        width: 80%;
+        margin: 1em 0;
+        color: var(--azul);
+    }
+
+    .div__botao {
+        width: 80%;
+        text-align: center;
+    }
+
+    .btn {
+        padding: 1em 8em;
+        font-weight: 700;
+        background-color: var(--azul);
+        border: none;
+        color: var(--branco);
+    }
+
+    .btn:hover {
+        background-color: var(--azul-claro);
+        color: var(--preto);
     }
 
 `
