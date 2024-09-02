@@ -27,8 +27,8 @@ export default function Colaboradores() {
                 }
             </section>
             <section className="links">
-                <a className="links__link" href="https://github.com/Challenge-Porto-Seguro/Challenge_Porto_Seguro"><img className="links__link--imagem" src={IconeGitHub} alt="icone do github" />Link do Projeto no GitHub</a>
-                <a className="links__link" href="https://www.figma.com/team_invite/redeem/853grbCAf7qkMOEln39byr"><img className="links__link--imagem" src={IconeFigma} alt="icone do figma" />Link do Projeto no Figma</a>
+                <a className="links__link" href="https://github.com/Challenge-Porto-Seguro/Challenge_Porto_Seguro" target="_blank"><img className="links__link--imagem" src={IconeGitHub} alt="icone do github" />Link do Projeto no GitHub</a>
+                <a className="links__link" href="https://www.figma.com/team_invite/redeem/853grbCAf7qkMOEln39byr" target="_blank"><img className="links__link--imagem" src={IconeFigma} alt="icone do figma" />Link do Projeto no Figma</a>
             </section>
             
         </ColaboradoresPageStyle>
