@@ -1,4 +1,3 @@
-import setaVoltar from "../../assets/icone_voltar.svg"
 import colaboradorPedro from "../../assets/fotos_contribuidores/foto_pedro.jpg"
 import ColaboradorThiago from "../../assets/fotos_contribuidores/foto_thiago.jpg"
 import IconeGitHub from "../../assets/github.png"
@@ -6,7 +5,7 @@ import IconeFigma from "../../assets/iconeFigma.webp"
 import Colaborador from "../../components/Colaborador";
 import { ListaColaboradores } from "../../types";
 import { ColaboradoresPageStyle } from "../../styledConfig";
-import { Link } from "react-router-dom";
+import SetaVoltar from "../../components/SetaVoltar";
 
 export default function Colaboradores() {
     document.title = "Colaboradores"
@@ -18,7 +17,7 @@ export default function Colaboradores() {
 
     return(
         <ColaboradoresPageStyle>
-            <Link to="/" className="link"><img className="link__imagem" src={setaVoltar} alt="seta de voltar" /></Link>
+            <SetaVoltar />
             <section className="colaboradores">
                 {   
                     colaboradores.map((colab, index) => (
