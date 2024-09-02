@@ -1,6 +1,6 @@
 CREATE TABLE T_PS_PRODUTO (
     cd_produto NUMBER(10) PRIMARY KEY,
-    preco NUMBER(4, 2) NOT NULL,
+    preco NUMBER(4, 2) NOT NULL CHECK(preco > 0),
     descricao CHAR(255),
     nome CHAR(255)
 );
@@ -12,8 +12,8 @@ DROP TABLE T_PS_PRODUTO;
 CREATE TABLE  T_PS_Minimo_Informacoes(
     cd_minino_informacoes int primary key,
     nome CHAR(255) NOT NULL,
-    email CHAR(255) NOT NULL,
-    senha CHAR(255) NOT NULL
+    email CHAR(255) NOT NULL CHECK (INSTR(email, '@') > 0),
+    senha CHAR(255) NOT NULL CHECK(senha >= 8)
 );
 
 SELECT * FROM T_PS_Minimo_Informacoes;
@@ -21,9 +21,9 @@ DESC T_PS_Minimo_Informacoes;
 DROP TABLE T_PS_Minimo_Informacoes;
 
 CREATE TABLE  T_PS_OFICINA(
-    cnpj CHAR(14) PRIMARY KEY,
+    cnpj CHAR(14) PRIMARY KEY CHECK(lENGTH(cnpj) = 14),
     InscricaoEstadual CHAR(12) NOT NULL,
-    valorPagar NUMBER(10,2),
+    valorPagar NUMBER(10,2) CHECK(ValorPagar > 0),
     oficina_minino_informacoes int,
     CONSTRAINT oficina_minino_informacoes FOREIGN KEY(oficina_minino_informacoes) REFERENCES T_PS_Minimo_Informacoes(cd_minino_informacoes)
 );
@@ -33,10 +33,10 @@ DESC T_PS_OFICINA;
 DROP TABLE T_PS_OFICINA;
 
 CREATE TABLE T_PS_USUARIO_COMUM(
-    cpf CHAR(11) PRIMARY KEY,
+    cpf CHAR(11) PRIMARY KEY CHECK(lENGTH(cpf) = 11),
     QuantidadeOrcamento NUMERIC(10) NOT NULL,
     DataOrcamento DATE,
-    comum_minino_informacoes int,
+    comum_minino_informacoes INT,
     CONSTRAINT comum_minino_informacoes FOREIGN KEY (comum_minino_informacoes) REFERENCES T_PS_Minimo_Informacoes(cd_minino_informacoes)
 );
 
@@ -45,7 +45,7 @@ DESC T_PS_USUARIO_COMUM;
 DROP TABLE T_PS_USUARIO_COMUM;
 
 CREATE TABLE T_PS_USUARIO_PORTO (
-    CPF CHAR(11) PRIMARY KEY,
+    CPF CHAR(11) PRIMARY KEY CHECK(lENGTH(CPF) = 11),
     CodigoSeguro CHAR(15) NOT NULL,
     QuantidadeOrcamento NUMBER(10) NOT NULL,
     DataUltimoOrcamento DATE,
@@ -99,14 +99,14 @@ CREATE TABLE T_PS_DIAGNOSTICO (
     CONSTRAINT fk_diagnostico_automovel FOREIGN KEY (fk_diagnostico_automovel) REFERENCES T_PS_AUTOMOVEL(cd_automovel)
 );
 
-SELECT * FROM T_PS_AUTOMOVEL;
-DESC T_PS_AUTOMOVEL;
-DROP TABLE T_PS_AUTOMOVEL;
+SELECT * FROM T_PS_DIAGNOSTICO;
+DESC T_PS_DIAGNOSTICO;
+DROP TABLE T_PS_DIAGNOSTICO;
 
 CREATE TABLE T_PS_ORCAMENTO (
     cd_orcamento NUMBER(10) PRIMARY KEY,
-    valor_total NUMBER(5, 2),
-    status_orcamento CHAR(255) NOT NULL,
+    valor_total NUMBER(5, 2) CHECK (valor_total > 0),
+    status_orcamento CHAR(255) NOT NULL CHECK(status_orcamento IN('Aberto', 'Fechado', 'Cancelado')),
     orcamento_minino_informacoes int,
     CONSTRAINT orcamento_minino_informacoes FOREIGN KEY (orcamento_minino_informacoes) REFERENCES T_PS_Minimo_Informacoes(cd_minino_informacoes),
     fk_orcamento_automovel int,
@@ -119,7 +119,7 @@ DROP TABLE T_PS_ORCAMENTO;
 
 CREATE TABLE T_PS_PEDIDO (
     cd_pedido NUMBER(10) PRIMARY KEY,
-    quantidade NUMBER(3) NOT NULL,
+    quantidade NUMBER(3) NOT NULL CHECK (quantidade > 0 AND quantidade < 1000),
     valor NUMBER(4, 2),
     fk_produto int,
     CONSTRAINT fk_produto FOREIGN KEY (fk_produto) REFERENCES T_PS_PRODUTO(cd_produto)
