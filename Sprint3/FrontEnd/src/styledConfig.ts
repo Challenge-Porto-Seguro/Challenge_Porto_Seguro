@@ -122,7 +122,7 @@ export const HomeStyle = styled.main`
 export const FooterStyle = styled.footer`
     display: flex;
     justify-content: space-between;
-    background-color: #007FFF;
+    background-color: var(--azul);
     padding: 1em 1.3em;
     color: var(--branco);
     text-transform: uppercase;
