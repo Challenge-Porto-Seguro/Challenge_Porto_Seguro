@@ -168,3 +168,77 @@ export const ChatBotPageStyle = styled.main`
     }
 
 `
+
+export const ColaboradoresPageStyle = styled.main`
+    margin: 1em;
+
+    .link__imagem {
+        width: 5%;
+        margin-bottom: 1em;
+    }
+
+    .colaboradores {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 2em 0;
+    }
+
+    .colaborador {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+        border: 2px solid var(--preto);
+        padding: 1em;
+        border-radius: 20px;
+    }
+
+    .colaborador__imagem{
+        width: 50%;
+        border-radius: 50%;
+    }
+
+    .colaborador__nomerm {
+        font-family: var(--fonte-secundaria);
+        font-size: 2rem;
+    }
+
+    .colaborador__github {
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: var(--preto);
+    }
+
+    .colaborador__github:hover {
+        color: #007FFF;
+    }
+
+    .links {
+        margin: 1.5em 0;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .links__link {
+        color: var(--preto);
+        font-size: 2rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 0 auto;
+    }
+
+    .links__link:hover {
+        color: var(--azul);
+    }
+
+    .links__link--imagem {
+        width: 5%;
+    }
+
+`
