@@ -41,6 +41,10 @@ export const HeaderStyle = styled.header`
         font-weight: 700;
     }
 
+    .header__botao:hover {
+        background-color: var(--azul);
+    }
+
 `
 
 export const ErrorStyle = styled.main`
