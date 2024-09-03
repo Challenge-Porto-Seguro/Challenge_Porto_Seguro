@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: changing DiagnosticoTest class" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: starting sprint 3 implementation">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/DaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/db/DB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/db/DbException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/impl/AutomovelDaoJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Automovel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,11 +26,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,7 +54,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.Teste.executor": "Run",
     "Application.teste.executor": "Run",
+    "JUnit.AutomovelTest.executor": "Run",
     "JUnit.AutomovelTest.se_ano_igual_20_10_2005_ano_formatado_igual_20_10_2005.executor": "Run",
     "JUnit.AutomovelTest.se_ano_igual_depois_de_hoje_retorna_erro.executor": "Run",
     "JUnit.AutomovelTest.se_ano_igual_null_retorna_erro.executor": "Run",
@@ -104,6 +118,7 @@
     "JUnit.domain in Java.executor": "Coverage",
     "JUnit.java in Java.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
@@ -127,14 +142,30 @@
       <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pedro Henrique\OneDrive\Documentos\Challenge_Porto_Seguro\Sprint3\Java" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example" />
       <recent name="com.example.domain" />
       <recent name="com.example.domain.usuarios" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.example in Java">
-    <configuration name="DiagnosticoTest.se_diagnostico_to_string_retorna_algumas_informacoes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Teste">
+    <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Teste" />
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AutomovelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -143,9 +174,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.example.domain.DiagnosticoTest" />
-      <option name="METHOD_NAME" value="se_diagnostico_to_string_retorna_algumas_informacoes" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.example.domain.AutomovelTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,22 +191,6 @@
       <option name="PACKAGE_NAME" value="com.example.domain" />
       <option name="MAIN_CLASS_NAME" value="com.example.domain.OrcamentoTest" />
       <option name="METHOD_NAME" value="se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrcamentoTest.se_tiver_2_pedido_de_100_50_valor_total_igual_201" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.example.domain.OrcamentoTest" />
-      <option name="METHOD_NAME" value="se_tiver_2_pedido_de_100_50_valor_total_igual_201" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,13 +225,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Teste" />
+      <item itemvalue="JUnit.AutomovelTest" />
+      <item itemvalue="JUnit.com.example in Java" />
+      <item itemvalue="JUnit.OrcamentoTest.se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603" />
+      <item itemvalue="JUnit.ValidaInformacoesMinimoInformacaoTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Teste" />
+        <item itemvalue="JUnit.AutomovelTest" />
         <item itemvalue="JUnit.com.example in Java" />
         <item itemvalue="JUnit.ValidaInformacoesMinimoInformacaoTest" />
         <item itemvalue="JUnit.OrcamentoTest.se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603" />
-        <item itemvalue="JUnit.OrcamentoTest.se_tiver_2_pedido_de_100_50_valor_total_igual_201" />
-        <item itemvalue="JUnit.DiagnosticoTest.se_diagnostico_to_string_retorna_algumas_informacoes" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +275,7 @@
       <workItem from="1716204003017" duration="18149000" />
       <workItem from="1716288759645" duration="2987000" />
       <workItem from="1716503036656" duration="23000" />
-      <workItem from="1725275415495" duration="510000" />
+      <workItem from="1725275415495" duration="18133000" />
     </task>
     <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
       <option name="closed" value="true" />
@@ -464,7 +485,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716260012095</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: starting sprint 3 implementation">
+      <option name="closed" value="true" />
+      <created>1725277445641</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1725277445641</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Começo da implementação sprint 2 java" />
     <MESSAGE value="feat: add validation to classes" />
     <MESSAGE value="refactor: changing class name" />
     <MESSAGE value="refactor: deleting validaDados in childs classes and add in class mother and changing alterarSenha" />
@@ -532,7 +560,8 @@
     <MESSAGE value="feat: UsuarioPortoTest class" />
     <MESSAGE value="refactor: changing OficinaTest class" />
     <MESSAGE value="refactor: changing DiagnosticoTest class" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: changing DiagnosticoTest class" />
+    <MESSAGE value="feat: starting sprint 3 implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: starting sprint 3 implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
