@@ -12,6 +12,7 @@ import java.util.Optional;
 
 public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados {
 
+    private Long id;
     private String nome;
     private String email;
     private String senha;
@@ -25,6 +26,14 @@ public abstract class MinimoInformacao implements FazerOrcamento, VerificaDados 
         this.email = email;
         this.senha = senha;
         this.endereco = endereco;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {

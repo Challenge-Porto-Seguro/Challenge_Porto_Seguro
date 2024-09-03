@@ -9,8 +9,7 @@ import java.util.List;
 
 public class Diagnostico {
 
-    public static int sequencia = 1;
-    private int id;
+    private Long id;
     private String descricao;
     private Date data;
     private Date dataFinalizado;
@@ -18,7 +17,6 @@ public class Diagnostico {
     private List<Orcamento> orcamentos = new ArrayList<>();
 
     public Diagnostico(String descricao) {
-        id += sequencia++;
         this.descricao = descricao;
         this.data = new Date();
         this.verificador = VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO;
@@ -36,8 +34,12 @@ public class Diagnostico {
         return verificador;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getDataFinalizado() {

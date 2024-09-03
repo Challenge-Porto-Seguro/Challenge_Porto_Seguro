@@ -2,6 +2,7 @@ package com.example.domain;
 
 public class Pedido {
 
+    private Long id;
     private int quantidade;
     private double valorTotal;
     private Produto produto;
@@ -13,6 +14,14 @@ public class Pedido {
 
     public int getQuantidade() {
         return quantidade;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public double getValorTotal() {

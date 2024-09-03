@@ -2,6 +2,7 @@ package com.example.domain;
 
 public class Produto {
 
+    private Long id;
     private String nome;
     private String descricao;
     private double preco;
@@ -10,6 +11,14 @@ public class Produto {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getNome() {

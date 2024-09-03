@@ -8,8 +8,7 @@ import java.util.List;
 
 public class Orcamento {
 
-    private static int sequencia = 1;
-    private int id;
+    private Long id;
     private double valorTotal;
     private LocalDate diaOrcamento;
     private List<Pedido> pedidos = new ArrayList<>();
@@ -17,7 +16,6 @@ public class Orcamento {
 
     public Orcamento() {
         this.statusOrcamento = StatusOrcamento.ATIVO;
-        id += sequencia++;
         diaOrcamento = LocalDate.now();
     }
 
@@ -29,6 +27,14 @@ public class Orcamento {
 
         this.valorTotal = total;
         return valorTotal;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public List<Pedido> getPedidos() {

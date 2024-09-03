@@ -38,6 +38,10 @@ public class Automovel {
         }
     }
 
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
