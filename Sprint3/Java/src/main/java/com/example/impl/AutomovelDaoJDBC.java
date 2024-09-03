@@ -53,7 +53,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                update automoveis set (marca, modelo, placa , ano) values (?, ?, ?, ?) where id = ?
+                update automoveis set marca = ?, modelo = ?, placa = ?, ano = ? where id = ?
             """);
             if (automovel.getMarca() != null) {
                 ps.setString(1, automovel.getMarca());
@@ -67,6 +67,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
             if (automovel.getAno() != null) {
                 ps.setDate(4, new Date(automovel.getAno().getTime()));
             }
+            ps.setInt(5, automovel.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
