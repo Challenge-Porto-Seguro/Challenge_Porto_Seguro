@@ -38,6 +38,10 @@ public class Automovel {
         }
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getMarca() {
         return marca;
     }
@@ -79,5 +83,18 @@ public class Automovel {
         diagnostico.diagnosticoResolvido();
         diagnosticos.add(diagnostico);
         diagnostico = null;
+    }
+
+    @Override
+    public String toString() {
+        return "Automovel{" +
+                "id=" + id +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", placa='" + placa + '\'' +
+                ", ano=" + ano +
+                ", diagnostico=" + diagnostico +
+                ", diagnosticos=" + diagnosticos +
+                '}';
     }
 }
