@@ -1,0 +1,12 @@
+THIAGO THOMAZ – RM:557992
+PEDRO HENRIQUE DOS SANTOS – RM:559064
+
+A tabela apresentada é uma ferramenta essencial para a avaliação detalhada das condições de um veículo, categorizando os danos em "EXTERNAS" e "INTERNAS" e são classificados em três níveis de gravidade: leve, moderada e grave. Essa classificação é crucial para determinar a prioridade dos reparos. Danos classificados como graves, como falhas no sistema de ar-condicionado ou problemas no sistema de ignição, indicam que o veículo pode ter problemas de segurança ou funcionamento que precisam de atenção imediata. Já os danos leves e moderados, como desgastes estéticos ou pequenas falhas, embora menos urgentes, ainda são relevantes, especialmente para manter o valor de mercado do veículo.
+
+A localização dos danos, seja na parte externa ou interna, oferece uma visão ampla de onde os problemas estão concentrados, auxiliando na identificação de áreas que podem afetar tanto a funcionalidade quanto a estética do veículo. Isso é particularmente importante para nosso chat, que pode usar essa informação para estimar custos de reparo e planejar manutenções de forma mais eficiente.
+
+Segue a baixo os links dos sites com as fontes:
+https://oficinaperto.com.br/artigos/carro-defeito/		
+https://blog.portoseguro.com.br/os-10-problemas-mais-comuns-em-carros-e-como-evita-los		
+https://blog.autoglassonline.com.br/defeitos-mais-comuns-em-veiculos/		
+https://www.kaggle.com/datasets/lplenka/coco-car-damage-detection-dataset/data		
