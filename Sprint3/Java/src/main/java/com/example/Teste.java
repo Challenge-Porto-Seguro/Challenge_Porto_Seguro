@@ -12,13 +12,14 @@ public class Teste {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         AutomovelDao automovelDao = DaoFactory.createAutomovelDao();
 
-        System.out.println("teste 1 ");
-        Automovel automovel = new Automovel("Tesla", "model x", "AAA1234", sdf.parse("20/10/2005"));
-        automovelDao.insert(automovel);
-
         System.out.println("Teste 2");
         System.out.println(automovelDao.findById(1));
 
-
+        System.out.println("Teste 3");
+        Automovel automovel1 = automovelDao.findById(1).get();
+        System.out.println(automovel1);
+        automovel1.setMarca("Ola mundo");
+        automovelDao.update(automovel1);
+        System.out.println(automovelDao.findById(1).get());
     }
 }
