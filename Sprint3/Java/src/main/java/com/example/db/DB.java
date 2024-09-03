@@ -26,6 +26,7 @@ public class DB {
         try (FileInputStream fs = new FileInputStream("db.properties")) {
             Properties props = new Properties();
             props.load(fs);
+            props.setProperty("password", System.getenv("DB_PASSWORD"));
             return props;
         } catch (IOException e) {
             throw new DbException(e.getMessage());
