@@ -15,33 +15,20 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_minimo_informacoes" id="581BCBD5-9021-63AA-FAE9-3CDC9E30CA57">
+<Attribute name="cd_minimo_informacoes" id="6D20BCE9-9D60-C739-455B-29382902056E">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-05-21 12:57:00 UTC</createdTime>
-<generatorID>E5185E62-AFD9-A7A0-0800-B0524D527C9F</generatorID>
+<createdTime>2024-09-03 23:26:55 UTC</createdTime>
+<generatorID>C87149DA-1D64-9AFA-2175-7CC64EB0E92C</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
-<referedAttribute>3DCD207D-F524-2E29-CDA4-D0346BA08DEB</referedAttribute>
+<referedAttribute>167133AA-B8DE-CA2A-71C5-462E5B6B9769</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="sq_cpf" id="3CFE75AC-CBFE-F8C4-66BD-0BC5C8B03259">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-05-21 12:52:02 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>11</dataTypeSize>
-<ownDataTypeParameters>11,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="sq_codigo_seguro" id="A53CB288-290E-DD49-B549-87F9B1E96300">
 <createdBy>Pedro Henrique</createdBy>
@@ -52,7 +39,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>15</dataTypeSize>
 <ownDataTypeParameters>15,,</ownDataTypeParameters>
 </Attribute>
@@ -93,8 +80,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>581BCBD5-9021-63AA-FAE9-3CDC9E30CA57</attributeRef>
-<attributeRef>3CFE75AC-CBFE-F8C4-66BD-0BC5C8B03259</attributeRef>
+<attributeRef>6D20BCE9-9D60-C739-455B-29382902056E</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

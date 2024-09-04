@@ -15,33 +15,20 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_minimo_informacoes" id="3E0127EF-AD9E-AC1E-D674-FA75DE648AFA">
+<Attribute name="cd_minimo_informacoes" id="919A9EBB-C52D-1DFB-E05E-D3A188C688B2">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-05-21 12:58:09 UTC</createdTime>
-<generatorID>6B268320-AC2E-E3A9-81F9-47AE54B48CCE</generatorID>
+<createdTime>2024-09-03 23:26:55 UTC</createdTime>
+<generatorID>F98EFAC6-C84D-CCE5-42D8-A3A0ADCF8872</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
-<referedAttribute>3DCD207D-F524-2E29-CDA4-D0346BA08DEB</referedAttribute>
+<referedAttribute>167133AA-B8DE-CA2A-71C5-462E5B6B9769</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="sq_cpf" id="2AB620C5-B12A-A133-2C91-B482FE4158FD">
-<createdBy>thmaz</createdBy>
-<createdTime>2024-04-22 17:40:39 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>11</dataTypeSize>
-<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="qt_orcamento_mes" id="4FD15F11-9DEB-18C5-B98B-21CC6E9C2B09">
 <createdBy>Pedro Henrique</createdBy>
@@ -69,21 +56,6 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_usuario" id="53EAF96D-57C4-F603-17D8-921450E5EAD5">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-08-24 00:03:31 UTC</createdTime>
-<generatorID>0BFAD984-BA6B-DCF7-669F-AAFA0C0056D1</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<referedAttribute>312D4B44-E25C-AB0B-F7EA-9F0AA087D47B</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="8A51DF04-D5A1-AD48-085B-E3244A1EFEEC" name="USUARIO PK">
@@ -95,8 +67,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>3E0127EF-AD9E-AC1E-D674-FA75DE648AFA</attributeRef>
-<attributeRef>2AB620C5-B12A-A133-2C91-B482FE4158FD</attributeRef>
+<attributeRef>919A9EBB-C52D-1DFB-E05E-D3A188C688B2</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

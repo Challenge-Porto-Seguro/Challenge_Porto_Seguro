@@ -1,15 +1,14 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="24438847-1A29-CB16-9756-A981DD28F6BF" name="Arc_1">
+<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="467939D1-AB07-9CA4-9008-40DA5B4E6AC9" name="Arc_2">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-05-21 12:58:24 UTC</createdTime>
+<createdTime>2024-09-03 23:28:15 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
 <entity>F628DF86-3029-8D75-3893-498AA1373767</entity>
 <relations>
-<relationID>6B268320-AC2E-E3A9-81F9-47AE54B48CCE</relationID>
-<relationID>E5185E62-AFD9-A7A0-0800-B0524D527C9F</relationID>
+<relationID>BCCDFB7F-DB41-2E16-C47E-4DEEA44CE7DA</relationID>
 <relationID>8E1E8936-C8B7-55A4-0AEC-758634C9A0D4</relationID>
 </relations>
 </Arc>

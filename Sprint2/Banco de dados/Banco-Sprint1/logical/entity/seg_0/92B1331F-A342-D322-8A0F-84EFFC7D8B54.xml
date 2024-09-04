@@ -28,20 +28,20 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_minimo_informacoes" id="693AA28A-99A4-7533-BCC3-8C7E45B2B310">
+<Attribute name="cd_minimo_informacoes" id="83D3BF1D-A1FD-2B9A-A678-880DF6E9C6B4">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-05-21 13:00:40 UTC</createdTime>
-<generatorID>B6AE1734-A36D-ACF1-B5AC-631B3A3D527B</generatorID>
+<createdTime>2024-09-03 23:31:58 UTC</createdTime>
+<generatorID>8E6E9297-F3A5-BB46-F126-43120277D86F</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
-<referedAttribute>3DCD207D-F524-2E29-CDA4-D0346BA08DEB</referedAttribute>
+<referedAttribute>167133AA-B8DE-CA2A-71C5-462E5B6B9769</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="sq_placa" id="FB9964EF-6B6C-0F71-F378-EB6E8BDE7B78">
 <createdBy>thmaz</createdBy>
@@ -52,7 +52,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>11</dataTypeSize>
 <ownDataTypeParameters>11,,</ownDataTypeParameters>
 </Attribute>
@@ -65,7 +65,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
@@ -78,7 +78,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
@@ -104,7 +104,7 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
@@ -120,7 +120,7 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>6562A2F2-D3AC-F003-0B2F-E933B77E8ACA</attributeRef>
-<attributeRef>693AA28A-99A4-7533-BCC3-8C7E45B2B310</attributeRef>
+<attributeRef>83D3BF1D-A1FD-2B9A-A678-880DF6E9C6B4</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
