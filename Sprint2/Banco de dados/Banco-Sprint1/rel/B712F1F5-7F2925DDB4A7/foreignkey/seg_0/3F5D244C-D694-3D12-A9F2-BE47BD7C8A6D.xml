@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3F5D244C-D694-3D12-A9F2-BE47BD7C8A6D" containerWithKeyObject="2122CBC9-A4C2-1048-F1D4-7B59D68F3654" localFKIndex="5383EE2B-5386-912D-18F5-3C03C4A264FB" name="FK_MINIMO_INFORMACAO_OFICINA">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>8E1E8936-C8B7-55A4-0AEC-758634C9A0D4</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<referredTableLongName>T_PS_MINIMO_INFORMACOES</referredTableLongName>
+<arc>D9275568-A12B-31AA-163F-16BC9546233B</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>073E9F9E-C388-6973-4A0F-4A3B6AC88AAF</referredTableID>
+<keyObject>80A7F00A-0B0E-18BD-896F-54D93FBDAF14</keyObject>
+<referredKeyID>80A7F00A-0B0E-18BD-896F-54D93FBDAF14</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_minimo_informacoes</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

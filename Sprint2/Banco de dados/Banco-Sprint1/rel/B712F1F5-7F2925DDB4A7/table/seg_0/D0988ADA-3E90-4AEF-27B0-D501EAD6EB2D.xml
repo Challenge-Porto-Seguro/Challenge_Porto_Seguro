@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D0988ADA-3E90-4AEF-27B0-D501EAD6EB2D" name="T_PS_ORCAMENTO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>97221D97-8CB5-072B-CBF7-5D0943C9283E</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_orcamento" id="D31CBDB7-BDFE-17BD-F638-A9F8EB5B0687">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>7A38B30B-EAF6-1377-2C65-23C6F52C10D3</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_diagnostico" id="A401F5DB-4789-449C-B423-68708136E1D7">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>04BBCEF9-608A-920B-00E5-08D10007198E</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46CB06F7-000F-8C1E-0A21-861D5AC86231" referredColumn="E9BE0FD4-8288-0F44-19CF-2CDC2013275F"/>
+</associations>
+</Column>
+<Column name="st_orcamento" id="3A25319B-9EDB-A8E9-F5D9-CBF9C0D382DF">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>54BE0754-1128-49E2-6767-C1F0A774216F</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<constraintName>CK_T_PS_STATUS_ORCAMENTO</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<listOfValues>
+<valueDef value="A" description="O orçamento esta ativo e operante"/>
+<valueDef value="I" description="O orçamento esta inativo e inoperante"/>
+</listOfValues>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6688B618-745A-72DA-58FF-516BA5B5E090" name="ORCAMENTO_PK">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>9BBED5DD-D8AD-E109-0EEA-989BA9A52727</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D31CBDB7-BDFE-17BD-F638-A9F8EB5B0687"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A95F20B7-128E-FD57-BE58-58C37033AEC6" name="FK_DIAGNOSTICO_ORCAMENTO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>4FEAF39D-CF16-F0D4-BF56-16682B4FF626</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A401F5DB-4789-449C-B423-68708136E1D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

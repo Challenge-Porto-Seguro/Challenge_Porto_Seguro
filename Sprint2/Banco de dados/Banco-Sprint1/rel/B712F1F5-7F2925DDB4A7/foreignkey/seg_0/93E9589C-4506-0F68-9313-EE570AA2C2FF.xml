@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="93E9589C-4506-0F68-9313-EE570AA2C2FF" containerWithKeyObject="455B6625-48B8-CDED-E502-28FB4CD7BE74" localFKIndex="434CEDFC-9C43-D913-3A54-D14839BC6184" name="FK_USUARIO_USUARIO_PORTO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>F98EFAC6-C84D-CCE5-42D8-A3A0ADCF8872</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<referredTableLongName>T_PS_USUARIO</referredTableLongName>
+<arc>1AC542C4-E6F4-5A19-2032-892C0039626E</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0F15D029-3CC2-C4CE-86DA-70A570E20523</referredTableID>
+<keyObject>909DD56D-661C-6C60-1184-9FADCD213CFE</keyObject>
+<referredKeyID>909DD56D-661C-6C60-1184-9FADCD213CFE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_minimo_informacoes</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="538CC970-B579-613F-BD79-E55C6D806048" name="T_PS_AUTOMOVEL">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>92B1331F-A342-D322-8A0F-84EFFC7D8B54</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_automovel" id="B66399C6-EA12-8A0C-9C28-DF028AD77893">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>6562A2F2-D3AC-F003-0B2F-E933B77E8ACA</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_minimo_informacoes" id="BE4DD43C-A0B1-7470-1968-A59E25810C66">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>83D3BF1D-A1FD-2B9A-A678-880DF6E9C6B4</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="201C1F28-6230-1018-B73D-28767CB47049" referredColumn="AE6AE5B3-8B7F-02E8-B231-55722366F2B2"/>
+</associations>
+</Column>
+<Column name="sq_placa" id="A98F3BBC-A95C-BA8E-3F27-D71778BE890D">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>FB9964EF-6B6C-0F71-F378-EB6E8BDE7B78</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_marca_veiculo" id="2BF44158-FF0C-C681-90C2-3094356945E5">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>CC343249-3FC0-C2A0-F764-73D656F691DD</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_modelo_veiculo" id="1BF095E0-2543-6032-6AFF-1EA27AD527B3">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>60FBD271-5E89-FEBE-CAC4-CAECFE46C4ED</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_veiculo" id="30D5083D-6242-6F58-599F-F499096BAF45">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>A714965B-6B57-3E42-A7B9-2F6997AAC98B</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tx_diagnostico" id="679488C1-8016-6BD1-0CD9-2B3C5715EF83">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>C89BF415-40E4-8378-8F59-EC2883B51E7A</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F56D6BAB-B4C4-20EC-065B-45794E26E167" name="AUTOMOVEL_PK">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>ECE78717-075B-C0CA-1FF9-1E7898ACA1ED</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B66399C6-EA12-8A0C-9C28-DF028AD77893"/>
+<colUsage columnID="BE4DD43C-A0B1-7470-1968-A59E25810C66"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC464F19-1091-1BBA-8038-64F7FD43E2FB" name="UK_PS_SQ_PLACA">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>B259730A-F953-2AF5-0F99-E01BD2DED796</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A98F3BBC-A95C-BA8E-3F27-D71778BE890D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2533CC4C-B1EF-5217-EBC4-0534CA49D2E4" name="FK_USUARIO_AUTOMOVEL">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>8E6E9297-F3A5-BB46-F126-43120277D86F</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE4DD43C-A0B1-7470-1968-A59E25810C66"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="D9275568-A12B-31AA-163F-16BC9546233B" name="INFORMACOES_PRIMARIAS">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>073E9F9E-C388-6973-4A0F-4A3B6AC88AAF</table>
+<fkeys>
+<fkeyID>CD3B7D3D-144F-8F65-1473-1C927478F540</fkeyID>
+<fkeyID>3F5D244C-D694-3D12-A9F2-BE47BD7C8A6D</fkeyID>
+</fkeys>
+</FKArc>

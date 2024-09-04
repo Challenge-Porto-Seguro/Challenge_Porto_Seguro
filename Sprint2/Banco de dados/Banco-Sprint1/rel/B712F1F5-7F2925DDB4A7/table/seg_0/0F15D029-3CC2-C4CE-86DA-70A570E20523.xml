@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0F15D029-3CC2-C4CE-86DA-70A570E20523" name="T_PS_USUARIO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>32A9E474-ED75-6BEA-0A1C-028706852321</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_minimo_informacoes" id="AE6AE5B3-8B7F-02E8-B231-55722366F2B2">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>167133AA-B8DE-CA2A-71C5-462E5B6B9769</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD3B7D3D-144F-8F65-1473-1C927478F540" referredColumn="A028DA96-C11C-AF1D-48AF-0E6F8CC7F1F5"/>
+</associations>
+</Column>
+<Column name="sq_cpf" id="EB877807-B873-FDB0-6FDB-9A095803FCCA">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>A07BBF0D-33EB-FCBA-5CE8-1567A2F4CCF9</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="909DD56D-661C-6C60-1184-9FADCD213CFE" name="T_PS_USUARIO_PK">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>8740FBF9-CDAF-8671-38A7-8C3336F22E83</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE6AE5B3-8B7F-02E8-B231-55722366F2B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5799470A-15DD-3147-5832-0CC5B939D154" name="UK_PS_SQ_CPF">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>62FC0E73-F142-7C1A-5500-BA21635458B7</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB877807-B873-FDB0-6FDB-9A095803FCCA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B923BA38-727C-6033-339C-A0E2678643FF" name="FK_MINIMO_INFROMACOES_USUARIO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>BCCDFB7F-DB41-2E16-C47E-4DEEA44CE7DA</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE6AE5B3-8B7F-02E8-B231-55722366F2B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

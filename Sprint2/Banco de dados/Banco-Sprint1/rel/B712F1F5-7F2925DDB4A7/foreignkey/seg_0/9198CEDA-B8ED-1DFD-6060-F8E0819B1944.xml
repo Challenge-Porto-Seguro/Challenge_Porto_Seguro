@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9198CEDA-B8ED-1DFD-6060-F8E0819B1944" containerWithKeyObject="A6600BAC-FED8-A826-6899-31D964FAE7E8" localFKIndex="DC0C4822-68E3-9416-0182-77745F646B83" name="FK_OFICINA_DIAGNOSTICO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>A35A794D-3AAF-3857-AC89-0D7E12F32342</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<referredTableLongName>T_PS_OFICINA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2122CBC9-A4C2-1048-F1D4-7B59D68F3654</referredTableID>
+<keyObject>20F562ED-61C6-99BD-00A2-CA8C28231ED7</keyObject>
+<referredKeyID>20F562ED-61C6-99BD-00A2-CA8C28231ED7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_minimo_informacoes</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C23330C6-A26A-8BCE-06B7-A5F1808B86F3" containerWithKeyObject="34FFF789-6B08-FE6F-8A88-88DBB04EF704" localFKIndex="1022A9A3-2840-627D-9B9F-E8D50F281B0B" name="FK_MINIMO_INFORMACOES_ENDERECO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>1D5DFF92-C4BD-7D40-D493-AD4A8C986AF9</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<referredTableLongName>T_PS_MINIMO_INFORMACOES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>073E9F9E-C388-6973-4A0F-4A3B6AC88AAF</referredTableID>
+<keyObject>80A7F00A-0B0E-18BD-896F-54D93FBDAF14</keyObject>
+<referredKeyID>80A7F00A-0B0E-18BD-896F-54D93FBDAF14</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_minimo_informacoes</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

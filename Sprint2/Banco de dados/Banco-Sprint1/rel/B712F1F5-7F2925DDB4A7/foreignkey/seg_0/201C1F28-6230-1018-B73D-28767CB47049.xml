@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="201C1F28-6230-1018-B73D-28767CB47049" containerWithKeyObject="538CC970-B579-613F-BD79-E55C6D806048" localFKIndex="2533CC4C-B1EF-5217-EBC4-0534CA49D2E4" name="FK_USUARIO_AUTOMOVEL">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>8E6E9297-F3A5-BB46-F126-43120277D86F</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<referredTableLongName>T_PS_USUARIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0F15D029-3CC2-C4CE-86DA-70A570E20523</referredTableID>
+<keyObject>909DD56D-661C-6C60-1184-9FADCD213CFE</keyObject>
+<referredKeyID>909DD56D-661C-6C60-1184-9FADCD213CFE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_minimo_informacoes</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

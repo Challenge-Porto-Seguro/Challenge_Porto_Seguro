@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A6600BAC-FED8-A826-6899-31D964FAE7E8" name="T_PS_DIAGNOSTICO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>647B10E9-4219-C287-EA5C-3DB0A388895A</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_diagnostico" id="E9BE0FD4-8288-0F44-19CF-2CDC2013275F">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>DC1C915E-56A9-EC95-B276-DD3D1DB29C64</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_automovel" id="EC1521B5-3F87-42A2-21B3-B59A6AA7DD28">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>08F12F53-14B8-3C61-D0F6-4DAC1914F535</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C686BFA-5EFD-5B66-C3D1-D9834F64CBFD" referredColumn="B66399C6-EA12-8A0C-9C28-DF028AD77893"/>
+</associations>
+</Column>
+<Column name="cd_minimo_informacoes" id="BD36C550-0169-5C27-FF5E-AA9F2B75AB12">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>5DCBD75F-EBEC-19F1-23DF-F76D2BB6E4EC</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C686BFA-5EFD-5B66-C3D1-D9834F64CBFD" referredColumn="BE4DD43C-A0B1-7470-1968-A59E25810C66"/>
+</associations>
+</Column>
+<Column name="nm_descricao_diagnostico" id="16BE5341-31D6-ABB3-F155-B60580E63B54">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>4F5BB288-BC63-60D5-63ED-EAB33839370B</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_inicio_diagnostico" id="1CE4EB71-1D11-E059-2B2C-6245E50C308C">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>D9373E08-22CE-7564-A8DC-F4289DBFD938</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_fim_diagnostico" id="591E0175-9157-D342-9D0E-C06829200612">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>37312F28-8FFD-8348-B933-353068150CF7</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="st_diagnostico" id="957EA73A-E33B-8B52-EC29-A5666A92188B">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>00AA2A4F-FECB-5FD8-78A8-57F8098CD9AE</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<constraintName>CK_T_PS_STATUS_DIAGNOSTICO</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<listOfValues>
+<valueDef value="A" description="O diagnostico esta ativo e operante"/>
+<valueDef value="I" description="O diagnostico esta inativo e inoperante"/>
+</listOfValues>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_minimo_informacoes1" id="9178CB68-0462-E75F-222C-2631161691BD">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>C8C5CA95-491F-80C4-F093-582185937A1B</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9198CEDA-B8ED-1DFD-6060-F8E0819B1944" referredColumn="AAA0046D-876A-7DD9-AF2B-33290B99317B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B58AA89C-7F42-EE96-4F61-758B9EC6921F" name="T_PS_DIAGNOSTICO_PK">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>87EC4216-C528-2A8C-8E59-C6F627751945</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9BE0FD4-8288-0F44-19CF-2CDC2013275F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D9A514DE-7A2F-7B02-5916-BE1BEB62B2F6" name="FK_AUTOMOVEL_DIAGNOSTICO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>6FFC3C2D-576D-4771-E413-0A37DC6A5BCA</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC1521B5-3F87-42A2-21B3-B59A6AA7DD28"/>
+<colUsage columnID="BD36C550-0169-5C27-FF5E-AA9F2B75AB12"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC0C4822-68E3-9416-0182-77745F646B83" name="FK_OFICINA_DIAGNOSTICO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<generatorID>A35A794D-3AAF-3857-AC89-0D7E12F32342</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9178CB68-0462-E75F-222C-2631161691BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

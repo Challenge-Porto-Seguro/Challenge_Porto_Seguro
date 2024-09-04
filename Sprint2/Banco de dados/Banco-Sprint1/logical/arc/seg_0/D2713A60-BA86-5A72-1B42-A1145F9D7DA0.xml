@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="D2713A60-BA86-5A72-1B42-A1145F9D7DA0" name="Arc_3">
+<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="D2713A60-BA86-5A72-1B42-A1145F9D7DA0" name="USUARIOS">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:17:54 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
