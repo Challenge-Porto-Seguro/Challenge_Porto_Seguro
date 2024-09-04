@@ -15,6 +15,19 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_endereco" id="34B52D64-66D0-C33A-DF7F-36C741D54186">
+<createdBy>thmaz</createdBy>
+<createdTime>2024-04-22 17:52:18 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="cd_minimo_informacoes" id="21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 13:03:30 UTC</createdTime>
@@ -29,19 +42,6 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cd_endereco" id="34B52D64-66D0-C33A-DF7F-36C741D54186">
-<createdBy>thmaz</createdBy>
-<createdTime>2024-04-22 17:52:18 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nm_rua" id="939D4E51-433F-5CCC-33AF-C1EFBF9F872C">
 <createdBy>thmaz</createdBy>
@@ -133,7 +133,6 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>34B52D64-66D0-C33A-DF7F-36C741D54186</attributeRef>
-<attributeRef>21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

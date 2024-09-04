@@ -57,5 +57,17 @@
 <attributeRef>167133AA-B8DE-CA2A-71C5-462E5B6B9769</attributeRef>
 </usedAttributes>
 </identifier>
+<identifier id="62FC0E73-F142-7C1A-5500-BA21635458B7" name="UK_PS_SQ_CPF">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:30:14 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<newElementsIDs>A07BBF0D-33EB-FCBA-5CE8-1567A2F4CCF9</newElementsIDs>
+<usedAttributes>
+<attributeRef>A07BBF0D-33EB-FCBA-5CE8-1567A2F4CCF9</attributeRef>
+</usedAttributes>
+</identifier>
 </identifiers>
 </Entity>

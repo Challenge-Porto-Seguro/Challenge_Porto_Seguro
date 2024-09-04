@@ -54,6 +54,10 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>2</dataTypeSize>
+<listOfValues>
+<valueDef value="A" description="O orçamento esta ativo e operante"/>
+<valueDef value="I" description="O orçamento esta inativo e inoperante"/>
+</listOfValues>
 <ownDataTypeParameters>2,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

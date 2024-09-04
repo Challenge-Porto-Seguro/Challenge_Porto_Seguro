@@ -81,5 +81,17 @@
 <attributeRef>3DCD207D-F524-2E29-CDA4-D0346BA08DEB</attributeRef>
 </usedAttributes>
 </identifier>
+<identifier id="9D915A37-C12A-C2EF-C6F6-88D41AD5536A" name="UK_PS_NM_EMAIL">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:28:36 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<newElementsIDs>0C01165F-15E4-C684-3166-845B894B3106</newElementsIDs>
+<usedAttributes>
+<attributeRef>0C01165F-15E4-C684-3166-845B894B3106</attributeRef>
+</usedAttributes>
+</identifier>
 </identifiers>
 </Entity>

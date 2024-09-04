@@ -85,5 +85,29 @@
 <attributeRef>05C8761C-3C8F-D476-D2FC-94154535E537</attributeRef>
 </usedAttributes>
 </identifier>
+<identifier id="3404C15F-B667-4D4B-3181-8DB48D3ED7E7" name="UK_PS_SQ_CNPJ">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:32:38 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<newElementsIDs>0F20565A-AED1-FAEF-4B35-A0DF16074C9F</newElementsIDs>
+<usedAttributes>
+<attributeRef>0F20565A-AED1-FAEF-4B35-A0DF16074C9F</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="688DC8E2-43F8-43AF-08A2-3034ED69D944" name="UK_PS_INSCRICAO_ESTADUAL">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:33:06 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<newElementsIDs>39B9A482-41AB-0427-861D-636F781D5124</newElementsIDs>
+<usedAttributes>
+<attributeRef>39B9A482-41AB-0427-861D-636F781D5124</attributeRef>
+</usedAttributes>
+</identifier>
 </identifiers>
 </Entity>

@@ -83,5 +83,17 @@
 <attributeRef>6D20BCE9-9D60-C739-455B-29382902056E</attributeRef>
 </usedAttributes>
 </identifier>
+<identifier id="6C6A4732-3301-903D-BF33-1EFADD09D9DC" name="UK_PS_SQ_CODIGO_SEGURO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-04 00:32:01 UTC</createdTime>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<engineerTo>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+</engineerTo>
+<newElementsIDs>A53CB288-290E-DD49-B549-87F9B1E96300</newElementsIDs>
+<usedAttributes>
+<attributeRef>A53CB288-290E-DD49-B549-87F9B1E96300</attributeRef>
+</usedAttributes>
+</identifier>
 </identifiers>
 </Entity>

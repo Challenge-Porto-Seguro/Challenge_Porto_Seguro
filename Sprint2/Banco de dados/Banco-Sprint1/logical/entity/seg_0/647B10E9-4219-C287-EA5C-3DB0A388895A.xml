@@ -106,8 +106,12 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>25</dataTypeSize>
-<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<dataTypeSize>2</dataTypeSize>
+<listOfValues>
+<valueDef value="A" description="O diagnostico esta ativo e operante"/>
+<valueDef value="I" description="O diagnostico esta inativo e inoperante"/>
+</listOfValues>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cd_minimo_informacoes1" id="C8C5CA95-491F-80C4-F093-582185937A1B">
 <createdBy>Pedro Henrique</createdBy>
