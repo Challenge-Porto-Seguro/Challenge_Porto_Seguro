@@ -2,7 +2,7 @@ CREATE TABLE T_PS_PRODUTO (
     cd_produto NUMBER(10) PRIMARY KEY,
     preco NUMBER(4, 2) NOT NULL CHECK(preco > 0),
     descricao CHAR(255),
-    nome CHAR(255)
+    nome CHAR(255) UNIQUE
 );
 
 SELECT * FROM T_PS_PRODUTO;
@@ -10,9 +10,9 @@ DESC T_PS_PRODUTO;
 DROP TABLE T_PS_PRODUTO;
 
 CREATE TABLE  T_PS_Minimo_Informacoes(
-    cd_minino_informacoes int primary key,
+    cd_minino_informacoes INT PRIMARY KEY,
     nome CHAR(255) NOT NULL,
-    email CHAR(255) NOT NULL CHECK (INSTR(email, '@') > 0),
+    email CHAR(255) NOT NULL UNIQUE CHECK (INSTR(email, '@') > 0),
     senha CHAR(255) NOT NULL CHECK(senha >= 8)
 );
 
@@ -22,7 +22,7 @@ DROP TABLE T_PS_Minimo_Informacoes;
 
 CREATE TABLE  T_PS_OFICINA(
     cnpj CHAR(14) PRIMARY KEY CHECK(lENGTH(cnpj) = 14),
-    InscricaoEstadual CHAR(12) NOT NULL,
+    InscricaoEstadual CHAR(12) NOT NULL UNIQUE,
     valorPagar NUMBER(10,2) CHECK(ValorPagar > 0),
     oficina_minino_informacoes int,
     CONSTRAINT oficina_minino_informacoes FOREIGN KEY(oficina_minino_informacoes) REFERENCES T_PS_Minimo_Informacoes(cd_minino_informacoes)
@@ -46,7 +46,7 @@ DROP TABLE T_PS_USUARIO_COMUM;
 
 CREATE TABLE T_PS_USUARIO_PORTO (
     CPF CHAR(11) PRIMARY KEY CHECK(lENGTH(CPF) = 11),
-    CodigoSeguro CHAR(15) NOT NULL,
+    CodigoSeguro CHAR(15) NOT NULL UNIQUE,
     QuantidadeOrcamento NUMBER(10) NOT NULL,
     DataUltimoOrcamento DATE,
     porto_minino_informacoes int,
@@ -63,7 +63,7 @@ CREATE TABLE T_PS_ENDERECO (
     cidade CHAR(255) NOT NULL,
     estado CHAR(255) NOT NULL,
     bairro CHAR(255),
-    cep CHAR(15) NOT NULL,
+    cep CHAR(15) NOT NULL UNIQUE,
     endereco_minino_informacoes int,
     CONSTRAINT endereco_minino_informacoes FOREIGN KEY (endereco_minino_informacoes) REFERENCES T_PS_Minimo_Informacoes(cd_minino_informacoes)
 );
@@ -74,7 +74,7 @@ DROP TABLE T_PS_ENDERECO;
 
 CREATE TABLE T_PS_AUTOMOVEL (
     cd_automovel NUMBER(10) PRIMARY KEY,
-    placa CHAR(11) NOT NULL,
+    placa CHAR(11) NOT NULL UNIQUE,
     marca CHAR(255) NOT NULL,
     modelo CHAR(255) NOT NULL,
     ano DATE NOT NULL,
@@ -89,7 +89,7 @@ DROP TABLE T_PS_AUTOMOVEL;
 
 CREATE TABLE T_PS_DIAGNOSTICO (
     cd_diagnostico NUMBER(10) PRIMARY KEY,
-    nm_descricao_diagnostico CHAR(255) NOT NULL,
+    nm_descricao_diagnostico CHAR(255) NOT NULL UNIQUE,
     dt_inicio_diagnostico DATE NOT NULL,
     dt_fim_diagnostico DATE,
     st_diagnostico CHAR(25) NOT NULL,
