@@ -1,11 +1,10 @@
-package com.example.domain;
+package com.example.model;
 
 import com.example.enums.VerificaDiagnostico;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 class DiagnosticoTest {

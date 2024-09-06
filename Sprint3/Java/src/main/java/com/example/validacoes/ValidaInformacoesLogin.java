@@ -1,6 +1,6 @@
-package com.example;
+package com.example.validacoes;
 
-public class ValidaInformacoesMinimoInformacao {
+public class ValidaInformacoesLogin {
 
 
     public static boolean validaNome(String nome){

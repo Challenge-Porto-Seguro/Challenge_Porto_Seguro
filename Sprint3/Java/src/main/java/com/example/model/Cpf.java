@@ -1,6 +1,4 @@
-package com.example.domain;
-
-import com.example.ValidaInformacoesMinimoInformacao;
+package com.example.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
