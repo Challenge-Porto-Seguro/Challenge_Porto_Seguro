@@ -1,8 +1,8 @@
-package com.example.domain;
+package com.example.model;
 
 public class Pedido {
 
-    private Long id;
+    private PkPedido id = new PkPedido();
     private int quantidade;
     private double valorTotal;
     private Produto produto;
@@ -14,14 +14,6 @@ public class Pedido {
 
     public int getQuantidade() {
         return quantidade;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public double getValorTotal() {

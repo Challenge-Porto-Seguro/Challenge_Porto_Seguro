@@ -1,6 +1,6 @@
-package com.example.dao;
+package com.example.db.dao;
 
-import com.example.domain.Automovel;
+import com.example.model.Automovel;
 
 import java.util.Optional;
 
@@ -8,6 +8,6 @@ public interface AutomovelDao {
 
     void insert(Automovel automovel);
     void update(Automovel automovel);
-    void deleteById(int id);
-    Optional<Automovel> findById(int id);
+    void deleteById(long id);
+    Optional<Automovel> findById(long id);
 }

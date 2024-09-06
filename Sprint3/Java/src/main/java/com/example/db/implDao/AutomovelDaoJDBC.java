@@ -1,12 +1,11 @@
-package com.example.impl;
+package com.example.db.implDao;
 
-import com.example.dao.AutomovelDao;
+import com.example.db.dao.AutomovelDao;
 import com.example.db.DB;
 import com.example.db.DbException;
-import com.example.domain.Automovel;
+import com.example.model.Automovel;
 
 import java.sql.*;
-import java.util.List;
 import java.util.Optional;
 
 public class AutomovelDaoJDBC implements AutomovelDao {
@@ -34,7 +33,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
             if (rowsAfected > 0) {
                 rs = ps.getGeneratedKeys();
                 if(rs.next()){
-                    int id = rs.getInt(1);
+                    Long id = rs.getLong(1);
                     automovel.setId(id);
                 }
             } else {
@@ -67,7 +66,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
             if (automovel.getAno() != null) {
                 ps.setDate(4, new Date(automovel.getAno().getTime()));
             }
-            ps.setInt(5, automovel.getId());
+            ps.setLong(5, automovel.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
@@ -78,13 +77,13 @@ public class AutomovelDaoJDBC implements AutomovelDao {
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(long id) {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
                 delete from automoveis where id = ? 
             """);
-            ps.setInt(1, id);
+            ps.setLong(1, id);
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
@@ -93,14 +92,14 @@ public class AutomovelDaoJDBC implements AutomovelDao {
     }
 
     @Override
-    public Optional<Automovel> findById(int id) {
+    public Optional<Automovel> findById(long id) {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement("""
                 select * from automoveis where id = ?
             """);
-            ps.setInt(1, id);
+            ps.setLong(1, id);
             rs = ps.executeQuery();
             if(rs.next()){
                 Automovel automovel = instanciaAutomovel(rs);
@@ -117,7 +116,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
 
     private Automovel instanciaAutomovel(ResultSet rs) throws SQLException {
         Automovel automovel = new Automovel(rs.getString("marca"), rs.getString("modelo"), rs.getString("placa"), rs.getDate("ano"));
-        automovel.setId(rs.getInt("id"));
+        automovel.setId(rs.getLong("id"));
         return automovel;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.model;
 
 import com.example.enums.VerificaDiagnostico;
 
@@ -10,6 +10,7 @@ import java.util.List;
 public class Diagnostico {
 
     private Long id;
+    private Long idAutomovel;
     private String descricao;
     private Date data;
     private Date dataFinalizado;

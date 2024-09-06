@@ -1,4 +1,6 @@
-package com.example.domain;
+package com.example.model;
+
+import com.example.validacoes.VerificaCriacaoAutomovel;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,7 +9,8 @@ import java.util.List;
 
 public class Automovel {
 
-    private int id;
+    private Long id;
+    private Long usuarioId;
     private String marca;
     private String modelo;
     private String placa;
@@ -16,33 +19,18 @@ public class Automovel {
     private List<Diagnostico> diagnosticos = new ArrayList<>();
 
     public Automovel(String marca, String modelo, String placa, Date ano) {
-        verificaSeAutomovelEValido(marca, modelo, placa, ano);
+        VerificaCriacaoAutomovel.verifica(marca, modelo, placa, ano);
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
         this.ano = ano;
     }
 
-    private void verificaSeAutomovelEValido(String marca, String modelo, String placa, Date ano){
-        if(marca.isBlank()){
-            throw new RuntimeException("Marca invalida");
-        }
-        if(modelo.isBlank()){
-            throw new RuntimeException("Modelo invalido");
-        }
-        if(placa.isBlank() || !placa.matches("[A-Z]{3}[0-9][0-9A-Z][0-9]{2}")){
-            throw new RuntimeException("Placa invalida");
-        }
-        if(ano == null || ano.after(new Date())){
-            throw new RuntimeException("Ano invalido");
-        }
-    }
-
     public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,7 +50,7 @@ public class Automovel {
         return ano;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

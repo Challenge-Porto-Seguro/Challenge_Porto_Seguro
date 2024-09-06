@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.model;
 
 import com.example.enums.StatusOrcamento;
 
@@ -9,6 +9,7 @@ import java.util.List;
 public class Orcamento {
 
     private Long id;
+    private Long idDiagnostico;
     private double valorTotal;
     private LocalDate diaOrcamento;
     private List<Pedido> pedidos = new ArrayList<>();
