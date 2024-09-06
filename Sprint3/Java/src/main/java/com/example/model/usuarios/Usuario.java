@@ -1,20 +1,20 @@
-package com.example.domain.usuarios;
+package com.example.model.usuarios;
 
-import com.example.domain.Automovel;
-import com.example.domain.Cpf;
-import com.example.domain.Endereco;
-import com.example.domain.Orcamento;
+import com.example.model.Automovel;
+import com.example.model.Cpf;
+import com.example.model.Endereco;
+import com.example.model.Orcamento;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class UsuarioComum extends MinimoInformacao {
+public class Usuario extends Login {
 
     private Cpf cpf;
     private int quantidadeOrcamento;
     private LocalDate diaUltimoOrcamento;
 
-    public UsuarioComum(String nome, String cpf, String email, String senha, Endereco endereco) {
+    public Usuario(String nome, String cpf, String email, String senha, Endereco endereco) {
         super(nome, email, senha, endereco);
         this.cpf = new Cpf(cpf);
     }
@@ -33,7 +33,7 @@ public class UsuarioComum extends MinimoInformacao {
 
     //Um usuario pode fazer ate 3 orçamentos por mes
     @Override
-    public void addOrcamento(int idAutomovel, Orcamento orcamento) {
+    public void addOrcamento(Automovel automovel, Orcamento orcamento) {
         LocalDate diaHoje = LocalDate.now();
 
         if(quantidadeOrcamento == 0){
@@ -47,7 +47,6 @@ public class UsuarioComum extends MinimoInformacao {
             quantidadeOrcamento = 0;
             this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
         }
-        Automovel automovel = findById(idAutomovel).orElseThrow(() -> new RuntimeException("Id invalido"));
         automovel.getDiagnostico().addOrcamento(orcamento);
         quantidadeOrcamento++;
 
