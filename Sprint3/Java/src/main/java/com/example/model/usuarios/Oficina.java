@@ -1,11 +1,11 @@
-package com.example.domain.usuarios;
+package com.example.model.usuarios;
 
-import com.example.domain.Automovel;
-import com.example.domain.Cnpj;
-import com.example.domain.Endereco;
-import com.example.domain.Orcamento;
+import com.example.model.Automovel;
+import com.example.model.Cnpj;
+import com.example.model.Endereco;
+import com.example.model.Orcamento;
 
-public class Oficina extends MinimoInformacao {
+public class Oficina extends Login {
 
     private String inscricaoEstadual;
     private Cnpj cnpj;
@@ -32,8 +32,7 @@ public class Oficina extends MinimoInformacao {
 
     //Um oficina pode fazer quantos orçamento quiser porem paga um valor a cada orçamento
     @Override
-    public void addOrcamento(int idAutomovel, Orcamento orcamento) {
-        Automovel automovel = findById(idAutomovel).orElseThrow(() -> new RuntimeException("Id invalido"));
+    public void addOrcamento(Automovel automovel, Orcamento orcamento) {
         automovel.getDiagnostico().addOrcamento(orcamento);
         valorAPagar += 5;
     }

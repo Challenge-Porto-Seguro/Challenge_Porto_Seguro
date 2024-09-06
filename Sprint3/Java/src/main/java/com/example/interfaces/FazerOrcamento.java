@@ -1,8 +1,9 @@
 package com.example.interfaces;
 
-import com.example.domain.Orcamento;
+import com.example.model.Automovel;
+import com.example.model.Orcamento;
 
 public interface FazerOrcamento {
 
-    public void addOrcamento(int idAutomovel, Orcamento orcamento);
+    public void addOrcamento(Automovel automovel, Orcamento orcamento);
 }

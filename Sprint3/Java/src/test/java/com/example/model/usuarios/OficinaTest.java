@@ -1,6 +1,6 @@
-package com.example.domain.usuarios;
+package com.example.model.usuarios;
 
-import com.example.domain.*;
+import com.example.model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
