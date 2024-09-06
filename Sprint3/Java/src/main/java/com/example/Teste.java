@@ -1,8 +1,8 @@
 package com.example;
 
-import com.example.dao.AutomovelDao;
-import com.example.dao.DaoFactory;
-import com.example.domain.Automovel;
+import com.example.db.dao.AutomovelDao;
+import com.example.db.dao.DaoFactory;
+import com.example.model.Automovel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
