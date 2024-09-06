@@ -29,7 +29,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -45,12 +45,9 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="4C686BFA-5EFD-5B66-C3D1-D9834F64CBFD" referredColumn="BE4DD43C-A0B1-7470-1968-A59E25810C66"/>
-</associations>
 </Column>
 <Column name="nm_descricao_diagnostico" id="16BE5341-31D6-ABB3-F155-B60580E63B54">
 <createdBy>Pedro Henrique</createdBy>
@@ -104,7 +101,7 @@
 <ownDataTypeParameters>2,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cd_minimo_informacoes1" id="9178CB68-0462-E75F-222C-2631161691BD">
+<Column name="cd_login" id="9178CB68-0462-E75F-222C-2631161691BD">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
 <generatorID>C8C5CA95-491F-80C4-F093-582185937A1B</generatorID>
@@ -113,7 +110,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -143,7 +140,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="EC1521B5-3F87-42A2-21B3-B59A6AA7DD28"/>
-<colUsage columnID="BD36C550-0169-5C27-FF5E-AA9F2B75AB12"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="DC0C4822-68E3-9416-0182-77745F646B83" name="FK_OFICINA_DIAGNOSTICO">

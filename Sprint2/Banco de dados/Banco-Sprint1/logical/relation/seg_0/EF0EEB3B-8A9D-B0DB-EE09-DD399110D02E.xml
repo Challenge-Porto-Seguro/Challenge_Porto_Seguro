@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_USUARIO_USUARIO_PORTO" directorySegmentName="seg_0" id="F98EFAC6-C84D-CCE5-42D8-A3A0ADCF8872">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_USUARIO_AUTOMOVEL" directorySegmentName="seg_0" id="EF0EEB3B-8A9D-B0DB-EE09-DD399110D02E">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-03 23:24:34 UTC</createdTime>
+<createdTime>2024-09-05 23:26:41 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -12,8 +12,8 @@
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>32A9E474-ED75-6BEA-0A1C-028706852321</sourceEntity>
-<targetCardinalityString>1</targetCardinalityString>
-<targetEntity>21481CBC-C9C0-32F9-0346-8AE396D0802B</targetEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>92B1331F-A342-D322-8A0F-84EFFC7D8B54</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>

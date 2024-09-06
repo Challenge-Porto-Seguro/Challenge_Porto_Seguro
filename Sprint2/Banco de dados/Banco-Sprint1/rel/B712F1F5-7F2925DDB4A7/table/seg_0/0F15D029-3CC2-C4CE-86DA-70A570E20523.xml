@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cd_minimo_informacoes" id="AE6AE5B3-8B7F-02E8-B231-55722366F2B2">
+<Column name="cd_login" id="AE6AE5B3-8B7F-02E8-B231-55722366F2B2">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
 <generatorID>167133AA-B8DE-CA2A-71C5-462E5B6B9769</generatorID>
@@ -17,7 +17,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -34,6 +34,30 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>11</dataTypeSize>
 <ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="qt_orcamento_mes" id="F46FF5F6-C4A4-E4D6-10D1-A2D8FA291B2A">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-05 23:38:36 UTC</createdTime>
+<generatorID>FF645D9B-61CE-ACD0-A134-11E02D35C8BA</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_ultimo_orcamento" id="AAAF40AE-7740-F630-A14B-B0CCDA35D076">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-05 23:38:36 UTC</createdTime>
+<generatorID>9E6E6A97-9F5A-F71A-ADED-672EBEF94BFD</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

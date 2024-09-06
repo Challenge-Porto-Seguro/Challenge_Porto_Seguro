@@ -15,19 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_pedido" id="058B7F3E-4B95-26DB-ECE5-E6B41A99A7CF">
-<createdBy>thmaz</createdBy>
-<createdTime>2024-04-22 17:38:52 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="cd_orcamento" id="D44CFDCB-C55C-7C84-E298-363C00F36E24">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-13 02:46:31 UTC</createdTime>
@@ -41,7 +28,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cd_produto" id="0F9361F2-A391-22CF-C79B-C7563F3CD65A">
 <createdBy>Pedro Henrique</createdBy>
@@ -92,12 +79,14 @@
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:43:27 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>058B7F3E-4B95-26DB-ECE5-E6B41A99A7CF</attributeRef>
+<attributeRef>D44CFDCB-C55C-7C84-E298-363C00F36E24</attributeRef>
+<attributeRef>0F9361F2-A391-22CF-C79B-C7563F3CD65A</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

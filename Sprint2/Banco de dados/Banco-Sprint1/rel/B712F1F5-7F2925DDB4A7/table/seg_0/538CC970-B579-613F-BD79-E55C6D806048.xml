@@ -20,22 +20,6 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cd_minimo_informacoes" id="BE4DD43C-A0B1-7470-1968-A59E25810C66">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
-<generatorID>83D3BF1D-A1FD-2B9A-A678-880DF6E9C6B4</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="201C1F28-6230-1018-B73D-28767CB47049" referredColumn="AE6AE5B3-8B7F-02E8-B231-55722366F2B2"/>
-</associations>
-</Column>
 <Column name="sq_placa" id="A98F3BBC-A95C-BA8E-3F27-D71778BE890D">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
@@ -96,6 +80,22 @@
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="cd_login" id="92E800DC-9DDC-E9A2-8FAC-5B33A509C36E">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-09-05 23:38:36 UTC</createdTime>
+<generatorID>3706C720-CBAF-558B-C42B-1AE6A7B66D2F</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ABCD4ED5-D86A-9E0F-7CED-C1152D061A90" referredColumn="AE6AE5B3-8B7F-02E8-B231-55722366F2B2"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="F56D6BAB-B4C4-20EC-065B-45794E26E167" name="AUTOMOVEL_PK">
@@ -108,7 +108,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="B66399C6-EA12-8A0C-9C28-DF028AD77893"/>
-<colUsage columnID="BE4DD43C-A0B1-7470-1968-A59E25810C66"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="CC464F19-1091-1BBA-8038-64F7FD43E2FB" name="UK_PS_SQ_PLACA">
@@ -122,15 +121,15 @@
 <colUsage columnID="A98F3BBC-A95C-BA8E-3F27-D71778BE890D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="2533CC4C-B1EF-5217-EBC4-0534CA49D2E4" name="FK_USUARIO_AUTOMOVEL">
+<ind_PK_UK id="D17DB632-266D-4874-E96E-74D4A1A6E807" name="FK_USUARIO_AUTOMOVEL">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
-<generatorID>8E6E9297-F3A5-BB46-F126-43120277D86F</generatorID>
+<createdTime>2024-09-05 23:38:36 UTC</createdTime>
+<generatorID>EF0EEB3B-8A9D-B0DB-EE09-DD399110D02E</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="BE4DD43C-A0B1-7470-1968-A59E25810C66"/>
+<colUsage columnID="92E800DC-9DDC-E9A2-8FAC-5B33A509C36E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

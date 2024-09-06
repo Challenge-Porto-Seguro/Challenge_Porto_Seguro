@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_minimo_informacoes" id="05C8761C-3C8F-D476-D2FC-94154535E537">
+<Attribute name="cd_login" id="05C8761C-3C8F-D476-D2FC-94154535E537">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:57:50 UTC</createdTime>
 <generatorID>8E1E8936-C8B7-55A4-0AEC-758634C9A0D4</generatorID>
@@ -28,7 +28,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="sq_cnpj" id="0F20565A-AED1-FAEF-4B35-A0DF16074C9F">
 <createdBy>Pedro Henrique</createdBy>

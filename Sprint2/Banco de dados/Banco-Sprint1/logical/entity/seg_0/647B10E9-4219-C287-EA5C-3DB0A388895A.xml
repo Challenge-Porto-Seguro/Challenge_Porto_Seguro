@@ -41,17 +41,17 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_minimo_informacoes" id="5DCBD75F-EBEC-19F1-23DF-F76D2BB6E4EC">
+<Attribute name="cd_login" id="C8C5CA95-491F-80C4-F093-582185937A1B">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-03 23:31:58 UTC</createdTime>
-<generatorID>6FFC3C2D-576D-4771-E413-0A37DC6A5BCA</generatorID>
+<createdTime>2024-09-04 00:19:30 UTC</createdTime>
+<generatorID>A35A794D-3AAF-3857-AC89-0D7E12F32342</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
-<referedAttribute>83D3BF1D-A1FD-2B9A-A678-880DF6E9C6B4</referedAttribute>
+<referedAttribute>05C8761C-3C8F-D476-D2FC-94154535E537</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -113,21 +113,6 @@
 <valueDef value="I" description="O diagnostico esta inativo e inoperante"/>
 </listOfValues>
 <ownDataTypeParameters>2,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cd_minimo_informacoes1" id="C8C5CA95-491F-80C4-F093-582185937A1B">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:19:30 UTC</createdTime>
-<generatorID>A35A794D-3AAF-3857-AC89-0D7E12F32342</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<referedAttribute>05C8761C-3C8F-D476-D2FC-94154535E537</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

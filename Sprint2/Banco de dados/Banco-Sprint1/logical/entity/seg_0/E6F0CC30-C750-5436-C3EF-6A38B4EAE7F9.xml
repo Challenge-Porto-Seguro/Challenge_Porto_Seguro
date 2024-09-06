@@ -28,7 +28,7 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_minimo_informacoes" id="21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C">
+<Attribute name="cd_login" id="21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 13:03:30 UTC</createdTime>
 <generatorID>1D5DFF92-C4BD-7D40-D493-AD4A8C986AF9</generatorID>
@@ -41,7 +41,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nm_rua" id="939D4E51-433F-5CCC-33AF-C1EFBF9F872C">
 <createdBy>thmaz</createdBy>

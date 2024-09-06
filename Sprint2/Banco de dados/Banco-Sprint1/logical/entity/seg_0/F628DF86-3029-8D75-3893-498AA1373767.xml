@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F628DF86-3029-8D75-3893-498AA1373767" name="T_PS_MINIMO_INFORMACOES">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F628DF86-3029-8D75-3893-498AA1373767" name="T_PS_LOGIN">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:46:41 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_minimo_informacoes" id="3DCD207D-F524-2E29-CDA4-D0346BA08DEB">
+<Attribute name="cd_login" id="3DCD207D-F524-2E29-CDA4-D0346BA08DEB">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:47:11 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>

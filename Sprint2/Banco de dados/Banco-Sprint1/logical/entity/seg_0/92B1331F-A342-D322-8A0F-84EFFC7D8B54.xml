@@ -28,10 +28,10 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_minimo_informacoes" id="83D3BF1D-A1FD-2B9A-A678-880DF6E9C6B4">
+<Attribute name="cd_login" id="3706C720-CBAF-558B-C42B-1AE6A7B66D2F">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-03 23:31:58 UTC</createdTime>
-<generatorID>8E6E9297-F3A5-BB46-F126-43120277D86F</generatorID>
+<createdTime>2024-09-05 23:26:41 UTC</createdTime>
+<generatorID>EF0EEB3B-8A9D-B0DB-EE09-DD399110D02E</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -114,21 +114,22 @@
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:43:38 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>6562A2F2-D3AC-F003-0B2F-E933B77E8ACA</attributeRef>
-<attributeRef>83D3BF1D-A1FD-2B9A-A678-880DF6E9C6B4</attributeRef>
 </usedAttributes>
 </identifier>
 <identifier id="B259730A-F953-2AF5-0F99-E01BD2DED796" name="UK_PS_SQ_PLACA">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:34:00 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <newElementsIDs>FB9964EF-6B6C-0F71-F378-EB6E8BDE7B78</newElementsIDs>
 <usedAttributes>
