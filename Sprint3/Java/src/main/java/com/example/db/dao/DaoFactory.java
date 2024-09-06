@@ -1,7 +1,7 @@
-package com.example.dao;
+package com.example.db.dao;
 
 import com.example.db.DB;
-import com.example.impl.AutomovelDaoJDBC;
+import com.example.db.implDao.AutomovelDaoJDBC;
 
 public class DaoFactory {
 
