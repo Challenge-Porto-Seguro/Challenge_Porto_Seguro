@@ -33,7 +33,7 @@ class UsuarioTest {
     void se_cpf_12345678909_get_cpf_retorna_cpf_formatado(){
         Cpf cpf = new Cpf("12345678909");
         Usuario mockUsuario = new Usuario("Pedro Henrique", "12345678909", "ph@gmail.com", "12345678");
-        Assertions.assertEquals(cpf.toString(), mockUsuario.getCpf().toString());
+        Assertions.assertEquals(cpf.toString(), mockUsuario.getCpf());
     }
 
 }
