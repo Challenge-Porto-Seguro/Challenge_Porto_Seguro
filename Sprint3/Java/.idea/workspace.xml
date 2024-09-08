@@ -4,29 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: alterando datamodeler">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add get de usuarioId">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/db/dao/UsuarioDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/UsuarioDaoJDBC.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/dao/DaoFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/AutomovelDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/AutomovelDaoJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Automovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Cpf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Cpf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Oficina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Oficina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/validacoes/VerificaSeInformacoesEnderecoValida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/validacoes/VerificaSeInformacoesEnderecoValida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/OficinaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/OficinaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioPortoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +122,7 @@
     "JUnit.com.example in Java.executor": "Coverage",
     "JUnit.com.example.domain in Java.executor": "Coverage",
     "JUnit.domain in Java.executor": "Coverage",
-    "JUnit.example in Java.executor": "Profiler#1",
+    "JUnit.example in Java.executor": "Coverage",
     "JUnit.java in Java.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -181,7 +166,7 @@
       <recent name="com.example.domain.usuarios" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.example in Java">
+  <component name="RunManager" selected="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado">
     <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Teste" />
       <module name="Java" />
@@ -210,16 +195,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example in Java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.*" />
+          <option name="PATTERN" value="com.example.model.usuarios.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="com.example.model.usuarios" />
+      <option name="MAIN_CLASS_NAME" value="com.example.model.usuarios.UsuarioTest" />
+      <option name="METHOD_NAME" value="se_cpf_12345678909_get_cpf_retorna_cpf_formatado" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -243,17 +230,17 @@
     <list>
       <item itemvalue="Application.Teste" />
       <item itemvalue="JUnit.UsuarioTest" />
+      <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado" />
       <item itemvalue="JUnit.example in Java" />
       <item itemvalue="JUnit.java in Java" />
-      <item itemvalue="JUnit.com.example in Java" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado" />
         <item itemvalue="JUnit.example in Java" />
         <item itemvalue="JUnit.UsuarioTest" />
         <item itemvalue="JUnit.java in Java" />
         <item itemvalue="Application.Teste" />
-        <item itemvalue="JUnit.com.example in Java" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +281,7 @@
       <workItem from="1725362473924" duration="7181000" />
       <workItem from="1725403026442" duration="1131000" />
       <workItem from="1725579368882" duration="5445000" />
-      <workItem from="1725819910215" duration="10854000" />
+      <workItem from="1725819910215" duration="11180000" />
     </task>
     <task id="LOCAL-00001" summary="Começo da implementação sprint 2 java">
       <option name="closed" value="true" />
@@ -616,7 +603,55 @@
       <option name="project" value="LOCAL" />
       <updated>1725831594990</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="refactor: alterando erros">
+      <option name="closed" value="true" />
+      <created>1725831849538</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1725831849538</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat: add dependecia para conectar com o banco oracle">
+      <option name="closed" value="true" />
+      <created>1725831884197</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1725831884197</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat: alterando configuração de login senha e url">
+      <option name="closed" value="true" />
+      <created>1725831917286</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1725831917286</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat: alterando construtor">
+      <option name="closed" value="true" />
+      <created>1725831954905</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1725831954905</updated>
+    </task>
+    <task id="LOCAL-00045" summary="feat: alterando para retornar o cpf desformatado">
+      <option name="closed" value="true" />
+      <created>1725831971693</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1725831971693</updated>
+    </task>
+    <task id="LOCAL-00046" summary="feat: add get de usuarioId">
+      <option name="closed" value="true" />
+      <created>1725832003591</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1725832003591</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,12 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: add a diagnosticos list attribute and changing method atualiza diagnostico" />
-    <MESSAGE value="refactor: add Gson dependency from google" />
-    <MESSAGE value="refactor: changing method pegarInformacoesEnderecoPoCep" />
-    <MESSAGE value="test: add test in EnderecoTest class" />
-    <MESSAGE value="refactor: changing junit dependency" />
-    <MESSAGE value="refactor: making changes" />
     <MESSAGE value="feat: AutomovelTest class" />
     <MESSAGE value="feat: MinimoInformacaoTest class" />
     <MESSAGE value="feat: UsuarioComumTest class" />
@@ -684,7 +713,13 @@
     <MESSAGE value="feat: alterando implementação do add orçamento" />
     <MESSAGE value="feat: alterando package" />
     <MESSAGE value="refactor: alterando datamodeler" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: alterando datamodeler" />
+    <MESSAGE value="refactor: alterando erros" />
+    <MESSAGE value="feat: add dependecia para conectar com o banco oracle" />
+    <MESSAGE value="feat: alterando configuração de login senha e url" />
+    <MESSAGE value="feat: alterando construtor" />
+    <MESSAGE value="feat: alterando para retornar o cpf desformatado" />
+    <MESSAGE value="feat: add get de usuarioId" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add get de usuarioId" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -694,7 +729,7 @@
     <SUITE FILE_PATH="coverage/Java$EnderecoTest.ic" NAME="EnderecoTest Coverage Results" MODIFIED="1716087568941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.domain.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Java$java_in_Java.ic" NAME="java in Java Coverage Results" MODIFIED="1716159789848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Java$java_in_Java.ic" NAME="java in Java Coverage Results" MODIFIED="1725831731596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/Java$Main.ic" NAME="Main Coverage Results" MODIFIED="1715702265948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.usuarios.*</FILTER>
     </SUITE>
@@ -704,6 +739,7 @@
     <SUITE FILE_PATH="coverage/Java$com_example_in_Java.ic" NAME="com.example in Java Coverage Results" MODIFIED="1725820745075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Java$example_in_Java.ic" NAME="example in Java Coverage Results" MODIFIED="1725831793117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/Java$domain_in_Java.ic" NAME="domain in Java Coverage Results" MODIFIED="1716158106035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
