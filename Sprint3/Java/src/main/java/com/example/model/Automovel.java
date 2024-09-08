@@ -50,6 +50,10 @@ public class Automovel {
         return ano;
     }
 
+    public Long getUsuarioId() {
+        return usuarioId;
+    }
+
     public Long getId() {
         return id;
     }
