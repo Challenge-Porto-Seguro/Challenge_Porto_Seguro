@@ -69,27 +69,6 @@ public class Cpf {
         return digitosAchado.equals(digitosVerificadores);
     }
 
-    private String cpfFormatado() {
-        List<String> list = new ArrayList<>();
-        int num = 1;
-        for(int i = 0; i < cpf.length(); i++){
-            list.add(String.valueOf(cpf.charAt(i)));
-            if(num % 3 == 0 && num != 9){
-                list.add(".");
-            } else if((num == 9)) {
-                list.add("-");
-            }
-            num++;
-        }
-
-        StringBuilder cpfFormatado = new StringBuilder();
-        for(String s : list){
-            cpfFormatado.append(s);
-        }
-
-        return cpfFormatado.toString();
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -105,6 +84,6 @@ public class Cpf {
 
     @Override
     public String toString() {
-        return "CPF: " + cpfFormatado();
+        return cpf;
     }
 }
