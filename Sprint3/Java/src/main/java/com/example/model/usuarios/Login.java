@@ -19,12 +19,11 @@ public abstract class Login implements FazerOrcamento, VerificaDados {
     private List<Automovel> automoveis = new ArrayList<>();
 
 
-    public Login(String nome, String email, String senha, Endereco endereco) {
+    public Login(String nome, String email, String senha) {
         validaDados(nome, email, senha);
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.endereco = endereco;
     }
 
     public Long getId() {
@@ -41,6 +40,10 @@ public abstract class Login implements FazerOrcamento, VerificaDados {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getSenha() {
+        return senha;
     }
 
     public List<Automovel> getAutomoveis() {

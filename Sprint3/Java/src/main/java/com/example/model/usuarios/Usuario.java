@@ -14,13 +14,13 @@ public class Usuario extends Login {
     private int quantidadeOrcamento;
     private LocalDate diaUltimoOrcamento;
 
-    public Usuario(String nome, String cpf, String email, String senha, Endereco endereco) {
-        super(nome, email, senha, endereco);
+    public Usuario(String nome, String cpf, String email, String senha) {
+        super(nome, email, senha);
         this.cpf = new Cpf(cpf);
     }
 
-    public Cpf getCpf() {
-        return cpf;
+    public String getCpf() {
+        return cpf.toString();
     }
 
     public int getQuantidadeOrcamento() {
@@ -29,6 +29,10 @@ public class Usuario extends Login {
 
     public LocalDate getDiaUltimoOrcamento() {
         return diaUltimoOrcamento;
+    }
+
+    public void setQuantidadeOrcamento(int quantidadeOrcamento) {
+        this.quantidadeOrcamento = quantidadeOrcamento;
     }
 
     //Um usuario pode fazer ate 3 orçamentos por mes
@@ -54,6 +58,6 @@ public class Usuario extends Login {
 
     @Override
     public String toString() {
-        return "Usuario Comum: " + "Nome: " + getNome() + ", Email: " + getEmail();
+        return "Usuario Comum: " + "Nome: " + getNome() + ", Email: " + getEmail() + getCpf() + " " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
     }
 }

@@ -2,7 +2,6 @@ package com.example.model.usuarios;
 
 import com.example.model.Automovel;
 import com.example.model.Cnpj;
-import com.example.model.Endereco;
 import com.example.model.Orcamento;
 
 public class Oficina extends Login {
@@ -11,8 +10,8 @@ public class Oficina extends Login {
     private Cnpj cnpj;
     private double valorAPagar;
 
-    public Oficina(String nome, String cnpj, String email, String senha, Endereco endereco, String inscricaoEstadual) {
-        super(nome, email, senha, endereco);
+    public Oficina(String nome, String cnpj, String email, String senha, String inscricaoEstadual) {
+        super(nome, email, senha);
         this.cnpj = new Cnpj(cnpj);
         this.inscricaoEstadual = inscricaoEstadual;
 
