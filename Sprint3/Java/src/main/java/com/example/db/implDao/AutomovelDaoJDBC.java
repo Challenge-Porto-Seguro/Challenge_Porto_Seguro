@@ -22,12 +22,13 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement("""
-                insert into automoveis (marca, modelo, placa, ano) values (?, ?, ?, ?)
-            """, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, automovel.getMarca());
-            ps.setString(2, automovel.getModelo());
-            ps.setString(3, automovel.getPlaca());
-            ps.setDate(4, new Date(automovel.getAno().getTime()));
+                insert into automoveis (usuario_id, marca, modelo, placa, ano) values (?, ?, ?, ?, ?)
+            """, new String[] {"cd_automovel"});
+            ps.setLong(1, automovel.getUsuarioId());
+            ps.setString(2, automovel.getMarca());
+            ps.setString(3, automovel.getModelo());
+            ps.setString(4, automovel.getPlaca());
+            ps.setDate(5, new Date(automovel.getAno().getTime()));
 
             int rowsAfected = ps.executeUpdate();
             if (rowsAfected > 0) {
