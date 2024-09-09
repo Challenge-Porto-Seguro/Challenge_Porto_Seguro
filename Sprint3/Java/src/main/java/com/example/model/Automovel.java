@@ -88,6 +88,7 @@ public class Automovel {
     public String toString() {
         return "Automovel{" +
                 "id=" + id +
+                ", usuario=" + usuario + '\'' +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", placa='" + placa + '\'' +
