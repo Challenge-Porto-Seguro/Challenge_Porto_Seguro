@@ -1,0 +1,224 @@
+CREATE TABLE t_ps_automovel (
+    cd_automovel      NUMBER(10) NOT NULL,
+    sq_placa          VARCHAR2(11) NOT NULL,
+    nm_marca_veiculo  VARCHAR2(255) NOT NULL,
+    nm_modelo_veiculo VARCHAR2(255) NOT NULL,
+    dt_veiculo        DATE NOT NULL,
+    tx_diagnostico    VARCHAR2(255),
+    cd_login          NUMBER(10) NOT NULL
+);
+
+ALTER TABLE t_ps_automovel ADD CONSTRAINT automovel_pk PRIMARY KEY ( cd_automovel );
+
+ALTER TABLE t_ps_automovel ADD CONSTRAINT uk_ps_sq_placa UNIQUE ( sq_placa );
+
+CREATE TABLE t_ps_diagnostico (
+    cd_diagnostico           NUMBER(10) NOT NULL,
+    cd_automovel             NUMBER(10) NOT NULL,
+    cd_minimo_informacoes    NUMBER(10) NOT NULL,
+    nm_descricao_diagnostico VARCHAR2(255) NOT NULL,
+    dt_inicio_diagnostico    DATE NOT NULL,
+    dt_fim_diagnostico       DATE,
+    st_diagnostico           VARCHAR2(2) NOT NULL,
+    cd_login                 NUMBER(10) NOT NULL
+);
+
+ALTER TABLE t_ps_diagnostico
+    ADD CONSTRAINT ck_t_ps_status_diagnostico CHECK ( st_diagnostico IN ( 'A', 'I' ) );
+
+ALTER TABLE t_ps_diagnostico ADD CONSTRAINT t_ps_diagnostico_pk PRIMARY KEY ( cd_diagnostico );
+
+CREATE TABLE t_ps_endereco (
+    cd_endereco NUMBER(10) NOT NULL,
+    cd_login    NUMBER(10) NOT NULL,
+    nm_rua      VARCHAR2(255) NOT NULL,
+    nm_cidade   VARCHAR2(255) NOT NULL,
+    nm_estado   VARCHAR2(255) NOT NULL,
+    nm_bairro   VARCHAR2(255) NOT NULL,
+    sq_cep      VARCHAR2(15) NOT NULL,
+    nr_casa     NUMBER(7) NOT NULL
+);
+
+ALTER TABLE t_ps_endereco ADD CONSTRAINT endereco_pk PRIMARY KEY ( cd_endereco );
+
+CREATE TABLE t_ps_login (
+    cd_login NUMBER(10) NOT NULL,
+    nm_nome  VARCHAR2(255) NOT NULL,
+    nm_email VARCHAR2(255) NOT NULL,
+    sq_senha VARCHAR2(50) NOT NULL
+);
+
+ALTER TABLE t_ps_login ADD CONSTRAINT t_ps_minimo_informacoes_pk PRIMARY KEY ( cd_login );
+
+ALTER TABLE t_ps_login ADD CONSTRAINT uk_ps_nm_email UNIQUE ( nm_email );
+
+CREATE TABLE t_ps_oficina (
+    cd_login              NUMBER(10) NOT NULL,
+    sq_cnpj               VARCHAR2(14) NOT NULL,
+    sq_inscricao_estadual VARCHAR2(12) NOT NULL,
+    vl_a_pagar            NUMBER(10, 2)
+);
+
+ALTER TABLE t_ps_oficina ADD CONSTRAINT t_ps_oficina_pk PRIMARY KEY ( cd_login );
+
+ALTER TABLE t_ps_oficina ADD CONSTRAINT uk_ps_sq_cnpj UNIQUE ( sq_cnpj );
+
+ALTER TABLE t_ps_oficina ADD CONSTRAINT uk_ps_inscricao_estadual UNIQUE ( sq_inscricao_estadual );
+
+CREATE TABLE t_ps_orcamento (
+    cd_orcamento   NUMBER(10) NOT NULL,
+    cd_diagnostico NUMBER(10) NOT NULL,
+    st_orcamento   VARCHAR2(2) NOT NULL
+);
+
+ALTER TABLE t_ps_orcamento
+    ADD CONSTRAINT ck_t_ps_status_orcamento CHECK ( st_orcamento IN ( 'A', 'I' ) );
+
+ALTER TABLE t_ps_orcamento ADD CONSTRAINT orcamento_pk PRIMARY KEY ( cd_orcamento );
+
+CREATE TABLE t_ps_pedido (
+    cd_orcamento NUMBER(10) NOT NULL,
+    cd_produto   NUMBER(10) NOT NULL,
+    qt_pedido    NUMBER(3) NOT NULL,
+    vl_pedido    NUMBER(4, 2)
+);
+
+ALTER TABLE t_ps_pedido ADD CONSTRAINT pedido_pk PRIMARY KEY ( cd_orcamento,
+                                                               cd_produto );
+
+CREATE TABLE t_ps_produto (
+    cd_produto NUMBER(10) NOT NULL,
+    vl_produto NUMBER(4, 2) NOT NULL,
+    ds_produto VARCHAR2(255),
+    nm_produto VARCHAR2(255) NOT NULL
+);
+
+ALTER TABLE t_ps_produto ADD CONSTRAINT produto_pk PRIMARY KEY ( cd_produto );
+
+CREATE TABLE t_ps_usuario (
+    cd_login            NUMBER(10) NOT NULL,
+    sq_cpf              VARCHAR2(11) NOT NULL,
+    qt_orcamento_mes    NUMBER(10) NOT NULL,
+    dt_ultimo_orcamento DATE
+);
+
+ALTER TABLE t_ps_usuario ADD CONSTRAINT t_ps_usuario_pk PRIMARY KEY ( cd_login );
+
+ALTER TABLE t_ps_usuario ADD CONSTRAINT uk_ps_sq_cpf UNIQUE ( sq_cpf );
+
+ALTER TABLE t_ps_diagnostico
+    ADD CONSTRAINT fk_automovel_diagnostico FOREIGN KEY ( cd_automovel )
+        REFERENCES t_ps_automovel ( cd_automovel );
+
+ALTER TABLE t_ps_orcamento
+    ADD CONSTRAINT fk_diagnostico_orcamento FOREIGN KEY ( cd_diagnostico )
+        REFERENCES t_ps_diagnostico ( cd_diagnostico );
+
+ALTER TABLE t_ps_oficina
+    ADD CONSTRAINT fk_minimo_informacao_oficina FOREIGN KEY ( cd_login )
+        REFERENCES t_ps_login ( cd_login );
+
+ALTER TABLE t_ps_endereco
+    ADD CONSTRAINT fk_minimo_informacoes_endereco FOREIGN KEY ( cd_login )
+        REFERENCES t_ps_login ( cd_login );
+
+ALTER TABLE t_ps_usuario
+    ADD CONSTRAINT fk_minimo_infromacoes_usuario FOREIGN KEY ( cd_login )
+        REFERENCES t_ps_login ( cd_login );
+
+ALTER TABLE t_ps_diagnostico
+    ADD CONSTRAINT fk_oficina_diagnostico FOREIGN KEY ( cd_login )
+        REFERENCES t_ps_oficina ( cd_login );
+
+ALTER TABLE t_ps_pedido
+    ADD CONSTRAINT fk_orcamento_pedido FOREIGN KEY ( cd_orcamento )
+        REFERENCES t_ps_orcamento ( cd_orcamento );
+
+ALTER TABLE t_ps_pedido
+    ADD CONSTRAINT fk_produto_pedido FOREIGN KEY ( cd_produto )
+        REFERENCES t_ps_produto ( cd_produto );
+
+ALTER TABLE t_ps_automovel
+    ADD CONSTRAINT fk_usuario_automovel FOREIGN KEY ( cd_login )
+        REFERENCES t_ps_usuario ( cd_login );
+
+--  ERROR: No Discriminator Column found in Arc INFORMACOES_PRIMARIAS - constraint trigger for Arc cannot be generated 
+
+--  ERROR: No Discriminator Column found in Arc INFORMACOES_PRIMARIAS - constraint trigger for Arc cannot be generated
+
+CREATE SEQUENCE sq_t_ps_automovel START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER tg_t_ps_automovel BEFORE
+    INSERT ON t_ps_automovel
+    FOR EACH ROW
+    WHEN ( new.cd_automovel IS NULL )
+BEGIN
+    :new.cd_automovel := sq_t_ps_automovel.nextval;
+END;
+/
+
+CREATE SEQUENCE sq_t_ps_diagnostico START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER tg_t_ps_diagnostico BEFORE
+    INSERT ON t_ps_diagnostico
+    FOR EACH ROW
+    WHEN ( new.cd_diagnostico IS NULL )
+BEGIN
+    :new.cd_diagnostico := sq_t_ps_diagnostico.nextval;
+END;
+/
+
+CREATE SEQUENCE sq_t_ps_cd_login START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER tg_t_ps_cd_login BEFORE
+    INSERT ON t_ps_login
+    FOR EACH ROW
+    WHEN ( new.cd_login IS NULL )
+BEGIN
+    :new.cd_login := sq_t_ps_cd_login.nextval;
+END;
+/
+
+CREATE SEQUENCE sq_t_ps_oficina START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER tg_t_ps_oficina BEFORE
+    INSERT ON t_ps_oficina
+    FOR EACH ROW
+    WHEN ( new.cd_login IS NULL )
+BEGIN
+    :new.cd_login := sq_t_ps_oficina.nextval;
+END;
+/
+
+CREATE SEQUENCE sq_t_ps_orcamento START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER tg_t_ps_orcamento BEFORE
+    INSERT ON t_ps_orcamento
+    FOR EACH ROW
+    WHEN ( new.cd_orcamento IS NULL )
+BEGIN
+    :new.cd_orcamento := sq_t_ps_orcamento.nextval;
+END;
+/
+
+CREATE SEQUENCE sq_t_ps_produto START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER tg_t_ps_produto BEFORE
+    INSERT ON t_ps_produto
+    FOR EACH ROW
+    WHEN ( new.cd_produto IS NULL )
+BEGIN
+    :new.cd_produto := sq_t_ps_produto.nextval;
+END;
+/
+
+CREATE SEQUENCE sq_t_ps_usuario START WITH 1 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER tg_t_ps_usuario BEFORE
+    INSERT ON t_ps_usuario
+    FOR EACH ROW
+    WHEN ( new.cd_login IS NULL )
+BEGIN
+    :new.cd_login := sq_t_ps_usuario.nextval;
+END;
+/
