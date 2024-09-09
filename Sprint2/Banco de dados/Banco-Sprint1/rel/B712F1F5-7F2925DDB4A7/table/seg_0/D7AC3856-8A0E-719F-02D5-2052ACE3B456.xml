@@ -18,7 +18,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_T_PS_PRODUTO</autoIncrementSequenceName>
+<autoIncrementTriggerName>TG_T_PS_PRODUTO</autoIncrementTriggerName>
 </Column>
 <Column name="vl_produto" id="DF2C87F6-4C30-0EFD-0825-715E7019543C">
 <createdBy>Pedro Henrique</createdBy>

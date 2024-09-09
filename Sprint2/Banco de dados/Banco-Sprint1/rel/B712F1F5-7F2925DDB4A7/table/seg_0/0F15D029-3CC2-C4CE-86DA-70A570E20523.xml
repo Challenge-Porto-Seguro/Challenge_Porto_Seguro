@@ -6,6 +6,7 @@
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<existDependencyGenerationLevel>Discriminator value</existDependencyGenerationLevel>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
 <Column name="cd_login" id="AE6AE5B3-8B7F-02E8-B231-55722366F2B2">
@@ -17,9 +18,12 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
+<autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_T_PS_USUARIO</autoIncrementSequenceName>
+<autoIncrementTriggerName>TG_T_PS_USUARIO</autoIncrementTriggerName>
 <associations>
 <colAssociation fkAssociation="CD3B7D3D-144F-8F65-1473-1C927478F540" referredColumn="A028DA96-C11C-AF1D-48AF-0E6F8CC7F1F5"/>
 </associations>

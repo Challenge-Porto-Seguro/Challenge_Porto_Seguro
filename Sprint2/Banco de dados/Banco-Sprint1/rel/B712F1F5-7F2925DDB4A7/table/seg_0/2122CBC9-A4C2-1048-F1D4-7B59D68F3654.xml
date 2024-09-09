@@ -6,6 +6,7 @@
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<existDependencyGenerationLevel>Discriminator value</existDependencyGenerationLevel>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
 <Column name="cd_login" id="AAA0046D-876A-7DD9-AF2B-33290B99317B">
@@ -17,9 +18,12 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
+<autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_T_PS_OFICINA</autoIncrementSequenceName>
+<autoIncrementTriggerName>TG_T_PS_OFICINA</autoIncrementTriggerName>
 <associations>
 <colAssociation fkAssociation="3F5D244C-D694-3D12-A9F2-BE47BD7C8A6D" referredColumn="A028DA96-C11C-AF1D-48AF-0E6F8CC7F1F5"/>
 </associations>
@@ -35,6 +39,7 @@
 <dataTypeSize>14</dataTypeSize>
 <ownDataTypeParameters>14,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<isDiscriminatorColumn>true</isDiscriminatorColumn>
 </Column>
 <Column name="sq_inscricao_estadual" id="DBD8AA7B-559A-F08D-297B-842318DA75D4">
 <createdBy>Pedro Henrique</createdBy>

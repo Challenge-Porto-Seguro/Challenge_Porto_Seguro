@@ -8,18 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cd_pedido" id="3848612F-08CC-1F58-F210-C26463908AF0">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
-<generatorID>058B7F3E-4B95-26DB-ECE5-E6B41A99A7CF</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="cd_orcamento" id="8D777F82-2D3E-0ED1-C0B0-ACDCEDE568BF">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
@@ -89,7 +77,8 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="3848612F-08CC-1F58-F210-C26463908AF0"/>
+<colUsage columnID="8D777F82-2D3E-0ED1-C0B0-ACDCEDE568BF"/>
+<colUsage columnID="154E7D42-4FF9-67B0-0647-D65C5C395CD5"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="493CA1CB-435F-953D-CCA8-586B3311AB5A" name="FK_ORCAMENTO_PEDIDO">

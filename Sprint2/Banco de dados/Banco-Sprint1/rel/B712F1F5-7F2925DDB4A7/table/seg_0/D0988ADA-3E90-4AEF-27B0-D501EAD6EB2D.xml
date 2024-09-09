@@ -18,7 +18,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_T_PS_ORCAMENTO</autoIncrementSequenceName>
+<autoIncrementTriggerName>TG_T_PS_ORCAMENTO</autoIncrementTriggerName>
 </Column>
 <Column name="cd_diagnostico" id="A401F5DB-4789-449C-B423-68708136E1D7">
 <createdBy>Pedro Henrique</createdBy>
