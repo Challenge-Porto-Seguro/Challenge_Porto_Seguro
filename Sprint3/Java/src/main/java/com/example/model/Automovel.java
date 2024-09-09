@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.example.model.usuarios.Usuario;
 import com.example.validacoes.VerificaCriacaoAutomovel;
 
 import java.text.SimpleDateFormat;
@@ -10,7 +11,7 @@ import java.util.List;
 public class Automovel {
 
     private Long id;
-    private Long usuarioId;
+    private Usuario usuario;
     private String marca;
     private String modelo;
     private String placa;
@@ -18,12 +19,13 @@ public class Automovel {
     private Diagnostico diagnostico;
     private List<Diagnostico> diagnosticos = new ArrayList<>();
 
-    public Automovel(String marca, String modelo, String placa, Date ano) {
+    public Automovel(String marca, String modelo, String placa, Date ano, Usuario usuario) {
         VerificaCriacaoAutomovel.verifica(marca, modelo, placa, ano);
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
         this.ano = ano;
+        this.usuario = usuario;
     }
 
     public void setMarca(String marca) {
@@ -32,6 +34,10 @@ public class Automovel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     public String getMarca() {
@@ -50,9 +56,6 @@ public class Automovel {
         return ano;
     }
 
-    public Long getUsuarioId() {
-        return usuarioId;
-    }
 
     public Long getId() {
         return id;

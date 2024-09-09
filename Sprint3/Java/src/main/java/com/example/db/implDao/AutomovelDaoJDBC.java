@@ -4,8 +4,11 @@ import com.example.db.dao.AutomovelDao;
 import com.example.db.DB;
 import com.example.db.DbException;
 import com.example.model.Automovel;
+import com.example.model.usuarios.Usuario;
+import com.example.service.UsuarioService;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.Optional;
 
 public class AutomovelDaoJDBC implements AutomovelDao {
@@ -22,9 +25,9 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement("""
-                insert into automoveis (usuario_id, marca, modelo, placa, ano) values (?, ?, ?, ?, ?)
+                insert into T_PS_AUTOMOVEL (cd_login, nm_marca_veiculo, nm_modelo_veiculo, sq_placa, dt_veiculo) values (?, ?, ?, ?, ?)
             """, new String[] {"cd_automovel"});
-            ps.setLong(1, automovel.getUsuarioId());
+            ps.setLong(1, automovel.getUsuario().getId());
             ps.setString(2, automovel.getMarca());
             ps.setString(3, automovel.getModelo());
             ps.setString(4, automovel.getPlaca());
@@ -53,7 +56,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                update automoveis set marca = ?, modelo = ?, placa = ?, ano = ? where id = ?
+                update T_PS_AUTOMOVEL set marca = ?, modelo = ?, placa = ?, ano = ? where cd_automovel = ?
             """);
             if (automovel.getMarca() != null) {
                 ps.setString(1, automovel.getMarca());
@@ -82,7 +85,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                delete from automoveis where id = ? 
+                delete from T_PS_AUTOMOVEL on delete cascade where cd_automovel = ? 
             """);
             ps.setLong(1, id);
             ps.executeUpdate();
@@ -98,12 +101,14 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement("""
-                select * from automoveis where id = ?
+                select * from T_PS_AUTOMOVEL where cd_automovel = ?
             """);
             ps.setLong(1, id);
             rs = ps.executeQuery();
             if(rs.next()){
-                Automovel automovel = instanciaAutomovel(rs);
+                UsuarioService usuarioService = new UsuarioService();
+                Usuario usuario = usuarioService.buscaUsuarioPorId(rs.getLong("cd_login"));
+                Automovel automovel = instanciaAutomovel(rs, usuario);
                 return Optional.of(automovel);
             }
             return Optional.empty();
@@ -115,9 +120,9 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         }
     }
 
-    private Automovel instanciaAutomovel(ResultSet rs) throws SQLException {
-        Automovel automovel = new Automovel(rs.getString("marca"), rs.getString("modelo"), rs.getString("placa"), rs.getDate("ano"));
-        automovel.setId(rs.getLong("id"));
+    private Automovel instanciaAutomovel(ResultSet rs, Usuario usuario) throws SQLException {
+        Automovel automovel = new Automovel(rs.getString("nm_marca_veiculo"), rs.getString("nm_modelo_veiculo"), rs.getString("sq_placa"), rs.getDate("dt_ano"), usuario);
+        automovel.setId(rs.getLong("cd_automovel"));
         return automovel;
     }
 }
