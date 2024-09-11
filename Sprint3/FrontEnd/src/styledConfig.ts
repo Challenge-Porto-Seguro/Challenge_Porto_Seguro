@@ -1,6 +1,12 @@
 import styled from "styled-components"
 import "./App.css"
 
+export const AppStyle = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+`
+
 export const HeaderStyle = styled.header`
     border-bottom: 2px solid var(--cinza);
     padding: 0.2em 0;
@@ -301,6 +307,11 @@ export const LoginPageStyle = styled.main`
         text-align: center;
     }
 
+    a {
+        margin-top: 50px;
+        color: var(--azul);
+    }
+
     .btn {
         padding: 1em 8em;
         font-weight: 700;
@@ -314,4 +325,123 @@ export const LoginPageStyle = styled.main`
         color: var(--preto);
     }
 
+`
+export const CadastroPageStyle = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 3em;
+
+
+    h1 {
+        color: var(--azul-claro);
+        border-bottom: 1px solid var(--cinza);
+        width: 50%;
+        text-align: center;
+        padding: 0.5em;
+    }
+`
+
+export const FormularioCadastroStyle = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    margin: 2em;
+    border: 0.7px solid var(--preto);
+    padding: 1em;
+    border-radius: 20px;
+    background-color: #F5F7F8;
+
+    .endereco_container {
+        display: flex;
+        width: 60%;
+        gap: 10px;
+    }
+
+    .botao_cadastro {
+        margin-top: 10px;
+        padding: 0.8em 5em;
+        background-color: var(--branco);
+        border: 1px solid var(--preto);
+    }
+
+    .botao_cadastro:hover {
+        background-color: var(--azul);
+        transition: 1s;
+    }
+
+    .rua {
+        width: 85%;
+    }
+
+    .numero {
+        width: 15%;
+    }
+
+
+`
+
+export const FormularioCadastroSectio = styled.section`
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    .campo {
+            margin-bottom: 10px;
+        }
+
+    .input {
+        margin-bottom: 10px;
+        padding: 0.5em 0.3em;
+        border-radius: 10px;
+        width: 60%;
+        color: var(--preto);
+    }
+
+    .input::placeholder {
+        text-align: center;
+        color: var(--preto);
+    }
+
+    #rua {
+        width: 100%;
+    }
+
+    #numero {
+        width: 100%;
+    }
+
+   
+
+`
+
+export const FormularioCadastroVeiculo = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    margin: 2em;
+    border: 0.7px solid var(--preto);
+    padding: 1em;
+    border-radius: 20px;
+    background-color: #F5F7F8;
+
+    .botao_cadastro {
+        margin-top: 10px;
+        padding: 0.8em 5em;
+        background-color: var(--branco);
+        border: 1px solid var(--preto);
+    }
+
+    .botao_cadastro:hover {
+        background-color: var(--azul);
+        transition: 1s;
+    }
 `
