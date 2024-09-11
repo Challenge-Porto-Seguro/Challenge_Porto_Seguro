@@ -19,7 +19,7 @@ export default function CadastroUsuario() {
         {id: "rua", nomeCampo: "Rua", tipo: "text", placeHolder: "Digite o nome da sua rua"},
         {id: "numero", nomeCampo: "Numero", tipo: "number", placeHolder: ""},
     ]
-
+    document.title = "Cadastro de Usuario"
     return (
         <CadastroPageStyle>
 

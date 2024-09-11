@@ -10,7 +10,9 @@ export default function CadastroAutomovel() {
         {id: "ano", nomeCampo: "Ano", tipo: "date", placeHolder: "Digite o ano de seu veiculo"},
         {id: "placa", nomeCampo: "Placa", tipo: "text", placeHolder: "Digite a placa do seu veiculo"}
     ]
+     document.title ="Cadastro de Automovel"
     return (
+       
         <CadastroPageStyle>
             <h1>Cadastro de veiculo</h1>
             <FormularioCadastroVeiculo>
