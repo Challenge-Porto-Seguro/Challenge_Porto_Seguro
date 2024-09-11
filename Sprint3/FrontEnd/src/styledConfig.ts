@@ -142,12 +142,49 @@ export const FooterStyle = styled.footer`
 
 export const ChatBotPageStyle = styled.main`
     display: flex;
-    flex-direction: column;
     text-align: center;
+    flex-grow: 1;
     padding: 1em;
-    gap: 40em;
+    gap: 10px;
+
+    .automoveis, .chatbot {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .automoveis {
+        align-items: center;
+    }
+
+    .titulo__automoveis {
+        color: var(--azul-claro);
+        font-size: 2rem;
+    }
+
+    a {
+        color: var(--preto);
+        border: 1px solid var(--preto);
+        text-decoration: none;
+        padding: 0.7em 1.5em;
+        border-radius: 10px;
+    }
+
+    a:hover {
+        background-color: var(--azul-claro);
+        transition: 1s;
+    }
+
+
+    .chatbot {
+        justify-content: space-between;
+        align-items: center;
+    }
+
 
     .titulo {
+        font-size: 2.5rem;
         font-family: var(--fonte-terciaria);
         letter-spacing: 6px;
     }
@@ -158,6 +195,7 @@ export const ChatBotPageStyle = styled.main`
     }
 
     .container__input{
+        padding: 1em;
         width: 80%;
         border-radius: 50px;
     }
@@ -174,7 +212,7 @@ export const ChatBotPageStyle = styled.main`
         text-decoration: none;
         background: none;
         border: none;
-        width: 3%;
+        width: 7%;
     }
 
 `
@@ -444,4 +482,16 @@ export const FormularioCadastroVeiculo = styled.form`
         background-color: var(--azul);
         transition: 1s;
     }
+`
+
+export const AutomoveisComponentSyle = styled.section`
+    display: flex;
+    gap: 20px;
+    border: 1px solid var(--preto);
+    border-radius: 20px;
+    width: 50%;
+    background-color: #F5F7F8;
+    padding: 0.5em 1em;
+    justify-content: center;
+
 `
