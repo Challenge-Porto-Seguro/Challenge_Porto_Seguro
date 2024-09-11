@@ -4,3 +4,10 @@ export interface ListaColaboradores {
     rm:number;
     link_github:string
 }
+
+export interface CriacaoFormulario {
+    id: string;
+    nomeCampo: string;
+    tipo: string;
+    placeHolder: string;
+}
