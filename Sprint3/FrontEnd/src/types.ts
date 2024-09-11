@@ -11,3 +11,9 @@ export interface CriacaoFormulario {
     tipo: string;
     placeHolder: string;
 }
+
+export interface ListaAutomoveis {
+    marca: string;
+    placa: string;
+
+}
