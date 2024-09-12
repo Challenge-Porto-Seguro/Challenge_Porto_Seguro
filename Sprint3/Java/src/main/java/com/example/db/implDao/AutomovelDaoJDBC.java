@@ -24,7 +24,8 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement("""
-                insert into T_PS_AUTOMOVEL (cd_login, nm_marca_veiculo, nm_modelo_veiculo, sq_placa, dt_veiculo) values (?, ?, ?, ?, ?)
+                insert into T_PS_AUTOMOVEL (cd_pessoa, nm_marca_veiculo, nm_modelo_veiculo, sq_placa, dt_veiculo)
+                values (?, ?, ?, ?, ?)
             """, new String[] {"cd_automovel"});
             ps.setLong(1, automovel.getUsuario().getId());
             ps.setString(2, automovel.getMarca());
@@ -55,21 +56,17 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                update T_PS_AUTOMOVEL set nm_marca_veiculo = ?, nm_modelo_veiculo = ?, sq_placa = ?, dt_veiculo = ? where cd_automovel = ?
+                update T_PS_AUTOMOVEL
+                    set nm_marca_veiculo = ?, nm_modelo_veiculo = ?, sq_placa = ?, dt_veiculo = ?
+                where cd_automovel = ?
             """);
-            if (automovel.getMarca() != null) {
-                ps.setString(1, automovel.getMarca());
-            }
-            if (automovel.getModelo() != null) {
-                ps.setString(2, automovel.getModelo());
-            }
-            if (automovel.getPlaca() != null) {
-                ps.setString(3, automovel.getPlaca());
-            }
-            if (automovel.getAno() != null) {
-                ps.setDate(4, new Date(automovel.getAno().getTime()));
-            }
+            ps.setString(1, automovel.getMarca());
+            ps.setString(2, automovel.getModelo());
+            ps.setString(3, automovel.getPlaca());
+            ps.setDate(4, new Date(automovel.getAno().getTime()));
             ps.setLong(5, automovel.getId());
+
+
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
@@ -84,7 +81,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                delete from T_PS_AUTOMOVEL where cd_automovel = ? 
+                delete from T_PS_AUTOMOVEL where cd_automovel = ?
             """);
             ps.setLong(1, id);
             ps.executeUpdate();
@@ -106,7 +103,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
             rs = ps.executeQuery();
             if(rs.next()){
                 UsuarioService usuarioService = new UsuarioService();
-                Usuario usuario = usuarioService.buscaUsuarioPorId(rs.getLong("cd_login"));
+                Usuario usuario = usuarioService.buscaUsuarioPorId(rs.getLong("cd_pessoa"));
                 Automovel automovel = instanciaAutomovel(rs, usuario);
                 return Optional.of(automovel);
             }

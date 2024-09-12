@@ -23,15 +23,16 @@ public class UsuarioDaoJDBC implements UsuarioDao {
         try {
             conn.setAutoCommit(false);
             ps = conn.prepareStatement(""" 
-                    insert into T_PS_LOGIN(nm_nome, nm_email, sq_senha)
+                    insert into T_PS_PESSOA(nm_nome, nm_email, sq_senha)
                     values (?, ?, ?)
-                """, new String[] {"cd_login"});
+                """, new String[] {"cd_pessoa"});
+
 
             ps.setString(1, usuario.getNome());
             ps.setString(2, usuario.getEmail());
             ps.setString(3, usuario.getSenha());
-
             int rowsAffected = ps.executeUpdate();
+
             if (rowsAffected > 0) {
                 ResultSet rs = ps.getGeneratedKeys();
                 if (rs.next()) {
@@ -40,17 +41,18 @@ public class UsuarioDaoJDBC implements UsuarioDao {
                 }
                 DB.closeResultSet(rs);
                 ps = conn.prepareStatement("""
-                    insert into T_PS_USUARIO(cd_login, sq_cpf, qt_orcamento_mes)
-                    values (?, ?, ?)
+                    insert into T_PS_USUARIO(cd_pessoa, sq_cpf)
+                    values (?, ?)
                 """);
                 ps.setLong(1, usuario.getId());
                 ps.setString(2, usuario.getCpf());
-                ps.setInt(3, 3);
                 int rowsAffected2 = ps.executeUpdate();
                 if (rowsAffected2 > 0) {
                     conn.commit();
+                    conn.setAutoCommit(true);
                 } else {
                     conn.rollback();
+                    conn.setAutoCommit(true);
                     throw new DbException("Erro ao inserir usuario");
                 }
             } else {
@@ -69,15 +71,18 @@ public class UsuarioDaoJDBC implements UsuarioDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                update usuarios set nome = ?, email = ?, senha = ?, cpf = ?, quantidade_orcamento = ? where id = ?
+                update T_PS_PESSOA set nm_nome = ?,nm_email = ?, sq_senha = ? where cd_pessoa = ?
             """);
             ps.setString(1, usuario.getNome());
             ps.setString(2, usuario.getEmail());
             ps.setString(3, usuario.getSenha());
-            ps.setString(4, usuario.getCpf());
-            ps.setInt(5, usuario.getQuantidadeOrcamento());
-            ps.setLong(6, usuario.getId());
+            ps.setLong(4, usuario.getId());
             ps.executeUpdate();
+            ps = conn.prepareStatement("""
+                update T_PS_USUARIO set sq_cpf = ? where cd_pessoa = ?
+            """);
+            ps.setString(1, usuario.getCpf());
+            ps.setLong(2, usuario.getId());
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         } finally {
@@ -90,7 +95,7 @@ public class UsuarioDaoJDBC implements UsuarioDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                delete from usuarios where id = ?
+                delete from T_PS_USUARIO where cd_pessoa = ?
             """);
 
             ps.setLong(1, id);
@@ -107,7 +112,7 @@ public class UsuarioDaoJDBC implements UsuarioDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                select * from T_PS_USUARIO usuario join T_PS_LOGIN login on usuario.cd_login = login.cd_login where usuario.cd_login = ?
+                select usuario.sq_cpf, login.* from T_PS_USUARIO usuario join T_PS_PESSOA login on usuario.cd_pessoa = login.cd_pessoa where usuario.cd_pessoa = ?
             """);
             ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
@@ -126,7 +131,7 @@ public class UsuarioDaoJDBC implements UsuarioDao {
 
     private Usuario instaciaUsuario(ResultSet rs) throws SQLException {
         Usuario usuario = new Usuario(rs.getString("nm_nome"), rs.getString("sq_cpf"), rs.getString("nm_email"), rs.getString("sq_senha"));
-        usuario.setId(rs.getLong("cd_login"));
+        usuario.setId(rs.getLong("cd_pessoa"));
         return usuario;
     }
 }
