@@ -11,6 +11,8 @@
 <Column name="cd_diagnostico" id="E9BE0FD4-8288-0F44-19CF-2CDC2013275F">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do diagnostico. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do diagnostico. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>DC1C915E-56A9-EC95-B276-DD3D1DB29C64</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -26,6 +28,8 @@
 <Column name="cd_automovel" id="EC1521B5-3F87-42A2-21B3-B59A6AA7DD28">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do automovel. Esse número é sequencial iniciando com 1 a partir do id do automovel  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do automovel. Esse número é sequencial iniciando com 1 a partir do id do automovel  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>08F12F53-14B8-3C61-D0F6-4DAC1914F535</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -55,6 +59,8 @@
 <Column name="nm_descricao_diagnostico" id="16BE5341-31D6-ABB3-F155-B60580E63B54">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a descrição do diagnostico. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a descrição do diagnostico. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>4F5BB288-BC63-60D5-63ED-EAB33839370B</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -67,6 +73,8 @@
 <Column name="dt_inicio_diagnostico" id="1CE4EB71-1D11-E059-2B2C-6245E50C308C">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a data de inicio do diagnostico. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a data de inicio do diagnostico. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>D9373E08-22CE-7564-A8DC-F4289DBFD938</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -78,6 +86,8 @@
 <Column name="dt_fim_diagnostico" id="591E0175-9157-D342-9D0E-C06829200612">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a data de fim do diagnostico]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a data de fim do diagnostico]]></commentInRDBMS>
 <generatorID>37312F28-8FFD-8348-B933-353068150CF7</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -90,23 +100,27 @@
 <Column name="st_diagnostico" id="957EA73A-E33B-8B52-EC29-A5666A92188B">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá recebero status  do diagnostico. Podendo receber a de ativo ou i de inativo. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá recebero status  do diagnostico. Podendo receber a de ativo ou i de inativo. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>00AA2A4F-FECB-5FD8-78A8-57F8098CD9AE</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <constraintName>CK_T_PS_STATUS_DIAGNOSTICO</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>2</dataTypeSize>
+<dataTypeSize>1</dataTypeSize>
 <listOfValues>
 <valueDef value="A" description="O diagnostico esta ativo e operante"/>
 <valueDef value="I" description="O diagnostico esta inativo e inoperante"/>
 </listOfValues>
-<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cd_login" id="9178CB68-0462-E75F-222C-2631161691BD">
+<Column name="cd_pessoa" id="9178CB68-0462-E75F-222C-2631161691BD">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>C8C5CA95-491F-80C4-F093-582185937A1B</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

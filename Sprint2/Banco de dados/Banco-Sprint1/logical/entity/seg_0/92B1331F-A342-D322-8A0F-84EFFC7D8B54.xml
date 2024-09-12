@@ -18,6 +18,8 @@
 <Attribute name="cd_automovel" id="6562A2F2-D3AC-F003-0B2F-E933B77E8ACA">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:41:08 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do automovel. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do automovel. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -28,10 +30,13 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_login" id="3706C720-CBAF-558B-C42B-1AE6A7B66D2F">
+<Attribute name="cd_pessoa" id="3706C720-CBAF-558B-C42B-1AE6A7B66D2F">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-05 23:26:41 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>EF0EEB3B-8A9D-B0DB-EE09-DD399110D02E</generatorID>
+<notes><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></notes>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -46,6 +51,8 @@
 <Attribute name="sq_placa" id="FB9964EF-6B6C-0F71-F378-EB6E8BDE7B78">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:41:38 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o numero da placa do automovel. Seu conteudo é obrigatorio]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o numero da placa do automovel. Seu conteudo é obrigatorio e unico]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -59,6 +66,8 @@
 <Attribute name="nm_marca_veiculo" id="CC343249-3FC0-C2A0-F764-73D656F691DD">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:41:43 UTC</createdTime>
+<comment><![CDATA[esse atribtuo ira receber a marca do automovel. Seu conteudo é obrigatorio]]></comment>
+<commentInRDBMS><![CDATA[esse atribtuo ira receber a marca do automovel. Seu conteudo é obrigatorio]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -72,6 +81,8 @@
 <Attribute name="nm_modelo_veiculo" id="60FBD271-5E89-FEBE-CAC4-CAECFE46C4ED">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:41:46 UTC</createdTime>
+<comment><![CDATA[esse atribtuo ira receber o modelo do automovel. Seu conteudo é obrigatorio]]></comment>
+<commentInRDBMS><![CDATA[esse atribtuo ira receber o modelo do automovel. Seu conteudo é obrigatorio]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -85,6 +96,7 @@
 <Attribute name="dt_veiculo" id="A714965B-6B57-3E42-A7B9-2F6997AAC98B">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:41:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[esse atribtuo ira receber a data do automovel. Seu conteudo é obrigatorio]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>

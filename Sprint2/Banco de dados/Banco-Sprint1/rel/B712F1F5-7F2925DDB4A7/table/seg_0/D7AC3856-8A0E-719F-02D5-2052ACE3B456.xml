@@ -11,6 +11,8 @@
 <Column name="cd_produto" id="E0DC164F-82FE-A4E2-1FC7-59E985768157">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do produto. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do produto. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>5A54663E-509A-046D-D45F-0A722B5CD8A6</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -26,6 +28,8 @@
 <Column name="vl_produto" id="DF2C87F6-4C30-0EFD-0825-715E7019543C">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber  o valor do produto. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber  o valor do produto. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>4EAB5705-DC9B-6889-FCA9-3A7367DE52D9</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -39,6 +43,8 @@
 <Column name="ds_produto" id="36436D44-F8F5-8748-FD57-D0EF0438CCAD">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a descrição do produto. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a descrição do produto. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>CD36D1DD-3293-BA0A-6064-6B543B5E29FA</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -52,6 +58,8 @@
 <Column name="nm_produto" id="09B770D8-3E53-B285-1634-155D5E82D30D">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá recebero nome  do produto. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá recebero nome  do produto. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>68299272-A136-8B0C-353C-8A640ACD88B3</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

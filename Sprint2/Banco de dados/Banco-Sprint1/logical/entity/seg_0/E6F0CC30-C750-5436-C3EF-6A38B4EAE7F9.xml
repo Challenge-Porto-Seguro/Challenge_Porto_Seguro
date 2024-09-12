@@ -18,6 +18,8 @@
 <Attribute name="cd_endereco" id="34B52D64-66D0-C33A-DF7F-36C741D54186">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:18 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do endereco. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do endereco. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -28,9 +30,11 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_login" id="21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C">
+<Attribute name="cd_pessoa" id="21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 13:03:30 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>1D5DFF92-C4BD-7D40-D493-AD4A8C986AF9</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
@@ -41,11 +45,13 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nm_rua" id="939D4E51-433F-5CCC-33AF-C1EFBF9F872C">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:24 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome da rua do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome da rua do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -59,6 +65,8 @@
 <Attribute name="nm_cidade" id="C1D562C5-2AEB-CDAF-B27C-A5BE6A1CB976">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome da cidade do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome da cidade do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -72,6 +80,8 @@
 <Attribute name="nm_estado" id="709741A3-405F-E157-7ED7-06BE81A17F00">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:29 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome do estado do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome do estado do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -85,6 +95,8 @@
 <Attribute name="nm_bairro" id="5076D932-8729-24E5-BA04-DFCF41D7DF21">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:33 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome do bairro do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome do bairro do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -98,6 +110,8 @@
 <Attribute name="sq_cep" id="1CF39CA1-A95F-783C-8257-6A29225CDA0A">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:52:35 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o cep do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o cep do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -111,6 +125,8 @@
 <Attribute name="nr_casa" id="CC0F1BDE-7832-B15E-A533-839E8979F6E8">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-08-23 23:58:30 UTC</createdTime>
+<comment><![CDATA[esse atriibuto ira receber o numero do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atriibuto ira receber o numero do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -127,8 +143,9 @@
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:53:11 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CD3B7D3D-144F-8F65-1473-1C927478F540" containerWithKeyObject="0F15D029-3CC2-C4CE-86DA-70A570E20523" localFKIndex="B923BA38-727C-6033-339C-A0E2678643FF" name="FK_MINIMO_INFROMACOES_USUARIO">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CD3B7D3D-144F-8F65-1473-1C927478F540" containerWithKeyObject="0F15D029-3CC2-C4CE-86DA-70A570E20523" localFKIndex="B923BA38-727C-6033-339C-A0E2678643FF" name="FK_PESSOA_USUARIO">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
 <generatorID>BCCDFB7F-DB41-2E16-C47E-4DEEA44CE7DA</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
-<referredTableLongName>T_PS_MINIMO_INFORMACOES</referredTableLongName>
+<referredTableLongName>T_PS_PESSOA</referredTableLongName>
 <arc>D9275568-A12B-31AA-163F-16BC9546233B</arc>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>073E9F9E-C388-6973-4A0F-4A3B6AC88AAF</referredTableID>
 <keyObject>80A7F00A-0B0E-18BD-896F-54D93FBDAF14</keyObject>
 <referredKeyID>80A7F00A-0B0E-18BD-896F-54D93FBDAF14</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>cd_minimo_informacoes</refColNames>
+<refColNames>cd_pessoa</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

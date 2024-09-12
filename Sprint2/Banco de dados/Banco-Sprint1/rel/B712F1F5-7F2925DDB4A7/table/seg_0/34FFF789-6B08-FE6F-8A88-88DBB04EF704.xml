@@ -11,6 +11,8 @@
 <Column name="cd_endereco" id="4BF32044-3D2F-DC9C-2978-806879CD3665">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do endereco. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do endereco. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>34B52D64-66D0-C33A-DF7F-36C741D54186</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -20,9 +22,11 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cd_login" id="5F8849B3-5F90-67E3-01AA-C482D17AE9C5">
+<Column name="cd_pessoa" id="5F8849B3-5F90-67E3-01AA-C482D17AE9C5">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>21A92BFD-6CDD-1E1B-AFFA-BCD11F43F08C</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -39,6 +43,8 @@
 <Column name="nm_rua" id="E0A2B062-8923-1072-1625-D07D10A7AD2C">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome da rua do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome da rua do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>939D4E51-433F-5CCC-33AF-C1EFBF9F872C</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -51,6 +57,8 @@
 <Column name="nm_cidade" id="7F76EDAA-B604-EBD8-64A1-07173936FB12">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome da cidade do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome da cidade do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>C1D562C5-2AEB-CDAF-B27C-A5BE6A1CB976</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -63,6 +71,8 @@
 <Column name="nm_estado" id="7E0FDA14-0189-A1A5-7A82-35B683A9F2B7">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome do estado do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome do estado do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>709741A3-405F-E157-7ED7-06BE81A17F00</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -75,6 +85,8 @@
 <Column name="nm_bairro" id="DE44DB81-E61A-3322-E41D-579FE672A8FE">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome do bairro do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome do bairro do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>5076D932-8729-24E5-BA04-DFCF41D7DF21</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -87,6 +99,8 @@
 <Column name="sq_cep" id="6C1C5AD9-4883-2DFA-CF8F-F7F04622F1AD">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o cep do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o cep do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>1CF39CA1-A95F-783C-8257-6A29225CDA0A</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -99,6 +113,8 @@
 <Column name="nr_casa" id="D304950B-C66A-6CC4-32F4-DE824DEC579E">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atriibuto ira receber o numero do endereco. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atriibuto ira receber o numero do endereco. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>CC0F1BDE-7832-B15E-A533-839E8979F6E8</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

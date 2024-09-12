@@ -15,9 +15,11 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_login" id="167133AA-B8DE-CA2A-71C5-462E5B6B9769">
+<Attribute name="cd_pessoa" id="167133AA-B8DE-CA2A-71C5-462E5B6B9769">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-03 23:26:19 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do usuario. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do usuario. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>BCCDFB7F-DB41-2E16-C47E-4DEEA44CE7DA</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
@@ -33,6 +35,8 @@
 <Attribute name="sq_cpf" id="A07BBF0D-33EB-FCBA-5CE8-1567A2F4CCF9">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-03 23:29:24 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o numero do cpf da pessoa. Seu conteúdo e obrigatorio e unico]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o numero do cpf da pessoa. Seu conteúdo e obrigatorio e unico]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -43,40 +47,15 @@
 <dataTypeSize>11</dataTypeSize>
 <ownDataTypeParameters>11,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="qt_orcamento_mes" id="FF645D9B-61CE-ACD0-A134-11E02D35C8BA">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-05 23:23:38 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="dt_ultimo_orcamento" id="9E6E6A97-9F5A-F71A-ADED-672EBEF94BFD">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-05 23:24:05 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="8740FBF9-CDAF-8671-38A7-8C3336F22E83" name="T_PS_USUARIO PK">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-08-24 00:02:07 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
@@ -87,8 +66,9 @@
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:30:14 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <newElementsIDs>A07BBF0D-33EB-FCBA-5CE8-1567A2F4CCF9</newElementsIDs>
 <usedAttributes>

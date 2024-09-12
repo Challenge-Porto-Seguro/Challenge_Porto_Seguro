@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_MINIMO_INFORMACAO_OFICINA" directorySegmentName="seg_0" id="8E1E8936-C8B7-55A4-0AEC-758634C9A0D4">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_PESSOA_OFICINA" directorySegmentName="seg_0" id="8E1E8936-C8B7-55A4-0AEC-758634C9A0D4">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:57:50 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -7,7 +7,7 @@
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
 <sourcePk>25CA3121-CA76-1CD1-7A4F-B153206ABD78</sourcePk>
-<arc>24438847-1A29-CB16-9756-A981DD28F6BF</arc>
+<arc>467939D1-AB07-9CA4-9008-40DA5B4E6AC9</arc>
 <identifying>false</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>

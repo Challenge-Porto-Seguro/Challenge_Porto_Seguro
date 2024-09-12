@@ -9,16 +9,18 @@
 <existDependencyGenerationLevel>Discriminator value</existDependencyGenerationLevel>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cd_login" id="AE6AE5B3-8B7F-02E8-B231-55722366F2B2">
+<Column name="cd_pessoa" id="AE6AE5B3-8B7F-02E8-B231-55722366F2B2">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do usuario. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do usuario. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>167133AA-B8DE-CA2A-71C5-462E5B6B9769</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -31,6 +33,8 @@
 <Column name="sq_cpf" id="EB877807-B873-FDB0-6FDB-9A095803FCCA">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o numero do cpf da pessoa. Seu conteúdo e obrigatorio e unico]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o numero do cpf da pessoa. Seu conteúdo e obrigatorio e unico]]></commentInRDBMS>
 <generatorID>A07BBF0D-33EB-FCBA-5CE8-1567A2F4CCF9</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -89,7 +93,7 @@
 <colUsage columnID="EB877807-B873-FDB0-6FDB-9A095803FCCA"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="B923BA38-727C-6033-339C-A0E2678643FF" name="FK_MINIMO_INFROMACOES_USUARIO">
+<ind_PK_UK id="B923BA38-727C-6033-339C-A0E2678643FF" name="FK_PESSOA_USUARIO">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
 <generatorID>BCCDFB7F-DB41-2E16-C47E-4DEEA44CE7DA</generatorID>

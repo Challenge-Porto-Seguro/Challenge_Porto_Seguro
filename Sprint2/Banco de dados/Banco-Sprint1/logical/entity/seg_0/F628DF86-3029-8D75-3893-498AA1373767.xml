@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F628DF86-3029-8D75-3893-498AA1373767" name="T_PS_LOGIN">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F628DF86-3029-8D75-3893-498AA1373767" name="T_PS_PESSOA">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:46:41 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -15,9 +15,11 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_login" id="3DCD207D-F524-2E29-CDA4-D0346BA08DEB">
+<Attribute name="cd_pessoa" id="3DCD207D-F524-2E29-CDA4-D0346BA08DEB">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:47:11 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -31,6 +33,8 @@
 <Attribute name="nm_nome" id="398A9270-4293-C1BE-C2B3-6E4DCEEB0923">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:48:17 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o nome da pessoa. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o nome da pessoa. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -44,6 +48,8 @@
 <Attribute name="nm_email" id="0C01165F-15E4-C684-3166-845B894B3106">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:47:36 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o email da pessoa. Seu conteúdo é obrigatório e unico.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o email da pessoa. Seu conteúdo é obrigatório e unico.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -57,6 +63,8 @@
 <Attribute name="sq_senha" id="C64269D9-5D15-78AE-B553-CCC0F1A833BD">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:48:40 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber a senha do email da pessoa. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber a senha do email da pessoa. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -69,7 +77,7 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="25CA3121-CA76-1CD1-7A4F-B153206ABD78" name="T_PS_MINIMO_INFORMACOES PK">
+<identifier id="25CA3121-CA76-1CD1-7A4F-B153206ABD78" name="T_PS_CD_PESSOA">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:48:00 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
@@ -77,6 +85,7 @@
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>3DCD207D-F524-2E29-CDA4-D0346BA08DEB</newElementsIDs>
 <usedAttributes>
 <attributeRef>3DCD207D-F524-2E29-CDA4-D0346BA08DEB</attributeRef>
 </usedAttributes>
@@ -85,8 +94,9 @@
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:28:36 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <newElementsIDs>0C01165F-15E4-C684-3166-845B894B3106</newElementsIDs>
 <usedAttributes>

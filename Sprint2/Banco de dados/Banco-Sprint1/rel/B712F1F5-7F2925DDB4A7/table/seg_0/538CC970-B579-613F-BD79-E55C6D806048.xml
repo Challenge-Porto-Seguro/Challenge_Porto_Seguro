@@ -11,6 +11,8 @@
 <Column name="cd_automovel" id="B66399C6-EA12-8A0C-9C28-DF028AD77893">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do automovel. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do automovel. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>6562A2F2-D3AC-F003-0B2F-E933B77E8ACA</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -26,6 +28,8 @@
 <Column name="sq_placa" id="A98F3BBC-A95C-BA8E-3F27-D71778BE890D">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o numero da placa do automovel. Seu conteudo é obrigatorio]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o numero da placa do automovel. Seu conteudo é obrigatorio e unico]]></commentInRDBMS>
 <generatorID>FB9964EF-6B6C-0F71-F378-EB6E8BDE7B78</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -38,6 +42,8 @@
 <Column name="nm_marca_veiculo" id="2BF44158-FF0C-C681-90C2-3094356945E5">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atribtuo ira receber a marca do automovel. Seu conteudo é obrigatorio]]></comment>
+<commentInRDBMS><![CDATA[esse atribtuo ira receber a marca do automovel. Seu conteudo é obrigatorio]]></commentInRDBMS>
 <generatorID>CC343249-3FC0-C2A0-F764-73D656F691DD</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -50,6 +56,8 @@
 <Column name="nm_modelo_veiculo" id="1BF095E0-2543-6032-6AFF-1EA27AD527B3">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atribtuo ira receber o modelo do automovel. Seu conteudo é obrigatorio]]></comment>
+<commentInRDBMS><![CDATA[esse atribtuo ira receber o modelo do automovel. Seu conteudo é obrigatorio]]></commentInRDBMS>
 <generatorID>60FBD271-5E89-FEBE-CAC4-CAECFE46C4ED</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -62,6 +70,7 @@
 <Column name="dt_veiculo" id="30D5083D-6242-6F58-599F-F499096BAF45">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[esse atribtuo ira receber a data do automovel. Seu conteudo é obrigatorio]]></commentInRDBMS>
 <generatorID>A714965B-6B57-3E42-A7B9-2F6997AAC98B</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -83,16 +92,19 @@
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cd_login" id="92E800DC-9DDC-E9A2-8FAC-5B33A509C36E">
+<Column name="cd_pessoa" id="92E800DC-9DDC-E9A2-8FAC-5B33A509C36E">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-05 23:38:36 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>3706C720-CBAF-558B-C42B-1AE6A7B66D2F</generatorID>
+<notes><![CDATA[Esse atributo irá receber a chave primária da pessoa. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></notes>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>

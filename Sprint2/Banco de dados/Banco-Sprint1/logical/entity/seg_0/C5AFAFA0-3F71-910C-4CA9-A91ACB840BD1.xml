@@ -15,9 +15,11 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_login" id="05C8761C-3C8F-D476-D2FC-94154535E537">
+<Attribute name="cd_pessoa" id="05C8761C-3C8F-D476-D2FC-94154535E537">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:57:50 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da oficina. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da oficina. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>8E1E8936-C8B7-55A4-0AEC-758634C9A0D4</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
@@ -28,11 +30,13 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="sq_cnpj" id="0F20565A-AED1-FAEF-4B35-A0DF16074C9F">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:54:48 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o cnpj da oficina. Seu conteúdo é obrigatorio e unico]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o cnpj da oficina. Seu conteúdo é obrigatorio e unico]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -46,6 +50,8 @@
 <Attribute name="sq_inscricao_estadual" id="39B9A482-41AB-0427-861D-636F781D5124">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:55:26 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber a inscrição estadual da oficina. Seu conteúdo é obrigatorio e unico]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber a inscrição estadual da oficina. Seu conteúdo é obrigatorio e unico]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -56,29 +62,15 @@
 <dataTypeSize>12</dataTypeSize>
 <ownDataTypeParameters>12,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="vl_a_pagar" id="9CAC48F3-3315-4F19-4D0C-CD4D8C323C53">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-05-21 12:56:07 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,10,2</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="18148AD1-203F-0773-8D10-799EC4D7C2B9" name="T_PS_OFICINA PK">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:59:55 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
@@ -89,8 +81,9 @@
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:32:38 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <newElementsIDs>0F20565A-AED1-FAEF-4B35-A0DF16074C9F</newElementsIDs>
 <usedAttributes>
@@ -101,8 +94,9 @@
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:33:06 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <newElementsIDs>39B9A482-41AB-0427-861D-636F781D5124</newElementsIDs>
 <usedAttributes>

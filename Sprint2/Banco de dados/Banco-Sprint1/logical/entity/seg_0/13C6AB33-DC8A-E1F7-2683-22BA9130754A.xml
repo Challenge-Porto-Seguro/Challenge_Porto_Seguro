@@ -18,6 +18,8 @@
 <Attribute name="cd_produto" id="5A54663E-509A-046D-D45F-0A722B5CD8A6">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:15:34 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do produto. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do produto. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -31,6 +33,8 @@
 <Attribute name="vl_produto" id="4EAB5705-DC9B-6889-FCA9-3A7367DE52D9">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:16:00 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber  o valor do produto. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber  o valor do produto. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -45,6 +49,8 @@
 <Attribute name="ds_produto" id="CD36D1DD-3293-BA0A-6064-6B543B5E29FA">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:16:15 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a descrição do produto. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a descrição do produto. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -59,6 +65,8 @@
 <Attribute name="nm_produto" id="68299272-A136-8B0C-353C-8A640ACD88B3">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:16:25 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá recebero nome  do produto. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá recebero nome  do produto. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -75,8 +83,9 @@
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:16:42 UTC</createdTime>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
+<item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

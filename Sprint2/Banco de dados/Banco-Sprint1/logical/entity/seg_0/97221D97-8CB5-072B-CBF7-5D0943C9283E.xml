@@ -18,6 +18,8 @@
 <Attribute name="cd_orcamento" id="7A38B30B-EAF6-1377-2C65-23C6F52C10D3">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:39:16 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do orcamento. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do orcamento. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -28,10 +30,12 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_diagnostico" id="04BBCEF9-608A-920B-00E5-08D10007198E">
+<Attribute name="cd_diagnostico" id="649CB172-18A7-CD8E-A30C-480453B4018A">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-08-23 23:56:54 UTC</createdTime>
-<generatorID>4FEAF39D-CF16-F0D4-BF56-16682B4FF626</generatorID>
+<createdTime>2024-09-11 10:44:58 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do diagnosticol. Esse número é sequencial iniciando com 1 a partir do cd do diagnostico  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do diagnosticol. Esse número é sequencial iniciando com 1 a partir do cd do diagnostico  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
+<generatorID>F31611E6-0DC3-D970-C9A0-C1140ABF4FCE</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>
@@ -46,6 +50,8 @@
 <Attribute name="st_orcamento" id="54BE0754-1128-49E2-6767-C1F0A774216F">
 <createdBy>thmaz</createdBy>
 <createdTime>2024-04-22 17:39:35 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá recebero status  do orcamento. Podendo receber a de ativo ou i de inativo. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá recebero status  do orcamento. Podendo receber a de ativo ou i de inativo. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <engineerTo>
 <item key="B712F1F5-B117-8B37-DC17-7F2925DDB4A7" value="true"/>

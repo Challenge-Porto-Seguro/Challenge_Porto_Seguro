@@ -9,16 +9,18 @@
 <existDependencyGenerationLevel>Discriminator value</existDependencyGenerationLevel>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cd_login" id="AAA0046D-876A-7DD9-AF2B-33290B99317B">
+<Column name="cd_pessoa" id="AAA0046D-876A-7DD9-AF2B-33290B99317B">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária da oficina. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária da oficina. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>05C8761C-3C8F-D476-D2FC-94154535E537</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -31,6 +33,8 @@
 <Column name="sq_cnpj" id="24F6B3EF-EAC8-7B6E-C3C6-8B02B0F99B23">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber o cnpj da oficina. Seu conteúdo é obrigatorio e unico]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber o cnpj da oficina. Seu conteúdo é obrigatorio e unico]]></commentInRDBMS>
 <generatorID>0F20565A-AED1-FAEF-4B35-A0DF16074C9F</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -44,6 +48,8 @@
 <Column name="sq_inscricao_estadual" id="DBD8AA7B-559A-F08D-297B-842318DA75D4">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<comment><![CDATA[esse atributo ira receber a inscrição estadual da oficina. Seu conteúdo é obrigatorio e unico]]></comment>
+<commentInRDBMS><![CDATA[esse atributo ira receber a inscrição estadual da oficina. Seu conteúdo é obrigatorio e unico]]></commentInRDBMS>
 <generatorID>39B9A482-41AB-0427-861D-636F781D5124</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -103,7 +109,7 @@
 <colUsage columnID="DBD8AA7B-559A-F08D-297B-842318DA75D4"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="5383EE2B-5386-912D-18F5-3C03C4A264FB" name="FK_MINIMO_INFORMACAO_OFICINA">
+<ind_PK_UK id="5383EE2B-5386-912D-18F5-3C03C4A264FB" name="FK_PESSOA_OFICINA">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
 <generatorID>8E1E8936-C8B7-55A4-0AEC-758634C9A0D4</generatorID>
