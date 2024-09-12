@@ -20,7 +20,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_T_PS_CD_ENDERECO</autoIncrementSequenceName>
+<autoIncrementTriggerName>TG_T_PS_CD_ENDERECO</autoIncrementTriggerName>
 </Column>
 <Column name="cd_pessoa" id="5F8849B3-5F90-67E3-01AA-C482D17AE9C5">
 <createdBy>Pedro Henrique</createdBy>
@@ -33,7 +36,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>

@@ -43,19 +43,6 @@
 <colAssociation fkAssociation="4C686BFA-5EFD-5B66-C3D1-D9834F64CBFD" referredColumn="B66399C6-EA12-8A0C-9C28-DF028AD77893"/>
 </associations>
 </Column>
-<Column name="cd_minimo_informacoes" id="BD36C550-0169-5C27-FF5E-AA9F2B75AB12">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
-<generatorID>5DCBD75F-EBEC-19F1-23DF-F76D2BB6E4EC</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="nm_descricao_diagnostico" id="16BE5341-31D6-ABB3-F155-B60580E63B54">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>

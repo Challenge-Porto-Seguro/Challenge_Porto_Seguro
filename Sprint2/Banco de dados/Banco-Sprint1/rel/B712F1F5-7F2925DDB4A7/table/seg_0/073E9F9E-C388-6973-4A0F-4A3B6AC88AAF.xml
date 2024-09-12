@@ -24,8 +24,8 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<autoIncrementSequenceName>SQ_T_PS_CD_LOGIN</autoIncrementSequenceName>
-<autoIncrementTriggerName>TG_T_PS_CD_LOGIN</autoIncrementTriggerName>
+<autoIncrementSequenceName>SQ_T_PS_CD_PESSOA</autoIncrementSequenceName>
+<autoIncrementTriggerName>TG_T_PS_CD_PESSOA</autoIncrementTriggerName>
 </Column>
 <Column name="nm_nome" id="E84229A1-0ECF-81A7-A1FA-8589E681574A">
 <createdBy>Pedro Henrique</createdBy>
