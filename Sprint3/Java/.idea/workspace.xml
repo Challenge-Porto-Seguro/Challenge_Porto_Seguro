@@ -4,24 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: testando insert e get by id de usuarios">
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/datatypes/Diagrams.local" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/datatypes/Diagrams.local" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/logical/Objects.local" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/logical/Objects.local" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/mapping/ExtendedMap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/mapping/ExtendedMap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/Objects.local" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/Objects.local" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/subviews/8C4F4DBC-9BC4-C019-5E08-F20FBFEF7397.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/subviews/8C4F4DBC-9BC4-C019-5E08-F20FBFEF7397.xml" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add comentarios e removendo atributos desnecessarios">
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/mapping/DeletedMap_RMB712F1F5-B117-8B37-DC17-7F2925DDB4A7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/mapping/DeletedMap_RMB712F1F5-B117-8B37-DC17-7F2925DDB4A7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/073E9F9E-C388-6973-4A0F-4A3B6AC88AAF.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/073E9F9E-C388-6973-4A0F-4A3B6AC88AAF.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/0F15D029-3CC2-C4CE-86DA-70A570E20523.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/0F15D029-3CC2-C4CE-86DA-70A570E20523.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/2122CBC9-A4C2-1048-F1D4-7B59D68F3654.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/2122CBC9-A4C2-1048-F1D4-7B59D68F3654.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/538CC970-B579-613F-BD79-E55C6D806048.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/538CC970-B579-613F-BD79-E55C6D806048.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/98A7F77B-CF8B-62DB-883B-DA85C32F7D32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/98A7F77B-CF8B-62DB-883B-DA85C32F7D32.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/34FFF789-6B08-FE6F-8A88-88DBB04EF704.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/34FFF789-6B08-FE6F-8A88-88DBB04EF704.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/A6600BAC-FED8-A826-6899-31D964FAE7E8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/A6600BAC-FED8-A826-6899-31D964FAE7E8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/D0988ADA-3E90-4AEF-27B0-D501EAD6EB2D.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/D0988ADA-3E90-4AEF-27B0-D501EAD6EB2D.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/D7AC3856-8A0E-719F-02D5-2052ACE3B456.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/D7AC3856-8A0E-719F-02D5-2052ACE3B456.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Database/Banco.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Database/Comando DLL em Texto.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Database/apaga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/apaga.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Database/cria.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/cria.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/AutomovelDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/AutomovelDaoJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Automovel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/UsuarioDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/UsuarioDaoJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +143,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pedro Henrique/OneDrive/Documentos/FIAP/JavaMaven/semana5semestre2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pedro Henrique/OneDrive/Documentos/Challenge_Porto_Seguro/Sprint3/Java&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -293,14 +294,10 @@
       <workItem from="1725403026442" duration="1131000" />
       <workItem from="1725579368882" duration="5445000" />
       <workItem from="1725819910215" duration="16178000" />
-    </task>
-    <task id="LOCAL-00002" summary="Começo da implementação sprint 2 java">
-      <option name="closed" value="true" />
-      <created>1715655812406</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1715655812406</updated>
+      <workItem from="1725965663563" duration="66000" />
+      <workItem from="1725969779708" duration="6375000" />
+      <workItem from="1726052070952" duration="17000" />
+      <workItem from="1726101495202" duration="2855000" />
     </task>
     <task id="LOCAL-00003" summary="feat: add validation to classes">
       <option name="closed" value="true" />
@@ -686,7 +683,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725832246124</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="feat: add comentarios e removendo atributos desnecessarios">
+      <option name="closed" value="true" />
+      <created>1726101558669</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1726101558669</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,7 +734,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: changing OficinaTest class" />
     <MESSAGE value="refactor: changing DiagnosticoTest class" />
     <MESSAGE value="feat: starting sprint 3 implementation" />
     <MESSAGE value="feat: config jdbc" />
@@ -754,7 +758,8 @@
     <MESSAGE value="feat: add querys para fazer crud de usuarios no banco de dados" />
     <MESSAGE value="feat: add usuarioDao" />
     <MESSAGE value="feat: testando insert e get by id de usuarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: testando insert e get by id de usuarios" />
+    <MESSAGE value="feat: add comentarios e removendo atributos desnecessarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add comentarios e removendo atributos desnecessarios" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
