@@ -38,8 +38,20 @@ public abstract class Login implements FazerOrcamento, VerificaDados {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        if (ValidaInformacoesLogin.validaEmail(email)) {
+            this.email = email;
+        } else {
+            throw new IllegalArgumentException("Email invalido");
+        }
     }
 
     public String getSenha() {
