@@ -58,6 +58,6 @@ public class Usuario extends Login {
 
     @Override
     public String toString() {
-        return "Usuario Comum: " + "Nome: " + getNome() + ", Email: " + getEmail() + getCpf() + " " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
+        return "Usuario Comum: " + "Nome: " + getNome() + ", Email: " + getEmail() + " " + getCpf() + " " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
     }
 }
