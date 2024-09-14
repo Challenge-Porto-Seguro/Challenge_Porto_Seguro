@@ -700,8 +700,9 @@ export const ColaboradorStyle = styled.article`
 
 export const LoginPageStyle = styled.main`
     margin: 1em;
+    flex-grow: 1;
 
-    article {
+    .container__titulo, .container__campos {
         width: 50%;
     }
 
@@ -766,6 +767,90 @@ export const LoginPageStyle = styled.main`
         color: var(--preto);
     }
 
+    @media screen and (max-width: 768px) {
+        gap: 20px;
+        .container__titulo {
+        width: 40%;
+        }
+
+        .container__campos {
+        width: 60%;
+        }
+        
+        .container__titulos--titulo {
+            font-size: 3rem;
+        }
+        .container__titulos--subtitulo {
+            font-size: 1.5rem;
+        }
+        .input {
+            width: 100%;
+        }
+
+        .esqueceu__senha{
+            width: 100%;
+        }
+
+        a {
+            font-size: 0.8rem;
+        }
+
+        @media screen and (max-width: 730px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .container__campos, .container__titulo {
+                width: 100%;
+            }
+            
+            .container__titulos--titulo {
+                font-size: 5rem;
+            }
+            .container__titulos--subtitulo {
+                font-size: 2rem;
+            }
+            .input {
+                width: 100%;
+            }
+
+            a {
+                font-size: 1rem;
+            }
+            
+        }
+
+        @media screen and (max-width: 375px) {
+            .container__titulos--titulo {
+                font-size: 3rem;
+            }
+            .container__titulos--subtitulo {
+                font-size: 1.5rem;
+            }
+            a {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .nome__input {
+                font-size: 1.3rem;
+            }
+
+            .esqueceu__senha {
+                font-size: 0.8rem;
+            }
+
+            .div__botao {
+                text-align: cente;
+                width: 80%;
+            }
+
+            .btn {
+                padding: 1em 5em;
+            }
+        }
+    }
 `
 export const CadastroPageStyle = styled.main`
     display: flex;
@@ -782,6 +867,12 @@ export const CadastroPageStyle = styled.main`
         width: 50%;
         text-align: center;
         padding: 0.5em;
+    }
+
+    @media screen and (max-width: 550px){
+        h1 {
+            width: 100%;
+        }
     }
 `
 
@@ -823,6 +914,41 @@ export const FormularioCadastroStyle = styled.form`
         width: 15%;
     }
 
+    @media screen and (max-width: 900px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 690px){
+        .endereco_container {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 550px){
+        .endereco_container {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 100%;
+        .endereco_container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rua {
+            width: 100%;
+        }
+
+        .numero {
+            width: 25%;
+        }
+
+        .botao_cadastro {
+            padding: 0.8em 3em;
+        }
+    }
 
 `
 
@@ -834,8 +960,8 @@ export const FormularioCadastroSectio = styled.section`
     align-items: center;
 
     .campo {
-            margin-bottom: 10px;
-        }
+        margin-bottom: 10px;
+    }
 
     .input {
         margin-bottom: 10px;
@@ -856,6 +982,29 @@ export const FormularioCadastroSectio = styled.section`
 
     #numero {
         width: 100%;
+    }
+
+    @media screen and (max-width: 690px){
+
+        .input::placeholder {
+            font-size: 0.8rem;
+        }
+        .input {
+            width: 80%;
+        }
+        
+    }
+
+    @media screen and (max-width: 550px){
+        .input {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .input {
+            height: 30px;
+        }
     }
 
    
@@ -885,6 +1034,23 @@ export const FormularioCadastroVeiculo = styled.form`
         background-color: var(--azul);
         transition: 1s;
     }
+
+    @media screen and (max-width: 550px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 100%;
+    }
+    
+    @media screen and (max-width: 375px) {
+        .botao_cadastro {
+            padding: 0.8em 3em;
+        }
+    }
+    
+
+    
 `
 
 export const AutomoveisComponentSyle = styled.section`

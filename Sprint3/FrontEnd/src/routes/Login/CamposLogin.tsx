@@ -1,6 +1,6 @@
 export default function CamposLogin() {
     return (
-        <article>
+        <article className="container__campos">
                 <h2 className="nome__input">Digite seu e-mail:</h2>
                 <input className="input" type="email" placeholder="E-mail" />
 
