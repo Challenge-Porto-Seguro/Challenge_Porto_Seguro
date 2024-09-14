@@ -3,6 +3,7 @@ import colaboradores from "./../assets/colaboradores.png"
 import chatbot from "./../assets/iconeChatBot.png"
 import { HeaderStyle } from "../styledConfig"
 import { Link } from "react-router-dom"
+import MenuHamburguer from "./MenuHamburguer"
 
 export default function Cabecalho() {
 
@@ -11,6 +12,7 @@ export default function Cabecalho() {
             <nav>
                 <ul className="header__lista">
                     <li className="header__lista--item">
+                        <MenuHamburguer />
                         <Link className="header__link logo" to="/"><img className="header__logo" src={logo_porto} alt="Logo da Porto" /></Link>
                     </li>
                     <li className="header__lista--item"> 
