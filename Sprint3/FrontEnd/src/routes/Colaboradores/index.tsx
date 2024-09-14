@@ -21,7 +21,7 @@ export default function Colaboradores() {
             <section className="colaboradores">
                 {   
                     colaboradores.map((colab, index) => (
-                        <Colaborador index={index} imagem={colab.imagem} nome={colab.nome} rm={colab.rm} link_github={colab.link_github} />
+                        <Colaborador key={index} imagem={colab.imagem} nome={colab.nome} rm={colab.rm} link_github={colab.link_github} />
                     ))
                 }
             </section>
