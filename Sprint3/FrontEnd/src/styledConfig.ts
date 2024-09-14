@@ -505,6 +505,53 @@ export const ChatBotPageStyle = styled.main`
         width: 7%;
     }
 
+
+    @media screen and (max-width: 780px) {
+
+        .titulo__automoveis {
+            font-size: 1.5rem;
+        }
+
+        .chatbot {
+            width: 60%;
+        }
+        .titulo {
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        .titulo__automoveis {
+            font-size: 1.3rem;
+        }
+        .titulo {
+            font-size: 1.5rem;
+        }
+
+        .container__input {
+            width: 100%;
+        }
+        .container__btn {
+            width: 10%;
+        }
+    }
+
+    @media screen and (max-width: 436px){
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .automoveis {
+            width: 100%;
+        }
+
+        .chatbot {
+            flex-grow: 1;
+            height: 50%;
+            width: 100%;
+        }
+    }
+
 `
 
 export const SetaVoltarStyle = styled.div`
@@ -783,5 +830,16 @@ export const AutomoveisComponentSyle = styled.section`
     background-color: #F5F7F8;
     padding: 0.5em 1em;
     justify-content: center;
+
+    @media screen and (max-width: 780px) {
+        width: 100%;
+        h3 {
+            font-size: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 436px) {
+        width: 80%;
+    }
 
 `
