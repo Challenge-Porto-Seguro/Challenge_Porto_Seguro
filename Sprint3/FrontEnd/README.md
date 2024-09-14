@@ -24,15 +24,18 @@ Nesse projeto estamos usando
 # Conteudos
 <img src="imagens_readme/pagina_principal.png" alt="imagem da pagina principal">
 Essa sera nossa pagina principal onde temos um header com os links para as outras paginas e a introdução do nosso projeto
-
-<img src="imagens_readme/pagina_cadastro_usuario.png" alt="imagem da pagina de cadastro do usuario">
+<h2></h2>
+<img src="imagens_readme/pagina_cadastro_usuario.PNG" alt="imagem da pagina de cadastro do usuario">
 Essa pagina sera uma pagina para cadastrar o usuario no sistema
-
-<img src="imagens_readme/pagina_cadastro_automovel.png" alt="imagem da pagina de cadastro do automovel">
+<h2></h2>
+<img src="imagens_readme/pagina_login.PNG" alt="imagem da pagina de login">
+Essa pagina sera para o usuario logar na sua conta
+<h2></h2>
+<img src="imagens_readme/pagina_cadastro_automovel.PNG" alt="imagem da pagina de cadastro do automovel">
 Essa pagina sera uma pagina para cadastrar um automovel para se fazer o diagnostico e o orçamento
-
-<img src="imagens_readme/pagina_chatbot.png" alt="imagem da pagina do ChatBot">
+<h2></h2>
+<img src="imagens_readme/pagina _chatbot.PNG" alt="imagem da pagina do ChatBot">
 Essa pagina será para o usuario conversar com a IA afim de fazer um diagnostico do lado ira aparecer os automoveis cadastrados e um botão para cadastrar outro automovel
-
-<img src="imagens_readme/pagina_colaboradores.png" alt="imagem da pagina de colaboradores">
+<h2></h2>
+<img src="imagens_readme/pagina_colaboradores.PNG" alt="imagem da pagina de colaboradores">
 Essa pagina será para mostrar todos os colaboradores do software e os Links do github deles, o link do github do projeto e o link do projeto no figma
