@@ -42,7 +42,6 @@ export const HeaderStyle = styled.header`
         border: 2px solid black;
         text-align: center;
         padding: 1em 2em;
-        width: 15em;
         margin: 0 1em;
         font-weight: 700;
     }
@@ -51,11 +50,211 @@ export const HeaderStyle = styled.header`
         background-color: var(--azul);
     }
 
+    .menu {
+        display: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .header__botao {
+            padding: 1em 1em;
+        }
+        
+    }
+
+    @media screen and (max-width: 900px){
+        .header__logo {
+            width: 80%;
+        }
+
+        .header__paginas--img {
+            width: 30%;
+        }   
+
+        .header__botao{
+            font-size: 0.8rem;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+
+        justify-content: space-between;
+
+        .header__lista--item:nth-child(1) {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu{
+            display: block;
+            margin: 0 0 40px 20px ;
+        }
+        
+        .header__lista--item:nth-child(2), .header__lista--item:nth-child(3){
+            display: none;
+        }
+
+        .header__lista--item {
+            width: 50%;
+        }
+
+        .header__botao{
+            font-size: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 421px) {
+        .header__lista {
+            gap: 20px;
+        }
+        
+        .header__logo {
+            width: 100%;
+            margin-left: 15px;
+        }
+        .header__botao{
+            font-size: 0.8rem;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .menu {
+            margin-bottom: 30px;
+        }
+
+        .header__botao{
+            font-size: 0.7rem;
+            padding: 1em 0.7em;
+        }
+        
+    }
+
+
+`
+
+export const MenuHamburguerStyle = styled.nav`
+
+    .menu-lines, input{
+        display: none;
+    }
+        
+    .menu-faketrigger{
+        position: absolute;
+        z-index: 1000;
+        width: 35px;
+        height: 35px;
+        opacity: 0;
+        cursor:pointer
+    }
+
+    .menu-lines{
+        display: block;
+        position: absolute;
+        z-index: 999;
+        width: 35px;
+        height: 35px;
+    }
+
+    input{
+        display: block;
+    }
+
+    .menu-lines span{
+        display:block;
+        width: 35px;
+        height: 5px;
+        margin-bottom: 10px;
+        background-color: #cdcdcd;
+        border-radius: 3px;
+        transition: all ease .2s;
+    }
+
+
+    .menu-faketrigger:checked ~ .menu-lines span{
+        background-color: #222;
+            
+    }
+    .menu-faketrigger:checked ~ .menu-lines span:nth-child(1){
+        transform-origin: 0% 0%;
+        transform: rotate(45deg) scaleX(1.25);
+
+    }
+    .menu-faketrigger:checked ~ .menu-lines span:nth-child(2){
+        opacity: 0;
+
+    }
+    .menu-faketrigger:checked ~ .menu-lines span:nth-child(3){
+        transform-origin: 0% 100%;
+        transform: rotate(-45deg) scaleX(1.25);
+
+    }
+
+    ul{
+        display: block;
+        position: absolute;
+        z-index: 998;
+        left: 0;
+        top: 0;
+        width: 250px;
+        padding-top: 80px;
+        background-color: var(--cinza-claro);
+        margin-left: -300px;
+        transition: all ease .2s;
+    }
+
+    .menu-faketrigger:checked ~ ul{
+        margin-left: 0;
+    }
+
+    ul li{
+        padding: 5px;
+    }
+
+    ul li a{    
+        color: var(--preto);
+        font-size: 22px;
+        margin: 0;
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
+        transition: all ease .3s;
+    }
+
+    ul li a:hover {
+        background-color: var(--azul-claro);
+        color: var(--branco);
+
+    }
+
+    @media screen and (max-width: 375px){
+        ul {
+            width: 200px;
+        }
+    }
+    
+    @media screen and (max-width: 320px){
+        .menu-faketrigge {
+            width: 30px;
+            height: 20px;
+        }
+        
+        .menu-lines {
+            height: 30px;
+            width: 20px;
+        }
+
+        .menu-lines span {
+            width: 30px;
+            margin-bottom: 8px;
+        }
+    }
+    
 `
 
 export const ErrorStyle = styled.main`
     margin: 1em;
     text-align: center;
+    flex-grow: 1;
 
     article {
         text-align: center;
@@ -79,6 +278,7 @@ export const ErrorStyle = styled.main`
 ` 
 
 export const HomeStyle = styled.main`
+    flex-grow: 1;
 
     .home__introducao {
         display: flex;
@@ -127,6 +327,78 @@ export const HomeStyle = styled.main`
         word-spacing: 5px;
     }
 
+    @media screen and (max-width: 900px) {
+        .principal__logo {
+            width: 50%;
+        }
+        .principal__titulo{
+            font-size: 1.8rem;
+        }
+
+        .home__sobre-nos--titulo {
+            font-size: 2rem;
+        }
+
+        .home__sobre-nos--paragrafo {
+            font-size: 1rem;
+        }
+        
+    }
+
+    @media screen and (max-width: 640px){
+        
+        .home__introducao {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .principal__logo {
+            width: 35%;
+        }
+
+        .principal__titulo{
+            font-size: 1.5rem;
+        }
+
+        article  {
+            width: 100%;
+        }
+
+        .principal__imagem {
+            width: 100%;
+        }
+
+        .principal__titulo {
+            margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 471px) {
+
+        .home__introducao {
+            padding: 1em 1em;
+            align-items: center;
+        }
+
+        .principal__titulo{
+            font-size: 1.2rem;
+        }
+
+        .principal__imagem {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 330px){
+        .home__sobre-nos--titulo {
+            font-size: 1.5rem;
+        }
+
+        .home__sobre-nos--paragrafo {
+            font-size: 0.8rem;
+        }     
+    }
+
 `
 
 export const FooterStyle = styled.footer`
@@ -137,6 +409,24 @@ export const FooterStyle = styled.footer`
     color: var(--branco);
     text-transform: uppercase;
     font-weight: 700;
+
+    @media screen and (max-width: 640px) {
+        h3 {
+            font-size: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 421px) {
+        h3 {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media screen and (max-width: 320px){
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 
 `
 
