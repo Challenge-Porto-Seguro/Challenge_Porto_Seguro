@@ -559,49 +559,29 @@ export const SetaVoltarStyle = styled.div`
         width: 5%;
         margin-bottom: 1em;
     }
+
+    @media screen and (max-width: 750px) {
+        .link__imagem {
+            width: 8%;
+        }
+    }
+
+    @media screen and (max-width: 465px){
+        .link__imagem {
+            width: 13%;
+        }
+    }
 `
 
 export const ColaboradoresPageStyle = styled.main`
     margin: 1em;
-
-    
+    flex-grow: 1;
 
     .colaboradores {
         display: flex;
         justify-content: center;
         gap: 20px;
         margin-top: 2em 0;
-    }
-
-    .colaborador {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        text-align: center;
-        border: 2px solid var(--preto);
-        padding: 1em;
-        border-radius: 20px;
-    }
-
-    .colaborador__imagem{
-        width: 50%;
-        border-radius: 50%;
-    }
-
-    .colaborador__nomerm {
-        font-family: var(--fonte-secundaria);
-        font-size: 2rem;
-    }
-
-    .colaborador__github {
-        text-decoration: none;
-        font-size: 1.3rem;
-        color: var(--preto);
-    }
-
-    .colaborador__github:hover {
-        color: #007FFF;
     }
 
     .links {
@@ -629,6 +609,92 @@ export const ColaboradoresPageStyle = styled.main`
     .links__link--imagem {
         width: 5%;
     }
+
+    @media screen and (max-width: 750px) {
+        .links__link {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and (max-width: 465px){
+        .colaboradores {
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: 417px){
+        .links__link {
+            font-size: 1rem;
+        }
+        .links__link--imagem {
+        width: 10%;
+    }
+    }
+
+    
+
+`
+export const ColaboradorStyle = styled.article`
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    border: 2px solid var(--preto);
+    padding: 1em;
+    border-radius: 20px;
+    
+
+    .colaborador__imagem{
+        width: 50%;
+        border-radius: 50%;
+    }
+
+    .colaborador__nomerm {
+        font-family: var(--fonte-secundaria);
+        font-size: 2rem;
+    }
+
+    .colaborador__github {
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: var(--preto);
+    }
+
+    .colaborador__github:hover {
+        color: #007FFF;
+    }
+
+    @media screen and (max-width: 950px){
+        .colaborador__nomerm {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .colaborador__nomerm {
+            font-size: 1.3rem;
+        }
+
+        .colaborador__github {
+            font-size: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .colaborador__imagem {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 465px){
+        .colaborador__imagem {
+            width: 50%;
+        }
+    }
+
+    
 
 `
 
