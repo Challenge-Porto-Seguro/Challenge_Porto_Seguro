@@ -34,7 +34,12 @@ public abstract class Login implements VerificaDados {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if(ValidaInformacoesLogin.validaNome(nome)){
+            this.nome = nome;
+        } else {
+            throw new RuntimeException("Nome invalido");
+        }
+
     }
 
     public String getEmail() {
