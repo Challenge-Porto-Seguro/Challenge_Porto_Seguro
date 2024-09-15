@@ -47,6 +47,10 @@ public class Usuario extends Login implements FazerOrcamento {
         this.automoveis.remove(automovel);
     }
 
+    public List<Automovel> getAutomoveis() {
+        return automoveis;
+    }
+
     //Um usuario pode fazer ate 3 orçamentos por mes
     @Override
     public void addOrcamento(Long idAutomovel, Orcamento orcamento) {

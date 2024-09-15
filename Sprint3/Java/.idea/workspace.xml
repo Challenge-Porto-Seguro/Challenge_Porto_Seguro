@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: arrumando modelo das classes">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add findAll e arrumando consulta de findById">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/dao/AutomovelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/dao/AutomovelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/dao/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/AutomovelDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/AutomovelDaoJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/UsuarioDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/UsuarioDaoJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/AutomovelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/AutomovelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,102 +53,106 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Teste.executor&quot;: &quot;Run&quot;,
-    &quot;Application.teste.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_ano_igual_20_10_2005_ano_formatado_igual_20_10_2005.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_ano_igual_depois_de_hoje_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_ano_igual_null_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_atualiza_diagnostico_get_diagnosticos_dever_ter_um_diagnostico.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_marca_em_branco_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_modelo_em_branco_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_placa_igual_123AAAA_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_placa_igual_AAA1234_get_placa_retorna_AAA1234.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_placa_igual_AAA1234_nao_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AutomovelTest.se_setar_um_diagnostico_get_diagnostico_retorna_um_diagnostico.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiagnosticoTest.diagnosticoResolvido.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiagnosticoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiagnosticoTest.se_diagnostico_criado_hoje_get_data_igual_a_data_de_hoje.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiagnosticoTest.se_diagnostico_to_string_retorna_algumas_informacoes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnderecoTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.EnderecoTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnderecoTest.testGetRua.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnderecoTest.testa_se_cep_for_01311000_e_todas_iformacoes_corretas_endereco_criado.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnderecoTest.testa_se_cep_for_01311000_uf_igual_pa_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnderecoTest.testa_se_cep_for_01311100_cep_invalido.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnderecoTest.testa_se_cep_for_05271050_cep_invalido.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.se_nome_invalido_validaDados_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MinimoInformacaoTest.se_adiciona_automovel_get_automove_size_igual_1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MinimoInformacaoTest.se_adiciona_orcamento_get_orcamento_size_igual_1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MinimoInformacaoTest.se_cep_igual_01311000_get_endereco_rua_igual_Avenida_Paulista.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MinimoInformacaoTest.se_mudarStatusOrcamento_orcamento_get_status_fica_inatico.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MinimoInformacaoTest.se_nome_senha_ou_cpf_invalido_validaDados_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MinimoInformacaoTest.se_remove_automovel_get_automove_size_igual_0.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MinimoInformacaoTest.se_remove_orcamento_get_orcamento_size_igual_0.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OficinaTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OficinaTest.se_cnpj_igual_a_19036613000107_get_cnpj_igual_19036613000107.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OficinaTest.se_cnpj_igual_a_19036613000107_get_cnpj_retorna_cnpj_formatado.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OficinaTest.se_inscricao_estadual_igual_12345678911_get_incricao_retorna_12345678911.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OficinaTest.testa_se_orcamento_igual_a_2_valor_a_pagar_igual_a_10.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrcamentoTest.se_adicionar_1_pedido_get_pedido_size_retorna_1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrcamentoTest.se_remover_pedido_get_pedido_size_retorna_0.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrcamentoTest.se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrcamentoTest.se_tiver_2_pedido_de_100_50_valor_total_igual_201.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_alterar_senha_e_email_e_nova_senha_for_valida_nao_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_alterar_senha_e_email_ou_nova_senha_for_invalido_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_cpf_12345678909_get_cpf_retorna_CPF_123_456_789_09.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_cpf_12345678909_retorna_123_456_789_09.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_hoje_igual_20_05_2024_get_dia_orcamento_igual_a_hoje.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_get_quantidade_igual_a_3.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_mais_de_30_dias_add_orcamento_nao_retorna_err.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_mais_de_30_dias_add_orcamento_nao_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_menos_de_30_dias_add_orcamento_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioPortoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioPortoTest.se_codigo_seguro_igual_1_get_codigo_seguro_igual_a_1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioPortoTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioPortoTest.se_hoje_igual_20_05_2024_get_dia_orcamento_igual_a_hoje.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_3_e_get_quantidade_igual_a_3.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_7_e_menos_de_30_dias_add_orcamento_retorna_erro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidaInformacoesMinimoInformacaoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.com.example in Java.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.com.example.domain in Java.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.domain in Java.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.example in Java.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.java in Java.executor&quot;: &quot;Coverage&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pedro Henrique/OneDrive/Documentos/Challenge_Porto_Seguro/Sprint3/Java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Teste.executor": "Run",
+    "Application.teste.executor": "Run",
+    "JUnit.AutomovelTest.executor": "Run",
+    "JUnit.AutomovelTest.se_ano_igual_20_10_2005_ano_formatado_igual_20_10_2005.executor": "Run",
+    "JUnit.AutomovelTest.se_ano_igual_depois_de_hoje_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_ano_igual_null_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_atualiza_diagnostico_get_diagnosticos_dever_ter_um_diagnostico.executor": "Run",
+    "JUnit.AutomovelTest.se_marca_em_branco_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_modelo_em_branco_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_placa_igual_123AAAA_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_placa_igual_AAA1234_get_placa_retorna_AAA1234.executor": "Run",
+    "JUnit.AutomovelTest.se_placa_igual_AAA1234_nao_retorna_erro.executor": "Run",
+    "JUnit.AutomovelTest.se_setar_um_diagnostico_get_diagnostico_retorna_um_diagnostico.executor": "Run",
+    "JUnit.DiagnosticoTest.diagnosticoResolvido.executor": "Run",
+    "JUnit.DiagnosticoTest.executor": "Run",
+    "JUnit.DiagnosticoTest.se_diagnostico_criado_hoje_get_data_igual_a_data_de_hoje.executor": "Run",
+    "JUnit.DiagnosticoTest.se_diagnostico_to_string_retorna_algumas_informacoes.executor": "Run",
+    "JUnit.EnderecoTest.executor": "Coverage",
+    "JUnit.EnderecoTest.test.executor": "Run",
+    "JUnit.EnderecoTest.testGetRua.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311000_e_todas_iformacoes_corretas_endereco_criado.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311000_uf_igual_pa_retorna_erro.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_01311100_cep_invalido.executor": "Run",
+    "JUnit.EnderecoTest.testa_se_cep_for_05271050_cep_invalido.executor": "Run",
+    "JUnit.LoginTest.executor": "Run",
+    "JUnit.LoginTest.se_nome_invalido_validaDados_retorna_erro.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_adiciona_automovel_get_automove_size_igual_1.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_adiciona_orcamento_get_orcamento_size_igual_1.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_cep_igual_01311000_get_endereco_rua_igual_Avenida_Paulista.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_mudarStatusOrcamento_orcamento_get_status_fica_inatico.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_nome_senha_ou_cpf_invalido_validaDados_retorna_erro.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_remove_automovel_get_automove_size_igual_0.executor": "Run",
+    "JUnit.MinimoInformacaoTest.se_remove_orcamento_get_orcamento_size_igual_0.executor": "Run",
+    "JUnit.OficinaTest.executor": "Run",
+    "JUnit.OficinaTest.se_cnpj_igual_a_19036613000107_get_cnpj_igual_19036613000107.executor": "Run",
+    "JUnit.OficinaTest.se_cnpj_igual_a_19036613000107_get_cnpj_retorna_cnpj_formatado.executor": "Run",
+    "JUnit.OficinaTest.se_inscricao_estadual_igual_12345678911_get_incricao_retorna_12345678911.executor": "Run",
+    "JUnit.OficinaTest.testa_se_orcamento_igual_a_2_valor_a_pagar_igual_a_10.executor": "Run",
+    "JUnit.OrcamentoTest.se_adicionar_1_pedido_get_pedido_size_retorna_1.executor": "Run",
+    "JUnit.OrcamentoTest.se_remover_pedido_get_pedido_size_retorna_0.executor": "Run",
+    "JUnit.OrcamentoTest.se_tiver_2_pedido_com_3_quantidade_de_100_50_valor_total_igual_603.executor": "Run",
+    "JUnit.OrcamentoTest.se_tiver_2_pedido_de_100_50_valor_total_igual_201.executor": "Run",
+    "JUnit.PedidoTest.executor": "Run",
+    "JUnit.ProdutoTest.executor": "Run",
+    "JUnit.UsuarioComumTest.se_alterar_senha_e_email_e_nova_senha_for_valida_nao_retorna_erro.executor": "Run",
+    "JUnit.UsuarioComumTest.se_alterar_senha_e_email_ou_nova_senha_for_invalido_retorna_erro.executor": "Run",
+    "JUnit.UsuarioComumTest.se_cpf_12345678909_get_cpf_retorna_CPF_123_456_789_09.executor": "Run",
+    "JUnit.UsuarioComumTest.se_cpf_12345678909_retorna_123_456_789_09.executor": "Run",
+    "JUnit.UsuarioComumTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor": "Run",
+    "JUnit.UsuarioComumTest.se_hoje_igual_20_05_2024_get_dia_orcamento_igual_a_hoje.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_get_quantidade_igual_a_3.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_mais_de_30_dias_add_orcamento_nao_retorna_err.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_mais_de_30_dias_add_orcamento_nao_retorna_erro.executor": "Run",
+    "JUnit.UsuarioComumTest.se_quantidade_orcamento_igual_a_3_e_menos_de_30_dias_add_orcamento_retorna_erro.executor": "Run",
+    "JUnit.UsuarioPortoTest.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_codigo_seguro_igual_1_get_codigo_seguro_igual_a_1.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_hoje_igual_20_05_2024_get_dia_orcamento_igual_a_hoje.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_3_e_get_quantidade_igual_a_3.executor": "Run",
+    "JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_7_e_menos_de_30_dias_add_orcamento_retorna_erro.executor": "Run",
+    "JUnit.UsuarioTest.executor": "Run",
+    "JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf.executor": "Run",
+    "JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado.executor": "Run",
+    "JUnit.UsuarioTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor": "Run",
+    "JUnit.UsuarioTest.se_cpf_invalido_retorna_erro.executor": "Run",
+    "JUnit.UsuarioTest.se_remove_automovel_get_automove_size_igual_0.executor": "Run",
+    "JUnit.ValidaInformacoesMinimoInformacaoTest.executor": "Run",
+    "JUnit.com.example in Java.executor": "Coverage",
+    "JUnit.com.example.domain in Java.executor": "Coverage",
+    "JUnit.domain in Java.executor": "Coverage",
+    "JUnit.example in Java.executor": "Coverage",
+    "JUnit.java in Java.executor": "Coverage",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Pedro Henrique/OneDrive/Documentos/Challenge_Porto_Seguro/Sprint3/Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -170,21 +170,8 @@
       <recent name="com.example.domain.usuarios" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Teste">
-    <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.Teste" />
-      <module name="Java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UsuarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.example in Java">
+    <configuration name="UsuarioTest.se_adiciona_automovel_get_automove_size_igual_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -194,12 +181,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.model.usuarios" />
       <option name="MAIN_CLASS_NAME" value="com.example.model.usuarios.UsuarioTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="se_adiciona_automovel_get_automove_size_igual_1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -209,7 +197,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.model.usuarios" />
       <option name="MAIN_CLASS_NAME" value="com.example.model.usuarios.UsuarioTest" />
-      <option name="METHOD_NAME" value="se_cpf_12345678909_get_cpf_retorna_cpf_formatado" />
+      <option name="METHOD_NAME" value="se_cpf_12345678909_get_cpf_retorna_cpf" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsuarioTest.se_cpf_igual_12345678909_get_cpf_12345678909" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.model.usuarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.model.usuarios" />
+      <option name="MAIN_CLASS_NAME" value="com.example.model.usuarios.UsuarioTest" />
+      <option name="METHOD_NAME" value="se_cpf_igual_12345678909_get_cpf_12345678909" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsuarioTest.se_cpf_invalido_retorna_erro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.model.usuarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.model.usuarios" />
+      <option name="MAIN_CLASS_NAME" value="com.example.model.usuarios.UsuarioTest" />
+      <option name="METHOD_NAME" value="se_cpf_invalido_retorna_erro" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -223,28 +243,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in Java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Teste" />
-      <item itemvalue="JUnit.UsuarioTest" />
-      <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado" />
+      <item itemvalue="JUnit.UsuarioTest.se_adiciona_automovel_get_automove_size_igual_1" />
+      <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf" />
+      <item itemvalue="JUnit.UsuarioTest.se_cpf_igual_12345678909_get_cpf_12345678909" />
+      <item itemvalue="JUnit.UsuarioTest.se_cpf_invalido_retorna_erro" />
       <item itemvalue="JUnit.example in Java" />
-      <item itemvalue="JUnit.java in Java" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Teste" />
-        <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado" />
         <item itemvalue="JUnit.example in Java" />
-        <item itemvalue="JUnit.UsuarioTest" />
-        <item itemvalue="JUnit.java in Java" />
+        <item itemvalue="JUnit.UsuarioTest.se_adiciona_automovel_get_automove_size_igual_1" />
+        <item itemvalue="JUnit.UsuarioTest.se_cpf_invalido_retorna_erro" />
+        <item itemvalue="JUnit.UsuarioTest.se_cpf_igual_12345678909_get_cpf_12345678909" />
+        <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf" />
       </list>
     </recent_temporary>
   </component>
@@ -291,15 +303,7 @@
       <workItem from="1726052070952" duration="17000" />
       <workItem from="1726101495202" duration="2855000" />
       <workItem from="1726420577049" duration="3200000" />
-      <workItem from="1726425166638" duration="2445000" />
-    </task>
-    <task id="LOCAL-00004" summary="refactor: changing class name">
-      <option name="closed" value="true" />
-      <created>1715731331318</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1715731331318</updated>
+      <workItem from="1726425166638" duration="4151000" />
     </task>
     <task id="LOCAL-00005" summary="refactor: deleting validaDados in childs classes and add in class mother and changing alterarSenha">
       <option name="closed" value="true" />
@@ -685,7 +689,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726423266648</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="feat: add findAll e arrumando consulta de findById">
+      <option name="closed" value="true" />
+      <created>1726428119671</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1726428119671</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,7 +740,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: starting sprint 3 implementation" />
     <MESSAGE value="feat: config jdbc" />
     <MESSAGE value="feat: add atribute id and method toString" />
     <MESSAGE value="feat: add interface and class of implementation" />
@@ -753,7 +764,8 @@
     <MESSAGE value="feat: testando insert e get by id de usuarios" />
     <MESSAGE value="feat: add comentarios e removendo atributos desnecessarios" />
     <MESSAGE value="feat: arrumando modelo das classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: arrumando modelo das classes" />
+    <MESSAGE value="feat: add findAll e arrumando consulta de findById" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add findAll e arrumando consulta de findById" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
