@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: testando classe">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: alterando extensão do arquivo par .sql" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,23 +294,7 @@
       <workItem from="1726052070952" duration="17000" />
       <workItem from="1726101495202" duration="2855000" />
       <workItem from="1726420577049" duration="3200000" />
-      <workItem from="1726425166638" duration="12279000" />
-    </task>
-    <task id="LOCAL-00010" summary="fix: removing valida cpf and renaming class">
-      <option name="closed" value="true" />
-      <created>1715821579596</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1715821579596</updated>
-    </task>
-    <task id="LOCAL-00011" summary="refactor: add methods to validar cpf">
-      <option name="closed" value="true" />
-      <created>1715821687823</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1715821687823</updated>
+      <workItem from="1726425166638" duration="13160000" />
     </task>
     <task id="LOCAL-00012" summary="refactor: changing method valida cpf">
       <option name="closed" value="true" />
@@ -690,7 +672,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726434119069</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="feat: uml das classes">
+      <option name="closed" value="true" />
+      <created>1726438112350</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1726438112350</updated>
+    </task>
+    <task id="LOCAL-00060" summary="feat: alterando extensão do arquivo par .sql">
+      <option name="closed" value="true" />
+      <created>1726438168837</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1726438168837</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -733,8 +731,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add validações em uma classe separadas" />
-    <MESSAGE value="feat: renomeano" />
     <MESSAGE value="feat: movendo package" />
     <MESSAGE value="feat: add id e alterando para long" />
     <MESSAGE value="feat: alterando implementação do add orçamento" />
@@ -758,7 +754,9 @@
     <MESSAGE value="feat: arrumando validação para add orçamentos" />
     <MESSAGE value="feat: arrumando o findAll para ordenar por nome" />
     <MESSAGE value="feat: testando classe" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: testando classe" />
+    <MESSAGE value="feat: uml das classes" />
+    <MESSAGE value="feat: alterando extensão do arquivo par .sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: alterando extensão do arquivo par .sql" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

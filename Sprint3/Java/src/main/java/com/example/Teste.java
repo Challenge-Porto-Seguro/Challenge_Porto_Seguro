@@ -70,6 +70,7 @@ public class Teste {
 
         System.out.println("Digite o id do usuario que deseja deletar");
         Long newId = scanner.nextLong();
+        scanner.nextLine();
         usuarioService.excluiUsuario(newId);
 
 
@@ -80,6 +81,7 @@ public class Teste {
             System.out.println("Cadastro de automovel");
             System.out.println("Digite a marca do automovel que deseja cadastrar: ");
             String marca = scanner.nextLine();
+
             System.out.println("Digite o modelo do automovel que deseja cadastrar: ");
             String modelo = scanner.nextLine();
             System.out.println("Digite a placa do automovel que deseja cadastrar: ");
