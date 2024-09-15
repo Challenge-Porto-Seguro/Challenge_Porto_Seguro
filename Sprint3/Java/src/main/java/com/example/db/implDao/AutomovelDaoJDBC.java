@@ -128,6 +128,7 @@ public class AutomovelDaoJDBC implements AutomovelDao {
                     select aut.*, usuario.sq_cpf, pessoa.* from T_PS_AUTOMOVEL aut
                         join T_PS_USUARIO usuario on aut.cd_pessoa = usuario.cd_pessoa
                         join T_PS_PESSOA pessoa on usuario.cd_pessoa = pessoa.cd_pessoa
+                        order by pessoa.nm_nome
         """;
         try {
             statement = conn.createStatement();

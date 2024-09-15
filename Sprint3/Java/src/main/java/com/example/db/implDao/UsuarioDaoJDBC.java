@@ -114,7 +114,9 @@ public class UsuarioDaoJDBC implements UsuarioDao {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("""
-                select usuario.sq_cpf, login.* from T_PS_USUARIO usuario join T_PS_PESSOA login on usuario.cd_pessoa = login.cd_pessoa where usuario.cd_pessoa = ?
+                select usuario.sq_cpf, login.* from T_PS_USUARIO usuario
+                join T_PS_PESSOA login on usuario.cd_pessoa = login.cd_pessoa
+                where usuario.cd_pessoa = ?
             """);
             ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
@@ -136,7 +138,11 @@ public class UsuarioDaoJDBC implements UsuarioDao {
         List<Usuario> usuarios = new ArrayList<>();
         Statement stmt = null;
         ResultSet rs = null;
-        String sql = "select usario.sq_cpf, pessoa.*  from T_PS_USUARIO usario join T_PS_PESSOA pessoa on usario.cd_pessoa = pessoa.cd_pessoa";
+        String sql = """
+                select usario.sq_cpf, pessoa.*  from T_PS_USUARIO usario
+                join T_PS_PESSOA pessoa on usario.cd_pessoa = pessoa.cd_pessoa
+                order by nm_nome
+""";
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
