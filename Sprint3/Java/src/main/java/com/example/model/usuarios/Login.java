@@ -1,23 +1,18 @@
 package com.example.model.usuarios;
 
-import com.example.validacoes.ValidaInformacoesLogin;
-import com.example.model.*;
 import com.example.enums.StatusOrcamento;
-import com.example.interfaces.FazerOrcamento;
 import com.example.interfaces.VerificaDados;
+import com.example.model.Endereco;
+import com.example.model.Orcamento;
+import com.example.validacoes.ValidaInformacoesLogin;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public abstract class Login implements FazerOrcamento, VerificaDados {
+public abstract class Login implements VerificaDados {
 
     private Long id;
     private String nome;
     private String email;
     private String senha;
     private Endereco endereco;
-    private List<Automovel> automoveis = new ArrayList<>();
-
 
     public Login(String nome, String email, String senha) {
         validaDados(nome, email, senha);
@@ -58,10 +53,6 @@ public abstract class Login implements FazerOrcamento, VerificaDados {
         return senha;
     }
 
-    public List<Automovel> getAutomoveis() {
-        return automoveis;
-    }
-
     public void alterarSenha(String email, String novaSenha){
 
         if(email.equals(this.email)){
@@ -87,14 +78,6 @@ public abstract class Login implements FazerOrcamento, VerificaDados {
         if(!ValidaInformacoesLogin.validaSenha(senha)){
             throw new RuntimeException("Senha invalida");
         }
-    }
-
-    public void addAutomovel(Automovel automovel){
-        this.automoveis.add(automovel);
-    }
-
-    public void removeAutomovel(Automovel automovel){
-        this.automoveis.remove(automovel);
     }
 
     public Endereco getEndereco() {

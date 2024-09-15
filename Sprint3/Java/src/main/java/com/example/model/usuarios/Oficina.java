@@ -1,14 +1,18 @@
 package com.example.model.usuarios;
 
-import com.example.model.Automovel;
 import com.example.model.Cnpj;
+import com.example.model.Diagnostico;
 import com.example.model.Orcamento;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Oficina extends Login {
 
     private String inscricaoEstadual;
     private Cnpj cnpj;
     private double valorAPagar;
+    List<Diagnostico> diagnosticos = new ArrayList<>();
 
     public Oficina(String nome, String cnpj, String email, String senha, String inscricaoEstadual) {
         super(nome, email, senha);
@@ -30,9 +34,9 @@ public class Oficina extends Login {
     }
 
     //Um oficina pode fazer quantos orçamento quiser porem paga um valor a cada orçamento
-    @Override
-    public void addOrcamento(Automovel automovel, Orcamento orcamento) {
-        automovel.getDiagnostico().addOrcamento(orcamento);
+    public void addOrcamento(Diagnostico diagnostico, Orcamento orcamento) {
+        diagnostico.criarOrcamento(orcamento);
+        diagnosticos.add(diagnostico);
         valorAPagar += 5;
     }
 

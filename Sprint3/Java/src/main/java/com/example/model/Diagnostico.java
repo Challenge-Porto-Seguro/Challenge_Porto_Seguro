@@ -3,9 +3,7 @@ package com.example.model;
 import com.example.enums.VerificaDiagnostico;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Diagnostico {
 
@@ -15,7 +13,7 @@ public class Diagnostico {
     private Date data;
     private Date dataFinalizado;
     private VerificaDiagnostico verificador;
-    private List<Orcamento> orcamentos = new ArrayList<>();
+    private Orcamento orcamento;
 
     public Diagnostico(String descricao) {
         this.descricao = descricao;
@@ -50,17 +48,9 @@ public class Diagnostico {
         return dataFinalizado;
     }
 
-    public List<Orcamento> getOrcamentos() {
-        return orcamentos;
+    public void criarOrcamento(Orcamento orcamento) {
+        this.orcamento = orcamento;
     }
-
-    public void removeOrcamento(Orcamento orcamento){
-        orcamentos.remove(orcamento);
-    }
-
-    public void addOrcamento(Orcamento orcamento) {
-        orcamentos.add(orcamento);
-    };
 
     public void diagnosticoResolvido() {
         this.verificador = VerificaDiagnostico.RESOLVIDO;
