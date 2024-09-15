@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add findAll e arrumando consulta de findById">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: arrumando testes unitarios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/AutomovelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/AutomovelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +115,7 @@
     "JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_3_e_get_quantidade_igual_a_3.executor": "Run",
     "JUnit.UsuarioPortoTest.se_quantidade_orcamento_igual_a_7_e_menos_de_30_dias_add_orcamento_retorna_erro.executor": "Run",
     "JUnit.UsuarioTest.executor": "Run",
+    "JUnit.UsuarioTest.se_adiciona_automovel_get_automove_size_igual_1.executor": "Run",
     "JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf.executor": "Run",
     "JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf_formatado.executor": "Run",
     "JUnit.UsuarioTest.se_cpf_igual_12345678909_get_cpf_12345678909.executor": "Run",
@@ -126,7 +125,7 @@
     "JUnit.com.example in Java.executor": "Coverage",
     "JUnit.com.example.domain in Java.executor": "Coverage",
     "JUnit.domain in Java.executor": "Coverage",
-    "JUnit.example in Java.executor": "Coverage",
+    "JUnit.example in Java.executor": "Run",
     "JUnit.java in Java.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -170,7 +169,20 @@
       <recent name="com.example.domain.usuarios" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.example in Java">
+  <component name="RunManager" selected="Application.Teste">
+    <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Teste" />
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UsuarioTest.se_adiciona_automovel_get_automove_size_igual_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java" />
       <extension name="coverage">
@@ -182,22 +194,6 @@
       <option name="PACKAGE_NAME" value="com.example.model.usuarios" />
       <option name="MAIN_CLASS_NAME" value="com.example.model.usuarios.UsuarioTest" />
       <option name="METHOD_NAME" value="se_adiciona_automovel_get_automove_size_igual_1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.model.usuarios.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.model.usuarios" />
-      <option name="MAIN_CLASS_NAME" value="com.example.model.usuarios.UsuarioTest" />
-      <option name="METHOD_NAME" value="se_cpf_12345678909_get_cpf_retorna_cpf" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -244,19 +240,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Teste" />
       <item itemvalue="JUnit.UsuarioTest.se_adiciona_automovel_get_automove_size_igual_1" />
-      <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf" />
       <item itemvalue="JUnit.UsuarioTest.se_cpf_igual_12345678909_get_cpf_12345678909" />
       <item itemvalue="JUnit.UsuarioTest.se_cpf_invalido_retorna_erro" />
       <item itemvalue="JUnit.example in Java" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Teste" />
         <item itemvalue="JUnit.example in Java" />
         <item itemvalue="JUnit.UsuarioTest.se_adiciona_automovel_get_automove_size_igual_1" />
         <item itemvalue="JUnit.UsuarioTest.se_cpf_invalido_retorna_erro" />
         <item itemvalue="JUnit.UsuarioTest.se_cpf_igual_12345678909_get_cpf_12345678909" />
-        <item itemvalue="JUnit.UsuarioTest.se_cpf_12345678909_get_cpf_retorna_cpf" />
       </list>
     </recent_temporary>
   </component>
@@ -303,15 +299,7 @@
       <workItem from="1726052070952" duration="17000" />
       <workItem from="1726101495202" duration="2855000" />
       <workItem from="1726420577049" duration="3200000" />
-      <workItem from="1726425166638" duration="4151000" />
-    </task>
-    <task id="LOCAL-00005" summary="refactor: deleting validaDados in childs classes and add in class mother and changing alterarSenha">
-      <option name="closed" value="true" />
-      <created>1715731542640</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1715731542640</updated>
+      <workItem from="1726425166638" duration="8075000" />
     </task>
     <task id="LOCAL-00006" summary="feat: add increment id">
       <option name="closed" value="true" />
@@ -697,7 +685,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726428119671</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="feat: arrumando testes unitarios">
+      <option name="closed" value="true" />
+      <created>1726429815708</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1726429815708</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -740,7 +736,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: config jdbc" />
     <MESSAGE value="feat: add atribute id and method toString" />
     <MESSAGE value="feat: add interface and class of implementation" />
     <MESSAGE value="feat: testando method" />
@@ -765,7 +760,8 @@
     <MESSAGE value="feat: add comentarios e removendo atributos desnecessarios" />
     <MESSAGE value="feat: arrumando modelo das classes" />
     <MESSAGE value="feat: add findAll e arrumando consulta de findById" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add findAll e arrumando consulta de findById" />
+    <MESSAGE value="feat: arrumando testes unitarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: arrumando testes unitarios" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -785,7 +781,7 @@
     <SUITE FILE_PATH="coverage/Java$com_example_in_Java.ic" NAME="com.example in Java Coverage Results" MODIFIED="1725820745075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Java$example_in_Java.ic" NAME="example in Java Coverage Results" MODIFIED="1725831793117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Java$example_in_Java.ic" NAME="example in Java Coverage Results" MODIFIED="1726429696413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/Java$domain_in_Java.ic" NAME="domain in Java Coverage Results" MODIFIED="1716158106035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

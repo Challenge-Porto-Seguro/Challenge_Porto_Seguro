@@ -6,6 +6,7 @@ import com.example.model.Cpf;
 import com.example.model.Orcamento;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,10 +36,6 @@ public class Usuario extends Login implements FazerOrcamento {
         return diaUltimoOrcamento;
     }
 
-    public void setQuantidadeOrcamento(int quantidadeOrcamento) {
-        this.quantidadeOrcamento = quantidadeOrcamento;
-    }
-
     public void addAutomovel(Automovel automovel){
         this.automoveis.add(automovel);
     }
@@ -54,17 +51,17 @@ public class Usuario extends Login implements FazerOrcamento {
     //Um usuario pode fazer ate 3 orçamentos por mes
     @Override
     public void addOrcamento(Long idAutomovel, Orcamento orcamento) {
-        LocalDate diaHoje = LocalDate.now();
         for(Automovel automovel : automoveis){
             if(Objects.equals(automovel.getId(), idAutomovel)){
                 if(quantidadeOrcamento == 0){
                     diaUltimoOrcamento = orcamento.getDiaOrcamento();
                 }
 
-                int diferencaDias = (int) ChronoUnit.DAYS.between(diaUltimoOrcamento, diaHoje);
-                if(quantidadeOrcamento == 3 && diferencaDias < 30){
+                Period period = Period.between(diaUltimoOrcamento, LocalDate.now());
+                int diferencaMeses = period.getMonths();
+                if(quantidadeOrcamento == 3 && diferencaMeses != 1){
                     throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaUltimoOrcamento.getDayOfMonth() + " do mês: " + (diaUltimoOrcamento.getMonthValue() + 1));
-                } else if(diferencaDias >= 30) {
+                } else if(diferencaMeses == 1) {
                     quantidadeOrcamento = 0;
                     this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
                 }
@@ -78,6 +75,6 @@ public class Usuario extends Login implements FazerOrcamento {
 
     @Override
     public String toString() {
-        return "Nome: " + getNome() + ", Email: " + getEmail() + ", Cpf: " + getCpf() + ", Senha: " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
+        return "Id: " + getId() + ", Nome: " + getNome() + ", Email: " + getEmail() + ", Cpf: " + getCpf() + ", Senha: " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
     }
 }
