@@ -10,18 +10,23 @@ export default function CadastroAutomovel() {
         {id: "ano", nomeCampo: "Ano", tipo: "date", placeHolder: "Digite o ano de seu veiculo"},
         {id: "placa", nomeCampo: "Placa", tipo: "text", placeHolder: "Digite a placa do seu veiculo"}
     ]
-     document.title ="Cadastro de Automovel"
+
+    function mostraAlertAutomovelCadastrado() {
+        alert("Obrigado por cadastrar seu veiculo")
+    }
+    
+    document.title ="Cadastro de Automovel"
     return (
        
         <CadastroPageStyle>
             <h1>Cadastro de veiculo</h1>
-            <FormularioCadastroVeiculo>
+            <FormularioCadastroVeiculo action="/chatbot">
                 {
                     formularioCadastroVeiculo.map((campo, index) => (
                         <Formulario key={index} id={campo.id} nomeCampo={campo.nomeCampo} tipo={campo.tipo} placeHolder={campo.placeHolder} />
                     ))
                 }
-                <button className="botao_cadastro">Cadastrar</button>
+                <button onClick={mostraAlertAutomovelCadastrado} className="botao_cadastro">Cadastrar</button>
             </FormularioCadastroVeiculo>
         </CadastroPageStyle>
     )

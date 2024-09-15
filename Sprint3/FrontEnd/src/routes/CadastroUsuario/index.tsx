@@ -19,12 +19,17 @@ export default function CadastroUsuario() {
         {id: "rua", nomeCampo: "Rua", tipo: "text", placeHolder: "Digite o nome da sua rua"},
         {id: "numero", nomeCampo: "Numero", tipo: "number", placeHolder: ""},
     ]
+
+
+    function mostraAlertUsuarioCadastrado() {
+        alert("Obrigado por se cadastrar")
+    }
     document.title = "Cadastro de Usuario"
     return (
         <CadastroPageStyle>
 
             <h1>Cadastro de Usuario</h1>
-            <FormularioCadastroStyle>
+            <FormularioCadastroStyle action="/">
 
                 {
                     listaCampos.map((campo, index) => (
@@ -43,7 +48,7 @@ export default function CadastroUsuario() {
                     ))
                 }
 
-                <button className="botao_cadastro">Cadastrar</button>
+                <button onClick={mostraAlertUsuarioCadastrado} className="botao_cadastro">Cadastrar</button>
                 
             </FormularioCadastroStyle>
 
