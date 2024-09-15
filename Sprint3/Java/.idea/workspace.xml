@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: arrumando testes unitarios">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: testando classe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/usuarios/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,39 +296,7 @@
       <workItem from="1726052070952" duration="17000" />
       <workItem from="1726101495202" duration="2855000" />
       <workItem from="1726420577049" duration="3200000" />
-      <workItem from="1726425166638" duration="8075000" />
-    </task>
-    <task id="LOCAL-00006" summary="feat: add increment id">
-      <option name="closed" value="true" />
-      <created>1715731585530</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1715731585530</updated>
-    </task>
-    <task id="LOCAL-00007" summary="test: testing methodo alterarSenha">
-      <option name="closed" value="true" />
-      <created>1715731626742</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1715731626742</updated>
-    </task>
-    <task id="LOCAL-00008" summary="feat: add CPF class">
-      <option name="closed" value="true" />
-      <created>1715820768733</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1715820768733</updated>
-    </task>
-    <task id="LOCAL-00009" summary="refactor: moved to interfaces package">
-      <option name="closed" value="true" />
-      <created>1715820857148</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1715820857148</updated>
+      <workItem from="1726425166638" duration="12279000" />
     </task>
     <task id="LOCAL-00010" summary="fix: removing valida cpf and renaming class">
       <option name="closed" value="true" />
@@ -693,7 +658,39 @@
       <option name="project" value="LOCAL" />
       <updated>1726429815708</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="feat: add validação para setar nome">
+      <option name="closed" value="true" />
+      <created>1726433525356</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1726433525356</updated>
+    </task>
+    <task id="LOCAL-00056" summary="feat: arrumando validação para add orçamentos">
+      <option name="closed" value="true" />
+      <created>1726433543213</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1726433543213</updated>
+    </task>
+    <task id="LOCAL-00057" summary="feat: arrumando o findAll para ordenar por nome">
+      <option name="closed" value="true" />
+      <created>1726434098060</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1726434098060</updated>
+    </task>
+    <task id="LOCAL-00058" summary="feat: testando classe">
+      <option name="closed" value="true" />
+      <created>1726434119069</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1726434119069</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -736,10 +733,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add atribute id and method toString" />
-    <MESSAGE value="feat: add interface and class of implementation" />
-    <MESSAGE value="feat: testando method" />
-    <MESSAGE value="feat: alterando banco de dados" />
     <MESSAGE value="feat: add validações em uma classe separadas" />
     <MESSAGE value="feat: renomeano" />
     <MESSAGE value="feat: movendo package" />
@@ -761,7 +754,11 @@
     <MESSAGE value="feat: arrumando modelo das classes" />
     <MESSAGE value="feat: add findAll e arrumando consulta de findById" />
     <MESSAGE value="feat: arrumando testes unitarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: arrumando testes unitarios" />
+    <MESSAGE value="feat: add validação para setar nome" />
+    <MESSAGE value="feat: arrumando validação para add orçamentos" />
+    <MESSAGE value="feat: arrumando o findAll para ordenar por nome" />
+    <MESSAGE value="feat: testando classe" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: testando classe" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
