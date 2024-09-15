@@ -6,6 +6,8 @@ import com.example.db.dao.UsuarioDao;
 import com.example.model.usuarios.Usuario;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class UsuarioDaoJDBC implements UsuarioDao {
@@ -127,6 +129,27 @@ public class UsuarioDaoJDBC implements UsuarioDao {
             DB.closeStatement(ps);
         }
 
+    }
+
+    @Override
+    public List<Usuario> findAll() {
+        List<Usuario> usuarios = new ArrayList<>();
+        Statement stmt = null;
+        ResultSet rs = null;
+        String sql = "select usario.sq_cpf, pessoa.*  from T_PS_USUARIO usario join T_PS_PESSOA pessoa on usario.cd_pessoa = pessoa.cd_pessoa";
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                usuarios.add(instaciaUsuario(rs));
+            }
+            return usuarios;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            DB.closeResultSet(rs);
+            DB.closeStatement(stmt);
+        }
     }
 
     private Usuario instaciaUsuario(ResultSet rs) throws SQLException {

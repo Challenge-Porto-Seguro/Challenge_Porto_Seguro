@@ -74,6 +74,6 @@ public class Usuario extends Login implements FazerOrcamento {
 
     @Override
     public String toString() {
-        return "Usuario Comum: " + "Nome: " + getNome() + ", Email: " + getEmail() + " " + getCpf() + " " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
+        return "Nome: " + getNome() + ", Email: " + getEmail() + ", Cpf: " + getCpf() + ", Senha: " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
     }
 }

@@ -4,6 +4,8 @@ import com.example.db.dao.DaoFactory;
 import com.example.db.dao.UsuarioDao;
 import com.example.model.usuarios.Usuario;
 
+import java.util.List;
+
 public class UsuarioService {
 
     private final UsuarioDao repository = DaoFactory.createUsuarioDao();
@@ -21,5 +23,9 @@ public class UsuarioService {
     }
     public void excluiUsuario(Long id) {
         repository.deleteById(id);
+    }
+
+    public List<Usuario> listaUsuarios() {
+        return repository.findAll();
     }
 }

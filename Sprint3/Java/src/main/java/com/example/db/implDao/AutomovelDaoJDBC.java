@@ -8,6 +8,8 @@ import com.example.model.usuarios.Usuario;
 import com.example.service.UsuarioService;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class AutomovelDaoJDBC implements AutomovelDao {
@@ -97,14 +99,15 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement("""
-                select * from T_PS_AUTOMOVEL where cd_automovel = ?
+                select aut.*, usuario.sq_cpf, pessoa.* from T_PS_AUTOMOVEL aut
+                    join T_PS_USUARIO usuario on aut.cd_pessoa = usuario.cd_pessoa
+                    join T_PS_PESSOA pessoa on usuario.cd_pessoa = pessoa.cd_pessoa
+                    where aut.cd_automovel = ?
             """);
             ps.setLong(1, id);
             rs = ps.executeQuery();
             if(rs.next()){
-                UsuarioService usuarioService = new UsuarioService();
-                Usuario usuario = usuarioService.buscaUsuarioPorId(rs.getLong("cd_pessoa"));
-                Automovel automovel = instanciaAutomovel(rs, usuario);
+                Automovel automovel = instanciaAutomovel(rs);
                 return Optional.of(automovel);
             }
             return Optional.empty();
@@ -116,9 +119,40 @@ public class AutomovelDaoJDBC implements AutomovelDao {
         }
     }
 
-    private Automovel instanciaAutomovel(ResultSet rs, Usuario usuario) throws SQLException {
-        Automovel automovel = new Automovel(rs.getString("nm_marca_veiculo"), rs.getString("nm_modelo_veiculo"), rs.getString("sq_placa"), rs.getDate("dt_veiculo"), usuario);
+    @Override
+    public List<Automovel> findAll() {
+        List<Automovel> automoveis = new ArrayList<>();
+        Statement statement = null;
+        ResultSet rs = null;
+        String sql = """ 
+                    select aut.*, usuario.sq_cpf, pessoa.* from T_PS_AUTOMOVEL aut
+                        join T_PS_USUARIO usuario on aut.cd_pessoa = usuario.cd_pessoa
+                        join T_PS_PESSOA pessoa on usuario.cd_pessoa = pessoa.cd_pessoa
+        """;
+        try {
+            statement = conn.createStatement();
+            rs = statement.executeQuery(sql);
+            while (rs.next()){
+                automoveis.add(instanciaAutomovel(rs));
+            }
+            return automoveis;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            DB.closeStatement(statement);
+            DB.closeResultSet(rs);
+        }
+    }
+
+    private Automovel instanciaAutomovel(ResultSet rs) throws SQLException {
+        Automovel automovel = new Automovel(rs.getString("nm_marca_veiculo"), rs.getString("nm_modelo_veiculo"), rs.getString("sq_placa"), rs.getDate("dt_veiculo"), instaciaUsuario(rs));
         automovel.setId(rs.getLong("cd_automovel"));
         return automovel;
+    }
+
+    private Usuario instaciaUsuario(ResultSet rs) throws SQLException {
+        Usuario usuario = new Usuario(rs.getString("nm_nome"), rs.getString("sq_cpf"), rs.getString("nm_email"), rs.getString("sq_senha"));
+        usuario.setId(rs.getLong("cd_pessoa"));
+        return usuario;
     }
 }

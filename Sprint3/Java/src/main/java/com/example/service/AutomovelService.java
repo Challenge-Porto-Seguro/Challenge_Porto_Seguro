@@ -4,6 +4,8 @@ import com.example.db.dao.AutomovelDao;
 import com.example.db.dao.DaoFactory;
 import com.example.model.Automovel;
 
+import java.util.List;
+
 public class AutomovelService {
 
     private final AutomovelDao repository = DaoFactory.createAutomovelDao();
@@ -22,6 +24,10 @@ public class AutomovelService {
 
     public Automovel buscaAutomovelPorId(Long id) {
         return repository.findById(id).orElseThrow(() -> new RuntimeException("Automovel não encontrado"));
+    }
+
+    public List<Automovel> listaAutomoveis() {
+        return repository.findAll();
     }
 
 }
