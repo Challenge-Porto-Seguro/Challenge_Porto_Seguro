@@ -2,10 +2,9 @@ import oracledb as banco
 
 def conectar_bd():
     try:
-        #Dados do Banco Oracle
         connection = banco.connect(
-            user="",  # Aqui vai o nome do seu banco no Oracle
-            password="", # Aqui vai a seu senha
+            user="",  
+            password="", 
             dsn="oracle.fiap.com.br/orcl"  
         )
         return connection

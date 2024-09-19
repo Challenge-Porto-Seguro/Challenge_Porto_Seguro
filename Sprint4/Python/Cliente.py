@@ -29,7 +29,11 @@ def cadastrar_usuario():
     if connection:
         try:
             cursor = connection.cursor()
+            idUSer = cursor.var(banco.NUMBER)
+            dado = {"id": idUSer}
+            
             # Solicitar informações do usuário
+            id = dado["id"].getvalue()[0]    # ID DO BANCO
             nome = input("Digite seu nome: ")
             email = input("Digite seu email: ")
             validarEmail(email)
@@ -46,9 +50,9 @@ def cadastrar_usuario():
             else:
                 # Inserir usuário no banco de dados
                 cursor.execute("""
-                    INSERT INTO usuarios (nome, email, telefone, senha)
-                    VALUES (:nome, :email, :telefone, :senha)
-                """, [nome, email, telefone, senha])
+                    (INSERT INTO usuarios (nome, email, telefone, senha)
+                    VALUES (:nome, :email, :telefone, :senha) returning id into :id", dado)
+                """, [id, nome, email, telefone, senha])
                 connection.commit()
                 print("[-------------------------------]")
                 print("[----      CADASTRADO!!    -----]")

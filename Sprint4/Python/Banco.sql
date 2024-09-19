@@ -16,3 +16,6 @@ CREATE TABLE carros (
 );
 
 Select * from carros;
+
+drop table carros;
+drop table usuarios;
