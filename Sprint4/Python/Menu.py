@@ -53,7 +53,7 @@ def menu_porto(email):
         elif escolha == '3':
             carros.atualizar_carro(email)
         elif escolha == '4':
-            carros.deletar_carro()
+            carros.deletar_carro(email)
         elif escolha == '5':
             print("Voltando ao menu principal...")
             break

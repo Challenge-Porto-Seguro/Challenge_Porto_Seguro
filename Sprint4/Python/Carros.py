@@ -68,12 +68,12 @@ def atualizar_carro(email):
                 print(f"Erro ao atualizar o carro: {e}")
 
 # Função para deletar um carro
-def deletar_carro():
+def deletar_carro(email):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
                 placa = input("Digite a placa do carro que deseja deletar: ").upper()
-                cursor.execute("SELECT id FROM carros WHERE placa = :placa", {"placa": placa})
+                cursor.execute("SELECT c.placa, c.nome FROM carros c JOIN usuarios u ON c.usuario_id = u.id WHERE u.email = :email", {"email": email})
                 carro = cursor.fetchone()
                 if not carro:
                     print(f"Erro: Carro com placa {placa} não encontrado.")
