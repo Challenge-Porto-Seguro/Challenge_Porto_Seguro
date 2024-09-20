@@ -34,7 +34,6 @@ def validarEmail(email):
 def cadastrar_usuario():
     if conn:
         try:
-            id = dado["id"].getvalue()[0] 
             # Solicitar informações do usuário
             nome = input("Digite seu nome: ")
             email = input("Digite seu email: ")
@@ -45,16 +44,17 @@ def cadastrar_usuario():
             validarSenha(senha)
             # Verificar se o email já está cadastrado no bd
             cursor.execute("SELECT * FROM usuarios WHERE id = :id", [id])
+            id = dado["id"].getvalue()[0]
             if cursor.fetchone():
-                print("[-------------------------------]")
-                print("[----   EMAIL JÁ CADASTRADO!   -----]")
-                print("[-------------------------------]")
+                print("[-----------------------------]")
+                print("[----     ID JÁ EXISTE    ----]")
+                print("[-----------------------------]")
             else:
                 # Inserir usuário no bd de dados
                 cursor.execute("""
-                    (INSERT INTO usuarios (nome, email, telefone, senha)
-                    VALUES (:nome, :email, :telefone, :senha) returning id into :id", dado)
-                """, [id, nome, email, telefone, senha])
+                    INSERT INTO usuarios (nome, email, telefone, senha)
+                    VALUES (:nome, :email, :telefone, :senha)
+                """, [nome, email, telefone, senha])
                 conn.commit()
                 print("[-------------------------------]")
                 print("[----      CADASTRADO!!    -----]")
@@ -67,13 +67,13 @@ def cadastrar_usuario():
 
 #Login
 def logar_usuario():
-    conn = bd.conectar_bd()
+    conn
     if conn:
         try:
             email = input("Digite seu email: ")
             senha = input("Digite sua senha: ")
 
-            cursor = conn.cursor()
+            cursor
             cursor.execute("SELECT senha FROM usuarios WHERE email = :email", [email])
             row = cursor.fetchone()
 
