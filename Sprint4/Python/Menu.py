@@ -49,7 +49,7 @@ def menu_porto(email):
             except Exception as msgErro:
                 print(msgErro.args[0])
         elif escolha == '2':
-            carros.ler_carros()
+            carros.exibir_carro(email)
         elif escolha == '3':
             carros.atualizar_carro()
         elif escolha == '4':
