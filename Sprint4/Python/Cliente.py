@@ -1,10 +1,11 @@
-import Oracle as banco
-connection = banco.conectar_bd()
-cursor = connection.cursor()
-idUser = cursor.var(banco.NUMBER)
-dado = {"id": idUser}
-id = dado["id"].getvalue()[0] 
+import oracledb as bd
+from Oracle import conectar_bd
 
+# Fazendo retorno do ID
+conn = conectar_bd()
+cursor = conn.cursor()
+idUser = cursor.var(bd.NUMBER)
+dado = {"id": idUser}
 
 # Import pro Regex que valida Email
 import re
@@ -31,8 +32,9 @@ def validarEmail(email):
 
 # cadastro
 def cadastrar_usuario():
-    if connection:
+    if conn:
         try:
+            id = dado["id"].getvalue()[0] 
             # Solicitar informações do usuário
             nome = input("Digite seu nome: ")
             email = input("Digite seu email: ")
@@ -41,37 +43,37 @@ def cadastrar_usuario():
             validaTelefone(telefone)
             senha = input("Digite sua senha: ")
             validarSenha(senha)
-            # Verificar se o email já está cadastrado no banco
+            # Verificar se o email já está cadastrado no bd
             cursor.execute("SELECT * FROM usuarios WHERE id = :id", [id])
             if cursor.fetchone():
                 print("[-------------------------------]")
                 print("[----   EMAIL JÁ CADASTRADO!   -----]")
                 print("[-------------------------------]")
             else:
-                # Inserir usuário no banco de dados
+                # Inserir usuário no bd de dados
                 cursor.execute("""
                     (INSERT INTO usuarios (nome, email, telefone, senha)
                     VALUES (:nome, :email, :telefone, :senha) returning id into :id", dado)
                 """, [id, nome, email, telefone, senha])
-                connection.commit()
+                conn.commit()
                 print("[-------------------------------]")
                 print("[----      CADASTRADO!!    -----]")
                 print("[-------------------------------]")
-        except banco.DatabaseError as e:
+        except bd.DatabaseError as e:
             print("Erro ao executar a operação", e)
         finally:
             cursor.close()
-            connection.close()
+            conn.close()
 
 #Login
 def logar_usuario():
-    connection = banco.conectar_bd()
-    if connection:
+    conn = bd.conectar_bd()
+    if conn:
         try:
             email = input("Digite seu email: ")
             senha = input("Digite sua senha: ")
 
-            cursor = connection.cursor()
+            cursor = conn.cursor()
             cursor.execute("SELECT senha FROM usuarios WHERE email = :email", [email])
             row = cursor.fetchone()
 
@@ -85,17 +87,17 @@ def logar_usuario():
                 print("[-- EMAIL OU SENHA INCORRETOS --]")
                 print("[-------------------------------]")
                 return False
-        except banco.DatabaseError as e:
+        except bd.DatabaseError as e:
             print("Erro ao executar a operação", e)
         finally:
             cursor.close()
-            connection.close()
+            conn.close()
 #Exibir
 def exibir_usuarios():
-    connection = banco.conectar_bd()
-    if connection:
+    conn
+    if conn:
         try:
-            cursor = connection.cursor()
+            cursor = conn.cursor()
             cursor.execute("SELECT nome, email, telefone FROM usuarios")
             rows = cursor.fetchall()
 
@@ -106,9 +108,9 @@ def exibir_usuarios():
             else:
                 print("--- Usuários cadastrados: ")
                 for row in rows:
-                    print(f"[---- ID: {id} Nome: {row[0]}, Email: {row[1]}, Telefone: {row[2]} ----]")
-        except banco.DatabaseError as e:
+                    print(f"[---- ID: {row[0]} Nome: {row[1]}, Email: {row[2]}, Telefone: {row[3]} ----]")
+        except bd.DatabaseError as e:
             print("Erro ao executar a operação", e)
         finally:
             cursor.close()
-            connection.close()
+            conn.close()

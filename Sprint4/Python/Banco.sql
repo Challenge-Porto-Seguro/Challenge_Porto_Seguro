@@ -8,14 +8,4 @@ CREATE TABLE usuarios (
 
 Select * from usuarios;
 
-CREATE TABLE carros (
-    placa VARCHAR2(7) PRIMARY KEY,
-    nome VARCHAR2(50) NOT NULL,
-    cliente_id NUMBER,
-    CONSTRAINT fk_cliente FOREIGN KEY (cliente_id) REFERENCES usuarios(id)
-);
-
-Select * from carros;
-
-drop table carros;
 drop table usuarios;
