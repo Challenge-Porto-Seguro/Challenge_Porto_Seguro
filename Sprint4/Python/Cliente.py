@@ -4,9 +4,6 @@ from Oracle import conectar_bd
 # Import pro Regex que valida Email
 import re
 
-# Dicionário para armazenar os usuários cadastrados
-usuarios = {}
-
 # Validação de Telefone
 def validaTelefone(telefone):
     if len(telefone) != 11:

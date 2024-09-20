@@ -1,57 +1,34 @@
 from Oracle import conectar_bd
 
-# Fazendo retorno do ID
-
-# Dicionário para armazenar os carros
-carros = {}
-
 def validar_placa(placa):
     if len(placa) != 7:
-        raise ValueError("Placa Invalida.")
+        raise ValueError("Placa inválida.")
 
-# Função para criar um carro
+# Função para criar um carro e inserir no banco de dados
 def criar_carro(email):
-     with conectar_bd() as conn:
+    with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
                 placa = input("Digite a placa do carro: ").upper()
                 validar_placa(placa)
-                cursor.execute("SELECT * FROM usuarios WHERE email = :email", {"email": email})
-                rows = cursor.fetchall()
-                for row in rows:
-                    print(row[2])
-                if placa in carros:
+                nome = input("Digite o nome do carro: ")
+                cursor.execute("SELECT id FROM usuarios WHERE email = :email", {"email": email})
+                usuario = cursor.fetchone()
+                if not usuario:
+                    print(f"Erro: Usuário com email {email} não encontrado.")
+                    return
+                usuario_id = usuario[0] 
+                cursor.execute("SELECT placa FROM carros WHERE placa = :placa", {"placa": placa})
+                if cursor.fetchone():
                     print("Erro: Já existe um carro com essa placa.")
                 else:
-                    nome = input("Digite o nome do carro: ")
-                    carros[placa] = nome
-                    print(f"Carro com placa {placa} e nome {nome} foi adicionado.")
+                    cursor.execute(
+                        "INSERT INTO carros (placa, nome, usuario_id) VALUES (:placa, :nome, :usuario_id)",
+                        {"placa": placa, "nome": nome, "usuario_id": usuario_id}
+                    )
+                    conn.commit()  # Confirma a transação
+                    print(f"Carro com placa {placa} e nome {nome} foi adicionado para o usuário {email}.")
             except ValueError as e:
                 print(e)
-
-# Função para ler os carros
-def ler_carros():
-    if not carros:
-        print("Nenhum carro cadastrado.")
-    else:
-        for placa, nome in carros.items():
-            print(f"Placa: {placa}, Nome: {nome}")
-
-# Função para atualizar um carro
-def atualizar_carro():
-    placa = input("Digite a placa do carro que deseja atualizar: ").upper()
-    if placa in carros:
-        novo_nome = input("Digite o novo nome do carro: ")
-        carros[placa] = novo_nome
-        print(f"Carro com placa {placa} foi atualizado para o nome {novo_nome}.")
-    else:
-        print("Erro: Carro não encontrado.")
-
-# Função para deletar um carro
-def deletar_carro():
-    placa = input("Digite a placa do carro que deseja deletar: ").upper()
-    if placa in carros:
-        del carros[placa]
-        print(f"Carro com placa {placa} foi deletado.")
-    else:
-        print("Erro: Carro não encontrado.")
+            except Exception as e:
+                print(f"Erro ao cadastrar o carro: {e}")

@@ -6,6 +6,17 @@ CREATE TABLE usuarios (
     senha VARCHAR2(100) NOT NULL
 );
 
-Select * from usuarios;
+SELECT * FROM usuarios;
 
-drop table usuarios;
+DROP TABLE usuarios;
+
+CREATE TABLE carros (
+    placa VARCHAR2(7) PRIMARY KEY,
+    nome VARCHAR2(100) NOT NULL,
+    usuario_id NUMBER,
+    CONSTRAINT fk_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+SELECT * FROM carros;
+
+DROP TABLE carros;
