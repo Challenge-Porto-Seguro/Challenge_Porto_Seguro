@@ -10,8 +10,6 @@ dado = {"id": idUser}
 # Import pro Regex que valida Email
 import re
 
-# Dicionário para armazenar os usuários cadastrados
-usuarios = {}
 
 # Validação de Telefone
 def validaTelefone(telefone):
@@ -43,11 +41,10 @@ def cadastrar_usuario():
             senha = input("Digite sua senha: ")
             validarSenha(senha)
             # Verificar se o email já está cadastrado no bd
-            cursor.execute("SELECT * FROM usuarios WHERE id = :id", [id])
-            id = dado["id"].getvalue()[0]
+            cursor.execute("SELECT * FROM usuarios WHERE email = :email", [email])
             if cursor.fetchone():
                 print("[-----------------------------]")
-                print("[----     ID JÁ EXISTE    ----]")
+                print("[----     ID JÁ EMAIL;    ----]")
                 print("[-----------------------------]")
             else:
                 # Inserir usuário no bd de dados
@@ -61,9 +58,6 @@ def cadastrar_usuario():
                 print("[-------------------------------]")
         except bd.DatabaseError as e:
             print("Erro ao executar a operação", e)
-        finally:
-            cursor.close()
-            conn.close()
 
 #Login
 def logar_usuario():
@@ -89,9 +83,7 @@ def logar_usuario():
                 return False
         except bd.DatabaseError as e:
             print("Erro ao executar a operação", e)
-        finally:
-            cursor.close()
-            conn.close()
+
 #Exibir
 def exibir_usuarios():
     conn
@@ -111,6 +103,3 @@ def exibir_usuarios():
                     print(f"[---- ID: {row[0]} Nome: {row[1]}, Email: {row[2]}, Telefone: {row[3]} ----]")
         except bd.DatabaseError as e:
             print("Erro ao executar a operação", e)
-        finally:
-            cursor.close()
-            conn.close()
