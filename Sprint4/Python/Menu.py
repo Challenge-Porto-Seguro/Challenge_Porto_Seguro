@@ -51,7 +51,7 @@ def menu_porto(email):
         elif escolha == '2':
             carros.exibir_carro(email)
         elif escolha == '3':
-            carros.atualizar_carro()
+            carros.atualizar_carro(email)
         elif escolha == '4':
             carros.deletar_carro()
         elif escolha == '5':
