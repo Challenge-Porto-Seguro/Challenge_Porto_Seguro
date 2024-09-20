@@ -4,6 +4,8 @@ from Oracle import conectar_bd
 # Import pro Regex que valida Email
 import re
 
+# Dicionário para armazenar os usuários cadastrados
+usuarios = {}
 
 # Validação de Telefone
 def validaTelefone(telefone):
@@ -24,7 +26,6 @@ def validarEmail(email):
 
 # cadastro
 def cadastrar_usuario():
-<<<<<<< HEAD
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
@@ -38,25 +39,6 @@ def cadastrar_usuario():
                 validarSenha(senha)
                 # Verificar se o email já está cadastrado no bd
                 
-=======
-    if conn:
-        try:
-            # Solicitar informações do usuário
-            nome = input("Digite seu nome: ")
-            email = input("Digite seu email: ")
-            validarEmail(email)
-            telefone = input("Digite seu telefone: ")
-            validaTelefone(telefone)
-            senha = input("Digite sua senha: ")
-            validarSenha(senha)
-            # Verificar se o email já está cadastrado no bd
-            cursor.execute("SELECT * FROM usuarios WHERE email = :email", [email])
-            if cursor.fetchone():
-                print("[-----------------------------]")
-                print("[----     ID JÁ EMAIL;    ----]")
-                print("[-----------------------------]")
-            else:
->>>>>>> 2b5f282ce990531a65223ed71570a95b1e881e13
                 # Inserir usuário no bd de dados
                 cursor.execute("""
                     INSERT INTO usuarios (nome, email, telefone, senha)
@@ -66,13 +48,8 @@ def cadastrar_usuario():
                 print("[-------------------------------]")
                 print("[----      CADASTRADO!!    -----]")
                 print("[-------------------------------]")
-<<<<<<< HEAD
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
-=======
-        except bd.DatabaseError as e:
-            print("Erro ao executar a operação", e)
->>>>>>> 2b5f282ce990531a65223ed71570a95b1e881e13
 
 #Login
 def logar_usuario():
@@ -86,7 +63,6 @@ def logar_usuario():
                 cursor.execute("SELECT * FROM usuarios WHERE email = :email", {"email": email})
                 row = cursor.fetchone()
 
-<<<<<<< HEAD
                 if row and row[4] == senha:
                     print("[-------------------------------]")
                     print("[----  LOGIN BEM SUCEDIDO  -----]")
@@ -100,21 +76,6 @@ def logar_usuario():
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
         
-=======
-            if row and row[0] == senha:
-                print("[-------------------------------]")
-                print("[----  LOGIN BEM SUCEDIDO  -----]")
-                print("[-------------------------------]")
-                return True
-            else:
-                print("[-------------------------------]")
-                print("[-- EMAIL OU SENHA INCORRETOS --]")
-                print("[-------------------------------]")
-                return False
-        except bd.DatabaseError as e:
-            print("Erro ao executar a operação", e)
-
->>>>>>> 2b5f282ce990531a65223ed71570a95b1e881e13
 #Exibir
 def exibir_usuarios():
      with conectar_bd() as conn:
@@ -124,7 +85,6 @@ def exibir_usuarios():
                 cursor.execute("SELECT id, nome, email, telefone FROM usuarios")
                 rows = cursor.fetchall()
 
-<<<<<<< HEAD
                 if not rows:
                     print("[-------------------------------]")
                     print("[----   Nenhum Cadastro!!  -----]")
@@ -135,15 +95,3 @@ def exibir_usuarios():
                         print(f"[---- ID: {row[0]} Nome: {row[1]}, Email: {row[2]}, Telefone: {row[3]} ----]")
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
-=======
-            if not rows:
-                print("[-------------------------------]")
-                print("[----   Nenhum Cadastro!!  -----]")
-                print("[-------------------------------]")
-            else:
-                print("--- Usuários cadastrados: ")
-                for row in rows:
-                    print(f"[---- ID: {row[0]} Nome: {row[1]}, Email: {row[2]}, Telefone: {row[3]} ----]")
-        except bd.DatabaseError as e:
-            print("Erro ao executar a operação", e)
->>>>>>> 2b5f282ce990531a65223ed71570a95b1e881e13
