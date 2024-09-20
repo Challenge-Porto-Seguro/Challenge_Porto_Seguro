@@ -3,8 +3,8 @@ import oracledb as banco
 def conectar_bd():
     try:
         connection = banco.connect(
-            user="",  
-            password="", 
+            user="rm557992",  
+            password="240504", 
             dsn="oracle.fiap.com.br/orcl"  
         )
         return connection

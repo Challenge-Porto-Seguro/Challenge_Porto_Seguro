@@ -1,4 +1,10 @@
 import Oracle as banco
+connection = banco.conectar_bd()
+cursor = connection.cursor()
+idUser = cursor.var(banco.NUMBER)
+dado = {"id": idUser}
+id = dado["id"].getvalue()[0] 
+
 
 # Import pro Regex que valida Email
 import re
@@ -25,15 +31,9 @@ def validarEmail(email):
 
 # cadastro
 def cadastrar_usuario():
-    connection = banco.conectar_bd()
     if connection:
         try:
-            cursor = connection.cursor()
-            idUSer = cursor.var(banco.NUMBER)
-            dado = {"id": idUSer}
-            
             # Solicitar informações do usuário
-            id = dado["id"].getvalue()[0]    # ID DO BANCO
             nome = input("Digite seu nome: ")
             email = input("Digite seu email: ")
             validarEmail(email)
@@ -42,7 +42,7 @@ def cadastrar_usuario():
             senha = input("Digite sua senha: ")
             validarSenha(senha)
             # Verificar se o email já está cadastrado no banco
-            cursor.execute("SELECT * FROM usuarios WHERE email = :email", [email])
+            cursor.execute("SELECT * FROM usuarios WHERE id = :id", [id])
             if cursor.fetchone():
                 print("[-------------------------------]")
                 print("[----   EMAIL JÁ CADASTRADO!   -----]")
@@ -90,7 +90,6 @@ def logar_usuario():
         finally:
             cursor.close()
             connection.close()
-
 #Exibir
 def exibir_usuarios():
     connection = banco.conectar_bd()
@@ -107,7 +106,7 @@ def exibir_usuarios():
             else:
                 print("--- Usuários cadastrados: ")
                 for row in rows:
-                    print(f"[---- Nome: {row[0]}, Email: {row[1]}, Telefone: {row[2]} ----]")
+                    print(f"[---- ID: {id} Nome: {row[0]}, Email: {row[1]}, Telefone: {row[2]} ----]")
         except banco.DatabaseError as e:
             print("Erro ao executar a operação", e)
         finally:
