@@ -18,8 +18,9 @@ def menu_cliente():
         elif opcao == "2":
             cliente.exibir_usuarios()
         elif opcao == "3":
-            if cliente.logar_usuario():
-                menu_porto()
+            [logado, email] = cliente.logar_usuario()
+            if logado:
+                menu_porto(email)
             else:
                 print("Falha no login. Tente novamente.")
         elif opcao == "4":
@@ -30,7 +31,7 @@ def menu_cliente():
         else:
             print("Opção inválida. Tente novamente.")
 
-def menu_porto():
+def menu_porto(email):
     while True:
         print("\n--- MENU PORTO ---")
         print("1. Criar um novo carro")
@@ -44,7 +45,7 @@ def menu_porto():
 
         if escolha == '1':
             try:
-                carros.criar_carro()
+                carros.criar_carro(email)
             except Exception as msgErro:
                 print(msgErro.args[0])
         elif escolha == '2':
