@@ -38,7 +38,7 @@ def menu_porto(email):
         print("2. Listar todos os carros")
         print("3. Atualizar um carro")
         print("4. Deletar um carro")
-        print("5. Voltar ao menu principal")
+        print("5. Voltar ao menu de Cadastro")
 
         escolha = input("Escolha uma opção: ")
         
