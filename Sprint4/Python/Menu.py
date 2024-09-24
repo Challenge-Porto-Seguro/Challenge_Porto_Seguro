@@ -41,15 +41,13 @@ def menu_porto(email):
         print("5. Voltar ao menu de Cadastro")
 
         escolha = input("Escolha uma opção: ")
-        
-
         if escolha == '1':
             try:
                 carros.criar_carro(email)
             except Exception as msgErro:
                 print(msgErro.args[0])
         elif escolha == '2':
-            carros.exibir_carro(email)
+            carros.exibir_carro()
         elif escolha == '3':
             carros.atualizar_carro(email)
         elif escolha == '4':

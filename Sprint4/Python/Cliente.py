@@ -2,9 +2,6 @@
 import oracledb as bd
 from Oracle import conectar_bd
 
-# Import do Json
-import json
-
 # Import pro Regex que valida Email
 import re
 
@@ -82,21 +79,16 @@ def exibir_usuarios():
             try:
                 cursor = conn.cursor()
                 cursor.execute("SELECT id, nome, email, telefone FROM usuarios")
-                colunas = [col[0] for col in cursor.description]
                 dados = []
                 rows = cursor.fetchall()
                 for r in rows:
                     dados.append({'id': r[0], 'nome': r[1], 'email': r[2], 'telefone': r[3]})
-                json_dados = json.dumps(dados, indent=4, ensure_ascii=False)
-                # json_resultado = json_dados()
                 if not rows:
                     print("[-------------------------------]")
                     print("[----   Nenhum Cadastro!!  -----]")
                     print("[-------------------------------]")
                 else:
                     print("--- Usuários cadastrados: ")
-                    for row in rows:
-                        print(f"[---- ID: {row[0]} Nome: {row[1]}, Email: {row[2]}, Telefone: {row[3]} ----]")
-                        print(dados)
+                    print(dados)
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)

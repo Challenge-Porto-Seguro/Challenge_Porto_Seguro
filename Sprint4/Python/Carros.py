@@ -34,15 +34,17 @@ def criar_carro(email):
                 print(f"Erro ao cadastrar o carro: {e}")
 
 # Função para exibir carros de um usuário
-def exibir_carro(email):
+def exibir_carro():
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
-            cursor.execute("SELECT c.placa, c.nome FROM carros c JOIN usuarios u ON c.usuario_id = u.id WHERE u.email = :email", {"email": email})
-            carros = cursor.fetchall()
-            if carros:
+            cursor.execute("SELECT placa, nome, usuario_id FROM carros")
+            dados = []
+            rows = cursor.fetchall()
+            for r in rows:
+                dados.append({'placa': r[0], 'nome': r[1], 'usuario_id': r[2]})
+            if rows:
                 print("Carros do usuário:")
-                for placa, nome in carros:
-                    print(f"Email do Proprietario: {email}, Placa: {placa}, Nome: {nome}")
+                print(dados)
             else:
                 print("Nenhum carro encontrado para este usuário.")
 
