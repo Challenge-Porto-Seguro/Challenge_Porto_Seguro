@@ -41,7 +41,7 @@ def exibir_carro():
             dados = []
             rows = cursor.fetchall()
             for r in rows:
-                dados.append({'placa': r[0], 'nome': r[1], 'usuario_id': r[2]})
+                dados.append({'Placa do Veiulo': r[0], 'Nome do Veiculo': r[1], 'Codigo do Proprietario': r[2]})
             if rows:
                 print("Carros do usuário:")
                 print(dados)
