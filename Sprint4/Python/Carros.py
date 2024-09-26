@@ -11,7 +11,7 @@ def criar_carro(email):
             try:
                 placa = input("Digite a placa do carro: ").upper()
                 validar_placa(placa)
-                nome = input("Digite o nome do carro: ")
+                modelo = input("Digite o modelo do carro: ")
                 cursor.execute("SELECT id FROM usuarios WHERE email = :email", {"email": email})
                 usuario = cursor.fetchone()
                 if not usuario:
@@ -24,10 +24,10 @@ def criar_carro(email):
                 else:
                     cursor.execute(
                         "INSERT INTO carros (placa, nome, usuario_id) VALUES (:placa, :nome, :usuario_id)",
-                        {"placa": placa, "nome": nome, "usuario_id": usuario_id}
+                        {"placa": placa, "nome": modelo, "usuario_id": usuario_id}
                     )
                     conn.commit()  # Confirma a transação
-                    print(f"Carro com placa {placa} e nome {nome} foi adicionado para o usuário {email}.")
+                    print(f"Carro com placa {placa} e nome {modelo} foi adicionado para o usuário {email}.")
             except ValueError as e:
                 print(e)
             except Exception as e:
@@ -39,7 +39,6 @@ def exibir_carro(email):
         with conn.cursor() as cursor:
             cursor.execute("SELECT id FROM usuarios WHERE email = :email", {"email": email})
             usuario_id = cursor.fetchone()[0]
-            
             cursor.execute("SELECT placa, nome, usuario_id FROM carros WHERE usuario_id = :usuario_id", {"usuario_id": usuario_id})
             dados = []
             rows = cursor.fetchall()
@@ -47,7 +46,8 @@ def exibir_carro(email):
                 dados.append({'Placa do Veiulo': r[0], 'Nome do Veiculo': r[1], 'Codigo do Proprietario': r[2]})
             if rows:
                 print("Carros do usuário:")
-                print(dados)
+                for carro in dados:
+                    print(carro)
             else:
                 print("Nenhum carro encontrado para este usuário.")
 
@@ -62,13 +62,13 @@ def atualizar_carro(email):
                 if not carro:
                     print(f"Erro: Carro com placa {placa} não encontrado.")
                     return
-                novo_nome = input("Digite o novo nome do carro: ")
+                novo_modelo = input("Digite o novo modelo do carro: ")
                 cursor.execute(
                     "UPDATE carros SET nome = :nome WHERE placa = :placa",
-                    {"nome": novo_nome, "placa": placa}
+                    {"nome": novo_modelo, "placa": placa}
                 )
                 conn.commit()
-                print(f"Carro com placa {placa} foi atualizado para {novo_nome}.")
+                print(f"Carro com placa {placa} foi atualizado para {novo_modelo}.")
             except Exception as e:
                 print(f"Erro ao atualizar o carro: {e}")
 

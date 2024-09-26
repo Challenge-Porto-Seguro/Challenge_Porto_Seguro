@@ -12,7 +12,7 @@ def validaTelefone(telefone):
 
 # Validação de Senha
 def validarSenha(senha):
-    if len(senha) <= 8:
+    if len(senha) < 8:
         raise Exception("Senha Invalida")
 
 # Validação de Email    
@@ -78,7 +78,7 @@ def exibir_usuarios():
         with conn.cursor() as cursor:
             try:
                 cursor = conn.cursor()
-                cursor.execute("SELECT id, nome, email, telefone FROM usuarios")
+                cursor.execute("SELECT id, nome, email, telefone FROM usuarios order by id")
                 dados = []
                 rows = cursor.fetchall()
                 for r in rows:
@@ -89,6 +89,7 @@ def exibir_usuarios():
                     print("[-------------------------------]")
                 else:
                     print("--- Usuários cadastrados: ")
-                    print(dados)
+                    for cliente in dados:
+                        print(cliente)
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
