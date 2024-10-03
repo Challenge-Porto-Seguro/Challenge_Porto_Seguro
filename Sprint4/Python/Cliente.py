@@ -23,18 +23,10 @@ def validarEmail(email):
         raise Exception("Email Invalido")
 
 # cadastro
-def cadastrar_usuario():
+def cadastrar_usuario(nome, email, telefone, senha):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                # Solicitar informações do usuário
-                nome = input("Digite seu nome: ")
-                email = input("Digite seu email: ")
-                validarEmail(email)
-                telefone = input("Digite seu telefone: ")
-                validaTelefone(telefone)
-                senha = input("Digite sua senha: ")
-                validarSenha(senha)
                 # Inserir usuário no bd de dados
                 cursor.execute("""
                     INSERT INTO usuarios (nome, email, telefone, senha)
@@ -91,5 +83,6 @@ def exibir_usuarios():
                     print("--- Usuários cadastrados: ")
                     for cliente in dados:
                         print(cliente)
+                return dados
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
