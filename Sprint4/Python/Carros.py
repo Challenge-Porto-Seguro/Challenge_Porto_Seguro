@@ -1,49 +1,53 @@
 from Oracle import conectar_bd
+import oracledb as bd
 
 def validar_placa(placa):
     if len(placa) != 7:
         raise ValueError("Placa inválida.")
-
-# Função para criar um carro 
-def criar_carro(email, placa, modelo):
+    
+def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                ##placa = input("Digite a placa do carro: ").upper()
-                validar_placa(placa)
-                ##modelo = input("Digite o modelo do carro: ")
-                cursor.execute("SELECT id FROM usuarios WHERE email = :email", {"email": email})
-                usuario = cursor.fetchone()
-                if not usuario:
-                    print(f"Erro: Usuário com email {email} não encontrado.")
-                    return
-                usuario_id = usuario[0] 
-                cursor.execute("SELECT placa FROM carros WHERE placa = :placa", {"placa": placa})
-                if cursor.fetchone():
-                    print("Erro: Já existe um carro com essa placa.")
-                else:
-                    cursor.execute(
-                        "INSERT INTO carros (placa, nome, usuario_id) VALUES (:placa, :nome, :usuario_id)",
-                        {"placa": placa, "nome": modelo, "usuario_id": usuario_id}
-                    )
-                    conn.commit()  # Confirma a transação
-                    print(f"Carro com placa {placa} e nome {modelo} foi adicionado para o usuário {email}.")
-            except ValueError as e:
-                print(e)
+                id = cursor.var(bd.NUMBER)
+
+                cursor.execute("""
+                    insert into t_ps_automovel (sq_placa, nm_marca_veiculo, nm_modelo_veiculo, dt_veiculo, cd_pessoa)
+                    values(:placa, :marca, :modelo, TO_DATE(:dt_veiculo, 'DD-MM-YYYY'), :pessoa_id)
+                    returning cd_automovel into :cd_automovel
+                """, {"placa": placa, "modelo": modelo, "pessoa_id": pessoa_id, "marca": marca, "dt_veiculo": dt_veiculo, "cd_automovel": id})
+
             except Exception as e:
                 print(f"Erro ao cadastrar o carro: {e}")
+
+
+# Função para criar um carro 
+# def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
+#     with conectar_bd() as conn:
+#         with conn.cursor() as cursor:
+#             try:
+#                 id = cursor.var(bd.NUMBER)
+
+#                 cursor.execute("""
+#                                     insert into t_ps_automovel (sq_placa, nm_marca_veiculo, nm_modelo_veiculo, dt_veiculo, cd_pessoa)
+#                                     values(:placa, :marca, :modelo, TO_DATE(:dt_veiculo, 'DD-MM-YYYY'), :pessoa_id)
+#                                     returning cd_automovel into :cd_automovel
+#                                 """, {"placa": placa, "modelo": modelo, "pessoa_id": pessoa_id, "marca": marca, "dt_veiculo": dt_veiculo, "cd_automovel": id})
+#             except Exception:
+#                 print("oi")
+                
 
 # Função para exibir carros de um usuário
 def exibir_carro(email):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
-            cursor.execute("SELECT id FROM usuarios WHERE email = :email", {"email": email})
-            usuario_id = cursor.fetchone()[0]
-            cursor.execute("SELECT placa, nome, usuario_id FROM carros WHERE usuario_id = :usuario_id", {"usuario_id": usuario_id})
+            cursor.execute("SELECT cd_pessoa FROM t_ps_pessoa WHERE nm_email = :nm_email", {"nm_email": email})
+            id = cursor.fetchone()[0]
+            cursor.execute("SELECT sq_placa, nm_marca_veiculo, cd_pessoa FROM t_ps_automovel WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
             dados = []
             rows = cursor.fetchall()
             for r in rows:
-                dados.append({'Placa do Veiulo': r[0], 'Nome do Veiculo': r[1], 'Codigo do Proprietario': r[2]})
+                dados.append({'Placa do Veiulo': r[1], 'Modelo do Veiculo': r[2], 'Codigo do Proprietario': r[6]})
             if rows:
                 print("Carros do usuário:")
                 for carro in dados:
@@ -51,25 +55,35 @@ def exibir_carro(email):
             else:
                 print("Nenhum carro encontrado para este usuário.")
             return dados
+        
+def exibir_carro_by_id(id):
+    with conectar_bd() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT id FROM t_ps_pessoa WHERE id = :id", {"id": id})
+            carro = cursor.fetchone()
+            if carro != None:
+                print(carro)
+                return carro
+            else:
+                print("Nenhum carro encontrado com esse id.")
 
 # Função para atualizar um carro
-def atualizar_carro(email):
+def atualizar_carro(id):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                placa = input("Digite a placa do carro que deseja atualizar: ").upper()
-                cursor.execute("SELECT c.placa, c.nome FROM carros c JOIN usuarios u ON c.usuario_id = u.id WHERE u.email = :email", {"email": email})
+                cursor.execute("SELECT * FROM t_ps_automovel cd_automovel = :cd_automovel", {"cd_automovel": id})
                 carro = cursor.fetchone()
                 if not carro:
-                    print(f"Erro: Carro com placa {placa} não encontrado.")
+                    print(f"Erro: Carro com id {id} não encontrado.")
                     return
                 novo_modelo = input("Digite o novo modelo do carro: ")
                 cursor.execute(
-                    "UPDATE carros SET nome = :nome WHERE placa = :placa",
-                    {"nome": novo_modelo, "placa": placa}
+                    "UPDATE t_ps_automovel SET nm_modelo_veiculo = :nm_modelo_veiculo WHERE sq_placa = :sq_placa",
+                    {"nm_modelo_veiculo": novo_modelo, "sq_placa": carro}
                 )
                 conn.commit()
-                print(f"Carro com placa {placa} foi atualizado para {novo_modelo}.")
+                print(f"Carro com id {id} foi atualizado para {novo_modelo}.")
             except Exception as e:
                 print(f"Erro ao atualizar o carro: {e}")
 
@@ -79,12 +93,12 @@ def deletar_carro(email):
         with conn.cursor() as cursor:
             try:
                 placa = input("Digite a placa do carro que deseja deletar: ").upper()
-                cursor.execute("SELECT c.placa, c.nome FROM carros c JOIN usuarios u ON c.usuario_id = u.id WHERE u.email = :email", {"email": email})
+                cursor.execute("SELECT c.sq_placa, c.nm_marca_veiculo FROM t_ps_automovel c JOIN usuarios u ON c.usuario_id = u.id WHERE u.email = :email", {"email": email})
                 carro = cursor.fetchone()
                 if not carro:
                     print(f"Erro: Carro com placa {placa} não encontrado.")
                     return
-                cursor.execute("DELETE FROM carros WHERE placa = :placa", {"placa": placa})
+                cursor.execute("DELETE FROM t_ps_automovel WHERE sq_placa = :sq_placa", {"sq_placa": placa})
                 conn.commit()
                 print(f"Carro com placa {placa} foi deletado.")
             except Exception as e:
