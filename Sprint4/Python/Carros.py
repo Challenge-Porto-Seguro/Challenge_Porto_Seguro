@@ -5,13 +5,13 @@ def validar_placa(placa):
         raise ValueError("Placa inválida.")
 
 # Função para criar um carro 
-def criar_carro(email):
+def criar_carro(email, placa, modelo):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                placa = input("Digite a placa do carro: ").upper()
+                ##placa = input("Digite a placa do carro: ").upper()
                 validar_placa(placa)
-                modelo = input("Digite o modelo do carro: ")
+                ##modelo = input("Digite o modelo do carro: ")
                 cursor.execute("SELECT id FROM usuarios WHERE email = :email", {"email": email})
                 usuario = cursor.fetchone()
                 if not usuario:
@@ -50,6 +50,7 @@ def exibir_carro(email):
                     print(carro)
             else:
                 print("Nenhum carro encontrado para este usuário.")
+            return dados
 
 # Função para atualizar um carro
 def atualizar_carro(email):
