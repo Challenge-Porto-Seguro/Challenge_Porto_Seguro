@@ -16,7 +16,7 @@ def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
                     values(:placa, :marca, :modelo, TO_DATE(:dt_veiculo, 'YYYY-MM-DD'), :pessoa_id)
                     returning cd_automovel into :cd_automovel
                 """, {"placa": placa, "marca": marca, "modelo": modelo,  "dt_veiculo": dt_veiculo, "pessoa_id": pessoa_id, "cd_automovel": id})
-
+                conn.commit()
             except Exception as e:
                 print(f"Erro ao cadastrar o carro: {e}")
 
@@ -42,11 +42,13 @@ def exibir_carro(id_pessoa):
         with conn.cursor() as cursor:
             cursor.execute("SELECT cd_pessoa FROM t_ps_usuario WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id_pessoa})
             id = cursor.fetchone()[0]
-            cursor.execute("SELECT sq_placa, nm_marca_veiculo, cd_pessoa FROM t_ps_automovel WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
+            cursor.execute("SELECT sq_placa, nm_modelo_veiculo, cd_pessoa FROM t_ps_automovel WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
             dados = []
             rows = cursor.fetchall()
             for r in rows:
-                dados.append({'Placa do Veiulo': r[1], 'Modelo do Veiculo': r[2], 'Codigo do Proprietario': r[6]})
+                print(r)
+                dados.append({'Placa do Veiulo': r[0], 'Modelo do Veiculo': r[1], 'Codigo do Proprietario': r[2]})
+                print("teste")
             if rows:
                 print("Carros do usuário:")
                 for carro in dados:
