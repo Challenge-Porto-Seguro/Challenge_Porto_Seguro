@@ -10,12 +10,12 @@ def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
         with conn.cursor() as cursor:
             try:
                 id = cursor.var(bd.NUMBER)
-
+                
                 cursor.execute("""
                     insert into t_ps_automovel (sq_placa, nm_marca_veiculo, nm_modelo_veiculo, dt_veiculo, cd_pessoa)
-                    values(:placa, :marca, :modelo, TO_DATE(:dt_veiculo, 'DD-MM-YYYY'), :pessoa_id)
+                    values(:placa, :marca, :modelo, TO_DATE(:dt_veiculo, 'YYYY-MM-DD'), :pessoa_id)
                     returning cd_automovel into :cd_automovel
-                """, {"placa": placa, "modelo": modelo, "pessoa_id": pessoa_id, "marca": marca, "dt_veiculo": dt_veiculo, "cd_automovel": id})
+                """, {"placa": placa, "marca": marca, "modelo": modelo,  "dt_veiculo": dt_veiculo, "pessoa_id": pessoa_id, "cd_automovel": id})
 
             except Exception as e:
                 print(f"Erro ao cadastrar o carro: {e}")
@@ -27,7 +27,6 @@ def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
 #         with conn.cursor() as cursor:
 #             try:
 #                 id = cursor.var(bd.NUMBER)
-
 #                 cursor.execute("""
 #                                     insert into t_ps_automovel (sq_placa, nm_marca_veiculo, nm_modelo_veiculo, dt_veiculo, cd_pessoa)
 #                                     values(:placa, :marca, :modelo, TO_DATE(:dt_veiculo, 'DD-MM-YYYY'), :pessoa_id)
@@ -38,10 +37,10 @@ def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
                 
 
 # Função para exibir carros de um usuário
-def exibir_carro(email):
+def exibir_carro(id_pessoa):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
-            cursor.execute("SELECT cd_pessoa FROM t_ps_pessoa WHERE nm_email = :nm_email", {"nm_email": email})
+            cursor.execute("SELECT cd_pessoa FROM t_ps_usuario WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id_pessoa})
             id = cursor.fetchone()[0]
             cursor.execute("SELECT sq_placa, nm_marca_veiculo, cd_pessoa FROM t_ps_automovel WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
             dados = []
@@ -55,17 +54,6 @@ def exibir_carro(email):
             else:
                 print("Nenhum carro encontrado para este usuário.")
             return dados
-        
-def exibir_carro_by_id(id):
-    with conectar_bd() as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT id FROM t_ps_pessoa WHERE id = :id", {"id": id})
-            carro = cursor.fetchone()
-            if carro != None:
-                print(carro)
-                return carro
-            else:
-                print("Nenhum carro encontrado com esse id.")
 
 # Função para atualizar um carro
 def atualizar_carro(id):

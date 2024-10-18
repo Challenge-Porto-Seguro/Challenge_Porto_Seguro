@@ -23,7 +23,7 @@ def validarEmail(email):
         raise Exception("Email Invalido")
 
 # cadastro
-def cadastrar_usuario(nome, email, senha):
+def cadastrar_pessoa(nome, email, senha):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
@@ -32,6 +32,22 @@ def cadastrar_usuario(nome, email, senha):
                 cursor.execute("""
                     INSERT INTO t_ps_pessoa (nm_nome, nm_email, sq_senha) VALUES(:nm_nome, :nm_email, :sq_senha)
                 returning cd_pessoa into :cd_pessoa""", {"nm_nome": nome,"nm_email": email,"sq_senha": senha, "cd_pessoa": id})
+                conn.commit()
+                print("[-------------------------------]")
+                print("[----      CADASTRADO!!    -----]")
+                print("[-------------------------------]")
+                return id.getvalue()[0]
+            except bd.DatabaseError as e:
+                print("Erro ao executar a operação", e)
+
+def cadastrar_usuario(nome, email, senha, cpf):
+    with conectar_bd() as conn:
+        with conn.cursor() as cursor:
+            try:
+                id_pessoa = cadastrar_pessoa(nome, email, senha)
+                # Inserir usuário no bd de dados
+                cursor.execute("""
+                    INSERT INTO t_ps_usuario (cd_pessoa, sq_cpf) VALUES(:cd_pessoa, :sq_cpf)""", {"cd_pessoa": id_pessoa, "sq_cpf": cpf})
                 conn.commit()
                 print("[-------------------------------]")
                 print("[----      CADASTRADO!!    -----]")
@@ -98,3 +114,15 @@ def exibir_usuarios_by_id(id):
                 return usuarios
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
+
+def exibir_pessoa_by_id(id):
+    with conectar_bd() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT * FROM t_ps_usuario WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
+            pesssoa = cursor.fetchone()
+            if pesssoa is not None:
+                print(pesssoa)
+                return pesssoa
+            else:
+                print("Nenhuma pessoa encontrada com esse id.")
+                return None
