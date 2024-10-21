@@ -55,14 +55,23 @@ def mostrar_carros(id):
     except Exception as e:
         return jsonify({'message': 'Erro ao buscar dados do carro', 'error': str(e)}), 500
 
-    
-# @app.route("/carros/<int:id>", methods=['PUT'])
-# def atualizar_automovel(id):
-#     carro_atualizado = carros.atualizar_carro(id)
-#     if carro_atualizado:
-#         return jsonify(carro_atualizado), 200
-#     else:
-#         return jsonify({'Msg': 'Carro não encontrado'}), 404
+@app.route('/carros/<placa>', methods=['PUT'])
+def atualizar_carro(placa):
+    data = request.get_json()
+    novo_modelo = data.get('nm_modelo_veiculo')
+
+    if not novo_modelo:
+        return jsonify({'erro': 'O campo "nm_modelo_veiculo" é obrigatório.'}), 400
+
+    resultado, status_code = carros.atualizar_carro(placa, novo_modelo)
+
+    return jsonify(resultado), status_code
+
+@app.route('/carros/<placa>', methods=['DELETE'])
+def deletar_carro_endpoint(placa):
+    resultado, status_code = carros.deletar_carro(placa)
+
+    return jsonify(resultado), status_code
 
 if __name__ == "__main__":
     app.run(debug=True)
