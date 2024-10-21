@@ -45,13 +45,13 @@ def atualizar_carro(placa, novo_modelo):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                cursor.execute("SELECT * FROM t_ps_automovel WHERE placa = :placa", {"placa": placa})
+                cursor.execute("SELECT * FROM t_ps_automovel WHERE sq_placa = :sq_placa", {"sq_placa": placa})
                 carro = cursor.fetchone()
                 if not carro:
                     return {'erro': f'Carro com a placa {placa} não encontrado.'}, 404
                 cursor.execute(
-                    "UPDATE t_ps_automovel SET nm_modelo_veiculo = :nm_modelo_veiculo WHERE placa = :placa",
-                    {"nm_modelo_veiculo": novo_modelo, "placa": placa}
+                    "UPDATE t_ps_automovel SET nm_modelo_veiculo = :nm_modelo_veiculo WHERE sq_placa = :sq_placa",
+                    {"nm_modelo_veiculo": novo_modelo, "sq_placa": placa}
                 )
                 conn.commit()
                 return {'mensagem': f'Carro com a placa {placa} foi atualizado para {novo_modelo}.'}, 200

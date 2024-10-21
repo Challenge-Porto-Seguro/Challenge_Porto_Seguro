@@ -61,7 +61,7 @@ def atualizar_carro(placa):
     novo_modelo = data.get('nm_modelo_veiculo')
 
     if not novo_modelo:
-        return jsonify({'erro': 'O campo "nm_modelo_veiculo" é obrigatório.'}), 400
+        return jsonify({'erro': 'O campo modelo é obrigatório.'}), 400
 
     resultado, status_code = carros.atualizar_carro(placa, novo_modelo)
 
