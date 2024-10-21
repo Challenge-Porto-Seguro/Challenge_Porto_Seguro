@@ -45,6 +45,7 @@ def cadastrar_usuario(nome, email, senha, cpf):
         with conn.cursor() as cursor:
             try:
                 id_pessoa = cadastrar_pessoa(nome, email, senha)
+                print(id_pessoa)
                 # Inserir usuário no bd de dados
                 cursor.execute("""
                     INSERT INTO t_ps_usuario (cd_pessoa, sq_cpf) VALUES(:cd_pessoa, :sq_cpf)""", {"cd_pessoa": id_pessoa, "sq_cpf": cpf})
@@ -52,8 +53,10 @@ def cadastrar_usuario(nome, email, senha, cpf):
                 print("[-------------------------------]")
                 print("[----      CADASTRADO!!    -----]")
                 print("[-------------------------------]")
+                return True
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
+                return False
 
 #Login
 def logar_usuario():
@@ -103,23 +106,24 @@ def exibir_usuarios():
             except bd.DatabaseError as e:
                 print("Erro ao executar a operação", e)
 
-def exibir_usuarios_by_id(id):
-     with conectar_bd() as conn:
-        with conn.cursor() as cursor:
-            try:
-                cursor = conn.cursor()
-                cursor.execute("SELECT * FROM t_ps_pessoa WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
-                r = cursor.fetchone()
-                usuarios = ({'cd_pessoa': r[0], 'nm_nome': r[1], 'nm_email': r[2], 'sq_senha': r[3]})
-                return usuarios
-            except bd.DatabaseError as e:
-                print("Erro ao executar a operação", e)
+# def exibir_usuarios_by_id(id):
+#      with conectar_bd() as conn:
+#         with conn.cursor() as cursor:
+#             try:
+#                 cursor = conn.cursor()
+#                 cursor.execute("SELECT * FROM t_ps_pessoa WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
+#                 r = cursor.fetchone()
+#                 usuarios = ({'cd_pessoa': r[0], 'nm_nome': r[1], 'nm_email': r[2], 'sq_senha': r[3]})
+#                 return usuarios
+#             except bd.DatabaseError as e:
+#                 print("Erro ao executar a operação", e)
 
 def exibir_pessoa_by_id(id):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             cursor.execute("SELECT * FROM t_ps_usuario WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
             pesssoa = cursor.fetchone()
+            print(pesssoa)
             if pesssoa is not None:
                 print(pesssoa)
                 return pesssoa
