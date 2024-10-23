@@ -8,4 +8,12 @@ body {
   @apply flex flex-col min-h-screen
 }
 
+.formulario_cadastro {
+  @apply w-full p-3 bg-blue-200 placeholder:text-black rounded-md
+}
+
+.home__sobre-nos--paragrafo {
+  @apply m-2 indent-2 text-xl tracking-wider font-sans font-medium
+}
+
 
