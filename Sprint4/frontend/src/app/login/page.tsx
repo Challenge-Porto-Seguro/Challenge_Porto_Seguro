@@ -1,7 +1,8 @@
-import CamposLogin from "@/components/CamposLogin";
+import CamposLogin from "@/app/login/components/CamposLogin";
 import Link from "next/link";
 
 export default function Login() {
+
   return (
     <main className="grow flex">
       <section className="w-2/3 m-auto">
