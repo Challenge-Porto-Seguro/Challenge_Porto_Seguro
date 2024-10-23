@@ -8,3 +8,9 @@ export type UserLogin = {
 export type User = {
     nome: string
 }
+
+export type CardProps = {
+    img: StaticImageData
+    titulo: string
+    descricao: string
+}
