@@ -21,22 +21,6 @@ def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
                 print(f"Erro ao cadastrar o carro: {e}")
 
 
-# Função para criar um carro 
-# def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
-#     with conectar_bd() as conn:
-#         with conn.cursor() as cursor:
-#             try:
-#                 id = cursor.var(bd.NUMBER)
-#                 cursor.execute("""
-#                                     insert into t_ps_automovel (sq_placa, nm_marca_veiculo, nm_modelo_veiculo, dt_veiculo, cd_pessoa)
-#                                     values(:placa, :marca, :modelo, TO_DATE(:dt_veiculo, 'DD-MM-YYYY'), :pessoa_id)
-#                                     returning cd_automovel into :cd_automovel
-#                                 """, {"placa": placa, "modelo": modelo, "pessoa_id": pessoa_id, "marca": marca, "dt_veiculo": dt_veiculo, "cd_automovel": id})
-#             except Exception:
-#                 print("oi")
-                
-
-# Função para exibir carros de um usuário
 def exibir_carro(id_pessoa):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
@@ -57,39 +41,37 @@ def exibir_carro(id_pessoa):
                 print("Nenhum carro encontrado para este usuário.")
             return dados
 
-# Função para atualizar um carro
-def atualizar_carro(id):
+def atualizar_carro(placa, novo_modelo):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                cursor.execute("SELECT * FROM t_ps_automovel cd_automovel = :cd_automovel", {"cd_automovel": id})
+                cursor.execute("SELECT * FROM t_ps_automovel WHERE sq_placa = :sq_placa", {"sq_placa": placa})
                 carro = cursor.fetchone()
                 if not carro:
-                    print(f"Erro: Carro com id {id} não encontrado.")
-                    return
-                novo_modelo = input("Digite o novo modelo do carro: ")
+                    return {'erro': f'Carro com a placa {placa} não encontrado.'}, 404
                 cursor.execute(
                     "UPDATE t_ps_automovel SET nm_modelo_veiculo = :nm_modelo_veiculo WHERE sq_placa = :sq_placa",
-                    {"nm_modelo_veiculo": novo_modelo, "sq_placa": carro}
+                    {"nm_modelo_veiculo": novo_modelo, "sq_placa": placa}
                 )
                 conn.commit()
-                print(f"Carro com id {id} foi atualizado para {novo_modelo}.")
+                return {'mensagem': f'Carro com a placa {placa} foi atualizado para {novo_modelo}.'}, 200
             except Exception as e:
-                print(f"Erro ao atualizar o carro: {e}")
+                return {'erro': f'Erro ao atualizar o carro: {e}'}, 500
 
-# Função para deletar um carro
-def deletar_carro(email):
+
+def deletar_carro(placa):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                placa = input("Digite a placa do carro que deseja deletar: ").upper()
-                cursor.execute("SELECT c.sq_placa, c.nm_marca_veiculo FROM t_ps_automovel c JOIN usuarios u ON c.usuario_id = u.id WHERE u.email = :email", {"email": email})
+                cursor.execute("SELECT * FROM t_ps_automovel WHERE sq_placa = :sq_placa", {"sq_placa": placa})
                 carro = cursor.fetchone()
                 if not carro:
-                    print(f"Erro: Carro com placa {placa} não encontrado.")
-                    return
-                cursor.execute("DELETE FROM t_ps_automovel WHERE sq_placa = :sq_placa", {"sq_placa": placa})
+                    return {'erro': f'Carro com a sq_placa {placa} não encontrado.'}, 404
+                cursor.execute(
+                    "DELETE FROM t_ps_automovel WHERE sq_placa = :sq_placa",
+                    {"sq_placa": placa}
+                )
                 conn.commit()
-                print(f"Carro com placa {placa} foi deletado.")
+                return {'mensagem': f'Carro com a sq_placa {placa} foi deletado com sucesso.'}, 200
             except Exception as e:
-                print(f"Erro ao deletar o carro: {e}")
+                return {'erro': f'Erro ao deletar o carro: {e}'}, 500
