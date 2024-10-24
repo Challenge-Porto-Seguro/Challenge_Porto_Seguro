@@ -1,6 +1,7 @@
 # Imports Gerais de Banco
 import oracledb as bd
 from Oracle import conectar_bd
+from ErroBanco import ErroBanco
 
 # Import pro Regex que valida Email
 import re
@@ -31,86 +32,51 @@ def cadastrar_pessoa(nome, email, senha):
                     INSERT INTO t_ps_pessoa (nm_nome, nm_email, sq_senha) VALUES(:nm_nome, :nm_email, :sq_senha)
                 returning cd_pessoa into :cd_pessoa""", {"nm_nome": nome,"nm_email": email,"sq_senha": senha, "cd_pessoa": id})
                 conn.commit()
-                print("[-------------------------------]")
-                print("[----      CADASTRADO!!    -----]")
-                print("[-------------------------------]")
                 return id.getvalue()[0]
-            except bd.DatabaseError as e:
-                print("Erro ao executar a operação", e)
+            except Exception as e:
+                raise ErroBanco(e)
 
-def cadastrar_usuario(nome, email, senha, cpf):
+def cadastrar_usuario(cpf, id_pessoa):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                id_pessoa = cadastrar_pessoa(nome, email, senha)
-                print(id_pessoa)
                 # Inserir usuário no bd de dados
                 cursor.execute("""
                     INSERT INTO t_ps_usuario (cd_pessoa, sq_cpf) VALUES(:cd_pessoa, :sq_cpf)""", {"cd_pessoa": id_pessoa, "sq_cpf": cpf})
                 conn.commit()
-                print("[-------------------------------]")
-                print("[----      CADASTRADO!!    -----]")
-                print("[-------------------------------]")
-                return True
-            except bd.DatabaseError as e:
-                print("Erro ao executar a operação", e)
-                return False
+            except Exception as e:
+                raise ErroBanco(e)
 
-def logar_usuario():
+def logar_usuario(email, senha):
      with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                email = input("Digite seu email: ")
-                senha = input("Digite sua senha: ")
+                cursor.execute("SELECT p.nm_nome, p.nm_email, p.cd_pessoa, u.sq_cpf FROM t_ps_pessoa p join t_ps_usuario u on(p.cd_pessoa = u.cd_pessoa) WHERE nm_email = :email and sq_senha = :senha", {"email": email, "senha": senha})
+                user = cursor.fetchone()
+                return user
+            except Exception as e:
+                raise ErroBanco(e)
 
-                cursor
-                cursor.execute("SELECT * FROM usuarios WHERE email = :email", {"email": email})
-                row = cursor.fetchone()
-
-                if row and row[4] == senha:
-                    print("[-------------------------------]")
-                    print("[----  LOGIN BEM SUCEDIDO  -----]")
-                    print("[-------------------------------]")
-                    return [True, email]
-                else:
-                    print("[-------------------------------]")
-                    print("[-- EMAIL OU SENHA INCORRETOS --]")
-                    print("[-------------------------------]")
-                    return [False, None]
-            except bd.DatabaseError as e:
-                print("Erro ao executar a operação", e)
-        
 def exibir_usuarios():
      with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
                 cursor = conn.cursor()
-                cursor.execute("SELECT cd_pessoa, nm_nome, nm_email, sq_senha FROM t_ps_pessoa order by cd_pessoa")
+                cursor.execute("SELECT cd_pessoa, nm_nome, nm_email FROM t_ps_pessoa order by cd_pessoa")
                 dados = []
                 rows = cursor.fetchall()
                 for r in rows:
-                    dados.append({'cd_pessoa': r[0], 'nm_nome': r[1], 'nm_email': r[2], 'sq_senha': r[3]})
-                if not rows:
-                    print("[-------------------------------]")
-                    print("[----   Nenhum Cadastro!!  -----]")
-                    print("[-------------------------------]")
-                else:
-                    print("--- Usuários cadastrados: ")
-                    for cliente in dados:
-                        print(cliente)
+                    dados.append({'cd_pessoa': r[0], 'nm_nome': r[1], 'nm_email': r[2]})
                 return dados
-            except bd.DatabaseError as e:
-                print("Erro ao executar a operação", e)
+            except Exception as e:
+                raise ErroBanco(e)
 
 def exibir_pessoa_by_id(id):
-    with conectar_bd() as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT * FROM t_ps_usuario WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
-            pesssoa = cursor.fetchone()
-            print(pesssoa)
-            if pesssoa is not None:
-                print(pesssoa)
-                return pesssoa
-            else:
-                print("Nenhuma pessoa encontrada com esse id.")
-                return None
+    try:
+        with conectar_bd() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("SELECT p.nm_nome, p.nm_email, p.cd_pessoa, u.sq_cpf FROM t_ps_usuario u join t_ps_pessoa p on(u.cd_pessoa = p.cd_pessoa) WHERE u.cd_pessoa = :cd_pessoa", {"cd_pessoa": id})
+                pessoa = cursor.fetchone()
+                return pessoa
+    except Exception as e:
+        raise ErroBanco(e)
