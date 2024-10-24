@@ -21,7 +21,7 @@ def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
                 print(f"Erro ao cadastrar o carro: {e}")
 
 
-def exibir_carro(id_pessoa):
+def exibir_todos_carros_por_pessoa(id_pessoa):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             cursor.execute("SELECT cd_pessoa FROM t_ps_usuario WHERE cd_pessoa = :cd_pessoa", {"cd_pessoa": id_pessoa})
@@ -41,28 +41,35 @@ def exibir_carro(id_pessoa):
                 print("Nenhum carro encontrado para este usuário.")
             return dados
 
+def exibir_carro_by_id(id):
+    with conectar_bd() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT cd_automovel, sq_placa, nm_modelo_veiculo, cd_pessoa, nm_marca_veiculo, to_char(dt_veiculo, 'DD/MM/YYYY') FROM t_ps_automovel WHERE cd_automovel = :cd_automovel", {"cd_automovel": id})
+            carro = cursor.fetchone()
+            print(carro)
+            if not carro:
+                return Exception("erro ao consultar id")
+            return carro
+        
+
 def atualizar_carro(id, novo_modelo):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                cursor.execute("SELECT * FROM t_ps_automovel WHERE cd_automovel = :cd_automovel", {"cd_automovel": id})
-                carro = cursor.fetchone()
-                if not carro:
-                    return {'erro': f'Carro com o id {id} não encontrado.'}, 404
+                carro = exibir_carro_by_id(id)
                 cursor.execute(
                     "UPDATE t_ps_automovel SET nm_modelo_veiculo = :nm_modelo_veiculo WHERE cd_automovel = :cd_automovel",
                     {"nm_modelo_veiculo": novo_modelo, "cd_automovel": id}
                 )
                 conn.commit()
-                return {"ID": carro[0],
+                return {"id": carro[0],
                         "Placa": carro[1],
                          "Modelo Novo": carro[2],
-                          "Data do Veiculo": carro[4],
-                           "Codigo do Proprietario": carro[6]}
+                         "Marca": carro[4],
+                          "Data do Veiculo": carro[5],
+                           "Codigo do Proprietario": carro[3]}
             except Exception as e:
-                return {'erro': f'Erro ao atualizar o carro: {e}'}, 500
-
-
+               return(str(e))
 def deletar_carro(placa):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
