@@ -41,20 +41,24 @@ def exibir_carro(id_pessoa):
                 print("Nenhum carro encontrado para este usuário.")
             return dados
 
-def atualizar_carro(placa, novo_modelo):
+def atualizar_carro(id, novo_modelo):
     with conectar_bd() as conn:
         with conn.cursor() as cursor:
             try:
-                cursor.execute("SELECT * FROM t_ps_automovel WHERE sq_placa = :sq_placa", {"sq_placa": placa})
+                cursor.execute("SELECT * FROM t_ps_automovel WHERE cd_automovel = :cd_automovel", {"cd_automovel": id})
                 carro = cursor.fetchone()
                 if not carro:
-                    return {'erro': f'Carro com a placa {placa} não encontrado.'}, 404
+                    return {'erro': f'Carro com o id {id} não encontrado.'}, 404
                 cursor.execute(
-                    "UPDATE t_ps_automovel SET nm_modelo_veiculo = :nm_modelo_veiculo WHERE sq_placa = :sq_placa",
-                    {"nm_modelo_veiculo": novo_modelo, "sq_placa": placa}
+                    "UPDATE t_ps_automovel SET nm_modelo_veiculo = :nm_modelo_veiculo WHERE cd_automovel = :cd_automovel",
+                    {"nm_modelo_veiculo": novo_modelo, "cd_automovel": id}
                 )
                 conn.commit()
-                return {'mensagem': f'Carro com a placa {placa} foi atualizado para {novo_modelo}.'}, 200
+                return {"ID": carro[0],
+                        "Placa": carro[1],
+                         "Modelo Novo": carro[2],
+                          "Data do Veiculo": carro[4],
+                           "Codigo do Proprietario": carro[6]}
             except Exception as e:
                 return {'erro': f'Erro ao atualizar o carro: {e}'}, 500
 
@@ -72,6 +76,6 @@ def deletar_carro(placa):
                     {"sq_placa": placa}
                 )
                 conn.commit()
-                return {'mensagem': f'Carro com a sq_placa {placa} foi deletado com sucesso.'}, 200
+                return {'mensagem': f'Carro com a sq_placa {placa} foi deletado com sucesso.'}
             except Exception as e:
                 return {'erro': f'Erro ao deletar o carro: {e}'}, 500
