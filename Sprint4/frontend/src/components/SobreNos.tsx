@@ -1,6 +1,6 @@
 export default function SobreNos() {
     return (
-        <section className="p-4">
+        <section className="p-4" id="sobre_nos">
                 <div className="text-center">
                     <h2 className="m-5 text-3xl font-bold">Sobre nós</h2>
                 </div >
