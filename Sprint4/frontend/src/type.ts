@@ -14,3 +14,10 @@ export type CardProps = {
     titulo: string
     descricao: string
 }
+
+export type FeadbackProps = {
+    nome: string
+    descricao: string
+    cidade: string
+    estado: string
+}
