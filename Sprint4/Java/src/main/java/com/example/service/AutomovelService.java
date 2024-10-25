@@ -1,33 +1,19 @@
 package com.example.service;
 
-import com.example.db.dao.AutomovelDao;
-import com.example.db.dao.DaoFactory;
+import com.example.exceptions.*;
 import com.example.model.Automovel;
 
 import java.util.List;
 
-public class AutomovelService {
+public interface AutomovelService {
 
-    private final AutomovelDao repository = DaoFactory.createAutomovelDao();
+    Automovel cadastraAutomovel(Automovel automovel) throws AutomovelInvalido, AutomovelNotCreate;
 
-    public void cadastraAutomovel(Automovel automovel) {
-        repository.insert(automovel);
-    }
+    Automovel alteraAutomovel(Automovel automovel) throws AutomovelNotFound, AutomovelNotUpdate;
 
-    public void alteraAutomovel(Automovel automovel) {
-        repository.update(automovel);
-    }
+    void excluiAutomovel(Long id) throws AutomovelNotFound, AutomovelNotDelete;
 
-    public void excluiAutomovel(Long id) {
-        repository.deleteById(id);
-    }
+    Automovel buscaAutomovelPorId(Long id) throws AutomovelNotFound;
 
-    public Automovel buscaAutomovelPorId(Long id) {
-        return repository.findById(id).orElseThrow(() -> new RuntimeException("Automovel não encontrado"));
-    }
-
-    public List<Automovel> listaAutomoveis() {
-        return repository.findAll();
-    }
-
+    List<Automovel> listaAutomoveis(Long idUsuario) throws AutomovelInvalido;
 }
