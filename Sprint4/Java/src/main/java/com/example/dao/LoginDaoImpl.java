@@ -61,4 +61,26 @@ final class LoginDaoImpl implements LoginDao{
             this.logger.warning("Erro ao atualizar login: " + e.getMessage());
         }
     }
+
+    @Override
+    public Long logar(Connection conn, Login login) throws LoginNotFound {
+        String sql = """
+                        select cd_pessoa from T_PS_PESSOA where nm_email = ? and sq_senha = ?
+                    """;
+        Long loginId = null;
+        try(PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, login.getEmail());
+            ps.setString(2, login.getSenha());
+            try(ResultSet rs = ps.executeQuery()) {
+                if (rs.next()){
+                    loginId = rs.getLong(1);
+                } else {
+                    throw new LoginNotFound();
+                }
+            }
+        } catch (SQLException e) {
+            this.logger.warning("Erro ao ralizar login: " + e.getMessage());
+        }
+        return loginId;
+    }
 }

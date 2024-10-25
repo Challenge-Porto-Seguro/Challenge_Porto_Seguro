@@ -11,4 +11,5 @@ public interface LoginDao {
 
     Long insertLogin(Connection conn, Login login) throws LoginNotCreate;
     void updateLogin(Connection conn, Login login) throws LoginNotFound;
+    Long logar(Connection conn, Login login) throws LoginNotFound;
 }
