@@ -1,4 +1,4 @@
-package com.example.db;
+package com.example.config;
 
 public class DbException extends RuntimeException {
 
