@@ -4,7 +4,6 @@ import com.example.model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.text.RuleBasedCollator;
 import java.util.Date;
 
 class UsuarioTest {

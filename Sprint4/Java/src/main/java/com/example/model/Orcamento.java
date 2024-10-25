@@ -1,7 +1,5 @@
 package com.example.model;
 
-import com.example.enums.StatusOrcamento;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

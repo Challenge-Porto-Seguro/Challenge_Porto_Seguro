@@ -1,9 +1,5 @@
-package com.example.model.usuarios;
+package com.example.model;
 
-import com.example.enums.StatusOrcamento;
-import com.example.interfaces.VerificaDados;
-import com.example.model.Endereco;
-import com.example.model.Orcamento;
 import com.example.validacoes.ValidaInformacoesLogin;
 
 public abstract class Login implements VerificaDados {

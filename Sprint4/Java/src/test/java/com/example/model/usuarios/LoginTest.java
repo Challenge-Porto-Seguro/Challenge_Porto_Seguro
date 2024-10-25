@@ -1,13 +1,8 @@
 package com.example.model.usuarios;
 
-import com.example.model.Automovel;
-import com.example.model.Endereco;
-import com.example.model.Orcamento;
-import com.example.enums.StatusOrcamento;
+import com.example.model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.Date;
 
 class LoginTest {
 

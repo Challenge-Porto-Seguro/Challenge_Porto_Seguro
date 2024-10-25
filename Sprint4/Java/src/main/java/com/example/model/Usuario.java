@@ -1,13 +1,7 @@
-package com.example.model.usuarios;
-
-import com.example.interfaces.FazerOrcamento;
-import com.example.model.Automovel;
-import com.example.model.Cpf;
-import com.example.model.Orcamento;
+package com.example.model;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

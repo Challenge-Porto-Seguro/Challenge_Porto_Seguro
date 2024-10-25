@@ -1,6 +1,4 @@
-package com.example.interfaces;
-
-import com.example.model.Orcamento;
+package com.example.model;
 
 public interface FazerOrcamento {
 

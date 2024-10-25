@@ -1,8 +1,4 @@
-package com.example.model.usuarios;
-
-import com.example.model.Cnpj;
-import com.example.model.Diagnostico;
-import com.example.model.Orcamento;
+package com.example.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,5 @@
 package com.example.model;
 
-import com.example.enums.VerificaDiagnostico;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

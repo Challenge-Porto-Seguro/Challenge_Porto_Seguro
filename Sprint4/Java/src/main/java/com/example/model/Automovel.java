@@ -1,6 +1,5 @@
 package com.example.model;
 
-import com.example.model.usuarios.Usuario;
 import com.example.validacoes.VerificaCriacaoAutomovel;
 
 import java.text.SimpleDateFormat;
