@@ -26,7 +26,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
             ps.setString(2, automovel.getMarca());
             ps.setString(3, automovel.getModelo());
             ps.setString(4, automovel.getPlaca());
-            ps.setDate(5, new Date(automovel.getAno().getTime()));
+            ps.setDate(5, Date.valueOf(automovel.getAno()));
             int rowsAfected = ps.executeUpdate();
             if (rowsAfected > 0) {
                 try(ResultSet rs = ps.getGeneratedKeys()) {
@@ -54,7 +54,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
         ps.setString(1, automovel.getMarca());
         ps.setString(2, automovel.getModelo());
         ps.setString(3, automovel.getPlaca());
-        ps.setDate(4, new Date(automovel.getAno().getTime()));
+        ps.setDate(4, Date.valueOf(automovel.getAno()));
         ps.setLong(5, automovel.getId());
         int rows = ps.executeUpdate();
         if (rows != 1) {
@@ -128,7 +128,7 @@ public void deleteById(Connection conn, long id) throws AutomovelNotFound {
     }
 
     private Automovel instanciaAutomovel(ResultSet rs) throws SQLException {
-        Automovel automovel = new Automovel(rs.getString("nm_marca_veiculo"), rs.getString("nm_modelo_veiculo"), rs.getString("sq_placa"), rs.getDate("dt_veiculo"), instaciaUsuario(rs));
+        Automovel automovel = new Automovel(rs.getString("nm_marca_veiculo"), rs.getString("nm_modelo_veiculo"), rs.getString("sq_placa"), rs.getDate("dt_veiculo").toLocalDate(), instaciaUsuario(rs));
         automovel.setId(rs.getLong("cd_automovel"));
         return automovel;
     }
