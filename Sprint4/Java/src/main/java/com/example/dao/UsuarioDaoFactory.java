@@ -1,6 +1,6 @@
 package com.example.dao;
 
-public class UsuarioDaoFactory {
+public final class UsuarioDaoFactory {
 
     private UsuarioDaoFactory(){
         throw new UnsupportedOperationException("Essa classe não deve ser instanciada");
