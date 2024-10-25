@@ -2,9 +2,8 @@ package com.example.controllers;
 
 import com.example.dto.UsuarioRequest;
 import com.example.dto.UsuarioResponse;
-import com.example.exceptions.LoginNotCreate;
-import com.example.exceptions.UsuarioNotCreate;
-import com.example.exceptions.UsuarioNotFound;
+import com.example.dto.UsuarioUpdateRequest;
+import com.example.exceptions.*;
 import com.example.model.Usuario;
 import com.example.service.LoginService;
 import com.example.service.LoginServiceFactory;
@@ -66,7 +65,25 @@ public class UsuarioController {
             List<UsuarioResponse> usuarios = service.listaUsuarios().stream().map(this::transformUsuario).toList();
             return Response.ok(usuarios).build();
         } catch (UsuarioNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
+        }
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateUsuario(@PathParam("id") Long id, UsuarioUpdateRequest dto) {
+        try {
+            Usuario usuario = new Usuario(dto.nome(), dto.cpf(), null, dto.senha());
+            usuario.setId(id);
+            loginService.update(usuario);
+            service.alteraUsuario(usuario);
+            return Response.ok(transformUsuario(usuario)).build();
+        } catch (LoginNotUpdade | UsuarioNotUpdate e) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "dados invalidos")).build();
+        } catch (UsuarioNotFound | LoginNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
         }
     }
 
