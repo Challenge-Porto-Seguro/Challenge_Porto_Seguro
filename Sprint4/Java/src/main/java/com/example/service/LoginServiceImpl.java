@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 final class LoginServiceImpl implements LoginService {
 
-    private LoginDao loginDao = LoginDaoFactory.getLoginDao();
+    private final LoginDao loginDao = LoginDaoFactory.getLoginDao();
 
     @Override
     public Long login(Login login) throws LoginNotFound {

@@ -9,19 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add metodo para atualizar login">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/UsuarioDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/UsuarioDaoFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/LoginNotUpdade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/UsuarioNotCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/UsuarioNotFound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioServiceImpl.java" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="fix: removendo redundancia">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AutomovelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/DbException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/dao/UsuarioDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/db/implDao/UsuarioDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/UsuarioDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +27,8 @@
         <option value="Kotlin Class" />
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -332,87 +324,7 @@
       <workItem from="1726425166638" duration="13160000" />
       <workItem from="1729819559331" duration="5592000" />
       <workItem from="1729857453276" duration="4115000" />
-      <workItem from="1729864277218" duration="1114000" />
-    </task>
-    <task id="LOCAL-00025" summary="refactor: changing OficinaTest class">
-      <option name="closed" value="true" />
-      <created>1716259998463</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1716259998463</updated>
-    </task>
-    <task id="LOCAL-00026" summary="refactor: changing DiagnosticoTest class">
-      <option name="closed" value="true" />
-      <created>1716260012095</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1716260012095</updated>
-    </task>
-    <task id="LOCAL-00027" summary="feat: starting sprint 3 implementation">
-      <option name="closed" value="true" />
-      <created>1725277445641</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1725277445641</updated>
-    </task>
-    <task id="LOCAL-00028" summary="feat: config jdbc">
-      <option name="closed" value="true" />
-      <created>1725327355973</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1725327355973</updated>
-    </task>
-    <task id="LOCAL-00029" summary="feat: add atribute id and method toString">
-      <option name="closed" value="true" />
-      <created>1725327414684</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1725327414684</updated>
-    </task>
-    <task id="LOCAL-00030" summary="feat: add interface and class of implementation">
-      <option name="closed" value="true" />
-      <created>1725327474000</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1725327474000</updated>
-    </task>
-    <task id="LOCAL-00031" summary="feat: testando method">
-      <option name="closed" value="true" />
-      <created>1725327494073</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1725327494073</updated>
-    </task>
-    <task id="LOCAL-00032" summary="feat: alterando banco de dados">
-      <option name="closed" value="true" />
-      <created>1725583364125</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1725583364125</updated>
-    </task>
-    <task id="LOCAL-00033" summary="feat: add validações em uma classe separadas">
-      <option name="closed" value="true" />
-      <created>1725583623196</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1725583623196</updated>
-    </task>
-    <task id="LOCAL-00034" summary="feat: movendo package">
-      <option name="closed" value="true" />
-      <created>1725583734196</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1725583734196</updated>
+      <workItem from="1729864277218" duration="3585000" />
     </task>
     <task id="LOCAL-00035" summary="feat: renomeano">
       <option name="closed" value="true" />
@@ -726,7 +638,87 @@
       <option name="project" value="LOCAL" />
       <updated>1729863656430</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="fix: removendo erro dbException">
+      <option name="closed" value="true" />
+      <created>1729865617882</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1729865617882</updated>
+    </task>
+    <task id="LOCAL-00075" summary="feat: add erro de login update">
+      <option name="closed" value="true" />
+      <created>1729865669415</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1729865669415</updated>
+    </task>
+    <task id="LOCAL-00076" summary="feat: create dao de usuario">
+      <option name="closed" value="true" />
+      <created>1729865692831</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1729865692831</updated>
+    </task>
+    <task id="LOCAL-00077" summary="feat: create service de usuario">
+      <option name="closed" value="true" />
+      <created>1729865702155</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1729865702155</updated>
+    </task>
+    <task id="LOCAL-00078" summary="refactor: atualizando para ser final">
+      <option name="closed" value="true" />
+      <created>1729866487343</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1729866487343</updated>
+    </task>
+    <task id="LOCAL-00079" summary="feat: add metodo de logar">
+      <option name="closed" value="true" />
+      <created>1729866513433</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1729866513433</updated>
+    </task>
+    <task id="LOCAL-00080" summary="refactor: removendo metodo de logar do usuarioService">
+      <option name="closed" value="true" />
+      <created>1729866548363</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1729866548363</updated>
+    </task>
+    <task id="LOCAL-00081" summary="feat: create usuario service factory">
+      <option name="closed" value="true" />
+      <created>1729866570929</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1729866570929</updated>
+    </task>
+    <task id="LOCAL-00082" summary="feat: create service de login com metodo de logar">
+      <option name="closed" value="true" />
+      <created>1729866597508</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1729866597508</updated>
+    </task>
+    <task id="LOCAL-00083" summary="fix: removendo redundancia">
+      <option name="closed" value="true" />
+      <created>1729866639748</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1729866639748</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,16 +761,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add usuarioDao" />
-    <MESSAGE value="feat: testando insert e get by id de usuarios" />
-    <MESSAGE value="feat: add comentarios e removendo atributos desnecessarios" />
-    <MESSAGE value="feat: arrumando modelo das classes" />
-    <MESSAGE value="feat: add findAll e arrumando consulta de findById" />
-    <MESSAGE value="feat: arrumando testes unitarios" />
-    <MESSAGE value="feat: add validação para setar nome" />
-    <MESSAGE value="feat: arrumando validação para add orçamentos" />
-    <MESSAGE value="feat: arrumando o findAll para ordenar por nome" />
-    <MESSAGE value="feat: testando classe" />
     <MESSAGE value="feat: uml das classes" />
     <MESSAGE value="feat: alterando extensão do arquivo par .sql" />
     <MESSAGE value="refactor: removendo classes não ultilizadas" />
@@ -794,7 +776,17 @@
     <MESSAGE value="feat: create dao de login" />
     <MESSAGE value="refactor: refatorando para retornar Logger" />
     <MESSAGE value="feat: add metodo para atualizar login" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add metodo para atualizar login" />
+    <MESSAGE value="fix: removendo erro dbException" />
+    <MESSAGE value="feat: add erro de login update" />
+    <MESSAGE value="feat: create dao de usuario" />
+    <MESSAGE value="feat: create service de usuario" />
+    <MESSAGE value="refactor: atualizando para ser final" />
+    <MESSAGE value="feat: add metodo de logar" />
+    <MESSAGE value="refactor: removendo metodo de logar do usuarioService" />
+    <MESSAGE value="feat: create usuario service factory" />
+    <MESSAGE value="feat: create service de login com metodo de logar" />
+    <MESSAGE value="fix: removendo redundancia" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: removendo redundancia" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

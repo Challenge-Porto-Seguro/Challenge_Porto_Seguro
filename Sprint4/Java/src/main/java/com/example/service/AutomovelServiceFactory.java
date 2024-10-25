@@ -1,6 +1,6 @@
 package com.example.service;
 
-public class AutomovelServiceFactory {
+public final class AutomovelServiceFactory {
 
     private AutomovelServiceFactory() {
         throw new UnsupportedOperationException("Essa classe não pode ser instanciada");

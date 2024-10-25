@@ -15,7 +15,7 @@ import java.util.List;
 
 final class UsuarioServiceImpl implements UsuarioService {
 
-    private UsuarioDao repository = UsuarioDaoFactory.getUsuarioDao();
+    private final UsuarioDao repository = UsuarioDaoFactory.getUsuarioDao();
 
     @Override
     public Usuario cadastraUsuario(Usuario usuario) throws UsuarioNotCreate {
