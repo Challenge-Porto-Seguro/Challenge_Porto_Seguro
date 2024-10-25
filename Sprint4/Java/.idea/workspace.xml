@@ -9,10 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: criando metodo de add usuario na controller">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add metodo para buscar todos os usuarios">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/config/CorsFilter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AutomovelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +28,8 @@
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -327,31 +328,7 @@
       <workItem from="1726425166638" duration="13160000" />
       <workItem from="1729819559331" duration="5592000" />
       <workItem from="1729857453276" duration="4115000" />
-      <workItem from="1729864277218" duration="8648000" />
-    </task>
-    <task id="LOCAL-00045" summary="feat: alterando para retornar o cpf desformatado">
-      <option name="closed" value="true" />
-      <created>1725831971693</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1725831971693</updated>
-    </task>
-    <task id="LOCAL-00046" summary="feat: add get de usuarioId">
-      <option name="closed" value="true" />
-      <created>1725832003591</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1725832003591</updated>
-    </task>
-    <task id="LOCAL-00047" summary="feat: alterando query sql para usar a tabela do oracle">
-      <option name="closed" value="true" />
-      <created>1725832127277</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1725832127277</updated>
+      <workItem from="1729864277218" duration="9455000" />
     </task>
     <task id="LOCAL-00048" summary="feat: add querys para fazer crud de usuarios no banco de dados">
       <option name="closed" value="true" />
@@ -721,7 +698,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729894268546</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="refactor: alterando para não retorna a senha">
+      <option name="closed" value="true" />
+      <created>1729895902728</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1729895902728</updated>
+    </task>
+    <task id="LOCAL-00095" summary="feat: add metodo para buscar usuario por id">
+      <option name="closed" value="true" />
+      <created>1729895930799</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1729895930799</updated>
+    </task>
+    <task id="LOCAL-00096" summary="feat: add metodo para buscar todos os usuarios">
+      <option name="closed" value="true" />
+      <created>1729895949586</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1729895949586</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -764,9 +765,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: configurando jersey" />
-    <MESSAGE value="refactor: atualizando packages" />
-    <MESSAGE value="feat: create dao de login" />
     <MESSAGE value="refactor: refatorando para retornar Logger" />
     <MESSAGE value="feat: add metodo para atualizar login" />
     <MESSAGE value="fix: removendo erro dbException" />
@@ -789,7 +787,10 @@
     <MESSAGE value="refactor: alterando para retornar void e apenas setar o id no objeto" />
     <MESSAGE value="feat: criando dto de request e response de usuario" />
     <MESSAGE value="feat: criando metodo de add usuario na controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: criando metodo de add usuario na controller" />
+    <MESSAGE value="refactor: alterando para não retorna a senha" />
+    <MESSAGE value="feat: add metodo para buscar usuario por id" />
+    <MESSAGE value="feat: add metodo para buscar todos os usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add metodo para buscar todos os usuarios" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -25,7 +25,7 @@ public class LoginController {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response logar(LoginRequest dto) {
         try {
-            return Response.ok(loginService.login(dto.email(), dto.password())).build();
+            return Response.ok(loginService.login(dto.email(), dto.senha())).build();
         } catch (LoginNotFound e){
             return Response.status(Response.Status.OK).entity(Map.of("message", "email ou senha invalido")).build();
         } catch (ErroLogar e){
