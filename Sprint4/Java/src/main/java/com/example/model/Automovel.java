@@ -3,6 +3,7 @@ package com.example.model;
 import com.example.validacoes.VerificaCriacaoAutomovel;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,11 +15,11 @@ public class Automovel {
     private String marca;
     private String modelo;
     private String placa;
-    private Date ano;
+    private LocalDate ano;
     private Diagnostico diagnostico;
     private List<Diagnostico> diagnosticos = new ArrayList<>();
 
-    public Automovel(String marca, String modelo, String placa, Date ano, Usuario usuario) {
+    public Automovel(String marca, String modelo, String placa, LocalDate ano, Usuario usuario) {
         VerificaCriacaoAutomovel.verifica(marca, modelo, placa, ano);
         this.marca = marca;
         this.modelo = modelo;
@@ -51,10 +52,9 @@ public class Automovel {
         return placa;
     }
 
-    public Date getAno() {
+    public LocalDate getAno() {
         return ano;
     }
-
 
     public Long getId() {
         return id;

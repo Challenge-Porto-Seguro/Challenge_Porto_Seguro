@@ -1,10 +1,10 @@
 package com.example.validacoes;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class VerificaCriacaoAutomovel {
 
-    public static void verifica(String marca, String modelo, String placa, Date ano){
+    public static void verifica(String marca, String modelo, String placa, LocalDate ano){
         if(marca.isBlank()){
             throw new RuntimeException("Marca invalida");
         }
@@ -14,7 +14,7 @@ public class VerificaCriacaoAutomovel {
         if(placa.isBlank() || !placa.matches("[A-Z]{3}[0-9][0-9A-Z][0-9]{2}")){
             throw new RuntimeException("Placa invalida");
         }
-        if(ano == null || ano.after(new Date())){
+        if(ano == null || ano.isAfter(LocalDate.now())){
             throw new RuntimeException("Ano invalido");
         }
     }
