@@ -16,8 +16,7 @@ final class LoginDaoImpl implements LoginDao{
     private Logger logger = Logger.getLogger(LoginDaoImpl.class.getName());
 
     @Override
-    public Long insertLogin(Connection conn, Login login) throws LoginNotCreate {
-        Long loginId = null;
+    public void insertLogin(Connection conn, Login login) throws LoginNotCreate {
         String sql = """ 
                     insert into T_PS_PESSOA(nm_nome, nm_email, sq_senha)
                     values (?, ?, ?)
@@ -30,7 +29,7 @@ final class LoginDaoImpl implements LoginDao{
             if (rows > 0) {
                 try (ResultSet rs = ps.getGeneratedKeys()) {
                     if(rs.next()){
-                        loginId = rs.getLong(1);
+                        login.setId(rs.getLong(1));
                     }
                 }
             } else {
@@ -39,7 +38,6 @@ final class LoginDaoImpl implements LoginDao{
         } catch (SQLException e) {
             this.logger.warning("Erro ao inserir login: " + e.getMessage());
         }
-        return loginId;
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.sql.Connection;
 
 public interface LoginDao {
 
-    Long insertLogin(Connection conn, Login login) throws LoginNotCreate;
+    void insertLogin(Connection conn, Login login) throws LoginNotCreate;
     void updateLogin(Connection conn, Login login) throws LoginNotFound;
     Long logar(Connection conn, String email, String senha) throws LoginNotFound;
 }
