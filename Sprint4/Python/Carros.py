@@ -17,7 +17,7 @@ def criar_carro(placa, modelo, pessoa_id, marca, dt_veiculo):
                     returning cd_automovel into :cd_automovel
                 """, {"placa": placa, "marca": marca, "modelo": modelo,  "dt_veiculo": dt_veiculo, "pessoa_id": pessoa_id, "cd_automovel": id})
                 conn.commit()
-                return mostrar_carro(id.getvalue()[0], marca, modelo, placa, dt_veiculo, pessoa_id)
+                return mostrar_carro(id, marca, modelo, placa, dt_veiculo, pessoa_id)
     except Exception as e:
         raise ErroBanco(e)
 
