@@ -9,7 +9,7 @@ import com.example.model.Login;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class LoginServiceImpl implements LoginService {
+final class LoginServiceImpl implements LoginService {
 
     private LoginDao loginDao = LoginDaoFactory.getLoginDao();
 
