@@ -53,7 +53,7 @@ public class Cnpj {
             digitoAchado.add(11 - restoDivisao);
         }
 
-        digitos.add(digitoAchado.getFirst());
+        digitos.add(digitoAchado.get(0));
 
         multiplicador = 6;
         sum = 0;

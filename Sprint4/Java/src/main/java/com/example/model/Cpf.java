@@ -54,7 +54,7 @@ public class Cpf {
             digitosAchado.add(soma % 11);
         }
 
-        digitos.add(digitosAchado.getFirst());
+        digitos.add(digitosAchado.get(0));
 
         soma = 0;
         for(int i = 0; i <= 9; i++){

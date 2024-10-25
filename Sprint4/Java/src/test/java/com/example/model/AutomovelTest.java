@@ -77,6 +77,6 @@ class AutomovelTest {
         Diagnostico mockDiagnostico = new Diagnostico("Meu carro não liga");
         mockAutomovel.setDiagnostico(mockDiagnostico);
         mockAutomovel.autalizarDiagnostico();
-        Assertions.assertEquals(mockDiagnostico, mockAutomovel.getDiagnosticos().getFirst());
+        Assertions.assertEquals(mockDiagnostico, mockAutomovel.getDiagnosticos().get(0));
     }
 }
