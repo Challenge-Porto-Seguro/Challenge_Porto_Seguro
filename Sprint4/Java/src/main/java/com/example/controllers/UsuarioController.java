@@ -58,6 +58,18 @@ public class UsuarioController {
         }
     }
 
+    @GET
+    @Path("")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllUsuarios() {
+        try {
+            List<UsuarioResponse> usuarios = service.listaUsuarios().stream().map(this::transformUsuario).toList();
+            return Response.ok(usuarios).build();
+        } catch (UsuarioNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
+
     private UsuarioResponse transformUsuario(Usuario usuario) {
         return new UsuarioResponse(usuario.getId(), usuario.getNome(), usuario.getEmail(), usuario.getCpf());
     }
