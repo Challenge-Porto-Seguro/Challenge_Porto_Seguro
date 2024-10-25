@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="fix: arrumando erro no insert">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AutomovelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/AutomovelRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/AutomovelResponse.java" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: create controller de automovel">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/login/components/CamposLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/login/components/CamposLogin.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,6 +139,7 @@
     "JUnit.domain in Java.executor": "Coverage",
     "JUnit.example in Java.executor": "Run",
     "JUnit.java in Java.executor": "Coverage",
+    "Maven.Java [clean,install].executor": "Run",
     "Maven.Java [clean].executor": "Run",
     "Maven.Java [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -276,6 +276,7 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean install" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Java:war" />
         </option>
@@ -328,23 +329,7 @@
       <workItem from="1726425166638" duration="13160000" />
       <workItem from="1729819559331" duration="5592000" />
       <workItem from="1729857453276" duration="4115000" />
-      <workItem from="1729864277218" duration="11866000" />
-    </task>
-    <task id="LOCAL-00056" summary="feat: arrumando validação para add orçamentos">
-      <option name="closed" value="true" />
-      <created>1726433543213</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1726433543213</updated>
-    </task>
-    <task id="LOCAL-00057" summary="feat: arrumando o findAll para ordenar por nome">
-      <option name="closed" value="true" />
-      <created>1726434098060</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1726434098060</updated>
+      <workItem from="1729864277218" duration="13502000" />
     </task>
     <task id="LOCAL-00058" summary="feat: testando classe">
       <option name="closed" value="true" />
@@ -722,7 +707,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729898432035</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="feat: create dto de automovel">
+      <option name="closed" value="true" />
+      <created>1729899897367</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1729899897367</updated>
+    </task>
+    <task id="LOCAL-00106" summary="feat: create controller de automovel">
+      <option name="closed" value="true" />
+      <created>1729899908929</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1729899908929</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -765,8 +766,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: removendo metodo de logar do usuarioService" />
-    <MESSAGE value="feat: create usuario service factory" />
     <MESSAGE value="feat: create service de login com metodo de logar" />
     <MESSAGE value="fix: removendo redundancia" />
     <MESSAGE value="feat: create login service factory" />
@@ -790,7 +789,9 @@
     <MESSAGE value="refactor: alterando data para localdate" />
     <MESSAGE value="fix: removendo testes unitarios" />
     <MESSAGE value="fix: arrumando erro no insert" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: arrumando erro no insert" />
+    <MESSAGE value="feat: create dto de automovel" />
+    <MESSAGE value="feat: create controller de automovel" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create controller de automovel" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -75,7 +75,7 @@ public class UsuarioController {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateUsuario(@PathParam("id") Long id, UsuarioUpdateRequest dto) {
         try {
-            Usuario usuario = new Usuario(dto.nome(), dto.cpf(), null, dto.senha());
+            Usuario usuario = new Usuario(dto.nome(), dto.cpf(), "teste@gmail.com", dto.senha());
             usuario.setId(id);
             loginService.update(usuario);
             service.alteraUsuario(usuario);
