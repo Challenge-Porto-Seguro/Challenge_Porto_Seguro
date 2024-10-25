@@ -1,19 +1,22 @@
 package com.example.dao;
 
-import com.example.config.DbException;
+import com.example.exceptions.AutomovelNotCreate;
 import com.example.exceptions.AutomovelNotFound;
 import com.example.model.Automovel;
-import com.example.model.usuarios.Usuario;
+import com.example.model.Usuario;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 final class AutomovelDaoImpl implements AutomovelDao {
 
+    private Logger logger = Logger.getLogger(AutomovelDaoImpl.class.getName());
+
     @Override
-    public void insert(Connection conn, Automovel automovel) {
+    public void insert(Connection conn, Automovel automovel) throws AutomovelNotCreate {
         String sql = """
                 insert into T_PS_AUTOMOVEL (cd_pessoa, nm_marca_veiculo, nm_modelo_veiculo, sq_placa, dt_veiculo)
                 values (?, ?, ?, ?, ?)
@@ -33,10 +36,10 @@ final class AutomovelDaoImpl implements AutomovelDao {
                     }
                 }
             } else {
-                throw new DbException("Erro ao inserir automovel");
+                throw new AutomovelNotCreate();
             }
         } catch (SQLException e) {
-            throw new DbException(e.getMessage());
+            this.logger.warning("não foi possivel adicionar o automovel");
         }
     }
 
@@ -58,7 +61,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
             throw new AutomovelNotFound();
         }
     } catch (SQLException e) {
-        throw new DbException(e.getMessage());
+        this.logger.warning("Não foi possivel alterar o automovel");
     }
 
 }
@@ -75,7 +78,7 @@ public void deleteById(Connection conn, long id) throws AutomovelNotFound {
             throw new AutomovelNotFound();
         }
         } catch (SQLException e) {
-            throw new DbException(e.getMessage());
+            this.logger.warning("não foi possivel deletar o automovel");
         }
 
     }
@@ -95,11 +98,11 @@ public void deleteById(Connection conn, long id) throws AutomovelNotFound {
                     Automovel automovel = instanciaAutomovel(rs);
                     return Optional.of(automovel);
                 }
-                return Optional.empty();
             }
         } catch (SQLException e) {
-            throw new DbException(e.getMessage());
+            this.logger.warning("Erro ao buscar o automovel com id " + id);
         }
+        return Optional.empty();
     }
 
     @Override
@@ -117,11 +120,11 @@ public void deleteById(Connection conn, long id) throws AutomovelNotFound {
                 while (rs.next()){
                     automoveis.add(instanciaAutomovel(rs));
                 }
-                return automoveis;
             }
         } catch (SQLException e) {
-            throw new DbException(e.getMessage());
+            this.logger.warning("Erro ao buscar todos os automovel do usario com id " + idUsuario);
         }
+        return automoveis;
     }
 
     private Automovel instanciaAutomovel(ResultSet rs) throws SQLException {
