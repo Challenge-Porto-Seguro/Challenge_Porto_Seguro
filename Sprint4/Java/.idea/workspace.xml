@@ -9,23 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: alterando data para localdate">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="fix: arrumando erro no insert">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AutomovelController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/AutomovelRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Automovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/validacoes/VerificaCriacaoAutomovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/validacoes/VerificaCriacaoAutomovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/ValidaInformacoesLoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/AutomovelTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/DiagnosticoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/EnderecoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/OrcamentoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/PedidoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/ProdutoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/LoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/OficinaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/model/usuarios/UsuarioTest.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/AutomovelResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/login/components/CamposLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/login/components/CamposLogin.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +28,8 @@
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -341,31 +328,7 @@
       <workItem from="1726425166638" duration="13160000" />
       <workItem from="1729819559331" duration="5592000" />
       <workItem from="1729857453276" duration="4115000" />
-      <workItem from="1729864277218" duration="11307000" />
-    </task>
-    <task id="LOCAL-00053" summary="feat: add findAll e arrumando consulta de findById">
-      <option name="closed" value="true" />
-      <created>1726428119671</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1726428119671</updated>
-    </task>
-    <task id="LOCAL-00054" summary="feat: arrumando testes unitarios">
-      <option name="closed" value="true" />
-      <created>1726429815708</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1726429815708</updated>
-    </task>
-    <task id="LOCAL-00055" summary="feat: add validação para setar nome">
-      <option name="closed" value="true" />
-      <created>1726433525356</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1726433525356</updated>
+      <workItem from="1729864277218" duration="11866000" />
     </task>
     <task id="LOCAL-00056" summary="feat: arrumando validação para add orçamentos">
       <option name="closed" value="true" />
@@ -735,7 +698,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729897513567</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="refactor: alterando data para localdate">
+      <option name="closed" value="true" />
+      <created>1729898358432</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1729898358432</updated>
+    </task>
+    <task id="LOCAL-00103" summary="fix: removendo testes unitarios">
+      <option name="closed" value="true" />
+      <created>1729898378018</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1729898378018</updated>
+    </task>
+    <task id="LOCAL-00104" summary="fix: arrumando erro no insert">
+      <option name="closed" value="true" />
+      <created>1729898432035</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1729898432035</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,8 +765,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: atualizando para ser final" />
-    <MESSAGE value="feat: add metodo de logar" />
     <MESSAGE value="refactor: removendo metodo de logar do usuarioService" />
     <MESSAGE value="feat: create usuario service factory" />
     <MESSAGE value="feat: create service de login com metodo de logar" />
@@ -803,7 +788,9 @@
     <MESSAGE value="feat: create dto de update" />
     <MESSAGE value="feat: metodo de atulizar usuario" />
     <MESSAGE value="refactor: alterando data para localdate" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: alterando data para localdate" />
+    <MESSAGE value="fix: removendo testes unitarios" />
+    <MESSAGE value="fix: arrumando erro no insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: arrumando erro no insert" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
