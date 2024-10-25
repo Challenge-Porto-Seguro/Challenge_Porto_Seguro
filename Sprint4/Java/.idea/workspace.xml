@@ -9,11 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="fix: removendo redundancia">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add metodo de cadastrar e atualizar login">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AutomovelController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/LoginController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/ErroLogar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +35,7 @@
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -324,31 +331,7 @@
       <workItem from="1726425166638" duration="13160000" />
       <workItem from="1729819559331" duration="5592000" />
       <workItem from="1729857453276" duration="4115000" />
-      <workItem from="1729864277218" duration="3585000" />
-    </task>
-    <task id="LOCAL-00035" summary="feat: renomeano">
-      <option name="closed" value="true" />
-      <created>1725583779295</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1725583779295</updated>
-    </task>
-    <task id="LOCAL-00036" summary="feat: movendo package">
-      <option name="closed" value="true" />
-      <created>1725583813933</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1725583813933</updated>
-    </task>
-    <task id="LOCAL-00037" summary="feat: add id e alterando para long">
-      <option name="closed" value="true" />
-      <created>1725583861979</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1725583861979</updated>
+      <workItem from="1729864277218" duration="5243000" />
     </task>
     <task id="LOCAL-00038" summary="feat: alterando implementação do add orçamento">
       <option name="closed" value="true" />
@@ -718,7 +701,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729866639748</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="feat: create login service factory">
+      <option name="closed" value="true" />
+      <created>1729869131516</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1729869131516</updated>
+    </task>
+    <task id="LOCAL-00085" summary="refactor: add final nos atributos daos e nas classes serviceImpl">
+      <option name="closed" value="true" />
+      <created>1729869242277</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1729869242277</updated>
+    </task>
+    <task id="LOCAL-00086" summary="feat: add metodo de cadastrar e atualizar login">
+      <option name="closed" value="true" />
+      <created>1729869515030</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1729869515030</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -761,9 +768,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: uml das classes" />
-    <MESSAGE value="feat: alterando extensão do arquivo par .sql" />
-    <MESSAGE value="refactor: removendo classes não ultilizadas" />
     <MESSAGE value="refactor: modificando classe para o java 17" />
     <MESSAGE value="refactor: refatorando conexão com o banco de dados" />
     <MESSAGE value="refactor: movendo package" />
@@ -786,7 +790,10 @@
     <MESSAGE value="feat: create usuario service factory" />
     <MESSAGE value="feat: create service de login com metodo de logar" />
     <MESSAGE value="fix: removendo redundancia" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: removendo redundancia" />
+    <MESSAGE value="feat: create login service factory" />
+    <MESSAGE value="refactor: add final nos atributos daos e nas classes serviceImpl" />
+    <MESSAGE value="feat: add metodo de cadastrar e atualizar login" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add metodo de cadastrar e atualizar login" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

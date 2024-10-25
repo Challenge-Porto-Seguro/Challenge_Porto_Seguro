@@ -3,6 +3,7 @@ package com.example.service;
 import com.example.config.DatabaseConnectionFactory;
 import com.example.dao.LoginDao;
 import com.example.dao.LoginDaoFactory;
+import com.example.exceptions.ErroLogar;
 import com.example.exceptions.LoginNotCreate;
 import com.example.exceptions.LoginNotFound;
 import com.example.exceptions.LoginNotUpdade;
@@ -16,11 +17,11 @@ final class LoginServiceImpl implements LoginService {
     private final LoginDao loginDao = LoginDaoFactory.getLoginDao();
 
     @Override
-    public Long login(Login login) throws LoginNotFound {
+    public Long login(String email, String senha) throws LoginNotFound, ErroLogar {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
-            return loginDao.logar(connection, login);
+            return loginDao.logar(connection, email, senha);
         } catch (SQLException e) {
-            throw new LoginNotFound();
+            throw new ErroLogar();
         }
     }
 

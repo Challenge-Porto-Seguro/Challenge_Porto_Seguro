@@ -63,14 +63,14 @@ final class LoginDaoImpl implements LoginDao{
     }
 
     @Override
-    public Long logar(Connection conn, Login login) throws LoginNotFound {
+    public Long logar(Connection conn, String email, String senha) throws LoginNotFound {
         String sql = """
                         select cd_pessoa from T_PS_PESSOA where nm_email = ? and sq_senha = ?
                     """;
         Long loginId = null;
         try(PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, login.getEmail());
-            ps.setString(2, login.getSenha());
+            ps.setString(1, email);
+            ps.setString(2, senha);
             try(ResultSet rs = ps.executeQuery()) {
                 if (rs.next()){
                     loginId = rs.getLong(1);
