@@ -1,31 +1,24 @@
 package com.example.service;
 
-import com.example.db.dao.DaoFactory;
-import com.example.db.dao.UsuarioDao;
-import com.example.model.usuarios.Usuario;
+import com.example.exceptions.UsuarioNotCreate;
+import com.example.exceptions.UsuarioNotDelete;
+import com.example.exceptions.UsuarioNotFound;
+import com.example.exceptions.UsuarioNotUpdate;
+import com.example.model.Usuario;
 
 import java.util.List;
 
-public class UsuarioService {
+public interface UsuarioService {
 
-    private final UsuarioDao repository = DaoFactory.createUsuarioDao();
+    Usuario login(String email, String senha);
 
-    public void cadastraUsuario(Usuario usuario) {
-        repository.insertUsuario(usuario);
-    }
+    Usuario cadastraUsuario(Usuario usuario) throws UsuarioNotCreate;
 
-    public Usuario buscaUsuarioPorId(Long id) {
-        return repository.findById(id).orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
-    }
+    Usuario buscaUsuarioPorId(Long id) throws UsuarioNotFound;
 
-    public void alteraUsuario(Usuario usuario) {
-        repository.updateUsuario(usuario);
-    }
-    public void excluiUsuario(Long id) {
-        repository.deleteById(id);
-    }
+    Usuario alteraUsuario(Usuario usuario) throws UsuarioNotFound, UsuarioNotUpdate;
 
-    public List<Usuario> listaUsuarios() {
-        return repository.findAll();
-    }
+    void excluiUsuario(Long id) throws UsuarioNotFound, UsuarioNotDelete;
+
+    List<Usuario> listaUsuarios() throws UsuarioNotFound;
 }
