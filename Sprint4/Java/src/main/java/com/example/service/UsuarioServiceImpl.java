@@ -13,14 +13,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UsuarioServiceImpl implements UsuarioService {
+final class UsuarioServiceImpl implements UsuarioService {
 
     private UsuarioDao repository = UsuarioDaoFactory.getUsuarioDao();
-
-    @Override
-    public Usuario login(String email, String senha) {
-        return null;
-    }
 
     @Override
     public Usuario cadastraUsuario(Usuario usuario) throws UsuarioNotCreate {

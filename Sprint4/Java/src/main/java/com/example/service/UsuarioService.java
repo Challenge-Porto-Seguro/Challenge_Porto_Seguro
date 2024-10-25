@@ -10,8 +10,6 @@ import java.util.List;
 
 public interface UsuarioService {
 
-    Usuario login(String email, String senha);
-
     Usuario cadastraUsuario(Usuario usuario) throws UsuarioNotCreate;
 
     Usuario buscaUsuarioPorId(Long id) throws UsuarioNotFound;
