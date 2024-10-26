@@ -1,14 +1,14 @@
 package com.example.dto;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record AutomovelRequest(
         String marca,
         String modelo,
         String placa,
-        @JsonAlias("dt_veiculo")
+        @JsonProperty("dt_veiculo")
         String dataVeiculo,
-        @JsonAlias("cd_pessoa")
+        @JsonProperty("cd_pessoa")
         Long userId
 ) {
 }

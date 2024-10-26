@@ -1,5 +1,6 @@
 package com.example.dao;
 
+import com.example.exceptions.AutomovelInvalido;
 import com.example.exceptions.AutomovelNotCreate;
 import com.example.exceptions.AutomovelNotFound;
 import com.example.model.Automovel;
@@ -16,7 +17,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
     private Logger logger = Logger.getLogger(AutomovelDaoImpl.class.getName());
 
     @Override
-    public void insert(Connection conn, Automovel automovel) throws AutomovelNotCreate {
+    public void insert(Connection conn, Automovel automovel) throws AutomovelNotCreate, AutomovelInvalido {
         String sql = """
                 insert into T_PS_AUTOMOVEL (cd_pessoa, nm_marca_veiculo, nm_modelo_veiculo, sq_placa, dt_veiculo)
                 values (?, ?, ?, ?, ?)
@@ -40,6 +41,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
             }
         } catch (SQLException e) {
             this.logger.warning("não foi possivel adicionar o automovel");
+            throw new AutomovelInvalido();
         }
     }
 
@@ -54,6 +56,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
         ps.setString(1, automovel.getMarca());
         ps.setString(2, automovel.getModelo());
         ps.setString(3, automovel.getPlaca());
+
         ps.setDate(4, Date.valueOf(automovel.getAno()));
         ps.setLong(5, automovel.getId());
         int rows = ps.executeUpdate();
@@ -112,11 +115,11 @@ public void deleteById(Connection conn, long id) throws AutomovelNotFound {
                     select aut.*, usuario.sq_cpf, pessoa.* from T_PS_AUTOMOVEL aut
                     join T_PS_USUARIO usuario on aut.cd_pessoa = usuario.cd_pessoa
                     join T_PS_PESSOA pessoa on usuario.cd_pessoa = pessoa.cd_pessoa
-                    order by pessoa.nm_nome
-                    where pessoa.cd_pessoa = aut.cd_pessoa
+                    where aut.cd_pessoa = ?
         """;
-        try(Statement statement = conn.createStatement()) {
-            try(ResultSet rs = statement.executeQuery(sql)) {
+        try(PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setLong(1, idUsuario);
+            try(ResultSet rs = statement.executeQuery()) {
                 while (rs.next()){
                     automoveis.add(instanciaAutomovel(rs));
                 }

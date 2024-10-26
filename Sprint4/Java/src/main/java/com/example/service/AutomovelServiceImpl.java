@@ -16,9 +16,6 @@ final class AutomovelServiceImpl implements AutomovelService {
 
     @Override
     public Automovel cadastraAutomovel(Automovel automovel) throws AutomovelInvalido, AutomovelNotCreate {
-        if (automovel.getId() != null) {
-            throw new AutomovelInvalido();
-        }
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             this.repository.insert(connection, automovel);
             connection.commit();

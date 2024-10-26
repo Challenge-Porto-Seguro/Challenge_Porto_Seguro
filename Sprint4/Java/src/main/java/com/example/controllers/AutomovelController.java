@@ -3,11 +3,7 @@ package com.example.controllers;
 
 import com.example.dto.AutomovelRequest;
 import com.example.dto.AutomovelResponse;
-import com.example.dto.UsuarioResponse;
-import com.example.exceptions.AutomovelInvalido;
-import com.example.exceptions.AutomovelNotCreate;
-import com.example.exceptions.AutomovelNotFound;
-import com.example.exceptions.UsuarioNotFound;
+import com.example.exceptions.*;
 import com.example.model.Automovel;
 import com.example.model.Usuario;
 import com.example.service.AutomovelService;
@@ -16,6 +12,7 @@ import com.example.service.UsuarioService;
 import com.example.service.UsuarioServiceFactory;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
@@ -30,25 +27,28 @@ public class AutomovelController {
 
     private AutomovelService automovelService = AutomovelServiceFactory.getAutomovelService();
     private UsuarioService usuarioService = UsuarioServiceFactory.getUsuarioService();
+    @Context
     private UriInfo uriInfo;
 
     @POST
-    @Path("/")
+    @Path("")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addAutomovel(AutomovelRequest request) {
         try {
             Usuario usuario = usuarioService.buscaUsuarioPorId(request.userId());
-            Automovel automovel = new Automovel(request.marca(), request.modelo(), request.placa(), LocalDate.parse(request.dataVeiculo()), usuario);
+            Automovel automovel = new Automovel(request.marca(), request.modelo(), request.placa(), LocalDate.parse(request.dataVeiculo(), DateTimeFormatter.ofPattern("dd/MM/yyyy")), usuario);
             Automovel newAutomovel = automovelService.cadastraAutomovel(automovel);
             URI uri = uriInfo.getAbsolutePathBuilder().path(newAutomovel.getId().toString()).build();
             return Response.created(uri).entity(transformaAutomovel(newAutomovel)).build();
         } catch (UsuarioNotFound e){
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Usuario não encontrado")).build();
         }catch (AutomovelNotCreate e) {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
-        } catch (AutomovelInvalido | RuntimeException e){
-            return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", "Não possivel criar automovel")).build();
+        } catch (AutomovelInvalido e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", "não foi possivel adicioanar o automovel")).build();
+        } catch (RuntimeException e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", e.getMessage())).build();
         }
     }
 
@@ -61,19 +61,21 @@ public class AutomovelController {
             Usuario usuario = usuarioService.buscaUsuarioPorId(request.userId());
             Automovel automovel = new Automovel(request.marca(), request.modelo(), request.placa(), LocalDate.parse(request.dataVeiculo()), usuario);
             automovel.setId(id);
-            automovel = automovelService.cadastraAutomovel(automovel);
+            automovel = automovelService.alteraAutomovel(automovel);
             return Response.ok(transformaAutomovel(automovel)).build();
-        } catch (AutomovelInvalido | RuntimeException e) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
-        } catch (AutomovelNotCreate e) {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+        } catch (RuntimeException e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", e.getMessage())).build();
+        }catch (AutomovelNotUpdate e) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", "não foi possivel atualizar o automovel")).build();
         } catch (UsuarioNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Usuario não encontrado")).build();
+        } catch (AutomovelNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Automovel não encontrado")).build();
         }
     }
 
     @GET
-    @Path("userId")
+    @Path("")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllAutomovesByUserId(@QueryParam("userId") Long userId) {
         try {
@@ -82,7 +84,7 @@ public class AutomovelController {
                     .toList();
             return Response.ok(automovels).build();
         } catch (AutomovelInvalido e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", "erro ao buscar todos automoveis por id")).build();
         }
     }
 
@@ -94,7 +96,7 @@ public class AutomovelController {
             Automovel automovel = automovelService.buscaAutomovelPorId(id);
             return Response.ok(transformaAutomovel(automovel)).build();
         } catch (AutomovelNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Automovel não encontrado")).build();
         }
     }
 
