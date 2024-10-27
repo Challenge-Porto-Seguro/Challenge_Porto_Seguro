@@ -3,7 +3,7 @@ import { UserLogin } from "@/type"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-export default function CamposLogin() {
+export default function CamposLogin({erro, clearErro} : {erro:() => void, clearErro: () => void}) {
 
     const [user, setUser] = useState<UserLogin>(
         {email: "", senha: ""}
@@ -11,8 +11,6 @@ export default function CamposLogin() {
     const [errors, setErrors] = useState<UserLogin>({
         email: "", senha: ""
     })
-
-    const [erroLogar, setErrorLogar] = useState(false)
 
     const validaFormulario = () => {
         let isValid = true
@@ -44,7 +42,7 @@ export default function CamposLogin() {
     const loginChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target
         setUser({...user, [name]:value})
-        setErrorLogar(false)
+        clearErro()
     }
 
     const loginSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -69,9 +67,8 @@ export default function CamposLogin() {
                     console.log(data);
                     sessionStorage.setItem("id", data)
                     navigate.push("/")
-                    setErrorLogar(false)
                 } else {
-                    setErrorLogar(true)
+                    erro()
                 }
             } 
         } catch (error) {
@@ -92,7 +89,6 @@ export default function CamposLogin() {
                 <label className="m-2 text-xl">Digite sua senha:</label>
                 <input className="w-full p-3 bg-blue-200 rounded-3xl placeholder:text-black" type="password" placeholder="Senha" name="senha" onChange={loginChange}/>
                 {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
-                {erroLogar && <p className="text-red-700 m-2">Email ou senha incorretos</p>}
                 <p className="text-indigo-500 m-2">Esqueceu sua senha?</p>
             </div>
             <button type="submit" className="bg-blue-400 p-3 pl-28 pr-28 rounded-3xl text-white text-xl">Entrar</button>
