@@ -11,11 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="fix: arrumando erros">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/AutomovelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AutomovelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/login/components/CamposLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/login/components/CamposLogin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Feadback.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

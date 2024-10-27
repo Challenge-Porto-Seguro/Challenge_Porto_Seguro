@@ -27,7 +27,7 @@ public class LoginController {
         try {
             return Response.ok(loginService.login(dto.email(), dto.senha())).build();
         } catch (LoginNotFound e){
-            return Response.status(Response.Status.OK).entity(Map.of("message", "email ou senha invalido")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "email ou senha invalido")).build();
         } catch (ErroLogar e){
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
         }
