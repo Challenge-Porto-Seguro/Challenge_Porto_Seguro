@@ -59,7 +59,7 @@ public class AutomovelController {
     public Response updateAutomovel(@PathParam("id") Long id, AutomovelRequest request) {
         try {
             Usuario usuario = usuarioService.buscaUsuarioPorId(request.userId());
-            Automovel automovel = new Automovel(request.marca(), request.modelo(), request.placa(), LocalDate.parse(request.dataVeiculo()), usuario);
+            Automovel automovel = new Automovel(request.marca(), request.modelo(), request.placa(), LocalDate.parse(request.dataVeiculo(), DateTimeFormatter.ofPattern("dd/MM/yyyy")), usuario);
             automovel.setId(id);
             automovel = automovelService.alteraAutomovel(automovel);
             return Response.ok(transformaAutomovel(automovel)).build();

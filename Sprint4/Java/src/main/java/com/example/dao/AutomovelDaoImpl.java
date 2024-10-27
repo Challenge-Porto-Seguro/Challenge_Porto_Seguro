@@ -56,7 +56,6 @@ final class AutomovelDaoImpl implements AutomovelDao {
         ps.setString(1, automovel.getMarca());
         ps.setString(2, automovel.getModelo());
         ps.setString(3, automovel.getPlaca());
-
         ps.setDate(4, Date.valueOf(automovel.getAno()));
         ps.setLong(5, automovel.getId());
         int rows = ps.executeUpdate();
@@ -64,7 +63,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
             throw new AutomovelNotFound();
         }
     } catch (SQLException e) {
-        this.logger.warning("Não foi possivel alterar o automovel");
+        this.logger.warning("Não foi possivel alterar o automovel " + e.getMessage());
     }
 
 }
