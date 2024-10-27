@@ -2,13 +2,13 @@ package com.example.dao;
 
 import com.example.exceptions.LoginNotCreate;
 import com.example.exceptions.LoginNotFound;
-import com.example.exceptions.LoginNotUpdade;
 import com.example.model.Login;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.logging.Logger;
 
 final class LoginDaoImpl implements LoginDao{
@@ -61,17 +61,18 @@ final class LoginDaoImpl implements LoginDao{
     }
 
     @Override
-    public Long logar(Connection conn, String email, String senha) throws LoginNotFound {
+    public Map<Long, String> logar(Connection conn, String email) throws LoginNotFound {
         String sql = """
-                        select cd_pessoa from T_PS_PESSOA where nm_email = ? and sq_senha = ?
+                        select cd_pessoa, sq_senha from T_PS_PESSOA where nm_email = ?
                     """;
         Long loginId = null;
+        String senha = null;
         try(PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, email);
-            ps.setString(2, senha);
             try(ResultSet rs = ps.executeQuery()) {
                 if (rs.next()){
                     loginId = rs.getLong(1);
+                    senha = rs.getString(2);
                 } else {
                     throw new LoginNotFound();
                 }
@@ -79,6 +80,6 @@ final class LoginDaoImpl implements LoginDao{
         } catch (SQLException e) {
             this.logger.warning("Erro ao ralizar login: " + e.getMessage());
         }
-        return loginId;
+        return Map.of(loginId, senha);
     }
 }

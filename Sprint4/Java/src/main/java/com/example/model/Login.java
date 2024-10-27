@@ -68,6 +68,10 @@ public abstract class Login implements VerificaDados {
         }
     }
 
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     @Override
     public void validaDados(String nome, String email, String senha) {
         if(!ValidaInformacoesLogin.validaNome(nome)){
