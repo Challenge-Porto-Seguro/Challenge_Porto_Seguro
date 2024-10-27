@@ -12,33 +12,6 @@ import Header from "@/components/Header";
 
 export default function Home() {
 
-  // const [usuario, setUsuario] = useState<User>({nome: ""})
-  // const navigate = useRouter()
-
-  // useEffect(() => {
-  //     const verificaLogado = async () =>{
-  //       const usuarioLogado = localStorage.getItem("id")
-
-  //       if(usuarioLogado){
-  //         try{
-  //           const response = await fetch(`http://localhost:5000/cliente/${usuarioLogado}`)
-  //           const data = await response.json()
-  //           const nome = data["nm_nome"]
-  //           setUsuario({nome})
-  //           localStorage.removeItem("id")
-  //         } catch(error){
-  //           console.error(error)
-  //         }
-  //       } else {
-  //         navigate.push("/login")
-  //       }
-  //     }
-
-  //     verificaLogado()
-  // }, [])
-
-
-
   const listCard: CardProps[] = [
     {img: diagnostico, titulo: "Diagnósticos Imediatos e Confiáveis", descricao: "Com apenas alguns cliques, descreva os problemas do seu carro. Nosso chatbot inteligente interpreta os sintomas e fornece diagnósticos precisos em tempo real, evitando deslocamentos desnecessários."},
     {img: tecnologia, titulo: "Tecnologia de Ponta ao seu Alcance:", descricao: "Utilizamos a mais avançada inteligência artificial para garantir diagnósticos rápidos e precisos, integrando a facilidade de um assistente virtual com técnicas automotivas de última geração."},
