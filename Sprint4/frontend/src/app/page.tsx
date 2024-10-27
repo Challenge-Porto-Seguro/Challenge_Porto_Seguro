@@ -1,7 +1,5 @@
-"use client"
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { CardProps, User } from "../type";
+
+import { CardProps } from "../type";
 import Introducao from "@/components/Introducao";
 import SobreNos from "@/components/SobreNos";
 import Card from "@/components/Card";
