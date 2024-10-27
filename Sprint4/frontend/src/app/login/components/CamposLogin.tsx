@@ -57,16 +57,17 @@ export default function CamposLogin() {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Origin": "http://localhost:3000" // Adiciona cabeçalho Origin
+                        "Origin": "http://localhost:3000"
                     },
                     body: JSON.stringify(user)
                 };
                 
-                const response = await fetch(`http://localhost:5000/cliente/login`, cabecalho);
+                const response = await fetch(`http://localhost:8080/Java_war/api/login`, cabecalho);
         
                 if (response.ok) {
                     const data = await response.json()
-                    localStorage.setItem("id", data[0])
+                    console.log(data);
+                    sessionStorage.setItem("id", data)
                     navigate.push("/")
                     setErrorLogar(false)
                 } else {
