@@ -20,11 +20,6 @@ export default function Header() {
                         </Link>
                     </li>
                     <li className="uppercase hover:text-blue-700">
-                        <Link className="header__link header__paginas" href="#feadback">
-                            FeadBacks
-                        </Link>
-                    </li>
-                    <li className="uppercase hover:text-blue-700">
                         <Link className="header__link header__paginas" href="#sobre_nos">
                             Sobre nos
                         </Link>
