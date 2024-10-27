@@ -14,3 +14,12 @@ export type CardProps = {
     titulo: string
     descricao: string
 }
+
+
+export type UserCadastro = {
+    nome: string
+    cpf: string
+    email: string
+    senha: string
+
+}

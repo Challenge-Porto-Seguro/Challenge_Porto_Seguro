@@ -3,7 +3,7 @@ export default function CadastroOficinaForm() {
       <form className="w-full flex flex-col items-center gap-14">
           <div className="w-2/3">
               <label className="mb-5">Nome <span className="text-red-600">*</span></label>
-              <input type="text" name="" placeholder="Carlos Eduardo Alvez da Silva" className="formulario_cadastro"/>
+              <input type="text" name="" placeholder="Tecno Soluções" className="formulario_cadastro"/>
           </div>
           <div className="w-2/3">
               <label className="mb-5">CNPJ <span className="text-red-600">*</span></label>

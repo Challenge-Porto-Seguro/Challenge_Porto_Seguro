@@ -1,27 +1,121 @@
+import { UserCadastro } from "@/type"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
+
 export default function CadastroUsuarioForm() {
+
+    const [user, setUser] = useState<UserCadastro>(
+        {nome: "", cpf: "", email: "", senha: ""}
+    )
+    const [errors, setErrors] = useState<UserCadastro>({
+        nome: "", cpf: "", email: "", senha: ""
+    })
+
+    const validaFormulario = () => {
+        let isValid = true;
+        const newError = { nome: "", cpf: "", email: "", senha: "" };
+
+        if(!user.nome){
+            newError.nome = "Nome é obrigatorio"
+            isValid = false
+        }
+
+        if(!user.cpf){
+            newError.cpf = "CPF é obrigatorio"
+            isValid = false
+        }
+
+        if(!user.email){
+            newError.email = "Email é obrigatorio"
+            isValid = false
+        } else if (!/\S+@\S+\.\S+/.test(user.email)) {
+            newError.email = 'Insira um e-mail válido.';
+            isValid = false;
+        }
+
+        if(!user.senha){
+            newError.senha = "Senha é obrigatoria"
+            isValid = false
+        } else if (user.senha.length < 6){
+            newError.senha = "Senha deve ser maior que 6 caracteres"
+            isValid = false
+        }
+
+        setErrors(newError)
+        return isValid
+    }
+
+    const navigate = useRouter()
+
+    const cadastroChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = e.target
+        setUser({...user, [name]:value})
+        setErrors({...errors, [name]:""})
+    }
+
+    const cadastroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        
+        try {
+            if(validaFormulario()){
+            
+                const cabecalho = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Origin": "http://localhost:3000"
+                    },
+                    body: JSON.stringify(user)
+                };
+                
+                const response = await fetch(`http://localhost:8080/Java_war/api/user`, cabecalho);
+        
+                if (response.ok) {
+                    const data = await response.json()
+                    sessionStorage.setItem("id", data[0])
+                    navigate.push("/cliente")
+                } else{
+                    const data = await response.json()
+                    const mensagem = data.message.toLowerCase()
+                    const newError = { nome: "", cpf: "", email: "", senha: "" };
+                    if(mensagem.includes("senha")){
+                        newError.senha = "senha invalida"
+                    } else if(mensagem.includes("email")){
+                        newError.email = "email invalido"
+                    } else if(mensagem.includes("cpf")){
+                        newError.cpf = "cpf invalido"
+                    }
+                    setErrors(newError)
+                }
+            } 
+        } catch (error) {
+            console.error(error);
+        }
+            
+    };
+
   return(
-    <form className="w-full flex flex-col items-center gap-14">
+    <form onSubmit={cadastroSubmit} className="w-full flex flex-col items-center gap-14">
         <div className="w-2/3">
             <label className="mb-5">Nome <span className="text-red-600">*</span></label>
-            <input type="text" name="" placeholder="Carlos Eduardo Alvez da Silva" className="formulario_cadastro"/>
+            <input type="text" name="nome" placeholder="Carlos Eduardo Alvez da Silva" className="formulario_cadastro" onChange={cadastroChange}/>
+            {errors.nome && <p className="text-red-700 m-2">{errors.nome}</p>}
         </div>
         <div className="w-2/3">
             <label className="mb-5">CPF <span className="text-red-600">*</span></label>
-            <input type="text" placeholder="123.456.789-12" className="formulario_cadastro"/>
+            <input type="text" name="cpf" placeholder="123.456.789-12" className="formulario_cadastro" onChange={cadastroChange}/>
+            {errors.cpf && <p className="text-red-700 m-2">{errors.cpf}</p>}
         </div>
-        <div className="w-2/3">
-            <label className="mb-5">TELEFONE <span className="text-red-600">*</span></label>
-            <input type="text" placeholder="(11) 91234-1234" className="formulario_cadastro"/>
-        </div>
-
         <div className="w-2/3">
             <label className="mb-5">E-MAIL <span className="text-red-600">*</span></label>
-            <input type="email" placeholder="joao@gmail.com" className="formulario_cadastro"/>
+            <input type="email" name="email" placeholder="joao@gmail.com" className="formulario_cadastro" onChange={cadastroChange}/>
+            {errors.email && <p className="text-red-700 m-2">{errors.email}</p>}
         </div>
 
         <div className="w-2/3">
             <label className="mb-5">SENHA <span className="text-red-600">*</span></label>
-            <input type="password" placeholder="Minimo 6 caracteres" className="formulario_cadastro"/>
+            <input type="password" name="senha" placeholder="Minimo 6 caracteres" className="formulario_cadastro" onChange={cadastroChange}/>
+            {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
         </div>
 
         <div className="w-2/3 flex justify-between">
