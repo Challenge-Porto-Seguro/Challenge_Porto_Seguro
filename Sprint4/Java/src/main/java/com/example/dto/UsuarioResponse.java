@@ -4,6 +4,7 @@ public record UsuarioResponse(
         Long id,
         String nome,
         String email,
-        String cpf
+        String cpf,
+        String senha
 ) {
 }

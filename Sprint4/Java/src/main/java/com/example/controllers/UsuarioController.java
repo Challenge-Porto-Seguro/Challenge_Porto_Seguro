@@ -88,7 +88,7 @@ public class UsuarioController {
     }
 
     private UsuarioResponse transformUsuario(Usuario usuario) {
-        return new UsuarioResponse(usuario.getId(), usuario.getNome(), usuario.getEmail(), usuario.getCpf());
+        return new UsuarioResponse(usuario.getId(), usuario.getNome(), usuario.getEmail(), usuario.getCpf(), usuario.getSenha());
     }
 
 }
