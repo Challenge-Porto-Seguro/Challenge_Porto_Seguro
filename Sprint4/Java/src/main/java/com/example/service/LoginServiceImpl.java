@@ -48,6 +48,7 @@ final class LoginServiceImpl implements LoginService {
     @Override
     public void update(Login login) throws LoginNotFound, LoginNotUpdade {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
+            login.setSenha(BCrypt.hashpw(login.getSenha(), BCrypt.gensalt()));
             loginDao.updateLogin(connection, login);
         } catch (SQLException e) {
             throw new LoginNotUpdade();
