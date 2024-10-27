@@ -2,6 +2,7 @@
 import CamposLogin from "@/app/login/components/CamposLogin";
 import Link from "next/link";
 import { useState } from "react";
+import { FaTimesCircle } from "react-icons/fa";
 
 export default function Login() {
 
@@ -10,9 +11,13 @@ export default function Login() {
   return (
     <main className="grow flex">
       <section className="w-2/3 m-auto">
-      <div className="text-center border-2 border-red-600 w-1/2 m-auto">
-        {erroLogar && <p className="text-red-700">Email ou senha incorretos</p>}
-      </div>
+        
+          {erroLogar && (<div className="flex justify-center items-center border-2 border-red-600 w-1/4 m-auto">
+                          <FaTimesCircle className="text-red-500 mr-2" />
+                          <p className="text-red-700">Email ou senha incorretos</p> 
+                        </div>              
+          )}
+        
         <h1 className="w-full text-center text-6xl text-blue-600">Login</h1>
         <CamposLogin erro={() => setErrorLogar(true)} clearErro={() => setErrorLogar(false)} />
       </section>
