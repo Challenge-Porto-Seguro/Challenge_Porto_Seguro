@@ -1,22 +1,19 @@
 "use client"
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { CardProps, FeadbackProps, User } from "../type";
+import { CardProps, User } from "../type";
 import Introducao from "@/components/Introducao";
 import SobreNos from "@/components/SobreNos";
 import Card from "@/components/Card";
 import diagnostico from "@/imagem/diagnostico.jpg"
 import economia from "@/imagem/economia.jpg"
 import tecnologia from "@/imagem/tecnologia.jpg"
-import Feadback from "@/components/Feadback";
 import Header from "@/components/Header";
 
 export default function Home() {
 
   // const [usuario, setUsuario] = useState<User>({nome: ""})
   // const navigate = useRouter()
-    const [feadbacks, setFeadbacks] = useState<FeadbackProps[]>([])
-    const [atual, setAtual] = useState(0)
 
   // useEffect(() => {
   //     const verificaLogado = async () =>{
@@ -40,21 +37,6 @@ export default function Home() {
   //     verificaLogado()
   // }, [])
 
-  useEffect(() => {
-    const feadback = async () => {
-        try{
-          const response = await fetch("http://localhost:5000/feadback")
-          const data = await response.json()
-          if(response.ok){
-            setFeadbacks(data)
-          } 
-        } catch(error){
-          console.error(error)
-        }
-    }
-  }, [])
-
-
 
 
   const listCard: CardProps[] = [
@@ -75,9 +57,6 @@ export default function Home() {
                 ))}
               </div>
             </section >
-            <section id="feadback">
-                <Feadback nome="teste" cidade="São Paulo" estado="São Paulo" descricao="melhor app funciona"/>
-            </section>
             <SobreNos />
         </main>
     )
