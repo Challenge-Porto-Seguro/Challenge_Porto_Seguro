@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: atualizando response para retornar senha">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="fix: alterando para quando não achar senha retoranar erro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -337,15 +338,7 @@
       <workItem from="1729819559331" duration="5592000" />
       <workItem from="1729857453276" duration="4115000" />
       <workItem from="1729864277218" duration="21883000" />
-      <workItem from="1730113162171" duration="4955000" />
-    </task>
-    <task id="LOCAL-00060" summary="feat: alterando extensão do arquivo par .sql">
-      <option name="closed" value="true" />
-      <created>1726438168837</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1726438168837</updated>
+      <workItem from="1730113162171" duration="5829000" />
     </task>
     <task id="LOCAL-00061" summary="refactor: removendo classes não ultilizadas">
       <option name="closed" value="true" />
@@ -731,7 +724,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729905484839</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="fix: alterando para quando não achar senha retoranar erro">
+      <option name="closed" value="true" />
+      <created>1730118809835</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1730118809835</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -774,7 +775,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: create login service factory" />
     <MESSAGE value="refactor: add final nos atributos daos e nas classes serviceImpl" />
     <MESSAGE value="feat: add metodo de cadastrar e atualizar login" />
     <MESSAGE value="refactor: alterando para receber apenas o email e a senha não a classe" />
@@ -799,7 +799,8 @@
     <MESSAGE value="feat: create controller de automovel" />
     <MESSAGE value="fix: arrumando erro" />
     <MESSAGE value="fix: arrumando erros" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: arrumando erros" />
+    <MESSAGE value="fix: alterando para quando não achar senha retoranar erro" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: alterando para quando não achar senha retoranar erro" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

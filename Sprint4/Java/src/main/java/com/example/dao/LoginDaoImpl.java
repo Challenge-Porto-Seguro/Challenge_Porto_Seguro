@@ -73,6 +73,7 @@ final class LoginDaoImpl implements LoginDao{
                 if (rs.next()){
                     loginId = rs.getLong(1);
                     senha = rs.getString(2);
+                    return Map.of(loginId, senha);
                 } else {
                     throw new LoginNotFound();
                 }
@@ -80,6 +81,6 @@ final class LoginDaoImpl implements LoginDao{
         } catch (SQLException e) {
             this.logger.warning("Erro ao ralizar login: " + e.getMessage());
         }
-        return Map.of(loginId, senha);
+        return null;
     }
 }
