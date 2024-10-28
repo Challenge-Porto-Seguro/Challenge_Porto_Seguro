@@ -11,6 +11,7 @@ import com.example.model.Login;
 import org.mindrot.jbcrypt.BCrypt;
 
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Map;
@@ -23,17 +24,23 @@ final class LoginServiceImpl implements LoginService {
     public Long login(String email, String senha) throws LoginNotFound, ErroLogar {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             Map<Long, String> dados = loginDao.logar(connection, email);
+            if(dados == null){
+                throw new LoginNotFound();
+            }
+            Long id = null;
             for(Map.Entry<Long, String> entry : dados.entrySet()) {
                 if(BCrypt.checkpw(senha, entry.getValue())) {
-                    return entry.getKey();
+                    id = entry.getKey();
                 }
             }
+            if(id == null) {
+                throw new LoginNotFound();
+            }
+            return id;
         } catch (SQLException e) {
             throw new ErroLogar();
         }
-        throw new ErroLogar();
     }
-
     @Override
     public void cadastrar(Login login) throws LoginNotCreate {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
