@@ -110,31 +110,35 @@ export default function InformacaoUsuario({nome, cpf, email, senha, reload}: Use
   return(
     <div className="grow flex flex-col justify-center items-center">
         <h1 className="font-bold text-4xl">Informações da conta</h1>
-        <div className="flex gap-4 w-1/6 mt-5">
-            <h2>Email:</h2>
-            <div className="flex gap-4 items-center bg-gray-300 pl-3 pr-3 border-2 border-black cursor-not-allowed">
-                <p>{email}</p>
-                <MdBlock />
-            </div>
-        </div>    
-        <form onSubmit={modal} className="flex flex-col items-center justify-center">
-            <div className="flex gap-4 mt-5">
-                <label>Nome:</label>
-                <input type="text" value={user.nome} name="nome" disabled={!alteraCampo} onChange={updateChange} className={`border-2 border-black pl-3 pr-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"}`}/>
-            </div>
-            <div className="flex gap-4 mt-5">
-                <label>Cpf:</label>
-                <input type="text" name="cpf" value={user.cpf} disabled={!alteraCampo} onChange={updateChange} className={`border-2 border-black pl-3 pr-3 ml-5 ${!alteraCampo && "cursor-not-allowed bg-gray-300"}`}/>
-            </div>
-            <div className="flex gap-4 mt-5">
-                <label>Senha:</label>
-                <input type="password" value={user.senha} name="senha" disabled={!alteraCampo} onChange={updateChange} className={`border-2 border-black pl-3 pr-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"}`}/>
-                {alteraCampo && <button onClick={limparCampo}>Limpar</button>}
+        <div className="flex gap-4 w-full justify-center mt-5">
+            <div className="flex flex-col bg-gray-300 pl-3 pr-3 border-2 border-black cursor-not-allowed w-2/4">
+                <label htmlFor="email" className="text-sm font-semibold cursor-not-allowed">Email</label>
+                <div className="flex justify-between">
+                    <input id="email" value={email} type="email" className="bg-gray-300 focus:outline-none cursor-not-allowed" disabled/>
+                    <MdBlock />
+                </div>
                 
             </div>
+        </div>  
+        
+          
+        <form onSubmit={modal} className="flex flex-col items-center justify-center w-full">
+            <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} w-2/4`}>
+                <label htmlFor="nome" className="text-sm font-semibold" >Nome:</label>
+                <input id="nome" type="text" value={user.nome} name="nome" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
+            </div>
+            <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} w-2/4`}>
+                <label htmlFor="cpf" className="text-sm font-semibold">Cpf:</label>
+                <input id="cpf" type="text" name="cpf" value={user.cpf} disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`} />
+            </div>
+            <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} w-2/4`}>
+                <label htmlFor="senha" className="text-sm font-semibold">Senha:</label>
+                <input id="senha" type="password" value={user.senha} name="senha" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
+            </div>
+            {alteraCampo && <button onClick={limparCampo} className="text-red-600 font-medium mt-1">Limpar</button>}
             <div className="mt-5">
-                <button type="submit" className="border border-black p-3">Atualizar</button>
-                <button onClick={alterarCampo} className="ml-3 border border-black p-3">Alterar</button>
+                <button type="submit" className="border border-black p-3 hover:bg-blue-300">Atualizar</button>
+                <button onClick={alterarCampo} className="ml-3 border border-black p-3 hover:bg-blue-300">Alterar</button>
             </div>
         </form> 
 

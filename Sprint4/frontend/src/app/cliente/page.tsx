@@ -28,10 +28,7 @@ export default function Cliente() {
                     cpf: data["cpf"],
                     senha: data["senha"]
                 }
-                console.log("oi" + new Date());
-                setUsuario(user)
-                console.log(user);
-                
+                setUsuario(user)        
             } catch(error){
                 console.error(error)
             }
@@ -45,9 +42,9 @@ export default function Cliente() {
 
 
   return(
-    <main className="p-5 grow   ">
-        <h1>Bem vindo {usuario.nome}</h1>
-        <section>
+    <main className="p-5 grow">
+        <h1 className="text-4xl font-bold">Bem vindo {usuario.nome}</h1>
+        <section className="border rounded-3xl shadow-md w-2/4 m-auto mt-5 p-10 h-full">
             <InformacaoUsuario nome={usuario.nome} email={usuario.email} cpf={usuario.cpf} senha={usuario.senha} reload ={() => reload}/>
         </section>
     </main>
