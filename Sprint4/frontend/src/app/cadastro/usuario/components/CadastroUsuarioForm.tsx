@@ -139,8 +139,8 @@ export default function CadastroUsuarioForm() {
         <Modal open={open} onClose={() => setOpen(false)}>
         <div className="text-center w-56">
             <MdSaveAs size={56} className="mx-auto text-red-500" />
-            <h3 className="text-lg font-black text-gray-800">Cadastrar Produto?</h3>
-            <p className="text-gray-500 text-sm">Voce tem certeza que deseja cadastrar o produto</p>
+            <h3 className="text-lg font-black text-gray-800">Cadastrar Usuario?</h3>
+            <p className="text-gray-500 text-sm">Voce tem certeza que deseja cadastrar o usuario {user.nome}</p>
         </div>
 
         <div className="flex gap-16">
