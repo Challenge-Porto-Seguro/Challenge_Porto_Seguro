@@ -12,9 +12,9 @@ export default function Login() {
     <main className="grow flex">
       <section className="w-2/3 m-auto">
         
-          {erroLogar && (<div className="flex justify-center items-center border-2 border-red-600 w-1/4 m-auto">
-                          <FaTimesCircle className="text-red-500 mr-2" />
-                          <p className="text-red-700">Email ou senha incorretos</p> 
+          {erroLogar && (<div className="flex justify-center items-center border-2 border-red-600 pt-2 pb-2 w-2/4 m-auto rounded-xl shadow-xl mb-4">
+                          <FaTimesCircle className="text-red-500 mr-2 text-2xl" />
+                          <p className="text-red-700 text-2xl">Email ou senha incorretos</p> 
                         </div>              
           )}
         
