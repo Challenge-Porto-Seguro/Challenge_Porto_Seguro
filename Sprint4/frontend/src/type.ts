@@ -7,6 +7,9 @@ export type UserLogin = {
 
 export type User = {
     nome: string
+    cpf: string
+    email: string
+    senha: string
 }
 
 export type CardProps = {
@@ -22,4 +25,10 @@ export type UserCadastro = {
     email: string
     senha: string
 
+}
+
+export type alterar = {
+    nome: string
+    cpf: string
+    senha: string
 }
