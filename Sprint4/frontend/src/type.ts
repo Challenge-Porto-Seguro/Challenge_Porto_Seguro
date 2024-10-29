@@ -32,3 +32,26 @@ export type alterar = {
     cpf: string
     senha: string
 }
+
+export type CardCarrosProps = {
+    placa:string 
+    marca:string 
+    modelo:string 
+    data:string
+}
+
+export type Carro = {
+    id:number
+    placa:string 
+    marca:string 
+    modelo:string 
+    data:string
+}
+
+export type CarroResponse = {
+    cd_pessoa:number
+    placa:string 
+    marca:string 
+    modelo:string 
+    dt_veiculo:string
+}
