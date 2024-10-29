@@ -1,6 +1,5 @@
 import Modal from "@/components/Modal";
 import { alterar, User } from "@/type";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { GrUpdate } from "react-icons/gr";
 import { MdBlock, MdSaveAs } from "react-icons/md";
@@ -115,7 +114,7 @@ export default function InformacaoUsuario({nome, cpf, email, senha, reload}: Use
                 <label htmlFor="email" className="text-sm font-semibold cursor-not-allowed">Email</label>
                 <div className="flex justify-between">
                     <input id="email" value={email} type="email" className="bg-gray-300 focus:outline-none cursor-not-allowed" disabled/>
-                    <MdBlock />
+                    <MdBlock className="text-xl"/>
                 </div>
                 
             </div>
@@ -127,14 +126,17 @@ export default function InformacaoUsuario({nome, cpf, email, senha, reload}: Use
                 <label htmlFor="nome" className="text-sm font-semibold" >Nome:</label>
                 <input id="nome" type="text" value={user.nome} name="nome" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
             </div>
+            {errors.nome && <p className="text-red-700 m-2">{errors.nome}</p>}
             <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} w-2/4`}>
                 <label htmlFor="cpf" className="text-sm font-semibold">Cpf:</label>
                 <input id="cpf" type="text" name="cpf" value={user.cpf} disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`} />
             </div>
+            {errors.cpf && <p className="text-red-700 m-2">{errors.cpf}</p>}
             <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} w-2/4`}>
                 <label htmlFor="senha" className="text-sm font-semibold">Senha:</label>
                 <input id="senha" type="password" value={user.senha} name="senha" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
             </div>
+            {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
             {alteraCampo && <button onClick={limparCampo} className="text-red-600 font-medium mt-1">Limpar</button>}
             <div className="mt-5">
                 <button type="submit" className="border border-black p-3 hover:bg-blue-300">Atualizar</button>
