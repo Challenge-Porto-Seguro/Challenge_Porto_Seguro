@@ -24,8 +24,6 @@ export default function Cliente() {
         modelo: "", placa: "", dt_veiculo: "", marca: ""
     })
 
-    const [refresh, setRefresh] = useState(0);
-
     const reload = ()=> {
         window.location.reload()
     }
@@ -83,9 +81,12 @@ export default function Cliente() {
                 console.error(error)
             }
         }
-
-        puxarCarros()
-    }, [refresh])
+        
+        setTimeout(() => {
+            puxarCarros();
+        }, 500);
+       
+    }, [])
 
     const validaFormulario = () => {
         let isValid = true;
@@ -131,7 +132,6 @@ export default function Cliente() {
         }
         
         setErrors({...errors, [name]:""})
-        setRefresh(refresh + 1)
     } 
 
 
@@ -151,7 +151,8 @@ export default function Cliente() {
                 const response = await fetch(`http://localhost:8080/Java_war/api/automovel`, cabecalho);
         
                 if (response.ok) {
-                    setRefresh(refresh + 1)
+                    alert("Usuario cadastrado")
+                    reload()
                 } else{
                     alert(await response.text())
                     
