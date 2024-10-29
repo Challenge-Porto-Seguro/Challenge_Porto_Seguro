@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="fix: alterando para quando não achar senha retoranar erro">
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: arrumando para retorna null">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/cliente/components/InformacaoUsuario.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/cliente/components/InformacaoUsuario.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/cliente/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/cliente/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,15 +340,8 @@
       <workItem from="1729819559331" duration="5592000" />
       <workItem from="1729857453276" duration="4115000" />
       <workItem from="1729864277218" duration="21883000" />
-      <workItem from="1730113162171" duration="5829000" />
-    </task>
-    <task id="LOCAL-00061" summary="refactor: removendo classes não ultilizadas">
-      <option name="closed" value="true" />
-      <created>1729823848985</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1729823848985</updated>
+      <workItem from="1730113162171" duration="11678000" />
+      <workItem from="1730153266362" duration="7761000" />
     </task>
     <task id="LOCAL-00062" summary="refactor: modificando classe para o java 17">
       <option name="closed" value="true" />
@@ -732,7 +727,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730118809835</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="refactor: arrumando para retorna null">
+      <option name="closed" value="true" />
+      <created>1730119274087</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119274087</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -775,7 +778,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: add final nos atributos daos e nas classes serviceImpl" />
     <MESSAGE value="feat: add metodo de cadastrar e atualizar login" />
     <MESSAGE value="refactor: alterando para receber apenas o email e a senha não a classe" />
     <MESSAGE value="feat: criando erro" />
@@ -800,7 +802,8 @@
     <MESSAGE value="fix: arrumando erro" />
     <MESSAGE value="fix: arrumando erros" />
     <MESSAGE value="fix: alterando para quando não achar senha retoranar erro" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: alterando para quando não achar senha retoranar erro" />
+    <MESSAGE value="refactor: arrumando para retorna null" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: arrumando para retorna null" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

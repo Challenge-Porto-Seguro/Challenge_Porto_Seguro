@@ -9,7 +9,6 @@ import com.example.model.Automovel;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
 
 final class AutomovelServiceImpl implements AutomovelService {
 

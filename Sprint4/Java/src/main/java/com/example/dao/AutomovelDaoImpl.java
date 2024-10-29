@@ -124,7 +124,7 @@ public void deleteById(Connection conn, long id) throws AutomovelNotFound {
                 }
             }
         } catch (SQLException e) {
-            this.logger.warning("Erro ao buscar todos os automovel do usario com id " + idUsuario);
+            this.logger.warning("Erro ao buscar todos os automovel do usario com id " + idUsuario + e.getMessage());
         }
         return automoveis;
     }
