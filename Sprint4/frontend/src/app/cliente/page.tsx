@@ -3,7 +3,6 @@ import { Carro, CarroResponse, User } from "@/type"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import InformacaoUsuario from "./components/InformacaoUsuario"
-import CardCarros from "./components/CardCarros"
 import Modal from "@/components/Modal"
 import Carrosel from "./components/Carrosel"
 
@@ -17,8 +16,18 @@ export default function Cliente() {
     const [carros, setCarros] = useState<Carro[]>([])
 
     const [carro, setCarro] = useState<CarroResponse>({
-        cd_pessoa: Number(sessionStorage.getItem("id")), marca: "", modelo: "", dt_veiculo: "", placa: ""
+        cd_pessoa: 0, marca: "", modelo: "", dt_veiculo: "", placa: ""
     })
+
+    useEffect(() => {
+        const id = sessionStorage.getItem("id");
+        if (id) {
+            setCarro((prevCarro) => ({
+                ...prevCarro,
+                cd_pessoa: Number(id),
+            }));
+        }
+    }, []);
 
     const [errors, setErrors] = useState({
         modelo: "", placa: "", dt_veiculo: "", marca: ""
