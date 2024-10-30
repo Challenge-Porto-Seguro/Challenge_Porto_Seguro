@@ -10,7 +10,7 @@ import java.util.Map;
 
 public interface LoginDao {
 
-    void insertLogin(Connection conn, Login login) throws LoginNotCreate, SQLException;
+    void insertLogin(Connection conn, Login login) throws SQLException;
     void updateLogin(Connection conn, Login login) throws LoginNotFound, SQLException;
     Map<Long, String> logar(Connection conn, String email) throws LoginNotFound, SQLException;
 }

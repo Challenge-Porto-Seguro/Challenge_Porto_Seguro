@@ -13,7 +13,7 @@ import java.util.Map;
 final class LoginDaoImpl implements LoginDao{
 
     @Override
-    public void insertLogin(Connection conn, Login login) throws LoginNotCreate, SQLException {
+    public void insertLogin(Connection conn, Login login) throws SQLException {
         String sql = """ 
             insert into T_PS_PESSOA(nm_nome, nm_email, sq_senha)
             values (?, ?, ?)
@@ -31,8 +31,6 @@ final class LoginDaoImpl implements LoginDao{
                         login.setId(rs.getLong(1));
                     }
                 }
-            } else {
-                throw new LoginNotCreate();
             }
         }
     }

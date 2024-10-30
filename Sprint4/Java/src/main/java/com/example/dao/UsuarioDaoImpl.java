@@ -13,7 +13,7 @@ import java.util.Optional;
 final class UsuarioDaoImpl implements UsuarioDao {
 
     @Override
-    public void insertUsuario(Connection conn, Usuario usuario) throws UsuarioNotCreate, SQLException {
+    public void insertUsuario(Connection conn, Usuario usuario) throws SQLException {
         String sql = """
                 insert into T_PS_USUARIO(cd_pessoa, sq_cpf)
                 values (?, ?)
@@ -22,10 +22,7 @@ final class UsuarioDaoImpl implements UsuarioDao {
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setLong(1, usuario.getId());
             ps.setString(2, usuario.getCpf());
-            int rowsAffected = ps.executeUpdate();
-            if (rowsAffected != 1) {
-                throw new UsuarioNotCreate();
-            }
+            ps.executeUpdate();
         }
     }
 
