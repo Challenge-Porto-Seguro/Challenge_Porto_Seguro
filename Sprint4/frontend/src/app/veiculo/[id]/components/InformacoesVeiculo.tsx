@@ -1,7 +1,10 @@
 import Modal from "@/components/Modal";
 import { Carro } from "@/type";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { GrUpdate } from "react-icons/gr";
+import Voltar from "@/imagem/icone_voltar.svg"
+import Link from "next/link";
 
 export default function InformacoesVeiculo({id, marca, modelo, placa, data, reload}: Carro & {reload: () => void}) {
 
@@ -120,7 +123,10 @@ export default function InformacoesVeiculo({id, marca, modelo, placa, data, relo
             
     };
     return(
-        <div className="grow flex flex-col justify-center items-center">
+        <div className="grow flex flex-col justify-center items-center p-4">
+            <div className="w-full flex justify-start">
+                <Link href={"/cliente"}><Image src={Voltar} alt="Seta de Voltar" className="w-20"/></Link>
+            </div>
             <h1 className="font-bold text-4xl">Informações do Carro</h1> 
             <form onSubmit={modal} className="flex flex-col items-center justify-center w-full">
                 <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-2/4`}>
