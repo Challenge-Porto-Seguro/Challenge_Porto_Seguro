@@ -10,8 +10,6 @@ import com.example.exceptions.LoginNotUpdade;
 import com.example.model.Login;
 import org.mindrot.jbcrypt.BCrypt;
 
-
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Map;
@@ -38,7 +36,7 @@ final class LoginServiceImpl implements LoginService {
             }
             return id;
         } catch (SQLException e) {
-            throw new ErroLogar();
+            throw new ErroLogar(e.getMessage());
         }
     }
     @Override
@@ -46,9 +44,8 @@ final class LoginServiceImpl implements LoginService {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             login.setSenha(BCrypt.hashpw(login.getSenha(), BCrypt.gensalt()));
             loginDao.insertLogin(connection, login);
-            connection.commit();
         } catch (SQLException e) {
-            throw new LoginNotCreate();
+            throw new LoginNotCreate(e.getMessage());
         }
     }
 
@@ -58,7 +55,7 @@ final class LoginServiceImpl implements LoginService {
             login.setSenha(BCrypt.hashpw(login.getSenha(), BCrypt.gensalt()));
             loginDao.updateLogin(connection, login);
         } catch (SQLException e) {
-            throw new LoginNotUpdade();
+            throw new LoginNotUpdade(e.getMessage());
         }
     }
 }

@@ -15,13 +15,13 @@ final class AutomovelServiceImpl implements AutomovelService {
     private final AutomovelDao repository = AutomovelDaoFactory.createAutomovelDao();
 
     @Override
-    public Automovel cadastraAutomovel(Automovel automovel) throws AutomovelInvalido, AutomovelNotCreate {
+    public Automovel cadastraAutomovel(Automovel automovel) throws AutomovelNotCreate {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             this.repository.insert(connection, automovel);
             connection.commit();
             return automovel;
         } catch (SQLException e) {
-            throw new AutomovelNotCreate();
+            throw new AutomovelNotCreate(e.getMessage());
         }
     }
 
@@ -32,7 +32,7 @@ final class AutomovelServiceImpl implements AutomovelService {
             connection.commit();
             return automovel;
         } catch (SQLException e) {
-            throw new AutomovelNotUpdate();
+            throw new AutomovelNotUpdate(e.getMessage());
         }
     }
 
@@ -42,29 +42,21 @@ final class AutomovelServiceImpl implements AutomovelService {
             this.repository.deleteById(connection, id);
             connection.commit();
         } catch (SQLException e){
-            throw new AutomovelNotDelete();
+            throw new AutomovelNotDelete(e.getMessage());
         }
 
     }
 
     @Override
-    public Automovel buscaAutomovelPorId(Long id) throws AutomovelNotFound {
-        try(Connection connection = DatabaseConnectionFactory.getConnection()) {
-            return repository.findById(connection, id).orElseThrow(() -> new RuntimeException("Automovel não encontrado"));
-        } catch (SQLException e) {
-            throw new AutomovelNotFound();
-        }
-
+    public Automovel buscaAutomovelPorId(Long id) throws AutomovelNotFound, SQLException {
+        Connection connection = DatabaseConnectionFactory.getConnection();
+        return repository.findById(connection, id).orElseThrow(AutomovelNotFound::new);
     }
 
     @Override
-    public List<Automovel> listaAutomoveis(Long idUsuario) throws AutomovelInvalido {
-        try(Connection connection = DatabaseConnectionFactory.getConnection()) {
-            return repository.findAll(connection, idUsuario);
-        } catch (SQLException e) {
-            throw new AutomovelInvalido();
-        }
-
+    public List<Automovel> listaAutomoveis(Long idUsuario) throws SQLException {
+        Connection connection = DatabaseConnectionFactory.getConnection();
+        return repository.findAll(connection, idUsuario);
     }
 
 }

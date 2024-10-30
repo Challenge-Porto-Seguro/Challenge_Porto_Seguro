@@ -24,18 +24,14 @@ final class UsuarioServiceImpl implements UsuarioService {
             connection.commit();
             return usuario;
         } catch (SQLException e) {
-            throw new UsuarioNotCreate();
+            throw new UsuarioNotCreate(e.getMessage());
         }
     }
 
     @Override
-    public Usuario buscaUsuarioPorId(Long id) throws UsuarioNotFound {
-        try(Connection connection = DatabaseConnectionFactory.getConnection()) {
-            return repository.findById(connection, id).orElseThrow(UsuarioNotFound::new);
-        } catch (SQLException e){
-            throw new UsuarioNotFound();
-        }
-
+    public Usuario buscaUsuarioPorId(Long id) throws UsuarioNotFound, SQLException {
+        Connection connection = DatabaseConnectionFactory.getConnection();
+        return repository.findById(connection, id).orElseThrow(UsuarioNotFound::new);
     }
 
     @Override
@@ -45,7 +41,7 @@ final class UsuarioServiceImpl implements UsuarioService {
             connection.commit();
             return usuario;
         } catch (SQLException e){
-            throw new UsuarioNotUpdate();
+            throw new UsuarioNotUpdate(e.getMessage());
         }
     }
     @Override
@@ -60,12 +56,8 @@ final class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<Usuario> listaUsuarios() throws UsuarioNotFound {
-        try(Connection connection = DatabaseConnectionFactory.getConnection()) {
-            return repository.findAll(connection);
-        } catch (SQLException e) {
-            throw new UsuarioNotFound();
-        }
-
+    public List<Usuario> listaUsuarios() throws UsuarioNotFound, SQLException {
+        Connection connection = DatabaseConnectionFactory.getConnection();
+        return repository.findAll(connection);
     }
 }
