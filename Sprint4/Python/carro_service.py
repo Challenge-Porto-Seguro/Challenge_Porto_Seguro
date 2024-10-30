@@ -19,7 +19,13 @@ def deletar_car_by_id(id):
     verifica_se_carro_existe(id)
     car.deletar_carro(id)
 
+def exibir_carro_by_id(id):
+    verifica_se_carro_existe
+    ca = car.exibir_carro_by_id(id)
+    print(ca)
+    return {"cd_automovel": ca[0], "sq_placa": ca[1], "nm_modelo_veiculo": ca[2], "cd_pessoa": ca[3], "nm_marca_veiculo": ca[4], "dt_veiculo": ca[5]}
+
 def verifica_se_carro_existe(id):
-    carro = car.exibir_carro_by_id()
+    carro = car.exibir_carro_by_id(id)
     if carro == None:
         raise Exception("Não existe carro com esse id")

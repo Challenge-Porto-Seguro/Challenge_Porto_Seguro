@@ -74,7 +74,7 @@ def mostrar_carro_by_id(id):
 
 @app.route('/carros/<int:id>', methods=['PUT'])
 def atualizar_carro(id):
-    data = request.json()
+    data = request.json
     novo_modelo = data["modelo"]
     if not novo_modelo:
         return jsonify({'erro': 'O campo modelo é obrigatório.'}), 400
