@@ -2,7 +2,7 @@ import Modal from "@/components/Modal";
 import { alterar, User } from "@/type";
 import { useEffect, useState } from "react";
 import { GrUpdate } from "react-icons/gr";
-import { MdBlock, MdSaveAs } from "react-icons/md";
+import { MdBlock } from "react-icons/md";
 
 export default function InformacaoUsuario({nome, cpf, email, senha, reload}: User & {reload: () => void}) {
 
