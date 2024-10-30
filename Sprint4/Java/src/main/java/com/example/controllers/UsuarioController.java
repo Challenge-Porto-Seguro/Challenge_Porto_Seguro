@@ -16,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -38,10 +39,11 @@ public class UsuarioController {
             service.cadastraUsuario(usuario);
             URI uri = uriInfo.getAbsolutePathBuilder().path(String.valueOf(usuario.getId())).build();
             return Response.created(uri).entity(transformUsuario(usuario)).build();
-        } catch (LoginNotCreate | UsuarioNotCreate e) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "dados invalidos")).build();
-        } catch (RuntimeException e) {
+
+        }catch (RuntimeException e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", e.getMessage())).build();
+        } catch (LoginNotCreate | UsuarioNotCreate e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         }
     }
 
@@ -54,6 +56,8 @@ public class UsuarioController {
             return Response.ok(transformUsuario(usuario)).build();
         } catch (UsuarioNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         }
     }
 
@@ -65,7 +69,9 @@ public class UsuarioController {
             List<UsuarioResponse> usuarios = service.listaUsuarios().stream().map(this::transformUsuario).toList();
             return Response.ok(usuarios).build();
         } catch (UsuarioNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não encontrado")).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         }
     }
 
@@ -81,7 +87,7 @@ public class UsuarioController {
             service.alteraUsuario(usuario);
             return Response.ok(transformUsuario(usuario)).build();
         } catch (LoginNotUpdade | UsuarioNotUpdate e) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "dados invalidos")).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         } catch (UsuarioNotFound | LoginNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
         }

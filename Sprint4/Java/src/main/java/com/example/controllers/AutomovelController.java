@@ -17,6 +17,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -43,12 +44,10 @@ public class AutomovelController {
             return Response.created(uri).entity(transformaAutomovel(newAutomovel)).build();
         } catch (UsuarioNotFound e){
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Usuario não encontrado")).build();
-        }catch (AutomovelNotCreate e) {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", "Não possivel criar automovel")).build();
-        } catch (AutomovelInvalido e){
-            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", "não foi possivel adicioanar o automovel")).build();
         } catch (RuntimeException e){
             return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", e.getMessage())).build();
+        } catch (AutomovelNotCreate | SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", e.getMessage())).build();
         }
     }
 
@@ -65,8 +64,8 @@ public class AutomovelController {
             return Response.ok(transformaAutomovel(automovel)).build();
         } catch (RuntimeException e){
             return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", e.getMessage())).build();
-        }catch (AutomovelNotUpdate e) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", "não foi possivel atualizar o automovel")).build();
+        }catch (AutomovelNotUpdate | SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", e.getMessage())).build();
         } catch (UsuarioNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Usuario não encontrado")).build();
         } catch (AutomovelNotFound e) {
@@ -83,8 +82,8 @@ public class AutomovelController {
                     .map(this::transformaAutomovel)
                     .toList();
             return Response.ok(automovels).build();
-        } catch (AutomovelInvalido e) {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", "erro ao buscar todos automoveis por id")).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", e.getMessage())).build();
         }
     }
 
@@ -97,6 +96,8 @@ public class AutomovelController {
             return Response.ok(transformaAutomovel(automovel)).build();
         } catch (AutomovelNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Automovel não encontrado")).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", e.getMessage())).build();
         }
     }
 
