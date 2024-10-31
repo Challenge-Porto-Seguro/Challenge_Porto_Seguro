@@ -17,6 +17,11 @@ public abstract class Login implements VerificaDados {
         this.senha = senha;
     }
 
+    public Login(String nome, String senha) {
+        this.nome = nome;
+        this.senha = senha;
+    }
+
     public Long getId() {
         return id;
     }
