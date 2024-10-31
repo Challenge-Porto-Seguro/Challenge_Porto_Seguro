@@ -16,7 +16,7 @@ def gerar_inserts():
     with open('inserts_automovel.sql', 'w', encoding='utf-8') as f:
         for i in range(1, 21):
             dt_veiculo = gerar_data_aleatoria(data_inicio, data_fim)
-            placa = f"{random.randint(100, 999)}-{random.choice(['ABC', 'DEF', 'GHI', 'JKL', 'MNO'])}"
+            placa = f"{random.choice(['ABC', 'DEF', 'GHI', 'JKL', 'MNO'])}{random.randint(1000, 9999)}"
             marca = random.choice(marcas)
             modelo = random.choice(modelos)
 
