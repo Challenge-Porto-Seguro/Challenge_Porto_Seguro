@@ -21,8 +21,8 @@ public class Oficina extends Login {
         return valorAPagar;
     }
 
-    public Cnpj getCnpj() {
-        return cnpj;
+    public String getCnpj() {
+        return cnpj.toString();
     }
 
     public String getInscricaoEstadual() {
