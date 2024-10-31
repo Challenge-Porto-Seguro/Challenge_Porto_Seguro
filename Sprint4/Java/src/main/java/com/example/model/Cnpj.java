@@ -77,19 +77,6 @@ public class Cnpj {
         return digitoAchado.equals(digitosVerificadores);
     }
 
-    private String formataCnpj(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(cnpj, 0, 2);
-        sb.append(".");
-        sb.append(cnpj, 2, 5);
-        sb.append(".");
-        sb.append(cnpj, 5, 8);
-        sb.append("/");
-        sb.append(cnpj, 8, 12);
-        sb.append("-");
-        sb.append(cnpj, 12, 14);
-        return sb.toString();
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -106,6 +93,6 @@ public class Cnpj {
 
     @Override
     public String toString() {
-        return "Cnpj: " + formataCnpj();
+        return cnpj;
     }
 }
