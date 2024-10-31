@@ -2,14 +2,13 @@ package com.example.dao;
 
 import com.example.exceptions.OficinaNotFound;
 import com.example.model.Oficina;
-import com.example.model.Usuario;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class OficinaDaoImpl implements OficinaDao {
+final class OficinaDaoImpl implements OficinaDao {
 
     @Override
     public void insertOficina(Connection conn, Oficina oficina) throws SQLException {
