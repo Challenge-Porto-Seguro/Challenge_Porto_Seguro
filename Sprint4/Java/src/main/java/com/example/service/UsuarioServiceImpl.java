@@ -56,7 +56,7 @@ final class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<Usuario> listaUsuarios() throws UsuarioNotFound, SQLException {
+    public List<Usuario> listaUsuarios() throws SQLException {
         Connection connection = DatabaseConnectionFactory.getConnection();
         return repository.findAll(connection);
     }

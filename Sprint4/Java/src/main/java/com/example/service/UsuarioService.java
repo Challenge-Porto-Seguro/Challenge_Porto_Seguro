@@ -19,5 +19,5 @@ public interface UsuarioService {
 
     void excluiUsuario(Long id) throws UsuarioNotFound, UsuarioNotDelete;
 
-    List<Usuario> listaUsuarios() throws UsuarioNotFound, SQLException;
+    List<Usuario> listaUsuarios() throws SQLException;
 }

@@ -67,8 +67,6 @@ public class UsuarioController {
         try {
             List<UsuarioResponse> usuarios = service.listaUsuarios().stream().map(this::transformUsuario).toList();
             return Response.ok(usuarios).build();
-        } catch (UsuarioNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não encontrado")).build();
         } catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         }
