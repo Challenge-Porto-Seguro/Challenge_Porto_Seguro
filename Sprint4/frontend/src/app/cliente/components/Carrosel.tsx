@@ -6,7 +6,7 @@ import CardCarros from "./CardCarros"
 export default function Carrosel({ carros }: { carros: Carro[] }) {
     const [atual, setAtual] = useState(0)
     const carrosPorPagina = 3
-    const totalPaginas = Math.ceil(carros.length / carrosPorPagina) + 1
+    const totalPaginas = carros.length - carrosPorPagina + 1
 
     const prev = () => {
         setAtual(atual === 0 ? totalPaginas - 1 : atual - 1)
@@ -14,7 +14,7 @@ export default function Carrosel({ carros }: { carros: Carro[] }) {
 
     const next = () => {
         setAtual(atual === totalPaginas - 1 ? 0 : atual + 1)
-    }
+    }    
 
     return (
         <div className="w-full">

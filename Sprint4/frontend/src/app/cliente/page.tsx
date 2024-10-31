@@ -33,9 +33,6 @@ export default function Cliente() {
         modelo: "", placa: "", dt_veiculo: "", marca: ""
     })
 
-    const reload = ()=> {
-        window.location.reload()
-    }
     const navigate = useRouter()
 
     useEffect(() => {
@@ -66,12 +63,12 @@ export default function Cliente() {
 
     
     useEffect(() => {
-
         const puxarCarros = async () => {
             try{
                 const response = await fetch(`http://localhost:8080/Java_war/api/automovel?userId=${sessionStorage.getItem("id")}`)
                 if (response.ok) {
                     const data = await response.json();
+                    
                     const carrosList = []
                     for (let i = 0; i < data.length; i++) {
                         const carro:Carro = {
@@ -80,7 +77,6 @@ export default function Cliente() {
                         carrosList.push(carro)               
                     }
                     setCarros(carrosList)
-                
                 } else {
                     const errorMessage = await response.text();
                     console.error("Erro na resposta:", response.status, errorMessage);
@@ -160,8 +156,8 @@ export default function Cliente() {
                 const response = await fetch(`http://localhost:8080/Java_war/api/automovel`, cabecalho);
         
                 if (response.ok) {
-                    alert("Usuario cadastrado")
-                    reload()
+                    alert("Carro cadastrado")
+                    window.location.reload()
                 } else{
                     alert(await response.text())
                     
@@ -178,7 +174,7 @@ export default function Cliente() {
     <main className="p-5 grow">
         <h1 className="text-4xl font-bold">Bem vindo {usuario.nome}</h1>
         <section className="border rounded-3xl shadow-xl w-2/4 m-auto mt-5 p-10">
-            <InformacaoUsuario nome={usuario.nome} email={usuario.email} cpf={usuario.cpf} senha={usuario.senha} reload ={() => reload}/>
+            <InformacaoUsuario nome={usuario.nome} email={usuario.email} cpf={usuario.cpf} senha={usuario.senha}/>
         </section>
         <section className="mt-11 flex flex-col items-center">
             <article className="w-full">

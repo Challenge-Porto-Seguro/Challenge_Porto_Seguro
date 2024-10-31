@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { GrUpdate } from "react-icons/gr";
 import { MdBlock } from "react-icons/md";
 
-export default function InformacaoUsuario({nome, cpf, email, senha, reload}: User & {reload: () => void}) {
+export default function InformacaoUsuario({nome, cpf, email, senha}: User) {
 
     const[alteraCampo, setAlteraCampo] = useState(false)
 
@@ -76,7 +76,7 @@ export default function InformacaoUsuario({nome, cpf, email, senha, reload}: Use
                 const response = await fetch(`http://localhost:8080/Java_war/api/user/${sessionStorage.getItem("id")}`, cabecalho);
         
                 if (response.ok) {
-                    reload()
+                    window.location.reload();
                 } else{
                     const data = await response.json()
                     const mensagem = data.message.toLowerCase()
