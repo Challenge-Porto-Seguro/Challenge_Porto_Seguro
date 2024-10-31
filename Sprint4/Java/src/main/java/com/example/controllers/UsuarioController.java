@@ -39,8 +39,7 @@ public class UsuarioController {
             service.cadastraUsuario(usuario);
             URI uri = uriInfo.getAbsolutePathBuilder().path(String.valueOf(usuario.getId())).build();
             return Response.created(uri).entity(transformUsuario(usuario)).build();
-
-        }catch (RuntimeException e) {
+        }catch (RuntimeException | CadastroInvalido e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", e.getMessage())).build();
         } catch (LoginNotCreate | UsuarioNotCreate e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
@@ -81,7 +80,7 @@ public class UsuarioController {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateUsuario(@PathParam("id") Long id, UsuarioUpdateRequest dto) {
         try {
-            Usuario usuario = new Usuario(dto.nome(), dto.cpf(), "teste@gmail.com", dto.senha());
+            Usuario usuario = new Usuario(dto.nome(), dto.senha(), dto.cpf());
             usuario.setId(id);
             loginService.update(usuario);
             service.alteraUsuario(usuario);

@@ -18,6 +18,11 @@ public class Usuario extends Login implements FazerOrcamento {
         this.cpf = new Cpf(cpf);
     }
 
+    public Usuario(String nome, String senha, String cpf) {
+        super(nome, senha);
+        this.cpf = new Cpf(cpf);
+    }
+
     public String getCpf() {
         return cpf.toString();
     }
