@@ -15,7 +15,7 @@ def gerar_senha(tamanho=10):
     caracteres = string.ascii_letters + string.digits
     return ''.join(random.choice(caracteres) for _ in range(tamanho))
 
-with open("inserts_pessoas.sql", "w") as arquivo_sql:
+with open("inserts_pessoas.sql", "w", encoding='utf-8') as arquivo_sql:
     for i in range(1, 21):
         nome = gerar_nome()
         email = gerar_email(nome)

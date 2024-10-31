@@ -10,7 +10,7 @@ for cd_pessoa in range(1, num_inserts + 1):
     
     inserts.append(f"INSERT INTO t_ps_oficina (cd_pessoa, sq_cnpj, sq_inscricao_estadual) VALUES ({cd_pessoa}, '{sq_cnpj}', '{sq_inscricao_estadual}');")
 
-with open(file_name, 'w') as file:
+with open(file_name, 'w', encoding='utf-8') as file:
     for insert in inserts:
         file.write(insert + "\n")
 

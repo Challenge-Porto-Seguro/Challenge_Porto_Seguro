@@ -12,7 +12,7 @@ for _ in range(num_inserts):
 
     inserts.append(f"INSERT INTO t_ps_itens_orcamento (cd_orcamento, cd_produto, qt_pedido, vl_pedido) VALUES ({cd_orcamento}, {cd_produto}, {qt_pedido}, {vl_pedido});")
 
-with open(file_name, 'w') as file:
+with open(file_name, 'w', encoding='utf-8') as file:
     for insert in inserts:
         file.write(insert + "\n")
 

@@ -22,7 +22,7 @@ def gerar_descricao_peca():
 def gerar_valor_peca():
     return round(random.uniform(30, 1000), 2)
 
-with open("inserts_pecas_carro.sql", "w") as arquivo_sql:
+with open("inserts_pecas_carro.sql", "w", encoding='utf-8') as arquivo_sql:
     for i in range(1, 21):
         nome_peca = gerar_nome_peca()
         descricao_peca = gerar_descricao_peca()
