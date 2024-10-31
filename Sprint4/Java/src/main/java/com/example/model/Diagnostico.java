@@ -1,34 +1,35 @@
 package com.example.model;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Diagnostico {
 
     private Long id;
-    private Long idAutomovel;
+    private Automovel automovel;
     private String descricao;
-    private Date data;
-    private Date dataFinalizado;
-    private VerificaDiagnostico verificador;
+    private LocalDate data;
+    private LocalDate dataFinalizado;
+    private VerificaDiagnostico status;
     private Orcamento orcamento;
+    private Oficina oficina;
 
-    public Diagnostico(String descricao) {
+    public Diagnostico(String descricao, LocalDate data, VerificaDiagnostico status) {
         this.descricao = descricao;
-        this.data = new Date();
-        this.verificador = VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO;
+        this.data = data;
+        this.status = status;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public Date getData(){
+    public LocalDate getData(){
         return data;
     }
 
-    public VerificaDiagnostico getVerificador() {
-        return verificador;
+    public VerificaDiagnostico getStatus() {
+        return status;
     }
 
     public Long getId() {
@@ -39,7 +40,7 @@ public class Diagnostico {
         this.id = id;
     }
 
-    public Date getDataFinalizado() {
+    public LocalDate getDataFinalizado() {
         if (dataFinalizado == null) {
             throw new RuntimeException("Esse diagnostico não foi finalizado");
         }
@@ -51,16 +52,56 @@ public class Diagnostico {
     }
 
     public void diagnosticoResolvido() {
-        this.verificador = VerificaDiagnostico.RESOLVIDO;
-        dataFinalizado = new Date();
+        this.status = VerificaDiagnostico.RESOLVIDO;
+        dataFinalizado = LocalDate.now();
+    }
+
+    public Automovel getAutomovel() {
+        return automovel;
+    }
+
+    public void setAutomovel(Automovel automovel) {
+        this.automovel = automovel;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public void setDataFinalizado(LocalDate dataFinalizado) {
+        this.dataFinalizado = dataFinalizado;
+    }
+
+    public void setStatus(VerificaDiagnostico status) {
+        this.status = status;
+    }
+
+    public Orcamento getOrcamento() {
+        return orcamento;
+    }
+
+    public void setOrcamento(Orcamento orcamento) {
+        this.orcamento = orcamento;
+    }
+
+    public Oficina getOficina() {
+        return oficina;
+    }
+
+    public void setOficina(Oficina oficina) {
+        this.oficina = oficina;
     }
 
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String dataStr = sdf.format(data);
-        if(verificador == VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO){
-            return "id: " + id +  ", descrição: " + descricao + ", data inicio: " + dataStr + ", verificador: " + verificador;
+        if(status == VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO){
+            return "id: " + id +  ", descrição: " + descricao + ", data inicio: " + dataStr + ", status: " + status;
         }
 
         String dataFinalizadoStr = sdf.format(dataFinalizado);
@@ -68,6 +109,6 @@ public class Diagnostico {
                 + ", descrição: " + descricao
                 + ", data inicio: " + dataStr
                 + ", data finalizado: " + dataFinalizadoStr
-                + ", verificador: " + verificador;
+                + ", status: " + status;
     }
 }

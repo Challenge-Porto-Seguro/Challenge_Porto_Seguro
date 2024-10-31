@@ -7,7 +7,6 @@ import java.util.List;
 public class Orcamento {
 
     private Long id;
-    private Long idDiagnostico;
     private double valorTotal;
     private LocalDate diaOrcamento;
     private List<Pedido> pedidos = new ArrayList<>();
