@@ -17,6 +17,12 @@ public class Oficina extends Login {
 
     }
 
+    public Oficina(String nome, String senha, String inscricaoEstadual, String cnpj) {
+        super(nome, senha);
+        this.inscricaoEstadual = inscricaoEstadual;
+        this.cnpj = new Cnpj(cnpj);
+    }
+
     public double getValorAPagar() {
         return valorAPagar;
     }
