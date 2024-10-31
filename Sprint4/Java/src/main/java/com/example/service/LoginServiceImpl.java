@@ -3,10 +3,7 @@ package com.example.service;
 import com.example.config.DatabaseConnectionFactory;
 import com.example.dao.LoginDao;
 import com.example.dao.LoginDaoFactory;
-import com.example.exceptions.ErroLogar;
-import com.example.exceptions.LoginNotCreate;
-import com.example.exceptions.LoginNotFound;
-import com.example.exceptions.LoginNotUpdade;
+import com.example.exceptions.*;
 import com.example.model.Login;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -40,10 +37,16 @@ final class LoginServiceImpl implements LoginService {
         }
     }
     @Override
-    public void cadastrar(Login login) throws LoginNotCreate {
+    public void cadastrar(Login login) throws LoginNotCreate, CadastroInvalido {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
-            login.setSenha(BCrypt.hashpw(login.getSenha(), BCrypt.gensalt()));
-            loginDao.insertLogin(connection, login);
+            try {
+                loginDao.logar(connection, login.getEmail());
+                connection.rollback();
+                throw new CadastroInvalido("Ja existe usuario com esse email");
+            } catch (LoginNotFound e) {
+                login.setSenha(BCrypt.hashpw(login.getSenha(), BCrypt.gensalt()));
+                loginDao.insertLogin(connection, login);
+            }
         } catch (SQLException e) {
             throw new LoginNotCreate(e.getMessage());
         }

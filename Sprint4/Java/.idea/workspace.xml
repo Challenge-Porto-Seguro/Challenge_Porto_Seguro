@@ -9,30 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: add mensagem do erro no logger">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: arrumando tratamento de erro">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/CadastroInvalido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/AutomovelDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/LoginDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/UsuarioDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/UsuarioDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/AutomovelInvalido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/AutomovelNotCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/AutomovelNotCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/AutomovelNotDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/AutomovelNotDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/AutomovelNotUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/AutomovelNotUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/ErroLogar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/ErroLogar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/LoginNotCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/LoginNotCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/LoginNotUpdade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/LoginNotUpdade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/UsuarioNotCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/UsuarioNotCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exceptions/UsuarioNotUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/UsuarioNotUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/AutomovelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UsuarioServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,55 +344,7 @@
       <workItem from="1729864277218" duration="21883000" />
       <workItem from="1730113162171" duration="11678000" />
       <workItem from="1730153266362" duration="7761000" />
-      <workItem from="1730328560079" duration="1818000" />
-    </task>
-    <task id="LOCAL-00062" summary="refactor: modificando classe para o java 17">
-      <option name="closed" value="true" />
-      <created>1729824074883</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1729824074883</updated>
-    </task>
-    <task id="LOCAL-00063" summary="refactor: refatorando conexão com o banco de dados">
-      <option name="closed" value="true" />
-      <created>1729824134819</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1729824134819</updated>
-    </task>
-    <task id="LOCAL-00064" summary="refactor: movendo package">
-      <option name="closed" value="true" />
-      <created>1729824145232</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1729824145233</updated>
-    </task>
-    <task id="LOCAL-00065" summary="feat: add erro de automovel">
-      <option name="closed" value="true" />
-      <created>1729824170725</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1729824170725</updated>
-    </task>
-    <task id="LOCAL-00066" summary="rafactor: refatorandi dao de automovel">
-      <option name="closed" value="true" />
-      <created>1729824928963</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1729824928963</updated>
-    </task>
-    <task id="LOCAL-00067" summary="rafactor: refatorando automovel service">
-      <option name="closed" value="true" />
-      <created>1729825027860</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1729825027860</updated>
+      <workItem from="1730328560079" duration="4355000" />
     </task>
     <task id="LOCAL-00068" summary="feat: add dependencia do jersey">
       <option name="closed" value="true" />
@@ -754,7 +690,55 @@
       <option name="project" value="LOCAL" />
       <updated>1730119274087</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="refactor: add mensagens ao erro">
+      <option name="closed" value="true" />
+      <created>1730330820548</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1730330820548</updated>
+    </task>
+    <task id="LOCAL-00112" summary="refactor: mandando erro para cima">
+      <option name="closed" value="true" />
+      <created>1730330916382</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1730330916382</updated>
+    </task>
+    <task id="LOCAL-00113" summary="fix: arrumando erro">
+      <option name="closed" value="true" />
+      <created>1730331072028</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1730331072028</updated>
+    </task>
+    <task id="LOCAL-00114" summary="refactor: add mensagem de erro">
+      <option name="closed" value="true" />
+      <created>1730331084975</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1730331084975</updated>
+    </task>
+    <task id="LOCAL-00115" summary="refactor: mandando erro para cima">
+      <option name="closed" value="true" />
+      <created>1730331131713</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1730331131713</updated>
+    </task>
+    <task id="LOCAL-00116" summary="refactor: arrumando tratamento de erro">
+      <option name="closed" value="true" />
+      <created>1730331148450</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1730331148450</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -797,10 +781,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add metodo de cadastrar e atualizar login" />
-    <MESSAGE value="refactor: alterando para receber apenas o email e a senha não a classe" />
-    <MESSAGE value="feat: criando erro" />
-    <MESSAGE value="feat: criando dto para request de login" />
     <MESSAGE value="feat: criando metodo de logar no login controller" />
     <MESSAGE value="refactor: alterando para retornar void e apenas setar o id no objeto" />
     <MESSAGE value="feat: criando dto de request e response de usuario" />
@@ -818,11 +798,15 @@
     <MESSAGE value="fix: arrumando erro no insert" />
     <MESSAGE value="feat: create dto de automovel" />
     <MESSAGE value="feat: create controller de automovel" />
-    <MESSAGE value="fix: arrumando erro" />
     <MESSAGE value="fix: arrumando erros" />
     <MESSAGE value="fix: alterando para quando não achar senha retoranar erro" />
     <MESSAGE value="refactor: arrumando para retorna null" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: arrumando para retorna null" />
+    <MESSAGE value="refactor: add mensagens ao erro" />
+    <MESSAGE value="fix: arrumando erro" />
+    <MESSAGE value="refactor: add mensagem de erro" />
+    <MESSAGE value="refactor: mandando erro para cima" />
+    <MESSAGE value="refactor: arrumando tratamento de erro" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: arrumando tratamento de erro" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
