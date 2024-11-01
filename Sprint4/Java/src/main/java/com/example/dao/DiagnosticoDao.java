@@ -1,5 +1,6 @@
 package com.example.dao;
 
+import com.example.exceptions.DiagnosticoNotFound;
 import com.example.model.Diagnostico;
 
 import java.sql.Connection;
@@ -13,7 +14,7 @@ public interface DiagnosticoDao {
 
     Optional<Diagnostico> getDiagnosticoById(Long id, Connection connection) throws SQLException;
 
-    void updateDiagnostico(Diagnostico diagnostico, Connection connection) throws SQLException;
+    void updateDiagnostico(Diagnostico diagnostico, Connection connection) throws SQLException, DiagnosticoNotFound;
 
     List<Diagnostico> getAllDiagnosticosByCdPessoa(Long cdPessoa, Connection connection) throws SQLException;
 
