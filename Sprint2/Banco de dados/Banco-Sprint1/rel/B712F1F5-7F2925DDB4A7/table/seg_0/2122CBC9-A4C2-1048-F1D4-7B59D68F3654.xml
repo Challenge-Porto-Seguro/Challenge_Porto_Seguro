@@ -9,7 +9,7 @@
 <existDependencyGenerationLevel>Discriminator value</existDependencyGenerationLevel>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cd_pessoa" id="AAA0046D-876A-7DD9-AF2B-33290B99317B">
+<Column name="cd_oficina" id="AAA0046D-876A-7DD9-AF2B-33290B99317B">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
 <comment><![CDATA[Esse atributo irá receber a chave primária da oficina. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
