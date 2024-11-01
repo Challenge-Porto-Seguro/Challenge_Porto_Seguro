@@ -11,7 +11,6 @@ public class Diagnostico {
     private LocalDate data;
     private LocalDate dataFinalizado;
     private VerificaDiagnostico status;
-    private Orcamento orcamento;
     private Oficina oficina;
 
     public Diagnostico(String descricao, LocalDate data, VerificaDiagnostico status) {
@@ -47,10 +46,6 @@ public class Diagnostico {
         return dataFinalizado;
     }
 
-    public void criarOrcamento(Orcamento orcamento) {
-        this.orcamento = orcamento;
-    }
-
     public void diagnosticoResolvido() {
         this.status = VerificaDiagnostico.RESOLVIDO;
         dataFinalizado = LocalDate.now();
@@ -78,14 +73,6 @@ public class Diagnostico {
 
     public void setStatus(VerificaDiagnostico status) {
         this.status = status;
-    }
-
-    public Orcamento getOrcamento() {
-        return orcamento;
-    }
-
-    public void setOrcamento(Orcamento orcamento) {
-        this.orcamento = orcamento;
     }
 
     public Oficina getOficina() {
