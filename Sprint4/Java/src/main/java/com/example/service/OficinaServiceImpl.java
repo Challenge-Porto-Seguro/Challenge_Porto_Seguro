@@ -18,7 +18,6 @@ final class OficinaServiceImpl implements OficinaService {
     public Oficina cadastraOficina(Oficina oficina) throws OficinaNotCreate {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             oficinaDao.insertOficina(connection, oficina);
-            connection.commit();
             return oficina;
         } catch (SQLException e) {
             throw new OficinaNotCreate(e.getMessage());
@@ -35,7 +34,6 @@ final class OficinaServiceImpl implements OficinaService {
     public Oficina alteraOficina(Oficina oficina) throws OficinaNotFound, OficinaNotUpdate {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             oficinaDao.updateOficina(connection, oficina);
-            connection.commit();
             return oficina;
         } catch (SQLException e){
             throw new OficinaNotUpdate(e.getMessage());

@@ -93,8 +93,10 @@ public class UsuarioController {
             loginService.update(usuario);
             service.alteraUsuario(usuario);
             Endereco endereco = new Endereco(dto.cep(), dto.numero());
+            endereco.setLogin(usuario.getId());
+            enderecoService.updateEndereco(endereco);
             return Response.ok(transformUsuario(usuario, endereco)).build();
-        } catch (LoginNotUpdade | UsuarioNotUpdate e) {
+        } catch (LoginNotUpdade | UsuarioNotUpdate | EnderecoNotFound | EnderecoNotUpdate e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         } catch (UsuarioNotFound | LoginNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();

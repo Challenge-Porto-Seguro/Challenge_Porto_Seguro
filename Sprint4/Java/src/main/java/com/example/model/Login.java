@@ -8,7 +8,6 @@ public abstract class Login implements VerificaDados {
     private String nome;
     private String email;
     private String senha;
-    private Endereco endereco;
 
     public Login(String nome, String email, String senha) {
         validaDados(nome, email, senha);
@@ -88,14 +87,6 @@ public abstract class Login implements VerificaDados {
         if(!ValidaInformacoesLogin.validaSenha(senha)){
             throw new RuntimeException("Senha invalida");
         }
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
     }
 
     public void mudarStatusOrcamento(Orcamento orcamento){

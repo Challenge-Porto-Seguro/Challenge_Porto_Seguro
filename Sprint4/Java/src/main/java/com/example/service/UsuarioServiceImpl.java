@@ -21,7 +21,6 @@ final class UsuarioServiceImpl implements UsuarioService {
     public Usuario cadastraUsuario(Usuario usuario) throws UsuarioNotCreate {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             repository.insertUsuario(connection, usuario);
-            connection.commit();
             return usuario;
         } catch (SQLException e) {
             throw new UsuarioNotCreate(e.getMessage());
@@ -38,7 +37,6 @@ final class UsuarioServiceImpl implements UsuarioService {
     public Usuario alteraUsuario(Usuario usuario) throws UsuarioNotFound, UsuarioNotUpdate {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             repository.updateUsuario(connection, usuario);
-            connection.commit();
             return usuario;
         } catch (SQLException e){
             throw new UsuarioNotUpdate(e.getMessage());

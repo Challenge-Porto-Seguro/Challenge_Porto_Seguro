@@ -6,6 +6,12 @@ public record OficinaResponse(
         String email,
         String cnpj,
         String inscricaoEstadual,
-        String senha
+        String senha,
+        String rua,
+        String cidade,
+        String estado,
+        String bairro,
+        String cep,
+        Integer numeroCasa
 ) {
 }

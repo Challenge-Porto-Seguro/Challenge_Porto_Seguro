@@ -2,12 +2,12 @@ package com.example.controllers;
 
 import com.example.dto.OficinaRequest;
 import com.example.dto.OficinaResponse;
+import com.example.dto.UsuarioResponse;
 import com.example.exceptions.*;
+import com.example.model.Endereco;
 import com.example.model.Oficina;
-import com.example.service.LoginService;
-import com.example.service.LoginServiceFactory;
-import com.example.service.OficinaService;
-import com.example.service.OficinaServiceFactory;
+import com.example.model.Usuario;
+import com.example.service.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -16,14 +16,16 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @Path("/oficina")
 public class OficinaController {
 
-    private OficinaService oficinaService = OficinaServiceFactory.getOficinaService();
+    private final OficinaService oficinaService = OficinaServiceFactory.getOficinaService();
     private final LoginService loginService = LoginServiceFactory.getLoginService();
+    private final EnderecoService enderecoService = EnderecoServiceFactory.getEnderecoService();
     @Context
     private UriInfo uriInfo;
 
@@ -31,16 +33,19 @@ public class OficinaController {
     @Path("")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addUsuario(OficinaRequest dto) {
+    public Response addOficina(OficinaRequest dto) {
         try {
             Oficina oficina = new Oficina(dto.nome(), dto.cnpj(), dto.email(), dto.senha(), dto.inscricaoEstadual());
             loginService.cadastrar(oficina);
             oficinaService.cadastraOficina(oficina);
+            Endereco endereco = new Endereco(dto.cep(), dto.numero());
+            endereco.setLogin(endereco.getIdUsuario());
+            enderecoService.cadastraEndereco(endereco);
             URI uri = uriInfo.getAbsolutePathBuilder().path(String.valueOf(oficina.getId())).build();
-            return Response.created(uri).entity(transformOficina(oficina)).build();
+            return Response.created(uri).entity(transformOficina(oficina, endereco)).build();
         }catch (RuntimeException | CadastroInvalido e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", e.getMessage())).build();
-        } catch (LoginNotCreate | OficinaNotCreate e) {
+        } catch (LoginNotCreate | OficinaNotCreate | EnderecoNotCreate e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         }
     }
@@ -48,11 +53,12 @@ public class OficinaController {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUsuarioById(@PathParam("id") long id) {
+    public Response getOficinaById(@PathParam("id") long id) {
         try {
             Oficina oficina = oficinaService.buscaOficinaPorId(id);
-            return Response.ok(transformOficina(oficina)).build();
-        } catch (OficinaNotFound e) {
+            Endereco endereco = enderecoService.buscaEnderecoPorId(oficina.getId());
+            return Response.ok(transformOficina(oficina, endereco)).build();
+        } catch (OficinaNotFound | EnderecoNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "Oficina não enconstrado")).build();
         } catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
@@ -62,12 +68,18 @@ public class OficinaController {
     @GET
     @Path("")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllUsuarios() {
+    public Response getAllOficinas() {
         try {
-            List<OficinaResponse> usuarios = oficinaService.listaOficinas().stream().map(this::transformOficina).toList();
-            return Response.ok(usuarios).build();
+            List<Oficina> oficinas = oficinaService.listaOficinas();
+            List<OficinaResponse> oficinaResponses = new ArrayList<>();
+            for (Oficina oficina : oficinas) {
+                oficinaResponses.add(transformOficina(oficina, enderecoService.buscaEnderecoPorId(oficina.getId())));
+            }
+            return Response.ok(oficinaResponses).build();
         } catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
+        } catch (EnderecoNotFound e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "Endereco não enconstrado")).build();
         }
     }
 
@@ -81,15 +93,19 @@ public class OficinaController {
             oficina.setId(id);
             loginService.update(oficina);
             oficinaService.alteraOficina(oficina);
-            return Response.ok(transformOficina(oficina)).build();
-        } catch (LoginNotUpdade | OficinaNotUpdate e) {
+            Endereco endereco = new Endereco(dto.cep(), dto.numero());
+            endereco.setLogin(oficina.getId());
+            endereco = enderecoService.updateEndereco(endereco);
+            return Response.ok(transformOficina(oficina, endereco)).build();
+        } catch (LoginNotUpdade | OficinaNotUpdate | EnderecoNotUpdate e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
-        } catch (OficinaNotFound | LoginNotFound e) {
+        } catch (OficinaNotFound | LoginNotFound | EnderecoNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
         }
     }
 
-    private OficinaResponse transformOficina(Oficina oficina) {
-        return new OficinaResponse(oficina.getId(), oficina.getNome(), oficina.getEmail(), oficina.getCnpj(), oficina.getInscricaoEstadual(), oficina.getSenha());
+    private OficinaResponse transformOficina(Oficina oficina, Endereco endereco) {
+        return new OficinaResponse(oficina.getId(), oficina.getNome(), oficina.getEmail(), oficina.getCnpj(), oficina.getInscricaoEstadual(), oficina.getSenha(),
+                endereco.getRua(), endereco.getCidade(), endereco.getUf(), endereco.getBairro(), endereco.getCep(), endereco.getNumero());
     }
 }

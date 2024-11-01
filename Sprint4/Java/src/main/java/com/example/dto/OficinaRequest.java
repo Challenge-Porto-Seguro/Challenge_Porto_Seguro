@@ -5,6 +5,8 @@ public record OficinaRequest(
         String email,
         String senha,
         String cnpj,
-        String inscricaoEstadual
+        String inscricaoEstadual,
+        String cep,
+        int numero
 ) {
 }
