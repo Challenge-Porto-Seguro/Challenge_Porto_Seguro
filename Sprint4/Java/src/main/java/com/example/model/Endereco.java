@@ -64,4 +64,43 @@ public class Endereco {
         return uf;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setLogin(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
 }
