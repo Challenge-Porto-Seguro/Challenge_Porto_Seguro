@@ -4,6 +4,7 @@ import com.example.exceptions.DiagnosticoNotFound;
 import com.example.model.*;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -78,7 +79,25 @@ final class DiagnosticoDaoImpl implements DiagnosticoDao {
 
     @Override
     public List<Diagnostico> getAllDiagnosticosByCdPessoa(Long cdPessoa, Connection connection) throws SQLException {
-        return List.of();
+        final String sql = """
+                select * from T_PS_DIAGNOSTICO d
+                join t_ps_automovel a on(d.cd_automovel = a.cd_automovel)
+                join t_ps_usuario u on(a.cd_pessoa = u.cd_pessoa)
+                join t_ps_pessoa p on(u.cd_pessoa = p.cd_pessoa)
+                join t_ps_oficina f on(f.cd_oficina = d.cd_oficina)
+                where a.cd_pessoa = ?
+                """;
+        List<Diagnostico> diagnosticos = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setLong(1, cdPessoa);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    diagnosticos.add(instanciaDiagnostico(rs));
+
+                }
+            }
+            return diagnosticos;
+        }
     }
 
     private Usuario instaciaUsuario(ResultSet rs) throws SQLException {
