@@ -79,19 +79,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="tx_diagnostico" id="679488C1-8016-6BD1-0CD9-2B3C5715EF83">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
-<generatorID>C89BF415-40E4-8378-8F59-EC2883B51E7A</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="cd_pessoa" id="92E800DC-9DDC-E9A2-8FAC-5B33A509C36E">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-05 23:38:36 UTC</createdTime>
@@ -104,7 +91,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
