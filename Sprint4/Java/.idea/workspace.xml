@@ -9,12 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="refactor: arrumando tratamento de erro">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/DiagnosticoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/DiagnosticoDaoImpl.java" afterDir="false" />
+    <list default="true" id="48f40ee4-ad3a-4367-a5bd-ea2d3e80b323" name="Changes" comment="feat: atualizando para ter um codigo para adicioanar no banco como a e i">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/DiagnosticoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/DiagnosticoDaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/DiagnosticoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dto/DiagnosticoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/DiagnosticoNotFound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exceptions/DiagnoticoNotCreated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/DiagnosticoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/DiagnosticoServiceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/DiagnosticoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/datatypes/Diagrams.local" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/datatypes/Diagrams.local" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/logical/Objects.local" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/logical/Objects.local" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/Objects.local" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/Objects.local" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/073E9F9E-C388-6973-4A0F-4A3B6AC88AAF.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/073E9F9E-C388-6973-4A0F-4A3B6AC88AAF.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/2122CBC9-A4C2-1048-F1D4-7B59D68F3654.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/2122CBC9-A4C2-1048-F1D4-7B59D68F3654.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/A6600BAC-FED8-A826-6899-31D964FAE7E8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/A6600BAC-FED8-A826-6899-31D964FAE7E8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/D7AC3856-8A0E-719F-02D5-2052ACE3B456.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Sprint2/Banco de dados/Banco-Sprint1/rel/B712F1F5-7F2925DDB4A7/table/seg_0/D7AC3856-8A0E-719F-02D5-2052ACE3B456.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/DiagnosticoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/DiagnosticoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dao/DiagnosticoDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/DiagnosticoDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Diagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Diagnostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Oficina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Oficina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Orcamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Orcamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/veiculo/[id]/components/InformacoesVeiculo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/veiculo/[id]/components/InformacoesVeiculo.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +47,9 @@
         <option value="Kotlin Class" />
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -344,118 +362,8 @@
       <workItem from="1730113162171" duration="11678000" />
       <workItem from="1730153266362" duration="7761000" />
       <workItem from="1730328560079" duration="4355000" />
-    </task>
-    <task id="LOCAL-00068" summary="feat: add dependencia do jersey">
-      <option name="closed" value="true" />
-      <created>1729825056716</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1729825056716</updated>
-    </task>
-    <task id="LOCAL-00069" summary="feat: configurando jersey">
-      <option name="closed" value="true" />
-      <created>1729825075807</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1729825075807</updated>
-    </task>
-    <task id="LOCAL-00070" summary="refactor: atualizando packages">
-      <option name="closed" value="true" />
-      <created>1729862988409</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1729862988409</updated>
-    </task>
-    <task id="LOCAL-00071" summary="feat: create dao de login">
-      <option name="closed" value="true" />
-      <created>1729863066332</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1729863066332</updated>
-    </task>
-    <task id="LOCAL-00072" summary="refactor: refatorando para retornar Logger">
-      <option name="closed" value="true" />
-      <created>1729863136611</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1729863136611</updated>
-    </task>
-    <task id="LOCAL-00073" summary="feat: add metodo para atualizar login">
-      <option name="closed" value="true" />
-      <created>1729863656430</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1729863656430</updated>
-    </task>
-    <task id="LOCAL-00074" summary="fix: removendo erro dbException">
-      <option name="closed" value="true" />
-      <created>1729865617882</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1729865617882</updated>
-    </task>
-    <task id="LOCAL-00075" summary="feat: add erro de login update">
-      <option name="closed" value="true" />
-      <created>1729865669415</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1729865669415</updated>
-    </task>
-    <task id="LOCAL-00076" summary="feat: create dao de usuario">
-      <option name="closed" value="true" />
-      <created>1729865692831</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1729865692831</updated>
-    </task>
-    <task id="LOCAL-00077" summary="feat: create service de usuario">
-      <option name="closed" value="true" />
-      <created>1729865702155</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1729865702155</updated>
-    </task>
-    <task id="LOCAL-00078" summary="refactor: atualizando para ser final">
-      <option name="closed" value="true" />
-      <created>1729866487343</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1729866487343</updated>
-    </task>
-    <task id="LOCAL-00079" summary="feat: add metodo de logar">
-      <option name="closed" value="true" />
-      <created>1729866513433</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1729866513433</updated>
-    </task>
-    <task id="LOCAL-00080" summary="refactor: removendo metodo de logar do usuarioService">
-      <option name="closed" value="true" />
-      <created>1729866548363</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1729866548363</updated>
-    </task>
-    <task id="LOCAL-00081" summary="feat: create usuario service factory">
-      <option name="closed" value="true" />
-      <created>1729866570929</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1729866570929</updated>
+      <workItem from="1730388332778" duration="2179000" />
+      <workItem from="1730391244217" duration="12646000" />
     </task>
     <task id="LOCAL-00082" summary="feat: create service de login com metodo de logar">
       <option name="closed" value="true" />
@@ -737,7 +645,119 @@
       <option name="project" value="LOCAL" />
       <updated>1730331148450</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="feat: começando implementação de diagnostico">
+      <option name="closed" value="true" />
+      <created>1730339877563</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1730339877563</updated>
+    </task>
+    <task id="LOCAL-00118" summary="fix: removendo a dependecia do jupiter">
+      <option name="closed" value="true" />
+      <created>1730394357762</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1730394357763</updated>
+    </task>
+    <task id="LOCAL-00119" summary="refactor: ajustando to string do cnpj e removendo o formatar cnpj">
+      <option name="closed" value="true" />
+      <created>1730394396289</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1730394396289</updated>
+    </task>
+    <task id="LOCAL-00120" summary="refactor: ajustando para o get retornar uma string">
+      <option name="closed" value="true" />
+      <created>1730394420864</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1730394420864</updated>
+    </task>
+    <task id="LOCAL-00121" summary="feat: criando e implementando dao de oficina">
+      <option name="closed" value="true" />
+      <created>1730394487341</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1730394487341</updated>
+    </task>
+    <task id="LOCAL-00122" summary="feat: criando erro de oficina não encontrada">
+      <option name="closed" value="true" />
+      <created>1730394515730</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1730394515730</updated>
+    </task>
+    <task id="LOCAL-00123" summary="feat: create oficina dao factory">
+      <option name="closed" value="true" />
+      <created>1730394621423</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1730394621423</updated>
+    </task>
+    <task id="LOCAL-00124" summary="feat: criando novo construtor">
+      <option name="closed" value="true" />
+      <created>1730416798557</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1730416798557</updated>
+    </task>
+    <task id="LOCAL-00125" summary="feat: criando erros de oficina">
+      <option name="closed" value="true" />
+      <created>1730416816035</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1730416816035</updated>
+    </task>
+    <task id="LOCAL-00126" summary="feat: criando dtos de request e response de oficina">
+      <option name="closed" value="true" />
+      <created>1730416834343</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1730416834343</updated>
+    </task>
+    <task id="LOCAL-00127" summary="feat: criando e implementando service">
+      <option name="closed" value="true" />
+      <created>1730416845862</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1730416845863</updated>
+    </task>
+    <task id="LOCAL-00128" summary="feat: criando controller de oficina">
+      <option name="closed" value="true" />
+      <created>1730416857054</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1730416857054</updated>
+    </task>
+    <task id="LOCAL-00129" summary="refactor: removendo erro">
+      <option name="closed" value="true" />
+      <created>1730416882664</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1730416882664</updated>
+    </task>
+    <task id="LOCAL-00130" summary="feat: atualizando para ter um codigo para adicioanar no banco como a e i">
+      <option name="closed" value="true" />
+      <created>1730416923612</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1730416923612</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -780,20 +800,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: criando metodo de logar no login controller" />
-    <MESSAGE value="refactor: alterando para retornar void e apenas setar o id no objeto" />
-    <MESSAGE value="feat: criando dto de request e response de usuario" />
-    <MESSAGE value="feat: criando metodo de add usuario na controller" />
-    <MESSAGE value="refactor: alterando para não retorna a senha" />
-    <MESSAGE value="feat: add metodo para buscar usuario por id" />
-    <MESSAGE value="feat: add metodo para buscar todos os usuarios" />
-    <MESSAGE value="refactor: alterando campo do dto de password para senha" />
-    <MESSAGE value="feat: criando o filtro do cors" />
-    <MESSAGE value="feat: registrando filtro" />
-    <MESSAGE value="feat: create dto de update" />
-    <MESSAGE value="feat: metodo de atulizar usuario" />
-    <MESSAGE value="refactor: alterando data para localdate" />
-    <MESSAGE value="fix: removendo testes unitarios" />
     <MESSAGE value="fix: arrumando erro no insert" />
     <MESSAGE value="feat: create dto de automovel" />
     <MESSAGE value="feat: create controller de automovel" />
@@ -805,7 +811,21 @@
     <MESSAGE value="refactor: add mensagem de erro" />
     <MESSAGE value="refactor: mandando erro para cima" />
     <MESSAGE value="refactor: arrumando tratamento de erro" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: arrumando tratamento de erro" />
+    <MESSAGE value="feat: começando implementação de diagnostico" />
+    <MESSAGE value="fix: removendo a dependecia do jupiter" />
+    <MESSAGE value="refactor: ajustando to string do cnpj e removendo o formatar cnpj" />
+    <MESSAGE value="refactor: ajustando para o get retornar uma string" />
+    <MESSAGE value="feat: criando e implementando dao de oficina" />
+    <MESSAGE value="feat: criando erro de oficina não encontrada" />
+    <MESSAGE value="feat: create oficina dao factory" />
+    <MESSAGE value="feat: criando novo construtor" />
+    <MESSAGE value="feat: criando erros de oficina" />
+    <MESSAGE value="feat: criando dtos de request e response de oficina" />
+    <MESSAGE value="feat: criando e implementando service" />
+    <MESSAGE value="feat: criando controller de oficina" />
+    <MESSAGE value="refactor: removendo erro" />
+    <MESSAGE value="feat: atualizando para ter um codigo para adicioanar no banco como a e i" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: atualizando para ter um codigo para adicioanar no banco como a e i" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
