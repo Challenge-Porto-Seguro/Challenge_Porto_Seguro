@@ -63,7 +63,7 @@ public class DiagnosticoController {
     }
 
     @GET
-    @Path("/id")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDiagnosticoById(@PathParam("id") Long id) {
         try {
@@ -77,7 +77,7 @@ public class DiagnosticoController {
     }
 
     @GET
-    @Path("/userId")
+    @Path("/buscar_todos/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllDiagnosticosByUserId(@PathParam("userId") Long userId) {
         try {
