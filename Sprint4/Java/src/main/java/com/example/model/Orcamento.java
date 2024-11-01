@@ -8,6 +8,7 @@ public class Orcamento {
 
     private Long id;
     private double valorTotal;
+    private Diagnostico diagnostico;
     private LocalDate diaOrcamento;
     private List<Pedido> pedidos = new ArrayList<>();
     private StatusOrcamento statusOrcamento;
@@ -57,6 +58,34 @@ public class Orcamento {
 
     public LocalDate getDiaOrcamento() {
         return diaOrcamento;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public Diagnostico getDiagnostico() {
+        return diagnostico;
+    }
+
+    public void setDiagnostico(Diagnostico diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    public void setDiaOrcamento(LocalDate diaOrcamento) {
+        this.diaOrcamento = diaOrcamento;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public StatusOrcamento getStatusOrcamento() {
+        return statusOrcamento;
+    }
+
+    public void setStatusOrcamento(StatusOrcamento statusOrcamento) {
+        this.statusOrcamento = statusOrcamento;
     }
 
     @Override

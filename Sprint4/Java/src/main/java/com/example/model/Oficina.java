@@ -36,11 +36,11 @@ public class Oficina extends Login {
     }
 
     //Um oficina pode fazer quantos orçamento quiser porem paga um valor a cada orçamento
-    public void addOrcamento(Diagnostico diagnostico, Orcamento orcamento) {
-        diagnostico.criarOrcamento(orcamento);
-        diagnosticos.add(diagnostico);
-        valorAPagar += 5;
-    }
+//    public void addOrcamento(Diagnostico diagnostico, Orcamento orcamento) {
+//        diagnostico.criarOrcamento(orcamento);
+//        diagnosticos.add(diagnostico);
+//        valorAPagar += 5;
+//    }
 
     @Override
     public String toString() {

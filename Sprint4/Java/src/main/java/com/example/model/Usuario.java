@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Usuario extends Login implements FazerOrcamento {
+public class Usuario extends Login /*implements FazerOrcamento*/ {
 
     private Cpf cpf;
     private int quantidadeOrcamento;
@@ -48,32 +48,28 @@ public class Usuario extends Login implements FazerOrcamento {
     }
 
     //Um usuario pode fazer ate 3 orçamentos por mes
-    @Override
-    public void addOrcamento(Long idAutomovel, Orcamento orcamento) {
-        for(Automovel automovel : automoveis){
-            if(Objects.equals(automovel.getId(), idAutomovel)){
-                if(quantidadeOrcamento == 0){
-                    diaUltimoOrcamento = orcamento.getDiaOrcamento();
-                }
-
-                Period period = Period.between(diaUltimoOrcamento, LocalDate.now());
-                int diferencaMeses = period.getMonths();
-                if(quantidadeOrcamento == 3 && diferencaMeses != 1){
-                    throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaUltimoOrcamento.getDayOfMonth() + " do mês: " + (diaUltimoOrcamento.getMonthValue() + 1));
-                } else if(diferencaMeses == 1) {
-                    quantidadeOrcamento = 0;
-                    this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
-                }
-                automovel.getDiagnostico().criarOrcamento(orcamento);
-                quantidadeOrcamento++;
-                break;
-            }
-        }
-
-    }
-
-    @Override
-    public String toString() {
-        return "Id: " + getId() + ", Nome: " + getNome() + ", Email: " + getEmail() + ", Cpf: " + getCpf() + ", Senha: " + getSenha() + " " + getQuantidadeOrcamento() + " " + getDiaUltimoOrcamento();
-    }
+//    @Override
+//    public void addOrcamento(Long idAutomovel, Orcamento orcamento) {
+//        for(Automovel automovel : automoveis){
+//            if(Objects.equals(automovel.getId(), idAutomovel)){
+//                if(quantidadeOrcamento == 0){
+//                    diaUltimoOrcamento = orcamento.getDiaOrcamento();
+//                }
+//
+//                Period period = Period.between(diaUltimoOrcamento, LocalDate.now());
+//                int diferencaMeses = period.getMonths();
+//                if(quantidadeOrcamento == 3 && diferencaMeses != 1){
+//                    throw new RuntimeException("Limite de orçamento por mês atingido\nVocê poda faze outro orçamento no dia: " + diaUltimoOrcamento.getDayOfMonth() + " do mês: " + (diaUltimoOrcamento.getMonthValue() + 1));
+//                } else if(diferencaMeses == 1) {
+//                    quantidadeOrcamento = 0;
+//                    this.diaUltimoOrcamento = orcamento.getDiaOrcamento();
+//                }
+//                automovel.getDiagnostico().criarOrcamento(orcamento);
+//                quantidadeOrcamento++;
+//                break;
+//            }
+////        }
+//
+//    }
+//
 }
