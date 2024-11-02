@@ -23,7 +23,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="1CB5D615-3C9C-6AE8-9E33-DB14357D02F8" referredColumn="D31CBDB7-BDFE-17BD-F638-A9F8EB5B0687"/>
+<colAssociation fkAssociation="B5F9FF3F-FCEF-F0A4-DD6C-774BAD60B33F" referredColumn="4E841A03-02A6-B89B-4CAD-17C765EDC1DE"/>
 </associations>
 </Column>
 <Column name="cd_produto" id="154E7D42-4FF9-67B0-0647-D65C5C395CD5">
@@ -89,17 +89,6 @@
 <colUsage columnID="154E7D42-4FF9-67B0-0647-D65C5C395CD5"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="493CA1CB-435F-953D-CCA8-586B3311AB5A" name="FK_ORCAMENTO_PEDIDO">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
-<generatorID>CE5495BD-8C50-D38C-4C6C-0E467012D352</generatorID>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="8D777F82-2D3E-0ED1-C0B0-ACDCEDE568BF"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="F3179122-0EFB-F610-5B09-5A489ABAB984" name="FK_PRODUTO_PEDIDO">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-09-04 00:49:27 UTC</createdTime>
@@ -109,6 +98,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="154E7D42-4FF9-67B0-0647-D65C5C395CD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8E84E480-2049-C297-9924-2BCEAE341A71" name="FK_ORCAMENTO_PEDIDO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
+<generatorID>CE5495BD-8C50-D38C-4C6C-0E467012D352</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D777F82-2D3E-0ED1-C0B0-ACDCEDE568BF"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

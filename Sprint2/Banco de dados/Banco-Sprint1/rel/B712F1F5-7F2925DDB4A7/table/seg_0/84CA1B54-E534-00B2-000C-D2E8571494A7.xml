@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D0988ADA-3E90-4AEF-27B0-D501EAD6EB2D" name="T_PS_ORCAMENTO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="84CA1B54-E534-00B2-000C-D2E8571494A7" name="T_PS_ORCAMENTO">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
 <generatorID>97221D97-8CB5-072B-CBF7-5D0943C9283E</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cd_orcamento" id="D31CBDB7-BDFE-17BD-F638-A9F8EB5B0687">
+<Column name="cd_orcamento" id="4E841A03-02A6-B89B-4CAD-17C765EDC1DE">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
 <comment><![CDATA[Esse atributo irá receber a chave primária do orcamento. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
 <commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do orcamento. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>7A38B30B-EAF6-1377-2C65-23C6F52C10D3</generatorID>
@@ -25,9 +25,9 @@
 <autoIncrementSequenceName>SQ_T_PS_ORCAMENTO</autoIncrementSequenceName>
 <autoIncrementTriggerName>TG_T_PS_ORCAMENTO</autoIncrementTriggerName>
 </Column>
-<Column name="st_orcamento" id="3A25319B-9EDB-A8E9-F5D9-CBF9C0D382DF">
+<Column name="st_orcamento" id="713B2863-3D38-44AD-61C4-F84A61219545">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
 <comment><![CDATA[Esse atributo irá recebero status  do orcamento. Podendo receber a de ativo ou i de inativo. Seu conteúdo é obrigatório.]]></comment>
 <commentInRDBMS><![CDATA[Esse atributo irá recebero status  do orcamento. Podendo receber a de ativo ou i de inativo. Seu conteúdo é obrigatório.]]></commentInRDBMS>
 <generatorID>54BE0754-1128-49E2-6767-C1F0A774216F</generatorID>
@@ -44,12 +44,11 @@
 <ownDataTypeParameters>2,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cd_diagnostico" id="A8B7F1B5-F2F8-D8E5-35AC-194EC4052CE9">
+<Column name="cd_diagnostico" id="0049D7E1-8C04-141C-F52D-3CD3F1ED570D">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-12 00:36:32 UTC</createdTime>
-<comment><![CDATA[Esse atributo irá receber a chave primária do diagnosticol. Esse número é sequencial iniciando com 1 a partir do cd do diagnostico  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
-<commentInRDBMS><![CDATA[Esse atributo irá receber a chave primária do diagnosticol. Esse número é sequencial iniciando com 1 a partir do cd do diagnostico  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></commentInRDBMS>
-<generatorID>649CB172-18A7-CD8E-A30C-480453B4018A</generatorID>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
+<comment><![CDATA[Esse atributo irá receber a chave primária do diagnostico. Esse número é sequencial e gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>
+<generatorID>5FDE2C7D-2AD7-08A7-8DC5-198C7754D984</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -59,43 +58,32 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="04DA64A6-CA45-F451-2DB4-F8FCF7AB3698" referredColumn="E9BE0FD4-8288-0F44-19CF-2CDC2013275F"/>
+<colAssociation fkAssociation="74BC96E7-5FA0-9619-F5BD-8BF996645FFD" referredColumn="E9BE0FD4-8288-0F44-19CF-2CDC2013275F"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="6688B618-745A-72DA-58FF-516BA5B5E090" name="ORCAMENTO_PK">
+<ind_PK_UK id="457CE374-A632-FF2B-B1ED-E894DEC3A740" name="ORCAMENTO_PK">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-04 00:49:27 UTC</createdTime>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
 <generatorID>9BBED5DD-D8AD-E109-0EEA-989BA9A52727</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="D31CBDB7-BDFE-17BD-F638-A9F8EB5B0687"/>
+<colUsage columnID="4E841A03-02A6-B89B-4CAD-17C765EDC1DE"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="0586F0CC-8050-FE03-3607-7653550E5B5F" name="T_PS_ORCAMENTO__IDX">
+<ind_PK_UK id="7075E4FD-4708-EBC1-E2F6-B429570F32DB" name="FK_DIAGNOSTICO_ORCAMENTO">
 <createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-12 00:36:32 UTC</createdTime>
-<ownerDesignName>Banco-Sprint1</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>F31611E6-0DC3-D970-C9A0-C1140ABF4FCE</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="A8B7F1B5-F2F8-D8E5-35AC-194EC4052CE9"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="1A6ED08A-7771-F007-05FC-92733AC98D4A" name="FK_DIAGNOSTICO_ORCAMENTOv1">
-<createdBy>Pedro Henrique</createdBy>
-<createdTime>2024-09-12 00:36:32 UTC</createdTime>
-<generatorID>F31611E6-0DC3-D970-C9A0-C1140ABF4FCE</generatorID>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
+<generatorID>5168D340-7170-2845-388D-20C0CD8615EE</generatorID>
 <ownerDesignName>Banco-Sprint1</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="A8B7F1B5-F2F8-D8E5-35AC-194EC4052CE9"/>
+<colUsage columnID="0049D7E1-8C04-141C-F52D-3CD3F1ED570D"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

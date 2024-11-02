@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cd_pessoa" id="05C8761C-3C8F-D476-D2FC-94154535E537">
+<Attribute name="cd_oficina" id="05C8761C-3C8F-D476-D2FC-94154535E537">
 <createdBy>Pedro Henrique</createdBy>
 <createdTime>2024-05-21 12:57:50 UTC</createdTime>
 <comment><![CDATA[Esse atributo irá receber a chave primária da oficina. Esse número é sequencial iniciando com 1 a partir do id da pessoa  e é  gerado automaticamente pelo sistema. Seu conteúdo é obrigatório.]]></comment>

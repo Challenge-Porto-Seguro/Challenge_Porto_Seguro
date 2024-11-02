@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B5F9FF3F-FCEF-F0A4-DD6C-774BAD60B33F" containerWithKeyObject="98A7F77B-CF8B-62DB-883B-DA85C32F7D32" localFKIndex="8E84E480-2049-C297-9924-2BCEAE341A71" name="FK_ORCAMENTO_PEDIDO">
+<createdBy>Pedro Henrique</createdBy>
+<createdTime>2024-11-02 15:17:15 UTC</createdTime>
+<generatorID>CE5495BD-8C50-D38C-4C6C-0E467012D352</generatorID>
+<ownerDesignName>Banco-Sprint1</ownerDesignName>
+<referredTableLongName>T_PS_ORCAMENTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>84CA1B54-E534-00B2-000C-D2E8571494A7</referredTableID>
+<keyObject>457CE374-A632-FF2B-B1ED-E894DEC3A740</keyObject>
+<referredKeyID>457CE374-A632-FF2B-B1ED-E894DEC3A740</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_orcamento</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
