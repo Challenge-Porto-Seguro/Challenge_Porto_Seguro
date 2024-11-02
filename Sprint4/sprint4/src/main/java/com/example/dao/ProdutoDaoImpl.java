@@ -24,7 +24,6 @@ final class ProdutoDaoImpl implements ProdutoDao {
             cs.registerOutParameter(4, Types.NUMERIC);
             cs.execute();
             Long id = cs.getLong(4);
-            System.out.println(id);
             produto.setId(id);
         }
     }
