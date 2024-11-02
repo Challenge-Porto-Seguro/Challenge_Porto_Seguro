@@ -24,7 +24,18 @@ export type UserCadastro = {
     cpf: string
     email: string
     senha: string
+    cep: string,
+    numero: number
+}
 
+export type OficinaCadastro = {
+    nome: string
+    cnpj: string
+    inscricaoEstadual: string
+    email: string
+    senha: string
+    cep: string,
+    numero: number
 }
 
 export type alterar = {
