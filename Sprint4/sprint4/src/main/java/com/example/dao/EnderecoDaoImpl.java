@@ -83,25 +83,11 @@ final class EnderecoDaoImpl implements EnderecoDao {
             ps.setLong(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    Endereco endereco = instanciaEndereco(rs);
+                    Endereco endereco = InstanciaObjetos.instanciaEndereco(rs);
                     return Optional.of(endereco);
                 }
             }
         }
         return Optional.empty();
-    }
-
-    private Endereco instanciaEndereco(ResultSet rs) throws SQLException {
-        Endereco endereco = new Endereco(rs.getString("nm_rua")
-                , rs.getInt("nr_casa")
-                , rs.getString("sq_cep")
-                , rs.getString("nm_bairro")
-                , rs.getString("nm_cidade")
-                ,rs.getString("nm_estado")
-                );
-        endereco.setId(rs.getLong("cd_endereco"));
-        endereco.setLogin(rs.getLong("cd_pessoa"));
-
-        return endereco;
     }
 }

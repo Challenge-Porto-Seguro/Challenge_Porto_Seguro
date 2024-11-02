@@ -63,7 +63,7 @@ final class OficinaDaoImpl implements OficinaDao {
     @Override
     public Optional<Oficina> findById(Connection conn, Long id) throws SQLException {
         String sql = """
-            select oficina.sq_cnpj, oficina.sq_inscricao_estadual, login.* from T_PS_OFICINA oficina
+            select oficina.cd_oficina, oficina.sq_cnpj, oficina.sq_inscricao_estadual, login.* from T_PS_OFICINA oficina
             join T_PS_PESSOA login on oficina.cd_oficina = login.cd_pessoa
             where oficina.cd_oficina = ?
         """;
@@ -72,7 +72,7 @@ final class OficinaDaoImpl implements OficinaDao {
             ps.setLong(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return Optional.of(instaciaOficina(rs));
+                    return Optional.of(InstanciaObjetos.instaciaOficina(rs));
                 }
             }
         }
@@ -91,15 +91,10 @@ final class OficinaDaoImpl implements OficinaDao {
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                oficinas.add(instaciaOficina(rs));
+                oficinas.add(InstanciaObjetos.instaciaOficina(rs));
             }
         }
         return oficinas;
     }
 
-    private Oficina instaciaOficina(ResultSet rs) throws SQLException {
-        Oficina oficina = new Oficina(rs.getString("nm_nome"), rs.getString("sq_cnpj"), rs.getString("nm_email"), rs.getString("sq_senha"), rs.getString("sq_inscricao_estadual"));
-        oficina.setId(rs.getLong("cd_pessoa"));
-        return oficina;
-    }
 }
