@@ -1,16 +1,16 @@
 import { UserCadastro } from "@/type"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { use, useState } from "react"
 import Modal from "../../../../components/Modal"
 import { MdSaveAs } from "react-icons/md"
 
 export default function CadastroUsuarioForm() {
 
     const [user, setUser] = useState<UserCadastro>(
-        {nome: "", cpf: "", email: "", senha: ""}
+        {nome: "", cpf: "", email: "", senha: "", cep: "", numero: 0}
     )
-    const [errors, setErrors] = useState<UserCadastro>({
-        nome: "", cpf: "", email: "", senha: ""
+    const [errors, setErrors] = useState({
+        nome: "", cpf: "", email: "", senha: "", cep: "", numero: ""
     })
     const [open, setOpen] = useState(false)
 
@@ -23,7 +23,7 @@ export default function CadastroUsuarioForm() {
 
     const validaFormulario = () => {
         let isValid = true;
-        const newError = { nome: "", cpf: "", email: "", senha: "" };
+        const newError = { nome: "", cpf: "", email: "", senha: "", cep: "", numero: ""};
 
         if(!user.nome){
             newError.nome = "Nome é obrigatorio"
@@ -49,6 +49,17 @@ export default function CadastroUsuarioForm() {
         } else if (user.senha.length < 6){
             newError.senha = "Senha deve ser maior que 6 caracteres"
             isValid = false
+        }
+        
+        const regex = /[a-zA-Z]/
+        if(!user.cep){
+            newError.cep = "Cep é obrigatorio"
+        } else if (regex.test(user.cep)){
+            newError.cep = "Cep deve conter apenas numeros"
+        }
+
+        if(user.numero == 0){
+            newError.numero = "numero invalido" 
         }
 
         setErrors(newError)
@@ -86,13 +97,17 @@ export default function CadastroUsuarioForm() {
                 } else{
                     const data = await response.json()
                     const mensagem = data.message.toLowerCase()
-                    const newError = { nome: "", cpf: "", email: "", senha: "" };
+                    const newError = { nome: "", cpf: "", email: "", senha: "", cep: "", numero: "" };
                     if(mensagem.includes("senha")){
                         newError.senha = "senha invalida"
                     } else if(mensagem.includes("email")){
                         newError.email = "email invalido"
                     } else if(mensagem.includes("cpf")){
                         newError.cpf = "cpf invalido"
+                    } else if(mensagem.includes("cep")){
+                        newError.cpf = "cep invalido"
+                    } else if(mensagem.includes("numero")){
+                        newError.cpf = "numero invalido"
                     }
                     setErrors(newError)
                 }
@@ -129,11 +144,23 @@ export default function CadastroUsuarioForm() {
                 {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
             </div>
 
-            <div className="w-2/3 flex justify-between">
-                <div>
+            <div className="w-2/3">
+                <label className="mb-5">CEP <span className="text-red-600">*</span></label>
+                <input type="text" name="cep" placeholder="Digite seu cep" className="formulario_cadastro" onChange={cadastroChange}/>
+                {errors.cep && <p className="text-red-700 m-2">{errors.cep}</p>}
+             </div>
+
+            <div className="w-2/3">
+                <label className="mb-5">NUMERO  <span className="text-red-600">*</span></label>
+                <input type="number" name="numero" placeholder="Digite seu numero" className="formulario_cadastro" onChange={cadastroChange}/>
+                {errors.numero && <p className="text-red-700 m-2">{errors.numero}</p>}
+            </div>
+
+            <div className="flex flex-col justify-center sm:w-2/3 sm:flex-row sm:justify-between">
+                <div className="text-center sm:text-left">
                     <button type="submit" className="bg-blue-600 p-3 pl-16 pr-16">Cadastrar</button>
                 </div>
-                <p className="w-1/3">Ao preencher o formulario acima você concorda com os nossos termos de uso e nossa politica de privacidade</p>
+                <p className="sm:w-1/3 sm:m-0 mt-5">Ao preencher o formulario acima você concorda com os nossos termos de uso e nossa politica de privacidade</p>
             </div>
         </form>
         <Modal open={open} onClose={() => setOpen(false)}>

@@ -28,22 +28,33 @@ export default function CadastroUsuario() {
 
   return(
     <main className="grow flex flex-col items-center p-8">
-
       <section className="text-center border-b-2">
-        <h1 className="text-5xl text-black">Crie seu Cadastro</h1>
-        <h2 className="text-md m-5">Para ser cliente é necessario preencher corretamento o formulario abaixo com os respectivos dados cadastrais. Os campos com * são de preenchimento obrigatório e essenciais para realizarmos o envio do seu futuro pedido</h2>
+        <h1 className="sm:text-5xl text-black text-4xl font-bold ">Crie seu Cadastro</h1>
+        <h2 className="text-md mt-5 md:m-5">
+          Para ser cliente é necessário preencher corretamente o formulário abaixo com os respectivos dados cadastrais. Os campos com * são de preenchimento obrigatório e essenciais para realizarmos o envio do seu futuro pedido.
+        </h2>
       </section>
-        
+      
       <div className="flex gap-8 justify-center m-5">
         <div className="flex gap-2 items-center">
-          <input checked={pessoaIsChecked} onChange={handlePessoaChange} type="checkbox" className="w-4 h-4 appearance-none rounded-xl border-2 border-black checked:bg-blue-500 checked:border-blue-500 focus:outline-none"/>
-          <p>Usuario</p>
+          <input 
+            checked={pessoaIsChecked} 
+            onChange={handlePessoaChange} 
+            type="checkbox" 
+            className="w-4 h-4 appearance-none rounded-xl border-2 border-black checked:bg-blue-500 checked:border-blue-500 focus:outline-none"
+          />
+          <p>Usuário</p>
         </div>
 
         <div className="flex gap-2 items-center">
-          <input checked={oficinaIsChecked} onChange={handleOficinaChange} type="checkbox" className="w-4 h-4 appearance-none rounded-xl border-2 border-black checked:bg-blue-500 checked:border-blue-500 focus:outline-none"/>
+          <input 
+            checked={oficinaIsChecked} 
+            onChange={handleOficinaChange} 
+            type="checkbox" 
+            className="w-4 h-4 appearance-none rounded-xl border-2 border-black checked:bg-blue-500 checked:border-blue-500 focus:outline-none"
+          />
           <p>Oficina</p>
-          </div>
+        </div>
       </div>
       
       {
