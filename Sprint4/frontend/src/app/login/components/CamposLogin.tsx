@@ -91,7 +91,7 @@ export default function CamposLogin({erro, clearErro} : {erro:() => void, clearE
                 {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
                 <p className="text-indigo-500 m-2">Esqueceu sua senha?</p>
             </div>
-            <button type="submit" className="bg-blue-400 p-3 pl-28 pr-28 rounded-3xl text-white text-xl">Entrar</button>
+            <button type="submit" className="bg-blue-400 p-3 px-14 sm:px-20 md:px-28 rounded-3xl text-white text-xl">Entrar</button>
         </form>
                 
     )
