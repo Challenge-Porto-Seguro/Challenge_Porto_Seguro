@@ -17,8 +17,8 @@ public abstract class Login implements VerificaDados {
     }
 
     public Login(String nome, String senha) {
-        this.nome = nome;
-        this.senha = senha;
+        setNome(nome);
+        setSenha(senha);
     }
 
     public Long getId() {
@@ -58,22 +58,12 @@ public abstract class Login implements VerificaDados {
         return senha;
     }
 
-    public void alterarSenha(String email, String novaSenha){
-
-        if(email.equals(this.email)){
-            if(ValidaInformacoesLogin.validaSenha(novaSenha)){
-                senha = novaSenha;
-                System.out.println("Senha alterada com sucesso!");
-            } else {
-                throw new RuntimeException("Nova senha esta invalida");
-            }
+    public void setSenha(String novaSenha){
+        if (ValidaInformacoesLogin.validaSenha(novaSenha)) {
+            senha = novaSenha;
         } else {
-            throw new RuntimeException("Não foi possivel alterar senha! Pois não existe Usuario com esse email!");
+            throw new RuntimeException("senha esta invalida");
         }
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     @Override
@@ -87,10 +77,6 @@ public abstract class Login implements VerificaDados {
         if(!ValidaInformacoesLogin.validaSenha(senha)){
             throw new RuntimeException("Senha invalida");
         }
-    }
-
-    public void mudarStatusOrcamento(Orcamento orcamento){
-        orcamento.setStatus(StatusOrcamento.INATIVO);
     }
 
 }
