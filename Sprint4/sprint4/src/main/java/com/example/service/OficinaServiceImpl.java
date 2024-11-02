@@ -23,6 +23,7 @@ final class OficinaServiceImpl implements OficinaService {
         try {
             loginService.cadastrar(connection, oficina);
             oficinaDao.insertOficina(connection, oficina);
+            endereco.setLogin(oficina.getId());
             enderecoService.cadastraEndereco(connection, endereco);
             connection.commit();
             return oficina;
