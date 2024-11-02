@@ -37,7 +37,7 @@ final class LoginServiceImpl implements LoginService {
         }
     }
     @Override
-    public void cadastrar(Connection connection, Login login) throws LoginNotCreate, CadastroInvalido, SQLException {
+    public void cadastrar(Connection connection, Login login) throws LoginNotCreate, CadastroInvalido {
         try {
             try {
                 loginDao.logar(connection, login.getEmail());
@@ -52,7 +52,7 @@ final class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public void update(Connection connection, Login login) throws LoginNotFound, LoginNotUpdade, SQLException {
+    public void update(Connection connection, Login login) throws LoginNotFound, LoginNotUpdade {
         try {
             login.setSenha(BCrypt.hashpw(login.getSenha(), BCrypt.gensalt()));
             loginDao.updateLogin(connection, login);
