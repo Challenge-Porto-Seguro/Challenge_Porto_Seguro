@@ -93,7 +93,7 @@ final class AutomovelDaoImpl implements AutomovelDao {
 
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    Automovel automovel = instanciaAutomovel(rs);
+                    Automovel automovel = InstanciaObjetos.instanciaAutomovel(rs);
                     return Optional.of(automovel);
                 }
             }
@@ -118,22 +118,11 @@ final class AutomovelDaoImpl implements AutomovelDao {
 
             try (ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
-                    automoveis.add(instanciaAutomovel(rs));
+                    automoveis.add(InstanciaObjetos.instanciaAutomovel(rs));
                 }
             }
         }
         return automoveis;
     }
 
-    private Automovel instanciaAutomovel(ResultSet rs) throws SQLException {
-        Automovel automovel = new Automovel(rs.getString("nm_marca_veiculo"), rs.getString("nm_modelo_veiculo"), rs.getString("sq_placa"), rs.getDate("dt_veiculo").toLocalDate(), instaciaUsuario(rs));
-        automovel.setId(rs.getLong("cd_automovel"));
-        return automovel;
-    }
-
-    private Usuario instaciaUsuario(ResultSet rs) throws SQLException {
-        Usuario usuario = new Usuario(rs.getString("nm_nome"), rs.getString("sq_cpf"), rs.getString("nm_email"), rs.getString("sq_senha"));
-        usuario.setId(rs.getLong("cd_pessoa"));
-        return usuario;
-    }
 }

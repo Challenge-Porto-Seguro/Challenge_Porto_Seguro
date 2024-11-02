@@ -71,7 +71,7 @@ final class UsuarioDaoImpl implements UsuarioDao {
             ps.setLong(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return Optional.of(instaciaUsuario(rs));
+                    return Optional.of(InstanciaObjetos.instaciaUsuario(rs));
                 }
             }
         }
@@ -91,16 +91,9 @@ final class UsuarioDaoImpl implements UsuarioDao {
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                usuarios.add(instaciaUsuario(rs));
+                usuarios.add(InstanciaObjetos.instaciaUsuario(rs));
             }
         }
         return usuarios;
-    }
-
-
-    private Usuario instaciaUsuario(ResultSet rs) throws SQLException {
-        Usuario usuario = new Usuario(rs.getString("nm_nome"), rs.getString("sq_cpf"), rs.getString("nm_email"), rs.getString("sq_senha"));
-        usuario.setId(rs.getLong("cd_pessoa"));
-        return usuario;
     }
 }
