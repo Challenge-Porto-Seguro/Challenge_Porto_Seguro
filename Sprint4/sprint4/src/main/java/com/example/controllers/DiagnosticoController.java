@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import com.example.dto.DiagnosticoByIdResponse;
 import com.example.dto.DiagnosticoRequest;
 import com.example.dto.DiagnosticoResponse;
 import com.example.exceptions.*;
@@ -22,6 +23,7 @@ public class DiagnosticoController {
     private OficinaService oficinaService = OficinaServiceFactory.getOficinaService();
     private AutomovelService automovelService = AutomovelServiceFactory.getAutomovelService();
 
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -32,13 +34,17 @@ public class DiagnosticoController {
             Diagnostico diagnostico = new Diagnostico(dto.descricao(), LocalDate.parse(dto.dt_inicio(), DateTimeFormatter.ofPattern("dd/MM/yyyy")), VerificaDiagnostico.DIAGNOSTICO_NAO_RESOLVIDO);
             diagnostico.setAutomovel(automovel);
             diagnostico.setOficina(oficina);
-            Diagnostico newDiagnostico = diagnosticoService.insertDiagnostico(diagnostico);
+            Orcamento orcamento = new Orcamento(StatusOrcamento.ATIVO, diagnostico);
+            Produto produto = new Produto(dto.peca(), null, dto.preco());
+            ItensOrcamento itensOrcamento = new ItensOrcamento(dto.quantidade());
+            Diagnostico newDiagnostico = diagnosticoService.insertDiagnostico(diagnostico, orcamento, produto, itensOrcamento);
             return Response.ok(getDiagnostico(newDiagnostico)).build();
-        }
-        catch (DiagnoticoNotCreated | SQLException e) {
+        } catch (MaximoDiagnosticoException e) {
+            return Response.status(Response.Status.TOO_MANY_REQUESTS).entity(Map.of("error", e.getMessage())).build();
+        } catch (DiagnoticoNotCreated | SQLException | ProdutoNotCreate e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
-        } catch (OficinaNotFound | AutomovelNotFound e) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("error", e.getMessage())).build();
+        } catch (OficinaNotFound | AutomovelNotFound | ProdutoNotFound e) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("error", "não encontrado")).build();
         }
     }
 
@@ -57,8 +63,8 @@ public class DiagnosticoController {
         }
         catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
-        } catch (DiagnosticoNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", e.getMessage())).build();
+        } catch (DiagnosticoNotFound | OrcamentoNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Não encontrado")).build();
         }
     }
 
@@ -67,12 +73,16 @@ public class DiagnosticoController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDiagnosticoById(@PathParam("id") Long id) {
         try {
-            Diagnostico diagnostico = diagnosticoService.getDiagnosticoById(id);
-            return Response.ok(getDiagnostico(diagnostico)).build();
+            DiagnosticoByIdResponse diagnostico = diagnosticoService.getDiagnosticoById(id);
+            return Response.ok(diagnostico).build();
         }catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
         } catch (DiagnosticoNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", e.getMessage())).build();
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Diagnostico não encotrado")).build();
+        } catch (OrcamentoNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Orçamento não encotrado")).build();
+        } catch (ProdutoNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Produto não encotrado")).build();
         }
     }
 
@@ -91,9 +101,31 @@ public class DiagnosticoController {
         }
     }
 
-    private DiagnosticoResponse getDiagnostico(Diagnostico diagnostico) {
-        return new DiagnosticoResponse(diagnostico.getAutomovel().getId(), diagnostico.getDescricao(), diagnostico.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                diagnostico.getOficina().getId(), diagnostico.getDataFinalizado().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), diagnostico.getStatus().toString());
+    @DELETE
+    @Path("/{id}")
+    public Response deleteDiagnostico(@PathParam("id") Long id) {
+        try {
+            diagnosticoService.deleteDiagnostico(id);
+            return Response.status(Response.Status.NO_CONTENT).build();
+        } catch (OrcamentoNotFound  e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "orcamento não encontrado")).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
+        } catch (DiagnosticoNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "diagnostico não encontrado")).build();
+        } catch (ItensOrcamentoNotFound e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "itens orcamento não encontrado")).build();
+        }
     }
 
+    private DiagnosticoResponse getDiagnostico(Diagnostico diagnostico) {
+        String date;
+        try {
+            date = diagnostico.getDataFinalizado().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        } catch (RuntimeException e) {
+            date = null;
+        }
+        return new DiagnosticoResponse(diagnostico.getId(), diagnostico.getAutomovel().getId(), diagnostico.getDescricao(), diagnostico.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                diagnostico.getOficina().getId(), date , diagnostico.getStatus().toString());
+    }
 }
