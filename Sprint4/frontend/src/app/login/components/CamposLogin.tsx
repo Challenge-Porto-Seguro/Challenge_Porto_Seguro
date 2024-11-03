@@ -65,8 +65,13 @@ export default function CamposLogin({erro, clearErro} : {erro:() => void, clearE
                 if (response.ok) {
                     const data = await response.json()
                     console.log(data);
-                    sessionStorage.setItem("id", data)
-                    navigate.push("/cliente")
+                    sessionStorage.setItem("id", data.id)
+                    if(data.tipo == "USUARIO"){
+                        navigate.push("/cliente")
+                    } else {
+                        navigate.push("/oficina")
+                    }
+                    
                 } else {
                     erro()
                 }
