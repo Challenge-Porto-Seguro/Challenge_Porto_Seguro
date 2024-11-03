@@ -20,9 +20,9 @@ export default function Home() {
         <main className="grow">
             <Header />
             <Introducao />
-            <section className="p-8 border-b-2 border-gray-400" id="diferenciais">
-              <h2 className="text-4xl text-center uppercase font-semibold">Por que utilizar nosso site</h2>
-              <div className="flex justify-center items-center gap-2 ">
+            <section className="p-5 md:p-8 border-b-2 border-gray-400" id="diferenciais">
+              <h2 className="text-3xl md:text-4xl text-center uppercase font-semibold">Por que utilizar nosso site</h2>
+              <div className="flex flex-col md:flex-row md:justify-center items-center gap-2 ">
                 {listCard.map((card, index) => (
                   <Card key={index} img={card.img} titulo={card.titulo} descricao={card.descricao} />
                 ))}
