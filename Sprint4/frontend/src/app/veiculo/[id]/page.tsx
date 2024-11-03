@@ -66,8 +66,10 @@ export default function Veiculo({params} : {params:{id:number}}) {
   return(
     <main>
       <InformacoesVeiculo id={carro.id} data={carro.data} marca={carro.marca} modelo={carro.modelo} placa={carro.placa} reload={() => reload}/>
-      <Link href={"/chatbot"}>Iniciar diagnostico</Link>
       <Carrosel diagnosticos={diagnosticos} />
+      <div className="w-full text-center">
+        <Link href={"/chatbot"} className="text-3xl font-bold uppercase my-10 border-2 border-blue-500 rounded-xl p-3 hover:bg-blue-300">Iniciar diagnostico</Link>
+      </div>
     </main>
       
   )

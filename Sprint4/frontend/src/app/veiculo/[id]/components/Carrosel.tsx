@@ -38,7 +38,7 @@ export default function Carrosel({ diagnosticos }: { diagnosticos: Diagnostico[]
     };
 
     return (
-        <div className="w-full">
+        <div className="w-full mt-10">
             <div className="overflow-hidden relative">
                 <div
                     className="flex transition-transform ease-out duration-500"
