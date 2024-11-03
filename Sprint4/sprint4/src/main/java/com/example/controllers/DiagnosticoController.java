@@ -125,7 +125,7 @@ public class DiagnosticoController {
         } catch (RuntimeException e) {
             date = null;
         }
-        return new DiagnosticoResponse(diagnostico.getId(), diagnostico.getAutomovel().getId(), diagnostico.getDescricao(), diagnostico.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                diagnostico.getOficina().getId(), date , diagnostico.getStatus().toString());
+        return new DiagnosticoResponse(diagnostico.getId(), diagnostico.getAutomovel().getId(), diagnostico.getAutomovel().getMarca(), diagnostico.getDescricao(), diagnostico.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                diagnostico.getOficina().getId(), diagnostico.getOficina().getNome(), date , diagnostico.getStatus().toString());
     }
 }
