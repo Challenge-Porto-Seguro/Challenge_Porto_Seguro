@@ -133,7 +133,7 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
     <div className="grow flex flex-col justify-center items-center">
         <h1 className="font-bold text-2xl lg:text-4xl">Informações da conta</h1>
         <div className="flex gap-4 w-full justify-center mt-5">
-            <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed lg:w-2/4">
+            <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed md:w-full">
                 <label htmlFor="email" className="text-sm font-semibold cursor-not-allowed">Email</label>
                 <div className="flex justify-between">
                     <input id="email" value={email} type="email" className="bg-gray-300 focus:outline-none cursor-not-allowed" disabled/>
@@ -145,29 +145,29 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
         
           
         <form onSubmit={modal} className="flex flex-col items-center justify-center w-full">
-            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} lg:w-2/4`}>
+            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} md:w-full `}>
                 <label htmlFor="nome" className="text-sm font-semibold" >Nome:</label>
                 <input id="nome" type="text" value={oficina.nome} name="nome" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
             </div>
             {errors.nome && <p className="text-red-700 m-2">{errors.nome}</p>}
-            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} lg:w-2/4`}>
+            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} md:w-full `}>
                 <label htmlFor="cpf" className="text-sm font-semibold">Cnpj:</label>
                 <input id="cpf" type="text" name="cnpj" value={oficina.cnpj} disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`} />
             </div>
             {errors.cnpj && <p className="text-red-700 m-2">{errors.cnpj}</p>}
-            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} lg:w-2/4`}>
+            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} md:w-full `}>
                 <label htmlFor="inscricaoEstadual" className="text-sm font-semibold">Cnpj:</label>
                 <input id="inscricaoEstadual" type="text" name="inscricaoEstadual" value={oficina.inscricaoEstadual} disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`} />
             </div>
             {errors.inscricaoEstadual && <p className="text-red-700 m-2">{errors.inscricaoEstadual}</p>}
-            <div className={`flex flex-col mt-5 border-2 px-6  border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} lg:w-2/4`}>
+            <div className={`flex flex-col mt-5 border-2 px-6  border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} md:w-full `}>
                 <label htmlFor="senha" className="text-sm font-semibold">Senha:</label>
                 <input id="senha" type="password" value={oficina.senha} name="senha" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
             </div>
             {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
             {alteraCampo && <button onClick={limparCampo} className="text-red-600 font-medium mt-1">Limpar</button>}
             <div className="flex gap-4 w-full justify-center mt-5">
-                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed lg:w-2/4">
+                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed md:w-full ">
                     <label htmlFor="rua" className="text-sm font-semibold cursor-not-allowed">Rua</label>
                     <div className="flex justify-between">
                         <input id="rua" value={rua} type="text" className="bg-gray-300 focus:outline-none cursor-not-allowed" disabled/>
@@ -177,7 +177,7 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
                 </div>
             </div>
             <div className="flex gap-4 w-full justify-center mt-5">
-                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed lg:w-2/4">
+                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed md:w-full ">
                     <label htmlFor="bairro" className="text-sm font-semibold cursor-not-allowed">Bairro</label>
                     <div className="flex justify-between">
                         <input id="bairro" value={bairro} type="text" className="bg-gray-300 focus:outline-none cursor-not-allowed" disabled/>
@@ -187,7 +187,7 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
                 </div>
             </div>  
             <div className="flex gap-4 w-full justify-center mt-5">
-                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed lg:w-2/4">
+                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed md:w-full ">
                     <label htmlFor="cidade" className="text-sm font-semibold cursor-not-allowed">Cidade</label>
                     <div className="flex justify-between">
                         <input id="cidade" value={cidade} type="text" className="bg-gray-300 focus:outline-none cursor-not-allowed" disabled/>
@@ -197,7 +197,7 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
                 </div>
             </div>  
             <div className="flex gap-4 w-full justify-center mt-5">
-                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed lg:w-2/4">
+                <div className="flex flex-col bg-gray-300 px-3 border-2 border-black cursor-not-allowed md:w-full ">
                     <label htmlFor="estado" className="text-sm font-semibold cursor-not-allowed">Estado</label>
                     <div className="flex justify-between">
                         <input id="estado" value={estado} type="text" className="bg-gray-300 focus:outline-none cursor-not-allowed" disabled/>
@@ -205,12 +205,12 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
                     </div>
                 </div>
             </div> 
-            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} lg:w-2/4`}>
+            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} md:w-full `}>
                 <label htmlFor="cep" className="text-sm font-semibold">Cep:</label>
                 <input id="cep" type="text" value={oficina.cep} name="ceo" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
             </div>
             {errors.cep && <p className="text-red-700 m-2">{errors.cep}</p>}
-            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} lg:w-2/4`}>
+            <div className={`flex flex-col mt-5 border-2 px-6 border-black lg:px-3 ${!alteraCampo && "cursor-not-allowed bg-gray-300"} md:w-full `}>
                 <label htmlFor="numero" className="text-sm font-semibold">Numero:</label>
                 <input id="numero" type="number" value={oficina.numero} name="numero" disabled={!alteraCampo} onChange={updateChange} className={`focus:outline-none ${alteraCampo ? "bg-white" : "bg-gray-300"}`}/>
             </div>

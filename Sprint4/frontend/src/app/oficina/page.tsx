@@ -1,8 +1,10 @@
 "use client"
-import { Diagnostico, OficinaRequest } from "@/type";
+import { Diagnostico, DiagnosticoComplete, OficinaRequest } from "@/type";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import InformacaoOficina from "./components/InformacaoOficina";
+import Carrosel from "./components/Carrosel";
+import DiagnoticoComplete from "../veiculo/[id]/components/DiagnosticoComplete";
 
 export default function Oficina() {
 
@@ -12,6 +14,11 @@ export default function Oficina() {
     })
 
     const [diagnosticos, setDiagnosticos] = useState<Diagnostico[]>([])
+    const [diagnostico, setDiagnostico] = useState<DiagnosticoComplete>(
+        {cd_automovel: 0, cd_oficina: 0, descricao: "", dt_fim: "", dt_inicio: "", id: 0, nome: "", preco: 0, quantidade: 0, status: "", valorTotal: 0}
+      )
+    const [open, setOpen] = useState(false)
+    const [currentDiagnosticoId, setCurrentDiagnosticoId] = useState<string|null>(null)
 
     useEffect(() => {
         const id = sessionStorage.getItem("id");
@@ -49,7 +56,6 @@ export default function Oficina() {
                         setOficina(oficina)     
                     } else {
                         const data = await response.json()
-                        console.log(data);
                     }
                    
                 } catch(error){
@@ -67,10 +73,9 @@ export default function Oficina() {
     useEffect(() => {
         const puxarDiagnostico = async () => {
             try{
-                const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/buscar_todos/${sessionStorage.getItem("id")}`)
+                const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/buscar_todos/oficina/${sessionStorage.getItem("id")}`)
                 if (response.ok) {
                     const data = await response.json();
-                    
                     const diagnosticoList = []
                     for (let i = 0; i < data.length; i++) {
                         const diagnostico:Diagnostico = {
@@ -98,14 +103,64 @@ export default function Oficina() {
        
     }, [])
 
+    useEffect(() => {
+        const idDiagnostico = sessionStorage.getItem("id_diagnostico");
+        if (open && idDiagnostico) {
+          setCurrentDiagnosticoId(idDiagnostico)
+          
+          const puxarDiagnostico = async () => {
+            try {
+              const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/${idDiagnostico}`);
+              if (response.ok) {
+                const data = await response.json();
+                const diagnosticoData = {
+                  id: data.id,
+                  cd_automovel: data.cd_automovel,
+                  cd_oficina: data.cd_oficina,
+                  descricao: data.descricao,
+                  dt_fim: data.dt_fim,
+                  dt_inicio: data.dt_inicio,
+                  status: data.status,
+                  nome: data.produtos[0].nome,
+                  preco: data.produtos[0].preco,
+                  quantidade: data.produtos[0].quantidade,
+                  valorTotal: data.valorTotal,
+                };
+                setDiagnostico(diagnosticoData)
+                
+              } else {
+                console.error("Erro ao buscar diagnóstico:", response.status);
+              }
+            } catch (error) {
+              console.error("Erro ao buscar diagnóstico:", error);
+            }
+          };
+          const intervalId = setInterval(puxarDiagnostico, 5000);
+
+          return () => clearInterval(intervalId);
+          
+        }
+      }, [open]); 
+
 
   return(
-    <main className="p-5 grow">
-    <h1 className="text-2xl md:text-4xl font-bold">Bem vindo {oficina.nome}</h1>
-    <section className="border rounded-3xl shadow-xl md:w-2/4 m-auto mt-5 p-10">
-        <InformacaoOficina nome={oficina.nome} email={oficina.email} cnpj={oficina.cnpj} inscricaoEstadual={oficina.inscricaoEstadual} senha={oficina.senha} bairro={oficina.bairro} cep={oficina.cep}
-        cidade={oficina.cidade} estado={oficina.estado} numero={oficina.numero} rua={oficina.rua} />
-    </section>
-</main>
+    <main onClick={() => setOpen(false)} className={`${open && "flex flex-col md:flex-row"} grow`}>
+        <div className={`${open && "w-full md:w-2/3"}`}>
+            <h1 className="text-2xl md:text-4xl font-bold">Bem vindo {oficina.nome}</h1>
+            <section className="border rounded-3xl shadow-xl w-3/4 lg:w-2/4 m-auto mt-5 p-10">
+                <InformacaoOficina nome={oficina.nome} email={oficina.email} cnpj={oficina.cnpj} inscricaoEstadual={oficina.inscricaoEstadual} senha={oficina.senha} bairro={oficina.bairro} cep={oficina.cep}
+                cidade={oficina.cidade} estado={oficina.estado} numero={oficina.numero} rua={oficina.rua} />
+            </section>
+            <Carrosel diagnosticos={diagnosticos} onCardClick={() => setOpen(true)} open={open}/>
+        </div>
+
+        {
+        open ? <div className="bg-slate-300 p-4 rounded-lg shadow-md w-full md:w-1/3" >
+          <DiagnoticoComplete cd_automovel={diagnostico?.cd_automovel} cd_oficina={diagnostico?.cd_oficina} descricao={diagnostico?.descricao} dt_fim={diagnostico?.dt_fim} dt_inicio={diagnostico?.dt_inicio} id={diagnostico?.id} nome={diagnostico?.nome} preco={diagnostico?.preco} quantidade={diagnostico?.quantidade} status={diagnostico?.status} valorTotal={diagnostico?.valorTotal}/> 
+          </div>
+        : ""
+      }
+        
+    </main>
   )
 }
