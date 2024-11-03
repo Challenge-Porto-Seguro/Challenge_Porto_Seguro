@@ -95,6 +95,7 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
                     window.location.reload();
                 } else{
                     const data = await response.json()
+                    console.log(data);
                     const mensagem = data.message.toLowerCase()
                     const newError = { nome: "", cnpj: "", inscricaoEstadual:"", senha: "", cep: "", numero: ""};
                     if(mensagem.includes("senha")){
