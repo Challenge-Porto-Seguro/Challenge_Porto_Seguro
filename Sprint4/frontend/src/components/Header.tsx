@@ -17,15 +17,15 @@ export default function Header() {
                     </li>
                     
                     <li className="hidden md:inline uppercase hover:text-blue-700 md:text-md lg:text-xl">
-                        <Link className="header__link logo" href="#introducao">Introdução</Link>
+                        <Link href="#introducao">Introdução</Link>
                     </li>
                     <li className="hidden md:inline uppercase hover:text-blue-700 md:text-md lg:text-xl"> 
-                        <Link className="header__link header__paginas" href="#diferenciais">
+                        <Link href="#diferenciais">
                             Diferenciais
                         </Link>
                     </li>
                     <li className="hidden md:inline uppercase hover:text-blue-700 md:text-md lg:text-xl">
-                        <Link className="header__link header__paginas" href="#sobre_nos">
+                        <Link href="#sobre_nos">
                             Sobre nos
                         </Link>
                     </li>
