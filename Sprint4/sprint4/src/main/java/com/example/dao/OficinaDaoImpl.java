@@ -31,7 +31,7 @@ final class OficinaDaoImpl implements OficinaDao {
                 update T_PS_OFICINA
                 set sq_cnpj = ?,
                 sq_inscricao_estadual = ?
-                where cd_pessoa = ?
+                where cd_oficina = ?
             """;
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -48,7 +48,7 @@ final class OficinaDaoImpl implements OficinaDao {
     @Override
     public void deleteById(Connection conn, Long id) throws OficinaNotFound, SQLException {
         String sql = """
-            delete from T_PS_OFICINA where cd_pessoa = ?
+            delete from T_PS_OFICINA where cd_oficina = ?
         """;
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
