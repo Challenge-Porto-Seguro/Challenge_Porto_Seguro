@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -91,12 +92,17 @@ public class DiagnosticoController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllDiagnosticosByUserId(@PathParam("userId") Long userId) {
         try {
-            List<DiagnosticoResponse> diagnosticos = diagnosticoService.getAllDiagnosticosByCdPessoa(userId)
+            List<Diagnostico> diagnosticos = diagnosticoService.getAllDiagnosticosByCdPessoa(userId);
+            for (Diagnostico diagnostico : diagnosticos) {
+                Oficina oficina = oficinaService.buscaOficinaPorId(diagnostico.getOficina().getId());
+                diagnostico.setOficina(oficina);
+            }
+            List<DiagnosticoResponse> diagnosticoResponses = diagnosticos
                     .stream()
                     .map(this::getDiagnostico)
                     .toList();
-            return Response.ok(diagnosticos).build();
-        } catch (SQLException e) {
+            return Response.ok(diagnosticoResponses).build();
+        } catch (SQLException | OficinaNotFound e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
         }
     }
