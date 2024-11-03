@@ -125,26 +125,26 @@ export default function InformacoesVeiculo({id, marca, modelo, placa, data, relo
     return(
         <div className="grow flex flex-col justify-center items-center p-4">
             <div className="w-full flex justify-start">
-                <Link href={"/cliente"}><Image src={Voltar} alt="Seta de Voltar" className="w-20"/></Link>
+                <Link href={"/cliente"}><Image src={Voltar} alt="Seta de Voltar" className="w-14 md:w-20"/></Link>
             </div>
-            <h1 className="font-bold text-4xl">Informações do Carro</h1> 
+            <h1 className="font-bold text-3xl md:text-4xl">Informações do Carro</h1> 
             <form onSubmit={modal} className="flex flex-col items-center justify-center w-full">
-                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-2/4`}>
+                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-3/4 md:w-2/4`}>
                     <label htmlFor="marca" className="text-sm font-semibold" >Marca:</label>
                     <input id="marca" type="text" value={carro.marca} name="marca" onChange={updateChange} className={`focus:outline-none`}/>
                 </div>
                 {errors.marca && <p className="text-red-700 m-2">{errors.marca}</p>}
-                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-2/4`}>
+                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-3/4 md:w-2/4`}>
                     <label htmlFor="modelo" className="text-sm font-semibold">modelo:</label>
                     <input id="modelo" type="text" name="modelo" value={carro.modelo} onChange={updateChange} className={`focus:outline-none`} />
                 </div>
                 {errors.modelo && <p className="text-red-700 m-2">{errors.modelo}</p>}
-                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-2/4`}>
+                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-3/4 md:w-2/4`}>
                     <label htmlFor="placa" className="text-sm font-semibold">placa:</label>
                     <input id="placa" type="text" value={carro.placa} name="placa" onChange={updateChange} className={`focus:outline-none`}/>
                 </div>
                 {errors.placa && <p className="text-red-700 m-2">{errors.placa}</p>}
-                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-2/4`}>
+                <div className={`flex flex-col mt-5 border-2 border-black pl-3 pr-3 w-3/4 md:w-2/4`}>
                     <label htmlFor="data" className="text-sm font-semibold">data:</label>
                     <input id="data" type="date" value={carro.data} name="data" onChange={updateChange} className={`focus:outline-none`}/>
                 </div>

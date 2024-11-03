@@ -117,3 +117,18 @@ export type CardDiagnostico = {
     oficina: string
     status: string
 }
+
+export type DiagnosticoComplete = {
+    id: number
+	cd_automovel: number
+	descricao: string
+	dt_inicio: string
+	cd_oficina: number
+	dt_fim: string
+	status: string
+    nome: string
+	preco: number
+	quantidade: number
+    valorTotal: number
+
+}

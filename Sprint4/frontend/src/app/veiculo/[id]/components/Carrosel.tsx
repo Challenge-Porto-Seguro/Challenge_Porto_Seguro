@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { Diagnostico } from "@/type"
 import CardDiagnosticos from "@/components/CardDiagnostico";
 
-export default function Carrosel({ diagnosticos }: { diagnosticos: Diagnostico[] }) {
+export default function Carrosel({ diagnosticos, onCardClick, open}: { diagnosticos: Diagnostico[], onCardClick:()=>void, open:boolean }) {
     const [atual, setAtual] = useState(0);
     const [carrosPorPagina, setCarrosPorPagina] = useState(1);
 
@@ -36,9 +36,8 @@ export default function Carrosel({ diagnosticos }: { diagnosticos: Diagnostico[]
     const anterior = () => {
         setAtual((prev) => (prev - 1 + totalPaginas) % totalPaginas);
     };
-
     return (
-        <div className="w-full mt-10">
+        <div className={`${open && "hidden"} w-full mt-10`}>
             <div className="overflow-hidden relative">
                 <div
                     className="flex transition-transform ease-out duration-500"
@@ -46,7 +45,7 @@ export default function Carrosel({ diagnosticos }: { diagnosticos: Diagnostico[]
                 >
                     {diagnosticos.map((d) => (
                         <div key={d.id} className="flex-none w-full md:w-1/3 px-2">
-                            <CardDiagnosticos id={d.id} descricao={d.descricao} dt_inicio={d.dt_inicio} oficina={d.nomeOficina} status={d.status} />
+                            <CardDiagnosticos id={d.id} descricao={d.descricao} dt_inicio={d.dt_inicio} oficina={d.nomeOficina} status={d.status} onclick={onCardClick}/>
                         </div>
                     ))}
                 </div>
