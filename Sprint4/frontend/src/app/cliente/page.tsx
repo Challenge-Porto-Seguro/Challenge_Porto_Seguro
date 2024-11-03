@@ -8,7 +8,8 @@ import Carrosel from "./components/Carrosel"
 
 export default function Cliente() {
     const [usuario, setUsuario] = useState<User>({
-        nome: "", email: "", cpf: "", senha: ""
+        nome: "", email: "", cpf: "", senha: "", cep:"", numero: 0, 
+        bairro: "", cidade: "", estado: "", rua: ""
     })
 
     const [open, setOpen] = useState(false)
@@ -47,7 +48,13 @@ export default function Cliente() {
                         nome: data["nome"],
                         email: data["email"],
                         cpf: data["cpf"],
-                        senha: data["senha"]
+                        senha: data["senha"],
+                        cep: data["cep"],
+                        bairro: data["bairro"],
+                        cidade: data["cidade"],
+                        estado: data["estado"],
+                        numero: data["numeroCasa"],
+                        rua: data["rua"] 
                     }
                     setUsuario(user)        
                 } catch(error){
@@ -172,9 +179,10 @@ export default function Cliente() {
 
   return(
     <main className="p-5 grow">
-        <h1 className="text-4xl font-bold">Bem vindo {usuario.nome}</h1>
-        <section className="border rounded-3xl shadow-xl w-2/4 m-auto mt-5 p-10">
-            <InformacaoUsuario nome={usuario.nome} email={usuario.email} cpf={usuario.cpf} senha={usuario.senha}/>
+        <h1 className="text-2xl md:text-4xl font-bold">Bem vindo {usuario.nome}</h1>
+        <section className="border rounded-3xl shadow-xl md:w-2/4 m-auto mt-5 p-10">
+            <InformacaoUsuario nome={usuario.nome} email={usuario.email} cpf={usuario.cpf} senha={usuario.senha} bairro={usuario.bairro} cep={usuario.cep}
+            cidade={usuario.cidade} estado={usuario.estado} numero={usuario.numero} rua={usuario.rua} />
         </section>
         <section className="mt-11 flex flex-col items-center">
             <article className="w-full">
