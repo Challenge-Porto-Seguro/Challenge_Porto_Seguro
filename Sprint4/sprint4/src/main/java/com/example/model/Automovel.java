@@ -20,6 +20,7 @@ public class Automovel {
 
     public Automovel(String marca, String modelo, String placa, LocalDate ano, Usuario usuario) {
         VerificaCriacaoAutomovel.verifica(marca, modelo, placa, ano);
+        placa = placa.replace("-", "");
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
