@@ -109,3 +109,11 @@ export type Diagnostico = {
 	dt_fim: string
 	status: string
 }
+
+export type CardDiagnostico = {
+    id: number
+    descricao: string
+    dt_inicio: string
+    oficina: string
+    status: string
+}
