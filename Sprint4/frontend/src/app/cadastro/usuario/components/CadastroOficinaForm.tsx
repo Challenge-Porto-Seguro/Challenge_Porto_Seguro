@@ -99,7 +99,7 @@ export default function CadastroOficinaForm() {
                 if (response.ok) {
                     const data = await response.json()
                     sessionStorage.setItem("id", data.id)
-                    navigate.push("/cliente")
+                    navigate.push("/oficina")
                 } else{
                     const data = await response.json()
                     const mensagem = data.message.toLowerCase()
