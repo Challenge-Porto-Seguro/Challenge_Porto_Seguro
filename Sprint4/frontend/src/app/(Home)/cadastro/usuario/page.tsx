@@ -2,6 +2,9 @@
 import { ChangeEvent, useState } from "react";
 import CadastroUsuarioForm from "./components/CadastroUsuarioForm";
 import CadastroOficinaForm from "./components/CadastroOficinaForm";
+import Link from "next/link";
+import Image from "next/image";
+import Voltar from "@/imagem/icone_voltar.svg"
 
 export default function CadastroUsuario() {
 
@@ -28,6 +31,11 @@ export default function CadastroUsuario() {
 
   return(
     <main className="grow flex flex-col items-center p-8">
+       <div className="self-start">
+            <Link href={"/"}>
+                <Image src={Voltar} alt="Seta de Voltar" className="w-14 my-5 md:w-20" />
+            </Link>
+        </div>
       <section className="text-center border-b-2">
         <h1 className="sm:text-5xl text-black text-4xl font-bold ">Crie seu Cadastro</h1>
         <h2 className="text-md mt-5 md:m-5">

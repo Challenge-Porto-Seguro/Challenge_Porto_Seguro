@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaTimesCircle } from "react-icons/fa";
 import CamposLogin from "./components/CamposLogin";
+import Image from "next/image";
+import Voltar from "@/imagem/icone_voltar.svg"
 
 export default function Login() {
 
@@ -10,6 +12,7 @@ export default function Login() {
 
   return (
     <main className="grow flex flex-col-reverse lg:flex-row">
+      <Link href={"/"}><Image src={Voltar} alt="Seta de Voltar" className="w-14 my-5 md:w-20"/></Link>
       <section className="w-full lg:w-2/3 m-auto">
         
           {erroLogar && (<div className="flex justify-center items-center border-2 border-red-600 pt-2 pb-2 w-2/4 m-auto rounded-xl shadow-xl mb-4">
