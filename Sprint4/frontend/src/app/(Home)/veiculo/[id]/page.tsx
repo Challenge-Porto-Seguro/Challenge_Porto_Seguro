@@ -1,12 +1,14 @@
 "use client"
 import { Carro, Diagnostico, DiagnosticoComplete } from "@/type"
-import { useEffect, useState } from "react"
+import { use, useEffect, useState } from "react"
 import InformacoesVeiculo from "./components/InformacoesVeiculo"
 import Link from "next/link"
 import Carrosel from "./components/Carrosel"
 import DiagnoticoComplete from "./components/DiagnosticoComplete"
 
-export default function Veiculo({params} : {params:{id:number}}) {
+export default function Veiculo({ params }: { params: Promise<{ id: number }> }) {
+
+  const { id } = use(params)
 
   const [carro, setCarro] = useState<Carro>({
     id: 0, data: "", marca: "", modelo: "", placa: ""
@@ -18,7 +20,6 @@ export default function Veiculo({params} : {params:{id:number}}) {
   )
 
   const [open, setOpen] = useState(false)
-  const id = params.id
   useEffect(
     () => {
         const chamadaApi = async () => {
