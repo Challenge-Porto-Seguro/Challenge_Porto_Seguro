@@ -18,8 +18,6 @@ export default function Veiculo({params} : {params:{id:number}}) {
   )
 
   const [open, setOpen] = useState(false)
-  const [currentDiagnosticoId, setCurrentDiagnosticoId] = useState<string|null>(null)
-  
   const id = params.id
   useEffect(
     () => {
@@ -75,7 +73,6 @@ export default function Veiculo({params} : {params:{id:number}}) {
     console.log(idDiagnostico);
     
     if (open && idDiagnostico) {
-      setCurrentDiagnosticoId(idDiagnostico)
       
       const puxarDiagnostico = async () => {
         try {

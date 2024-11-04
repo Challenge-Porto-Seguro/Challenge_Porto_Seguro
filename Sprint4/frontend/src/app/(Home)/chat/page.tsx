@@ -39,7 +39,6 @@ import { createSession, sendMessage } from '@/lib/watsonApi'
 import { getFormattedTime } from '@/helper/format-message-timestamp'
 import { Message } from './_components/message'
 import { useRouter } from 'next/navigation'
-import { error } from 'console'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -282,7 +281,6 @@ export default function Chat(){
             const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico`, cabecalho);
     
             if (response.ok) {
-                const data = await response.json()
                 const cd_automovel = sessionStorage.getItem("cd_automovel")
                 sessionStorage.removeItem("cd_automovel")
                 navigation.push(`/veiculo/${cd_automovel}`)

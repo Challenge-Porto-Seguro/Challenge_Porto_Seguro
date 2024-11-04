@@ -18,7 +18,6 @@ export default function Oficina() {
         {cd_automovel: 0, cd_oficina: 0, descricao: "", dt_fim: "", dt_inicio: "", id: 0, nome: "", preco: 0, quantidade: 0, status: "", valorTotal: 0}
       )
     const [open, setOpen] = useState(false)
-    const [currentDiagnosticoId, setCurrentDiagnosticoId] = useState<string|null>(null)
 
     useEffect(() => {
         const id = sessionStorage.getItem("id");
@@ -54,8 +53,6 @@ export default function Oficina() {
                             rua: data["rua"]
                         }
                         setOficina(oficina)     
-                    } else {
-                        const data = await response.json()
                     }
                    
                 } catch(error){
@@ -106,8 +103,6 @@ export default function Oficina() {
     useEffect(() => {
         const idDiagnostico = sessionStorage.getItem("id_diagnostico");
         if (open && idDiagnostico) {
-          setCurrentDiagnosticoId(idDiagnostico)
-          
           const puxarDiagnostico = async () => {
             try {
               const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/${idDiagnostico}`);
