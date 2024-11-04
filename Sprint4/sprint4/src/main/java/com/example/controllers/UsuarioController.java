@@ -53,10 +53,12 @@ public class UsuarioController {
             Usuario usuario = service.buscaUsuarioPorId(id);
             Endereco endereco = enderecoService.buscaEnderecoPorId(usuario.getId());
             return Response.ok(transformUsuario(usuario, endereco)).build();
-        } catch (UsuarioNotFound | EnderecoNotFound e) {
+        } catch (UsuarioNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
         } catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
+        } catch (EnderecoNotFound e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "endereco não enconstrado")).build();
         }
     }
 
@@ -74,7 +76,7 @@ public class UsuarioController {
         } catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
         } catch (EnderecoNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "endereco não enconstrado")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "endereco não enconstrado")).build();
         }
     }
 
@@ -90,10 +92,14 @@ public class UsuarioController {
             endereco.setLogin(id);
             service.alteraUsuario(usuario, endereco);
             return Response.ok(transformUsuario(usuario, endereco)).build();
-        } catch (LoginNotUpdade | UsuarioNotUpdate | EnderecoNotFound | EnderecoNotUpdate | SQLException e) {
+        } catch (LoginNotUpdade | UsuarioNotUpdate | EnderecoNotUpdate | SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
-        } catch (UsuarioNotFound | LoginNotFound e) {
+        } catch (UsuarioNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
+        } catch (EnderecoNotFound e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "endereco não enconstrado")).build();
+        } catch (LoginNotFound e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "login não enconstrado")).build();
         }
     }
 

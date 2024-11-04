@@ -8,12 +8,14 @@ import com.example.model.*;
 import com.example.service.*;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +25,8 @@ public class DiagnosticoController {
     private DiagnosticoService diagnosticoService = DiagnosticoServiceFactory.getDiagnosticoService();
     private OficinaService oficinaService = OficinaServiceFactory.getOficinaService();
     private AutomovelService automovelService = AutomovelServiceFactory.getAutomovelService();
-
+    @Context
+    private UriInfo uriInfo;
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -39,7 +42,8 @@ public class DiagnosticoController {
             Produto produto = new Produto(dto.peca(), null, dto.preco());
             ItensOrcamento itensOrcamento = new ItensOrcamento(dto.quantidade());
             Diagnostico newDiagnostico = diagnosticoService.insertDiagnostico(diagnostico, orcamento, produto, itensOrcamento);
-            return Response.ok(getDiagnostico(newDiagnostico)).build();
+            URI uri = uriInfo.getAbsolutePathBuilder().path(diagnostico.getId().toString()).build();
+            return Response.created(uri).entity(getDiagnostico(newDiagnostico)).build();
         } catch (MaximoDiagnosticoException e) {
             return Response.status(Response.Status.TOO_MANY_REQUESTS).entity(Map.of("error", e.getMessage())).build();
         } catch (DiagnoticoNotCreated | SQLException | ProdutoNotCreate e) {
@@ -64,8 +68,10 @@ public class DiagnosticoController {
         }
         catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
-        } catch (DiagnosticoNotFound | OrcamentoNotFound e) {
+        } catch (DiagnosticoNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Não encontrado")).build();
+        } catch (OrcamentoNotFound e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("error", "Não encontrado")).build();
         }
     }
 
@@ -81,9 +87,9 @@ public class DiagnosticoController {
         } catch (DiagnosticoNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Diagnostico não encotrado")).build();
         } catch (OrcamentoNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Orçamento não encotrado")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("error", "Erro ao encontrar orçamento")).build();
         } catch (ProdutoNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "Produto não encotrado")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("error", "Erro ao encontrar produto")).build();
         }
     }
 
@@ -134,13 +140,13 @@ public class DiagnosticoController {
             diagnosticoService.deleteDiagnostico(id);
             return Response.status(Response.Status.NO_CONTENT).build();
         } catch (OrcamentoNotFound  e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "orcamento não encontrado")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("error", "orcamento não encontrado")).build();
         } catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
         } catch (DiagnosticoNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "diagnostico não encontrado")).build();
         } catch (ItensOrcamentoNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "itens orcamento não encontrado")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("error", "itens orcamento não encontrado")).build();
         }
     }
 

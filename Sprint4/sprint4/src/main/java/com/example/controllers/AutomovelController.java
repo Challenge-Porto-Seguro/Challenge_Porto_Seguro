@@ -43,7 +43,7 @@ public class AutomovelController {
             URI uri = uriInfo.getAbsolutePathBuilder().path(newAutomovel.getId().toString()).build();
             return Response.created(uri).entity(transformaAutomovel(newAutomovel)).build();
         } catch (UsuarioNotFound e){
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Usuario não encontrado")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("mensagem", "Usuario não encontrado")).build();
         } catch (RuntimeException e){
             return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("erro", e.getMessage())).build();
         } catch (AutomovelNotCreate | SQLException e) {
@@ -67,7 +67,7 @@ public class AutomovelController {
         }catch (AutomovelNotUpdate | SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("erro", e.getMessage())).build();
         } catch (UsuarioNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Usuario não encontrado")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("mensagem", "Usuario não encontrado")).build();
         } catch (AutomovelNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("mensagem", "Automovel não encontrado")).build();
         }

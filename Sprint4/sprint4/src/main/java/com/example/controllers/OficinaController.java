@@ -53,10 +53,12 @@ public class OficinaController {
             Oficina oficina = oficinaService.buscaOficinaPorId(id);
             Endereco endereco = enderecoService.buscaEnderecoPorId(oficina.getId());
             return Response.ok(transformOficina(oficina, endereco)).build();
-        } catch (OficinaNotFound | EnderecoNotFound e) {
+        } catch (OficinaNotFound e) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "Oficina não enconstrado")).build();
         } catch (SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
+        } catch (EnderecoNotFound e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "Endereco não enconstrado")).build();
         }
     }
 
@@ -91,8 +93,12 @@ public class OficinaController {
             return Response.ok(transformOficina(oficina, endereco)).build();
         } catch (LoginNotUpdade | OficinaNotUpdate | EnderecoNotUpdate | SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();
-        } catch (OficinaNotFound | LoginNotFound | EnderecoNotFound e) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "usuario não enconstrado")).build();
+        } catch (OficinaNotFound  e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("message", "oficina não enconstrado")).build();
+        }  catch (LoginNotFound  e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "login não enconstrado")).build();
+        } catch (EnderecoNotFound e){
+            return Response.status(Response.Status.BAD_REQUEST).entity(Map.of("message", "endereco não enconstrado")).build();
         }
     }
 
