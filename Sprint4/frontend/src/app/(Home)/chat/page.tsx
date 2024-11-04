@@ -299,8 +299,8 @@ export default function Chat(){
 }, [diagnostico])
 
   return (
-    <div className='bg-slate-700 min-h-screen w-screen'>
-      <h1 className='font-semibold text-center text-3xl mb-4'>
+    <div className='bg-slate-100 min-h-screen w-screen'>
+      <h1 className='font-bold text-center text-5xl my-4'>
         Chat com Watson Assistant
       </h1>
       <div className='flex flex-col w-3/4 m-auto bg-slate-400 p-4 rounded-md'>
