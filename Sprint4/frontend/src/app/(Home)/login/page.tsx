@@ -1,8 +1,8 @@
 "use client"
-import CamposLogin from "@/app/login/components/CamposLogin";
 import Link from "next/link";
 import { useState } from "react";
 import { FaTimesCircle } from "react-icons/fa";
+import CamposLogin from "./components/CamposLogin";
 
 export default function Login() {
 

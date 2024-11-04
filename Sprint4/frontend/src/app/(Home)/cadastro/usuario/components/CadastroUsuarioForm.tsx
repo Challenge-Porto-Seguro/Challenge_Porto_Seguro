@@ -1,7 +1,7 @@
+import Modal from "@/components/Modal"
 import { UserCadastro } from "@/type"
 import { useRouter } from "next/navigation"
-import { use, useState } from "react"
-import Modal from "../../../../components/Modal"
+import { useState } from "react"
 import { MdSaveAs } from "react-icons/md"
 
 export default function CadastroUsuarioForm() {
@@ -46,8 +46,8 @@ export default function CadastroUsuarioForm() {
         if(!user.senha){
             newError.senha = "Senha é obrigatoria"
             isValid = false
-        } else if (user.senha.length < 6){
-            newError.senha = "Senha deve ser maior que 6 caracteres"
+        } else if (user.senha.length < 8){
+            newError.senha = "Senha deve ser maior que 8 caracteres"
             isValid = false
         }
         
@@ -140,7 +140,7 @@ export default function CadastroUsuarioForm() {
 
             <div className="w-2/3">
                 <label className="mb-5">SENHA <span className="text-red-600">*</span></label>
-                <input type="password" name="senha" placeholder="Minimo 6 caracteres" className="formulario_cadastro" onChange={cadastroChange}/>
+                <input type="password" name="senha" placeholder="Minimo 8 caracteres" className="formulario_cadastro" onChange={cadastroChange}/>
                 {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
             </div>
 

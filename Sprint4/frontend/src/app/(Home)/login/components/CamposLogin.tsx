@@ -28,8 +28,8 @@ export default function CamposLogin({erro, clearErro} : {erro:() => void, clearE
         if(!user.senha){
             newError.senha = "Senha é obrigatoria"
             isValid = false
-        } else if (user.senha.length < 6){
-            newError.senha = "Senha deve ser maior que 6 caracteres"
+        } else if (user.senha.length < 8){
+            newError.senha = "Senha deve ser maior que 8 caracteres"
             isValid = false
         }
 

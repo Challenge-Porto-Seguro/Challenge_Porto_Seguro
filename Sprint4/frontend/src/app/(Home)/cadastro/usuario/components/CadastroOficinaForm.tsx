@@ -52,8 +52,8 @@ export default function CadastroOficinaForm() {
         if(!oficina.senha){
             newError.senha = "Senha é obrigatoria"
             isValid = false
-        } else if (oficina.senha.length < 6){
-            newError.senha = "Senha deve ser maior que 6 caracteres"
+        } else if (oficina.senha.length < 8){
+            newError.senha = "Senha deve ser maior que 8 caracteres"
             isValid = false
         }
         
@@ -155,7 +155,7 @@ export default function CadastroOficinaForm() {
 
                 <div className="w-2/3">
                     <label className="mb-5">SENHA <span className="text-red-600">*</span></label>
-                    <input type="password" name="senha" placeholder="Minimo 6 caracteres" className="formulario_cadastro" onChange={cadastroChange}/>
+                    <input type="password" name="senha" placeholder="Minimo 8 caracteres" className="formulario_cadastro" onChange={cadastroChange}/>
                     {errors.senha && <p className="text-red-700 m-2">{errors.senha}</p>}
                 </div>
 

@@ -145,7 +145,7 @@ export default function Veiculo({params} : {params:{id:number}}) {
         <InformacoesVeiculo  id={carro.id} data={carro.data} marca={carro.marca} modelo={carro.modelo} placa={carro.placa} reload={() => reload}/>
         <Carrosel diagnosticos={diagnosticos} onCardClick={() => setOpen(true)} open={open}/>
         <div className="w-full text-center my-10">
-          <Link href={""} className="text-xl md:text-3xl font-bold uppercase border-2 border-blue-500 rounded-xl p-3 hover:bg-blue-300">Iniciar diagnostico</Link>
+          <Link href={"/chat"} onClick={() => sessionStorage.setItem("cd_automovel", carro.id.toString())} className="text-xl md:text-3xl font-bold uppercase border-2 border-blue-500 rounded-xl p-3 hover:bg-blue-300">Iniciar diagnostico</Link>
         </div>
       </div>
       
