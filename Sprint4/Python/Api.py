@@ -2,10 +2,16 @@ from flask import Flask, request, jsonify
 import carro_service
 import cliente_service
 from ErroBanco import ErroBanco
-
+import json
+from flask import Flask, jsonify
 from datetime import datetime
 
+
 app = Flask(__name__)
+
+def salvar_json_em_json(dados):
+    with open("itens.json", "w", encoding="utf-8") as arquivo:
+        json.dump(dados, arquivo, ensure_ascii=False, indent=4)
 
 @app.route("/cliente", methods=["POST"])
 def cadastro_cliente():
@@ -21,9 +27,13 @@ def cadastro_cliente():
 @app.route("/cliente", methods=["GET"])
 def clientes_cadastrados():
     try:
-        return jsonify(cliente_service.exibir_usuarios()), 200
+        usuarios = cliente_service.exibir_usuarios()
+        salvar_json_em_json(usuarios)  
+        return jsonify(usuarios), 200
     except ErroBanco as e:
         return {"error": str(e)}, 500
+    
+
 
 @app.route("/cliente/<int:id>")
 def exibir_pessoa_by_id(id):

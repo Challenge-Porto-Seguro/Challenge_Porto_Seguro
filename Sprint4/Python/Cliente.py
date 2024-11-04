@@ -3,6 +3,7 @@ import oracledb as bd
 from Oracle import conectar_bd
 from ErroBanco import ErroBanco
 
+
 # Import pro Regex que valida Email
 import re
 
