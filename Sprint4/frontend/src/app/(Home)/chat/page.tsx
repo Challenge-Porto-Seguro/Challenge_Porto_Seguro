@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
+import Voltar from "@/imagem/icone_voltar.svg"
 import type {
   ApiResponse,
   CadastroDiagnostico,
@@ -39,6 +40,8 @@ import { getFormattedTime } from '@/helper/format-message-timestamp'
 import { Message } from './_components/message'
 import { useRouter } from 'next/navigation'
 import { error } from 'console'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Chat(){
 
@@ -300,6 +303,7 @@ export default function Chat(){
 
   return (
     <div className='bg-slate-100 min-h-screen w-screen'>
+      <Link href={"/cliente"}><Image src={Voltar} alt="Seta de Voltar" className="w-14 my-5 md:w-20"/></Link>
       <h1 className='font-bold text-center text-5xl my-4'>
         Chat com Watson Assistant
       </h1>
