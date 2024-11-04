@@ -1,0 +1,27 @@
+[
+    {
+        "cd_pessoa": 1,
+        "nm_nome": "Fernanda Ribeiro",
+        "nm_email": "fernanda.ribeiro@mail.com"
+    },
+    {
+        "cd_pessoa": 2,
+        "nm_nome": "Thiago",
+        "nm_email": "thmaz16salles@gmail.com"
+    },
+    {
+        "cd_pessoa": 3,
+        "nm_nome": "teste",
+        "nm_email": "teste@gmail.com"
+    },
+    {
+        "cd_pessoa": 4,
+        "nm_nome": "Marcos",
+        "nm_email": "marcos@gmail.com"
+    },
+    {
+        "cd_pessoa": 5,
+        "nm_nome": "teste",
+        "nm_email": "teste@gmail.com"
+    }
+]
