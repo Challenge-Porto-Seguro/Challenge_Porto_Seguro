@@ -1,8 +1,6 @@
 
 import { ProcessedApiResponse } from '@/type'
 import { OptionMessage } from './option-message'
-import Image from 'next/image'
-
 
 interface MessageProps {
   text: string | ProcessedApiResponse[]
@@ -16,13 +14,6 @@ export function Message({ text, fromUser, timestamp, setValue }: MessageProps) {
     <div
       className={`flex items-start space-x-2 ${fromUser ? 'justify-end' : ''}`}
     >
-      {!fromUser && (
-        <Image
-          src='https://via.placeholder.com/40x40'
-          alt='User avatar'
-          className='w-8 h-8 rounded-full'
-        />
-      )}
 
       <div className={`flex flex-col ${fromUser ? 'items-end' : ''}`}>
         <div
@@ -61,13 +52,6 @@ export function Message({ text, fromUser, timestamp, setValue }: MessageProps) {
         <span className='text-xs text-gray-500 mt-1'>{timestamp}</span>
       </div>
 
-      {fromUser && (
-        <Image
-          src='https://via.placeholder.com/40x40'
-          alt='User avatar'
-          className='w-8 h-8 rounded-full'
-        />
-      )}
     </div>
   )
 }
