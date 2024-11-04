@@ -20,4 +20,6 @@ public interface DiagnosticoDao {
 
     void deleteDiagnostico(Long id, Connection connection) throws SQLException, DiagnosticoNotFound;
 
+    List<Diagnostico> getAllDiagnosticosByCdOficina(Long cdOficina, Connection connection) throws SQLException;
+
 }

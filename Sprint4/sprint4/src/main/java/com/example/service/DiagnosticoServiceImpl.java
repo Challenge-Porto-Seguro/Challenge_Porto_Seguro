@@ -71,9 +71,15 @@ final class DiagnosticoServiceImpl implements DiagnosticoService {
                produtos.add(new ItensProdutoDto(produto.getNome(), produto.getPreco(), itens.getQuantidade()));
            }
            orcamento.setPedidos(itensOrcamento);
+           String date;
+           try {
+               date = diagnostico.getDataFinalizado().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+           } catch (RuntimeException e) {
+               date = null;
+           }
            DiagnosticoByIdResponse diagnosticoByIdResponse = new DiagnosticoByIdResponse(diagnostico.getId(),
                    diagnostico.getAutomovel().getId(), diagnostico.getDescricao(), diagnostico.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                   diagnostico.getOficina().getId(), diagnostico.getDataFinalizado() != null ? diagnostico.getDataFinalizado().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) : null,
+                   diagnostico.getOficina().getId(), date,
                    diagnostico.getStatus().toString(), produtos, orcamento.getValorTotal());
            return diagnosticoByIdResponse;
        }
@@ -99,6 +105,14 @@ final class DiagnosticoServiceImpl implements DiagnosticoService {
     public List<Diagnostico> getAllDiagnosticosByCdPessoa(Long cdPessoa) throws SQLException {
         try(Connection connection = DatabaseConnectionFactory.getConnection()) {
             List<Diagnostico> diagnosticos = diagnosticoDao.getAllDiagnosticosByCdPessoa(cdPessoa, connection);
+            return diagnosticos;
+        }
+    }
+
+    @Override
+    public List<Diagnostico> getAllDiagnosticosByCdOficina(Long cdOficina) throws SQLException {
+        try(Connection connection = DatabaseConnectionFactory.getConnection()) {
+            List<Diagnostico> diagnosticos = diagnosticoDao.getAllDiagnosticosByCdOficina(cdOficina, connection);
             return diagnosticos;
         }
     }

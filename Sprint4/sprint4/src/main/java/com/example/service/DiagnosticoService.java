@@ -21,5 +21,7 @@ public interface DiagnosticoService {
 
     List<Diagnostico> getAllDiagnosticosByCdPessoa(Long cdPessoa) throws SQLException;
 
+    List<Diagnostico> getAllDiagnosticosByCdOficina(Long cdOficina) throws SQLException;
+
     void deleteDiagnostico(Long id) throws SQLException, DiagnosticoNotFound, OrcamentoNotFound, ItensOrcamentoNotFound;
 }

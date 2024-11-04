@@ -107,6 +107,26 @@ public class DiagnosticoController {
         }
     }
 
+    @GET
+    @Path("/buscar_todos/oficina/{oficinaId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllDiagnosticosByOficinaId(@PathParam("oficinaId") Long oficianId) {
+        try {
+            List<Diagnostico> diagnosticos = diagnosticoService.getAllDiagnosticosByCdOficina(oficianId);
+            for (Diagnostico diagnostico : diagnosticos) {
+                Oficina oficina = oficinaService.buscaOficinaPorId(oficianId);
+                diagnostico.setOficina(oficina);
+            }
+            List<DiagnosticoResponse> diagnosticoResponses = diagnosticos
+                    .stream()
+                    .map(this::getDiagnostico)
+                    .toList();
+            return Response.ok(diagnosticoResponses).build();
+        } catch (SQLException | OficinaNotFound e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("error", e.getMessage())).build();
+        }
+    }
+
     @DELETE
     @Path("/{id}")
     public Response deleteDiagnostico(@PathParam("id") Long id) {
