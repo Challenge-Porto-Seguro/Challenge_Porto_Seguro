@@ -38,8 +38,8 @@ def menu_cliente():
             senha = input("Digite sua senha: ")
             usuario = cliente.logar_usuario(email, senha)
             if usuario:
-                print(f"Bem-vindo, {usuario[0]}!")
-                menu_porto(email)
+                print(f"Bem-vindo, {usuario[2]}")
+                menu_porto(usuario[2])
             else:
                 print("Falha no login. Tente novamente.")
         elif opcao == "4":
@@ -50,7 +50,7 @@ def menu_cliente():
         else:
             print("Opção inválida. Tente novamente.")
 
-def menu_porto(email):
+def menu_porto(id):
     while True:
         print("\n--- Menu Porto ---")
         print("1. Criar um novo carro")
@@ -67,14 +67,14 @@ def menu_porto(email):
                 marca = input("Digite a marca do carro: ")
                 dt_veiculo = input("Digite a data de fabricação (DD/MM/YYYY): ")
                 carros.validar_placa(placa)
-                carros.criar_carro(placa, modelo, email, marca, dt_veiculo)
+                carros.criar_carro(placa, modelo, id, marca, dt_veiculo)
                 print("Carro cadastrado com sucesso!")
             except Exception as msgErro:
                 print(msgErro.args[0])
         elif escolha == '2':
-            carros_por_pessoa = carros.exibir_todos_carros_por_pessoa(email)
+            carros_por_pessoa = carros.exibir_todos_carros_por_pessoa(id)
             for carro in carros_por_pessoa:
-                print(f"Placa: {carro['Placa do Veiculo']}, Modelo: {carro['Modelo do Veiculo']}, Proprietário: {carro['Codigo do Proprietario']}")
+                print(f"Placa: {carro['Placa do Veiulo']}, Modelo: {carro['Modelo do Veiculo']}, Proprietário: {carro['Codigo do Proprietario']}")
         elif escolha == '3':
             id_carro = input("Digite o ID do carro que deseja atualizar: ")
             novo_modelo = input("Digite o novo modelo: ")
