@@ -6,6 +6,56 @@
 
 Para iniciar o projeto, primeiro devemos iniciar o backend Java. Certifique-se de que o servidor esteja em execução antes de acessar a aplicação front-end.
 
+## Como iniciar o Java
+
+1. **Abrir o Projeto Java**
+   ![Abrir o Projeto Java](https://github.com/user-attachments/assets/c56d669f-2df9-402a-aae5-4dd6034eaa18)
+
+2. **Ir em Current File**
+   ![Ir em Current File](https://github.com/user-attachments/assets/fd5f7238-c175-4908-a412-ab2ff54cb8a8)
+
+3. **Edit Configurations**
+   ![Edit Configurations](https://github.com/user-attachments/assets/962108c1-aae1-475b-9b3e-094e1b45eb45)
+
+4. **Add New**
+   ![Add New](https://github.com/user-attachments/assets/f5dc5048-5962-475a-9445-6546036792c3)
+
+5. **Selecionar Tomcat**
+   ![Tomcat](https://github.com/user-attachments/assets/442a4a35-3b7d-45e8-ae51-85f99d0ef66e)
+
+6. **Configure Tomcat**
+   ![Configure](https://github.com/user-attachments/assets/d0e1b0df-9173-42c5-980f-d33462c79a65)
+   - Seleciona a pasta que seu Tomcat está instalado e clica em **OK**.
+
+7. **Adicionar Novo**
+   ![Clique no mais](https://github.com/user-attachments/assets/ab7eb677-0b90-48c0-bd95-4c8a0465b702)
+
+8. **Pesquisar Maven**
+   ![Pesquisar Maven](https://github.com/user-attachments/assets/5cfe7512-9b82-4dc8-83a7-da92b5dd9c95)
+   - Clica no **Maven run goal**.
+
+9. **Em Command Line**
+   ![Em command line](https://github.com/user-attachments/assets/b5548a4a-3caf-4284-b934-91fecb7a6205)
+   - Escreva `clean install` e clique em **OK**.
+
+10. **Va em Deployment**
+    ![Deployment](https://github.com/user-attachments/assets/6483e14d-b0ac-4b3f-946b-d213b1814e38)
+    - Clique no **mais** após isso **artifact**.
+
+11. **Selecionar Artifact**
+    ![Clique em sprint4:war](https://github.com/user-attachments/assets/e6b8f2a3-87c7-4a33-8bbe-abb69cc66f2a)
+    - Clique em `sprint4:war` e **OK**.
+
+12. **Mudar Application Context**
+    ![Mudar application context](https://github.com/user-attachments/assets/e840feb0-5f89-4382-b30f-4c3db3520993)
+    - Mude o application context para `Java_war`.
+
+13. **Aplicar e Executar**
+    ![Clique em apply e em run](https://github.com/user-attachments/assets/96f35196-de84-4c98-8ef4-57cfe08b62af)
+    - Clique em **Apply** e em **Run**.
+
+E o backend já estará rodando!
+
 ## Objetivo do Projeto
 
 O objetivo do nosso projeto é desenvolver um software que permita aos usuários realizar diagnósticos e orçamentos de seus veículos por meio de uma Inteligência Artificial, tudo isso sem precisar sair de casa. Isso facilita a manutenção dos veículos e proporciona uma experiência de usuário mais conveniente.
