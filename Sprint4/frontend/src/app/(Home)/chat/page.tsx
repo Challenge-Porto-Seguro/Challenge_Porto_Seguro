@@ -303,7 +303,7 @@ export default function Chat(){
 
   return (
     <div className='bg-slate-100 min-h-screen w-screen'>
-      <Link href={"/cliente"}><Image src={Voltar} alt="Seta de Voltar" className="w-14 my-5 md:w-20"/></Link>
+      <Link href={"/cliente"} onClick={()=>sessionStorage.removeItem("cd_automovel")}><Image src={Voltar} alt="Seta de Voltar" className="w-14 my-5 md:w-20"/></Link>
       <h1 className='font-bold text-center text-5xl my-4'>
         Chat com Watson Assistant
       </h1>
