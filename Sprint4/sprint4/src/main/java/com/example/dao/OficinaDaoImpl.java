@@ -83,7 +83,7 @@ final class OficinaDaoImpl implements OficinaDao {
     public List<Oficina> findAll(Connection conn) throws SQLException {
         List<Oficina> oficinas = new ArrayList<>();
         String sql = """
-             select oficina.sq_cnpj, oficina.sq_inscricao_estadual, login.* from T_PS_OFICINA oficina
+             select oficina.*, login.* from T_PS_OFICINA oficina
             join T_PS_PESSOA login on oficina.cd_oficina = login.cd_pessoa
             order by nm_nome
         """;
