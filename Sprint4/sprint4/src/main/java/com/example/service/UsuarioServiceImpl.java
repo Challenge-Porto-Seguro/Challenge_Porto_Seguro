@@ -50,6 +50,7 @@ final class UsuarioServiceImpl implements UsuarioService {
             loginService.update(connection, usuario);
             enderecoService.updateEndereco(connection, endereco);
             connection.commit();
+            usuario = repository.findById(connection, usuario.getId()).orElseThrow(UsuarioNotFound::new);
             return usuario;
         } catch (SQLException e){
             connection.rollback();

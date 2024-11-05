@@ -84,12 +84,12 @@ public class OficinaController {
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateUsuario(@PathParam("id") Long id, OficinaRequest dto) {
+    public Response updateOficina(@PathParam("id") Long id, OficinaRequest dto) {
         try {
             Oficina oficina = new Oficina(dto.nome(), dto.senha(), dto.inscricaoEstadual(), dto.cnpj());
             oficina.setId(id);
             Endereco endereco = new Endereco(dto.cep(), dto.numero());
-            oficinaService.alteraOficina(oficina, endereco);
+            oficina = oficinaService.alteraOficina(oficina, endereco);
             return Response.ok(transformOficina(oficina, endereco)).build();
         } catch (LoginNotUpdade | OficinaNotUpdate | EnderecoNotUpdate | SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();

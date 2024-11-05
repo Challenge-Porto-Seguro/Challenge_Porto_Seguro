@@ -90,7 +90,7 @@ public class UsuarioController {
             usuario.setId(id);
             Endereco endereco = new Endereco(dto.cep(), dto.numero());
             endereco.setLogin(id);
-            service.alteraUsuario(usuario, endereco);
+            usuario = service.alteraUsuario(usuario, endereco);
             return Response.ok(transformUsuario(usuario, endereco)).build();
         } catch (LoginNotUpdade | UsuarioNotUpdate | EnderecoNotUpdate | SQLException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Map.of("message", e.getMessage())).build();

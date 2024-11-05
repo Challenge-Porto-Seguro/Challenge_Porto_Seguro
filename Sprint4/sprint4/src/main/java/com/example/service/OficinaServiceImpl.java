@@ -51,6 +51,7 @@ final class OficinaServiceImpl implements OficinaService {
             endereco.setLogin(oficina.getId());
             enderecoService.updateEndereco(connection, endereco);
             connection.commit();
+            oficina = buscaOficinaPorId(oficina.getId());
             return oficina;
         } catch (SQLException e){
             connection.rollback();
